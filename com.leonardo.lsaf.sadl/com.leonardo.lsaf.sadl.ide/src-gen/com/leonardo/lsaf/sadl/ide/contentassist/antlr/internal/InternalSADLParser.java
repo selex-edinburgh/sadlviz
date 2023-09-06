@@ -5699,7 +5699,19 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 int LA22_0 = input.LA(1);
 
                 if ( (LA22_0==19) ) {
-                    alt22=1;
+                    int LA22_2 = input.LA(2);
+
+                    if ( (LA22_2==RULE_ID) ) {
+                        int LA22_3 = input.LA(3);
+
+                        if ( (synpred34_InternalSADL()) ) {
+                            alt22=1;
+                        }
+
+
+                    }
+
+
                 }
 
 
@@ -28294,30 +28306,34 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connection__SourceAssignment_5"
-    // InternalSADL.g:8743:1: rule__Connection__SourceAssignment_5 : ( ( RULE_ID ) ) ;
+    // InternalSADL.g:8743:1: rule__Connection__SourceAssignment_5 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Connection__SourceAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSADL.g:8747:1: ( ( ( RULE_ID ) ) )
-            // InternalSADL.g:8748:2: ( ( RULE_ID ) )
+            // InternalSADL.g:8747:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSADL.g:8748:2: ( ( ruleQualifiedName ) )
             {
-            // InternalSADL.g:8748:2: ( ( RULE_ID ) )
-            // InternalSADL.g:8749:3: ( RULE_ID )
+            // InternalSADL.g:8748:2: ( ( ruleQualifiedName ) )
+            // InternalSADL.g:8749:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectionAccess().getSourcePortCrossReference_5_0()); 
             }
-            // InternalSADL.g:8750:3: ( RULE_ID )
-            // InternalSADL.g:8751:4: RULE_ID
+            // InternalSADL.g:8750:3: ( ruleQualifiedName )
+            // InternalSADL.g:8751:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_5_0_1()); 
+               before(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_5_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            ruleQualifiedName();
+
+            state._fsp--;
+            if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_5_0_1()); 
+               after(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_5_0_1()); 
             }
 
             }
@@ -28347,30 +28363,34 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connection__SourceAssignment_6_1"
-    // InternalSADL.g:8762:1: rule__Connection__SourceAssignment_6_1 : ( ( RULE_ID ) ) ;
+    // InternalSADL.g:8762:1: rule__Connection__SourceAssignment_6_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Connection__SourceAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSADL.g:8766:1: ( ( ( RULE_ID ) ) )
-            // InternalSADL.g:8767:2: ( ( RULE_ID ) )
+            // InternalSADL.g:8766:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSADL.g:8767:2: ( ( ruleQualifiedName ) )
             {
-            // InternalSADL.g:8767:2: ( ( RULE_ID ) )
-            // InternalSADL.g:8768:3: ( RULE_ID )
+            // InternalSADL.g:8767:2: ( ( ruleQualifiedName ) )
+            // InternalSADL.g:8768:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectionAccess().getSourcePortCrossReference_6_1_0()); 
             }
-            // InternalSADL.g:8769:3: ( RULE_ID )
-            // InternalSADL.g:8770:4: RULE_ID
+            // InternalSADL.g:8769:3: ( ruleQualifiedName )
+            // InternalSADL.g:8770:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_6_1_0_1()); 
+               before(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_6_1_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            ruleQualifiedName();
+
+            state._fsp--;
+            if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_6_1_0_1()); 
+               after(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_6_1_0_1()); 
             }
 
             }
@@ -28457,30 +28477,34 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connection__DestinationAssignment_10"
-    // InternalSADL.g:8800:1: rule__Connection__DestinationAssignment_10 : ( ( RULE_ID ) ) ;
+    // InternalSADL.g:8800:1: rule__Connection__DestinationAssignment_10 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Connection__DestinationAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSADL.g:8804:1: ( ( ( RULE_ID ) ) )
-            // InternalSADL.g:8805:2: ( ( RULE_ID ) )
+            // InternalSADL.g:8804:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSADL.g:8805:2: ( ( ruleQualifiedName ) )
             {
-            // InternalSADL.g:8805:2: ( ( RULE_ID ) )
-            // InternalSADL.g:8806:3: ( RULE_ID )
+            // InternalSADL.g:8805:2: ( ( ruleQualifiedName ) )
+            // InternalSADL.g:8806:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0()); 
             }
-            // InternalSADL.g:8807:3: ( RULE_ID )
-            // InternalSADL.g:8808:4: RULE_ID
+            // InternalSADL.g:8807:3: ( ruleQualifiedName )
+            // InternalSADL.g:8808:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_10_0_1()); 
+               before(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_10_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            ruleQualifiedName();
+
+            state._fsp--;
+            if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_10_0_1()); 
+               after(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_10_0_1()); 
             }
 
             }
@@ -28510,30 +28534,34 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connection__DestinationAssignment_11_1"
-    // InternalSADL.g:8819:1: rule__Connection__DestinationAssignment_11_1 : ( ( RULE_ID ) ) ;
+    // InternalSADL.g:8819:1: rule__Connection__DestinationAssignment_11_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Connection__DestinationAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSADL.g:8823:1: ( ( ( RULE_ID ) ) )
-            // InternalSADL.g:8824:2: ( ( RULE_ID ) )
+            // InternalSADL.g:8823:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSADL.g:8824:2: ( ( ruleQualifiedName ) )
             {
-            // InternalSADL.g:8824:2: ( ( RULE_ID ) )
-            // InternalSADL.g:8825:3: ( RULE_ID )
+            // InternalSADL.g:8824:2: ( ( ruleQualifiedName ) )
+            // InternalSADL.g:8825:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0()); 
             }
-            // InternalSADL.g:8826:3: ( RULE_ID )
-            // InternalSADL.g:8827:4: RULE_ID
+            // InternalSADL.g:8826:3: ( ruleQualifiedName )
+            // InternalSADL.g:8827:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_11_1_0_1()); 
+               before(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_11_1_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            ruleQualifiedName();
+
+            state._fsp--;
+            if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_11_1_0_1()); 
+               after(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_11_1_0_1()); 
             }
 
             }
@@ -29272,22 +29300,52 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__Strategy__PropertiesAssignment_3"
 
+    // $ANTLR start synpred34_InternalSADL
+    public final void synpred34_InternalSADL_fragment() throws RecognitionException {   
+        // InternalSADL.g:1553:3: ( rule__QualifiedName__Group_1__0 )
+        // InternalSADL.g:1553:3: rule__QualifiedName__Group_1__0
+        {
+        pushFollow(FOLLOW_2);
+        rule__QualifiedName__Group_1__0();
+
+        state._fsp--;
+        if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred34_InternalSADL
+
     // Delegated rules
+
+    public final boolean synpred34_InternalSADL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred34_InternalSADL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
 
 
     protected DFA18 dfa18 = new DFA18(this);
     static final String dfa_1s = "\6\uffff";
     static final String dfa_2s = "\1\6\1\23\1\6\2\uffff\1\23";
     static final String dfa_3s = "\1\6\1\66\1\6\2\uffff\1\66";
-    static final String dfa_4s = "\3\uffff\1\1\1\2\1\uffff";
+    static final String dfa_4s = "\3\uffff\1\2\1\1\1\uffff";
     static final String dfa_5s = "\6\uffff}>";
     static final String[] dfa_6s = {
             "\1\1",
-            "\1\2\41\uffff\1\3\1\4",
+            "\1\2\41\uffff\1\4\1\3",
             "\1\5",
             "",
             "",
-            "\1\2\41\uffff\1\3\1\4"
+            "\1\2\41\uffff\1\4\1\3"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);

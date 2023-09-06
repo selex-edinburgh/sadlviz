@@ -8748,9 +8748,9 @@ rule__Connection__SourceAssignment_5
 	(
 		{ before(grammarAccess.getConnectionAccess().getSourcePortCrossReference_5_0()); }
 		(
-			{ before(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_5_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_5_0_1()); }
+			{ before(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_5_0_1()); }
+			ruleQualifiedName
+			{ after(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_5_0_1()); }
 		)
 		{ after(grammarAccess.getConnectionAccess().getSourcePortCrossReference_5_0()); }
 	)
@@ -8767,9 +8767,9 @@ rule__Connection__SourceAssignment_6_1
 	(
 		{ before(grammarAccess.getConnectionAccess().getSourcePortCrossReference_6_1_0()); }
 		(
-			{ before(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_6_1_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getConnectionAccess().getSourcePortIDTerminalRuleCall_6_1_0_1()); }
+			{ before(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_6_1_0_1()); }
+			ruleQualifiedName
+			{ after(grammarAccess.getConnectionAccess().getSourcePortQualifiedNameParserRuleCall_6_1_0_1()); }
 		)
 		{ after(grammarAccess.getConnectionAccess().getSourcePortCrossReference_6_1_0()); }
 	)
@@ -8805,9 +8805,9 @@ rule__Connection__DestinationAssignment_10
 	(
 		{ before(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0()); }
 		(
-			{ before(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_10_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_10_0_1()); }
+			{ before(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_10_0_1()); }
+			ruleQualifiedName
+			{ after(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_10_0_1()); }
 		)
 		{ after(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0()); }
 	)
@@ -8824,9 +8824,9 @@ rule__Connection__DestinationAssignment_11_1
 	(
 		{ before(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0()); }
 		(
-			{ before(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_11_1_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getConnectionAccess().getDestinationPortIDTerminalRuleCall_11_1_0_1()); }
+			{ before(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_11_1_0_1()); }
+			ruleQualifiedName
+			{ after(grammarAccess.getConnectionAccess().getDestinationPortQualifiedNameParserRuleCall_11_1_0_1()); }
 		)
 		{ after(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0()); }
 	)

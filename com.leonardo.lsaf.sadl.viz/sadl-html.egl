@@ -27,7 +27,7 @@ var connections = Sequence{};
 	        
 	        const elkGraph = {
 	            "id": "root",
-	            "layoutOptions": { 'elk.algorithm': 'layered' },
+	            "layoutOptions": { "elk.algorithm": "layered" },
 	            "children": [
 [% for (container in application.containers) {
      
@@ -80,7 +80,7 @@ var connections = Sequence{};
 [%
         }
 %]
-                              ], "width": 30, "height": 30 },
+                              ], "width": 30, "height": 30, "info":"component" },
 [%
         }
         else if (currentContainer.isTypeOf(M!sadl::Container)) {
@@ -113,7 +113,7 @@ var connections = Sequence{};
 	            ]
 	            
 	            ,
-	            edges: [
+	            "edges": [
 [%
 // handle connections to edges
 for (connection in connections) {

@@ -1656,12 +1656,12 @@ public class SADLGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cColonColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cSourceAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cSourcePortCrossReference_5_0 = (CrossReference)cSourceAssignment_5.eContents().get(0);
-		private final RuleCall cSourcePortIDTerminalRuleCall_5_0_1 = (RuleCall)cSourcePortCrossReference_5_0.eContents().get(1);
+		private final RuleCall cSourcePortQualifiedNameParserRuleCall_5_0_1 = (RuleCall)cSourcePortCrossReference_5_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cFullStopKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cSourceAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final CrossReference cSourcePortCrossReference_6_1_0 = (CrossReference)cSourceAssignment_6_1.eContents().get(0);
-		private final RuleCall cSourcePortIDTerminalRuleCall_6_1_0_1 = (RuleCall)cSourcePortCrossReference_6_1_0.eContents().get(1);
+		private final RuleCall cSourcePortQualifiedNameParserRuleCall_6_1_0_1 = (RuleCall)cSourcePortCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Alternatives cAlternatives_8 = (Alternatives)cGroup.eContents().get(8);
 		private final Keyword cSelfKeyword_8_0 = (Keyword)cAlternatives_8.eContents().get(0);
@@ -1671,12 +1671,12 @@ public class SADLGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cColonColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cDestinationAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final CrossReference cDestinationPortCrossReference_10_0 = (CrossReference)cDestinationAssignment_10.eContents().get(0);
-		private final RuleCall cDestinationPortIDTerminalRuleCall_10_0_1 = (RuleCall)cDestinationPortCrossReference_10_0.eContents().get(1);
+		private final RuleCall cDestinationPortQualifiedNameParserRuleCall_10_0_1 = (RuleCall)cDestinationPortCrossReference_10_0.eContents().get(1);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
 		private final Keyword cFullStopKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
 		private final Assignment cDestinationAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
 		private final CrossReference cDestinationPortCrossReference_11_1_0 = (CrossReference)cDestinationAssignment_11_1.eContents().get(0);
-		private final RuleCall cDestinationPortIDTerminalRuleCall_11_1_0_1 = (RuleCall)cDestinationPortCrossReference_11_1_0.eContents().get(1);
+		private final RuleCall cDestinationPortQualifiedNameParserRuleCall_11_1_0_1 = (RuleCall)cDestinationPortCrossReference_11_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
 		private final Keyword cUsingKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
@@ -1697,13 +1697,13 @@ public class SADLGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cSemicolonKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//Connection:
-		//    'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port]      ('.' source+=[Port])* ','
-		//                             ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port] ('.' destination+=[Port])* ')'
+		//    'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port | QualifiedName]      ('.' source+=[Port| QualifiedName])* ','
+		//                             ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port| QualifiedName] ('.' destination+=[Port | QualifiedName])* ')'
 		//                             ('using' strategy=[Strategy] ('(' value+=PropertyValue ( ',' value+=PropertyValue)* ')')? )? (description = STRING)? ';' ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port]      ('.' source+=[Port])* ','
-		//                         ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port] ('.' destination+=[Port])* ')'
+		//'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port | QualifiedName]      ('.' source+=[Port| QualifiedName])* ','
+		//                         ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port| QualifiedName] ('.' destination+=[Port | QualifiedName])* ')'
 		//                         ('using' strategy=[Strategy] ('(' value+=PropertyValue ( ',' value+=PropertyValue)* ')')? )? (description = STRING)? ';'
 		public Group getGroup() { return cGroup; }
 		
@@ -1737,29 +1737,29 @@ public class SADLGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'::'
 		public Keyword getColonColonKeyword_4() { return cColonColonKeyword_4; }
 		
-		//source+=[Port]
+		//source+=[Port | QualifiedName]
 		public Assignment getSourceAssignment_5() { return cSourceAssignment_5; }
 		
-		//[Port]
+		//[Port | QualifiedName]
 		public CrossReference getSourcePortCrossReference_5_0() { return cSourcePortCrossReference_5_0; }
 		
-		//ID
-		public RuleCall getSourcePortIDTerminalRuleCall_5_0_1() { return cSourcePortIDTerminalRuleCall_5_0_1; }
+		//QualifiedName
+		public RuleCall getSourcePortQualifiedNameParserRuleCall_5_0_1() { return cSourcePortQualifiedNameParserRuleCall_5_0_1; }
 		
-		//('.' source+=[Port])*
+		//('.' source+=[Port| QualifiedName])*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_6_0() { return cFullStopKeyword_6_0; }
 		
-		//source+=[Port]
+		//source+=[Port| QualifiedName]
 		public Assignment getSourceAssignment_6_1() { return cSourceAssignment_6_1; }
 		
-		//[Port]
+		//[Port| QualifiedName]
 		public CrossReference getSourcePortCrossReference_6_1_0() { return cSourcePortCrossReference_6_1_0; }
 		
-		//ID
-		public RuleCall getSourcePortIDTerminalRuleCall_6_1_0_1() { return cSourcePortIDTerminalRuleCall_6_1_0_1; }
+		//QualifiedName
+		public RuleCall getSourcePortQualifiedNameParserRuleCall_6_1_0_1() { return cSourcePortQualifiedNameParserRuleCall_6_1_0_1; }
 		
 		//','
 		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
@@ -1782,29 +1782,29 @@ public class SADLGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'::'
 		public Keyword getColonColonKeyword_9() { return cColonColonKeyword_9; }
 		
-		//destination+=[Port]
+		//destination+=[Port| QualifiedName]
 		public Assignment getDestinationAssignment_10() { return cDestinationAssignment_10; }
 		
-		//[Port]
+		//[Port| QualifiedName]
 		public CrossReference getDestinationPortCrossReference_10_0() { return cDestinationPortCrossReference_10_0; }
 		
-		//ID
-		public RuleCall getDestinationPortIDTerminalRuleCall_10_0_1() { return cDestinationPortIDTerminalRuleCall_10_0_1; }
+		//QualifiedName
+		public RuleCall getDestinationPortQualifiedNameParserRuleCall_10_0_1() { return cDestinationPortQualifiedNameParserRuleCall_10_0_1; }
 		
-		//('.' destination+=[Port])*
+		//('.' destination+=[Port | QualifiedName])*
 		public Group getGroup_11() { return cGroup_11; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_11_0() { return cFullStopKeyword_11_0; }
 		
-		//destination+=[Port]
+		//destination+=[Port | QualifiedName]
 		public Assignment getDestinationAssignment_11_1() { return cDestinationAssignment_11_1; }
 		
-		//[Port]
+		//[Port | QualifiedName]
 		public CrossReference getDestinationPortCrossReference_11_1_0() { return cDestinationPortCrossReference_11_1_0; }
 		
-		//ID
-		public RuleCall getDestinationPortIDTerminalRuleCall_11_1_0_1() { return cDestinationPortIDTerminalRuleCall_11_1_0_1; }
+		//QualifiedName
+		public RuleCall getDestinationPortQualifiedNameParserRuleCall_11_1_0_1() { return cDestinationPortQualifiedNameParserRuleCall_11_1_0_1; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_12() { return cRightParenthesisKeyword_12; }
@@ -2461,8 +2461,8 @@ public class SADLGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Connection:
-	//    'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port]      ('.' source+=[Port])* ','
-	//                             ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port] ('.' destination+=[Port])* ')'
+	//    'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port | QualifiedName]      ('.' source+=[Port| QualifiedName])* ','
+	//                             ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port| QualifiedName] ('.' destination+=[Port | QualifiedName])* ')'
 	//                             ('using' strategy=[Strategy] ('(' value+=PropertyValue ( ',' value+=PropertyValue)* ')')? )? (description = STRING)? ';' ;
 	public ConnectionElements getConnectionAccess() {
 		return pConnection;

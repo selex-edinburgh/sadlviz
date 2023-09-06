@@ -2775,9 +2775,12 @@ ruleConnection returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getConnectionRule());
 					}
 				}
-				otherlv_6=RULE_ID
 				{
-					newLeafNode(otherlv_6, grammarAccess.getConnectionAccess().getSourcePortCrossReference_5_0());
+					newCompositeNode(grammarAccess.getConnectionAccess().getSourcePortCrossReference_5_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -2793,9 +2796,12 @@ ruleConnection returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getConnectionRule());
 						}
 					}
-					otherlv_8=RULE_ID
 					{
-						newLeafNode(otherlv_8, grammarAccess.getConnectionAccess().getSourcePortCrossReference_6_1_0());
+						newCompositeNode(grammarAccess.getConnectionAccess().getSourcePortCrossReference_6_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
@@ -2838,9 +2844,12 @@ ruleConnection returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getConnectionRule());
 					}
 				}
-				otherlv_13=RULE_ID
 				{
-					newLeafNode(otherlv_13, grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0());
+					newCompositeNode(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -2856,9 +2865,12 @@ ruleConnection returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getConnectionRule());
 						}
 					}
-					otherlv_15=RULE_ID
 					{
-						newLeafNode(otherlv_15, grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0());
+						newCompositeNode(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)

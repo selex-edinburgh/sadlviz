@@ -114,8 +114,8 @@ Instance:
         ('[' (unbounded ?= '*' | lowerBound = INT | ( lowerBound = INT '..' (unbounded ?= '*' | upperBound = INT))) ']')? (description = STRING)? ';' ;
  
 Connection:
-    'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port]      ('.' source+=[Port])* ','
-                             ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port] ('.' destination+=[Port])* ')'
+    'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port | QualifiedName]      ('.' source+=[Port| QualifiedName])* ','
+                             ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port| QualifiedName] ('.' destination+=[Port | QualifiedName])* ')'
                              ('using' strategy=[Strategy] ('(' value+=PropertyValue ( ',' value+=PropertyValue)* ')')? )? (description = STRING)? ';' ;
  
 Deployment:
