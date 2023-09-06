@@ -76,7 +76,7 @@ var connections = Sequence{};
 [%
         for (port in currentContainer.type.ports) {   
 %]
-                                 { "id": "[%=componentFullName + "." + port.name%]", "label": "[%=port.name%]", "width": 5, "height": 5},
+                                 { "id": "[%=(componentFullName + "." + port.name).replace("\\.","-")%]", "label": "[%=port.name%]", "width": 5, "height": 5},
 [%
         }
 %]
@@ -123,8 +123,8 @@ for (connection in connections) {
 %]
 	             { 
 	               "id": "[%=connection.getFullNameStr()%]", "label":"[%=connection.name%]", 
-	               "sources": ["[%=connection.from.getFullNameStr() + "." + connection.source[connection.source.size - 1].name %]"],
-	               "targets": ["[%=connection.to.getFullNameStr() + "." + connection.target[connection.target.size - 1].name%]"]
+	               "sources": ["[%=(connection.from.getFullNameStr() + "." + connection.source[connection.source.size - 1].name).replace("\\.","-") %]"],
+	               "targets": ["[%=(connection.to.getFullNameStr() + "." + connection.destination[connection.destination.size - 1].name).replace("\\.","-")%]"]
 	             },
 [% } %]
 	            ]

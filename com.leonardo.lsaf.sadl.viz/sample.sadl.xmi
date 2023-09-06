@@ -40,14 +40,8 @@
         </children>
       </containers>
       <containers name="root">
-        <connections name="c1toc2" from="//@package.0/@contents.9/@containers.1/@children.0/@instances.0" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.0">
-          <source href="sample.sadl#|10"/>
-          <destination href="sample.sadl#|12"/>
-        </connections>
-        <connections name="c3toc2" from="//@package.0/@contents.9/@containers.1/@children.1/@instances.1" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.0">
-          <source href="sample.sadl#|14"/>
-          <destination href="sample.sadl#|16"/>
-        </connections>
+        <connections name="c1toc2" from="//@package.0/@contents.9/@containers.1/@children.0/@instances.0" source="//@package.0/@contents.6/@ports.0" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.0" destination="//@package.0/@contents.7/@ports.0"/>
+        <connections name="c3toc2" from="//@package.0/@contents.9/@containers.1/@children.1/@instances.1" source="//@package.0/@contents.8/@ports.0" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.0" destination="//@package.0/@contents.7/@ports.0"/>
         <children name="cont1">
           <instances type="//@package.0/@contents.6" name="c1"/>
           <children name="cont11"/>

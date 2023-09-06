@@ -25,76 +25,57 @@
 	            "layoutOptions": { 'elk.algorithm': 'layered' },
 	            "children": [
                             { "id": "First.first.dummy", "label": "dummy", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                             { "id": "First.first.dummy.dummy1", "label": "dummy1", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                             { "id": "First.first.dummy.dummy1.dummy11", "label": "dummy11", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                             { "id": "First.first.dummy.dummy1.dummy12", "label": "dummy12", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                           ], "width": 30, "height": 30 },
                             { "id": "First.first.dummy.dummy2", "label": "dummy2", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                             { "id": "First.first.dummy.dummy2.dummy21", "label": "dummy21", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                             { "id": "First.first.dummy.dummy2.dummy22", "label": "dummy22", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                           ], "width": 30, "height": 30 },
                           ], "width": 30, "height": 30 },
 
                             { "id": "First.first.root", "label": "root", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                             { "id": "First.first.root.cont1", "label": "cont1", 
+                              "children": [
+                            { "id": "First.first.root.cont1.c1", "label": "c1", 
                               "ports": [
-                                 { "id": "First.first.root.cont1.c1", "label": "c1", "width": 5, "height": 5},
-                              ],
-                            "children": [
+                                 { "id": "First-first-root-cont1-c1-a", "label": "a", "width": 5, "height": 5},
+                              ], "width": 30, "height": 30 },
                             { "id": "First.first.root.cont1.cont11", "label": "cont11", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                             { "id": "First.first.root.cont1.cont12", "label": "cont12", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                           ], "width": 30, "height": 30 },
                             { "id": "First.first.root.cont2", "label": "cont2", 
+                              "children": [
+                            { "id": "First.first.root.cont2.c2", "label": "c2", 
                               "ports": [
-                                 { "id": "First.first.root.cont2.c2", "label": "c2", "width": 5, "height": 5},
-                                 { "id": "First.first.root.cont2.c3", "label": "c3", "width": 5, "height": 5},
-                              ],
-                            "children": [
+                                 { "id": "First-first-root-cont2-c2-b", "label": "b", "width": 5, "height": 5},
+                              ], "width": 30, "height": 30 },
+                            { "id": "First.first.root.cont2.c3", "label": "c3", 
+                              "ports": [
+                                 { "id": "First-first-root-cont2-c3-c", "label": "c", "width": 5, "height": 5},
+                              ], "width": 30, "height": 30 },
                             { "id": "First.first.root.cont2.cont21", "label": "cont21", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                             { "id": "First.first.root.cont2.cont22", "label": "cont22", 
-                              "ports": [
-                              ],
-                            "children": [
+                              "children": [
                           ], "width": 30, "height": 30 },
                           ], "width": 30, "height": 30 },
                           ], "width": 30, "height": 30 },
@@ -105,11 +86,13 @@
 	            edges: [
 	             { 
 	               "id": "First.first.root.c1toc2", "label":"c1toc2", 
-	               "sources": ["First.first.root.cont1.c1"],"targets": ["First.first.root.cont2.c2"]
+	               "sources": ["First-first-root-cont1-c1-a"],
+	               "targets": ["First-first-root-cont2-c2-b"]
 	             },
 	             { 
 	               "id": "First.first.root.c3toc2", "label":"c3toc2", 
-	               "sources": ["First.first.root.cont1.c1"],"targets": ["First.first.root.cont2.c3"]
+	               "sources": ["First-first-root-cont2-c3-c"],
+	               "targets": ["First-first-root-cont2-c2-b"]
 	             },
 	            ]
 	        }
