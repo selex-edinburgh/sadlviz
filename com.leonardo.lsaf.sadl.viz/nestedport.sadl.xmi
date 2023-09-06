@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sadl:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sadl="http://www.leonardo.com/lsaf/sadl/SADL">
+  <package name="nestedportexample">
+    <contents xsi:type="sadl:Topic" name="Ta"/>
+    <contents xsi:type="sadl:Topic" name="Tb"/>
+    <contents xsi:type="sadl:Interface" name="Ia">
+      <ports xsi:type="sadl:TopicPort" name="ta" type="//@package.0/@contents.0"/>
+    </contents>
+    <contents xsi:type="sadl:Interface" name="Ib">
+      <ports xsi:type="sadl:TopicPort" name="tb" conjugated="true" type="//@package.0/@contents.1"/>
+    </contents>
+    <contents xsi:type="sadl:Interface" name="Ic">
+      <ports xsi:type="sadl:InterfacePort" name="p1" type="//@package.0/@contents.2"/>
+      <ports xsi:type="sadl:InterfacePort" name="p2" conjugated="true" type="//@package.0/@contents.3"/>
+    </contents>
+    <contents xsi:type="sadl:Interface" name="Id">
+      <ports xsi:type="sadl:InterfacePort" name="c" type="//@package.0/@contents.4"/>
+    </contents>
+    <contents xsi:type="sadl:Component" name="A">
+      <ports xsi:type="sadl:InterfacePort" name="p1" type="//@package.0/@contents.2"/>
+      <ports xsi:type="sadl:InterfacePort" name="p2" type="//@package.0/@contents.5"/>
+    </contents>
+    <contents xsi:type="sadl:Component" name="B">
+      <ports xsi:type="sadl:InterfacePort" name="p1" conjugated="true" type="//@package.0/@contents.5"/>
+    </contents>
+    <contents xsi:type="sadl:Application" name="dummy">
+      <containers name="test">
+        <instances type="//@package.0/@contents.6" name="a"/>
+        <instances type="//@package.0/@contents.7" name="b"/>
+        <connections from="//@package.0/@contents.8/@containers.0/@instances.0" to="//@package.0/@contents.8/@containers.0/@instances.1">
+          <source href="nestedport.sadl#|11"/>
+          <destination href="nestedport.sadl#|13"/>
+          <destination href="nestedport.sadl#|14"/>
+          <destination href="nestedport.sadl#|15"/>
+        </connections>
+      </containers>
+    </contents>
+  </package>
+</sadl:Model>

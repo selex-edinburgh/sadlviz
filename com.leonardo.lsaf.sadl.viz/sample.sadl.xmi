@@ -44,7 +44,7 @@
           <source href="sample.sadl#|10"/>
           <destination href="sample.sadl#|12"/>
         </connections>
-        <connections name="c3toc2" from="//@package.0/@contents.9/@containers.1/@children.0/@instances.0" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.1">
+        <connections name="c3toc2" from="//@package.0/@contents.9/@containers.1/@children.1/@instances.1" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.0">
           <source href="sample.sadl#|14"/>
           <destination href="sample.sadl#|16"/>
         </connections>

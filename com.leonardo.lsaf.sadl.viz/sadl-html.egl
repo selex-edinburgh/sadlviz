@@ -47,50 +47,65 @@ var connections = Sequence{};
             continue;
         }
 
-        var i = currentContainer.children.size - 1;
-        while(i >= 0) {
-            var child = currentContainer.children.get(i);
-            //child.name.println("+add:");
-            stack.add(0, child);
-            i = i - 1;
-        }
-        // do for current container
-        if (currentContainer.isTypeOf(M!sadl::Container)) {
-            // add this container's' connections to processed later with all other connections
-            //currentContainer.connections.println;
-            connections.addAll(currentContainer.connections); 
+		// add subcontainers 
+		if (currentContainer.isTypeOf(M!sadl::Container)) {
+	        var i = currentContainer.children.size - 1;
+	        while(i >= 0) {
+	            var child = currentContainer.children.get(i);
+	            //child.name.println("+add:");
+	            stack.add(0, child);
+	            i = i - 1;
+	        }
+	        
+	        // add instances in the container
+	        i = currentContainer.instances.size - 1;
+	        while(i >= 0) {
+	            var child = currentContainer.instances.get(i);
+	            //child.name.println("+add:");
+	            stack.add(0, child);
+	            i = i - 1;
+	        }
+	    }
         
+        // do for current container
+        if (currentContainer.isTypeOf(M!sadl::Instance)) {
+               var componentFullName = currentContainer.getFullNameStr();
 %]
-                            { "id": "[%=currentContainer.getFullNameStr()%]", "label": "[%=currentContainer.name%]", 
-[%                                
-            // map instances to ports
-%]
+                            { "id": "[%=componentFullName%]", "label": "[%=currentContainer.name%]", 
                               "ports": [
 [%
-        for (instance in currentContainer.instances) {   
+        for (port in currentContainer.type.ports) {   
 %]
-                                 { "id": "[%=instance.getFullNameStr()%]", "label": "[%=instance.name%]", "width": 5, "height": 5},
+                                 { "id": "[%=componentFullName + "." + port.name%]", "label": "[%=port.name%]", "width": 5, "height": 5},
 [%
         }
 %]
-                              ],
-                            "children": [
+                              ], "width": 30, "height": 30 },
 [%
         }
-        
-          
+        else if (currentContainer.isTypeOf(M!sadl::Container)) {
+            
+            // collect connections
+            connections.addAll(currentContainer.connections); 
+%]
+                            { "id": "[%=currentContainer.getFullNameStr()%]", "label": "[%=currentContainer.name%]", 
+                              "children": [
+[%
+        }
                 
         currentContainer.name.println("!process:");
-        if (currentContainer.children.size > 0){
+        if (currentContainer.isTypeOf(M!sadl::Container) and currentContainer.children.size > 0){
             visited.add(currentContainer);
         }
 
         //currentContainer.name.println("-rem:");
-        if (currentContainer.children.size == 0) {
+        if (currentContainer.isTypeOf(M!sadl::Container) and currentContainer.children.size == 0) {
 %]                          ], "width": 30, "height": 30 },
 [% 
             stack.remove(currentContainer);
-        }  
+        }else if (currentContainer.isTypeOf(M!sadl::Instance)){
+            stack.remove(currentContainer);
+        }
     }
    %]
 
@@ -100,12 +115,16 @@ var connections = Sequence{};
 	            ,
 	            edges: [
 [%
+// handle connections to edges
 for (connection in connections) {
-    connection.to.println(connection.from + " : ");
+    //connection.to.println(connection.from + " : ");
+    connection.println;
+    
 %]
 	             { 
 	               "id": "[%=connection.getFullNameStr()%]", "label":"[%=connection.name%]", 
-	               "sources": ["[%=connection.from.getFullNameStr()%]"],"targets": ["[%=connection.to.getFullNameStr()%]"]
+	               "sources": ["[%=connection.from.getFullNameStr() + "." + connection.source[connection.source.size - 1].name %]"],
+	               "targets": ["[%=connection.to.getFullNameStr() + "." + connection.target[connection.target.size - 1].name%]"]
 	             },
 [% } %]
 	            ]

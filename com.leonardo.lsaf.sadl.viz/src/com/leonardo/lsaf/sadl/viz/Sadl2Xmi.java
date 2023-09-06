@@ -17,7 +17,7 @@ public class Sadl2Xmi {
 	public static void main(String[] args) {
 
 		try {
-			File sourceModelFile = new File("sample.sadl");
+			File sourceModelFile = new File("nestedport.sadl");
 			System.out.println("Converting " + sourceModelFile.getAbsolutePath() +" to "  +sourceModelFile.getAbsolutePath() + ".xmi ... ");
 			Injector injector = new SADLStandaloneSetup().createInjectorAndDoEMFRegistration();
 			XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
