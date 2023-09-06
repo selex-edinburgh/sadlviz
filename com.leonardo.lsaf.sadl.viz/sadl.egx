@@ -1,0 +1,15 @@
+import "sadl.eol";
+
+rule Sadl2Html
+    transform application : M!sadl::Application {
+    template : "sadl-html.egl"
+    target : "html/" + application.getFullName().concat(".") + ".html"
+    parameters : Map{
+        "path" = addExtension(application.getFullName(), "html"),
+        "format" = "html",
+        "application" =  application
+    }
+}
+
+
+

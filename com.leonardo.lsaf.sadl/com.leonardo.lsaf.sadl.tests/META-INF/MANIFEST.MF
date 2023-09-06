@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.leonardo.lsaf.sadl.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: com.leonardo.lsaf.sadl.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.leonardo.lsaf.sadl.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.leonardo.lsaf.sadl,
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ junit-jupiter-api
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.leonardo.lsaf.sadl.tests;x-internal=true

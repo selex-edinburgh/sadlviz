@@ -1,0 +1,7 @@
+#graphContainer {
+    overflow: hidden;
+    /* width: 321px;
+    height: 241px; */
+    background: url('../images/grid.gif');
+    cursor: default;
+}

@@ -1,0 +1,135 @@
+operation addExtension(sequence: Sequence, extension: String) {
+	sequence.add(0, extension);
+	return sequence;
+}
+
+operation M!sadl::Application getFullName() {
+    var segments = Sequence{};
+    segments.add(self.name);
+    var container = self.eContainer;
+    var jModel = null;
+    while (container <> null) {
+        if (container.isTypeOf(M!sadl::Package)) {
+            segments.add(0, container.name);
+        } 
+//        else if (container.isTypeOf(M!sadl::Model)) {
+//            segments.add(0, container.name);
+//        } 
+        container = container.eContainer;
+    }
+    return segments;
+}
+
+operation M!sadl::Container getFullName() {
+    var segments = Sequence{};
+    segments.add(self.name);
+    var container = self.eContainer;
+    var jModel = null;
+    while (container <> null) {
+        if (container.isTypeOf(M!sadl::Package)) {
+            segments.add(0, container.name);
+        } 
+        else if (container.isTypeOf(M!sadl::Application)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!sadl::Container)) {
+            segments.add(0, container.name);
+        }  
+        container = container.eContainer;
+    }
+    return segments;
+}
+
+operation M!sadl::Connection getFullName() {
+    var segments = Sequence{};
+    segments.add(self.name);
+    var container = self.eContainer;
+    var jModel = null;
+    while (container <> null) {
+        if (container.isTypeOf(M!sadl::Package)) {
+            segments.add(0, container.name);
+        } 
+        else if (container.isTypeOf(M!sadl::Application)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!sadl::Container)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!sadl::Connection)) {
+            segments.add(0, container.name);
+        }  
+        container = container.eContainer;
+    }
+    return segments;
+}
+
+operation M!sadl::Instance getFullName() {
+    var segments = Sequence{};
+    segments.add(self.name);
+    var container = self.eContainer;
+    var jModel = null;
+    while (container <> null) {
+        if (container.isTypeOf(M!sadl::Package)) {
+            segments.add(0, container.name);
+        } 
+        else if (container.isTypeOf(M!sadl::Application)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!sadl::Container)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!sadl::Instance)) {
+            segments.add(0, container.name);
+        }  
+        container = container.eContainer;
+    }
+    return segments;
+}
+
+operation M!sadl::Port getFullName() {
+    var segments = Sequence{};
+    segments.add(self.name);
+    var container = self.eContainer;
+    var jModel = null;
+    while (container <> null) {
+        if (container.isTypeOf(M!sadl::Package)) {
+            segments.add(0, container.name);
+        } 
+        else if (container.isTypeOf(M!sadl::Application)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!sadl::Container)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!sadl::Port)) {
+            segments.add(0, container.name);
+        }  
+        container = container.eContainer;
+    }
+    return segments;
+}
+
+operation M!sadl::Application getFullNameStr() {
+    var fullName = self.getFullName().concat(".");
+    return fullName;
+}
+
+operation M!sadl::Container getFullNameStr() {
+    var fullName = self.getFullName().concat(".");
+    return fullName;
+}
+
+operation M!sadl::Connection getFullNameStr() {
+    var fullName = self.getFullName().concat(".");
+    return fullName;
+}
+
+operation M!sadl::Instance getFullNameStr() {
+    var fullName = self.getFullName().concat(".");
+    return fullName;
+}
+
+operation M!sadl::Port getFullNameStr() {
+    var fullName = self.getFullName().concat(".");
+    return fullName;
+}

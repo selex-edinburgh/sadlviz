@@ -1,0 +1,99 @@
+// Overrides check for valid roots
+mxGraph.prototype.isValidRoot = function () {
+    return false;
+};
+
+
+function transverseElkTree(elkGraph, mxgraphRoot, mxgraph) {
+    console.log(elkGraph.id);
+    for (i in elkGraph.children) {
+        let elkNode = elkGraph.children[i];
+        transverseElkNodes(elkNode, mxgraphRoot, mxgraph);
+    }
+    for (i in elkGraph.edges) {
+        let elkEdge = elkGraph.edges[i];
+        let from = mxgraph.model.getCell(elkEdge.sources[0]);
+        let to = mxgraph.model.getCell(elkEdge.targets[0]);
+        var mxedge = mxgraph.insertEdge(mxgraphRoot, elkEdge.id, elkEdge.label, from, to, "rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;");
+        var points = [];
+        for (j in elkEdge.sections) {
+            let section = elkEdge.sections[j]; 
+            for (k in section.bendPoints) {
+                let bendPoint = section.bendPoints[k];
+                points.push(new mxPoint(bendPoint.x, bendPoint.y));
+            }
+        }
+        mxedge.getGeometry().points = points;
+    }
+}
+
+function transverseElkNodes(elkElement, mxgraphElement, mxgraph) {
+    console.log(elkElement.id);
+    var mxElement = mxgraph.insertVertex(mxgraphElement, elkElement.id, elkElement.label, elkElement.x, elkElement.y, elkElement.width, elkElement.height, "verticalLabelPosition=top;verticalAlign=bottom");
+
+    for (i in elkElement.ports) {
+        let port = elkElement.ports[i];
+        console.log(port.id);
+        var mxPort = mxgraph.insertVertex(mxElement, port.id, port.label, port.x, port.y, port.width, port.height, "strokeColor=none;fillColor=#000000;labelPosition=center;verticalLabelPosition=top;");
+    }
+
+    for (i in elkElement.children) {
+        let subElkElement = elkElement.children[i];
+        transverseElkNodes(subElkElement, mxElement, mxgraph);
+    }
+}
+
+
+// Program starts here. Creates a sample graph in the
+// DOM node with the specified ID. This function is invoked
+// from the onLoad event handler of the document (see below).
+function render(container, elkGraph) {
+    // Checks if the browser is supported
+    if (!mxClient.isBrowserSupported()) {
+        // Displays an error message if the browser is not supported.
+        mxUtils.error('Browser is not supported!', 200, false);
+    }
+    else {
+        // Creates the graph inside the given container
+        var mxgraph = new mxGraph(container);
+        mxgraph.constrainChildren = false;
+        mxgraph.extendParents = false;
+        mxgraph.extendParentsOnAdd = true;
+        mxgraph.setEnabled(false);
+        // graph.panningHandler.ignoreCell = true;
+        // graph.setPanning(true);
+        mxgraph.foldingEnabled = false;
+        mxgraph.recursiveResize = true;
+        mxgraph.setConnectable(true);
+
+        mxgraph.isPort = function (cell) {
+            var geo = this.getCellGeometry(cell);
+            return (geo != null) ? geo.relative : false;
+        };
+
+        // Enables rubberband selection
+        new mxRubberband(mxgraph);
+
+        // Gets the default parent for inserting new cells. This
+        // is normally the first child of the root (ie. layer 0).
+        var parent = mxgraph.getDefaultParent();
+
+        // Adds cells to the model in a single step
+        mxgraph.getModel().beginUpdate();
+        try {
+            // dummy(parent, mxgraph);
+            transverseElkTree(elkGraph, parent, mxgraph);
+            // var v1 = mxGgraph.insertVertex(parent, 'e1', 'A', 20, 20, 60, 120, "verticalLabelPosition=top;verticalAlign=bottom");
+            // v1.setConnectable(false);
+            // var v2 = graph.insertVertex(v1, 'e2', 'a', 1, 0.20, 20, 60, "fillColor=#d5e8d4;verticalLabelPosition=middle;verticalAlign=middle;labelPosition=left");
+            // v2.geometry.offset = new mxPoint(-10, -10);
+            // v2.geometry.relative = true;
+            // var e1 = graph.insertEdge(parent, null, '', v3, v7, "movable=0;edgeStyle=orthogonalEdgeStyle");
+            // var e2 = graph.insertEdge(parent, null, '', v5, v10, "movable=0;edgeStyle=orthogonalEdgeStyle");
+        }
+        finally {
+            // Updates the display
+            mxgraph.getModel().endUpdate();
+        }
+    }
+};

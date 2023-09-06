@@ -1,0 +1,182 @@
+@namespace(uri="http://www.leonardo.com/lsaf/sadl/SADL", prefix="sadl")
+package sadl;
+
+class Model {
+	val Package[*] ~package;
+}
+
+class Package {
+	attr String name;
+	attr String description;
+	val PackageableElement[*] contents;
+}
+
+class PackageableElement {
+	attr String name;
+}
+
+class Unit extends PackageableElement {
+	ref Unit group;
+	attr String description;
+}
+
+class Type extends PackageableElement {
+}
+
+class Component extends PackageableElement {
+	attr String description;
+	val Port[*] ports;
+}
+
+class Primitive extends Type {
+	attr double min;
+	attr double max;
+	attr double res;
+}
+
+class Interface extends PackageableElement {
+	attr String description;
+	val Port[*] ports;
+}
+
+class Enumeration extends Type {
+	attr String description;
+	val Enumerator[*] enumerators;
+}
+
+class Topic extends Type {
+	attr String description;
+	val Attribute[*] attributes;
+}
+
+class Alias extends Type {
+	ref Type type;
+	attr double min;
+	attr double max;
+	attr double res;
+	attr String unbounded;
+	attr int upperbound;
+	ref Unit unit;
+	attr String description;
+}
+
+class Port {
+	attr String name;
+	attr boolean conjugated;
+}
+
+class Enumerator {
+	attr boolean deprecated;
+	attr String name;
+	attr int value;
+	attr String description;
+}
+
+class Attribute {
+	attr boolean deprecated;
+	ref Type type;
+	attr String name;
+	attr boolean unbounded;
+	attr int lowerbound;
+	attr int upperbound;
+	ref Unit unit;
+	attr String description;
+}
+
+class TopicPort extends Port {
+	ref Topic type;
+}
+
+class InterfacePort extends Port {
+	ref Interface type;
+}
+
+class Platform extends PackageableElement {
+	attr String description;
+	val Processor[*] processors;
+	val Link[*] links;
+}
+
+class Processor {
+	attr String name;
+	attr String description;
+}
+
+class Link {
+	attr String name;
+	attr String description;
+	!unique ref Processor[*] processors;
+	ref Transport transport;
+	val PropertyValue[*] value;
+}
+
+class Property {
+	attr String name;
+	attr boolean optional;
+	attr String description;
+}
+
+class PropertyValue {
+	ref Property property;
+	attr String value;
+}
+
+class Transport extends PackageableElement {
+	attr String description;
+	val Property[*] properties;
+}
+
+class Application extends PackageableElement {
+	attr String description;
+	val Container[*] containers;
+}
+
+class Container {
+	attr String name;
+	attr String description;
+	val Instance[*] instances;
+	val Connection[*] connections;
+	val Container[*] children;
+}
+
+class Instance {
+	ref Component type;
+	attr String name;
+	attr boolean unbounded;
+	attr int lowerBound;
+	attr int upperBound;
+	attr String description;
+}
+
+class Connection {
+	attr String name;
+	ref Instance from;
+	!unique ref Port[*] source;
+	ref Instance to;
+	!unique ref Port[*] destination;
+	ref Strategy strategy;
+	val PropertyValue[*] value;
+	attr String description;
+}
+
+class Deployment extends PackageableElement {
+	attr String description;
+	val ContainerMapping[*] containermapping;
+	val ConnectionMapping[*] connectionmapping;
+}
+
+class ContainerMapping {
+	ref Processor processor;
+	ref Container container;
+}
+
+class ConnectionMapping {
+	ref Link link;
+	ref Connection connection;
+}
+
+class Strategy extends PackageableElement {
+	attr String description;
+	val Property[*] properties;
+}
+

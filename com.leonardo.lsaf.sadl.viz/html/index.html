@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>ADL Visualisation</title>
+</head>
+<body>
+    <!-- Creates a container for the graph with a grid wallpaper -->
+    <div id="graphContainer" class="viewport">
+    </div>
+    
+    <link rel="stylesheet" href="css/sadl.css"><link>
+    <script type="text/javascript" src="js/mxClient-min.js"></script>
+    <script type="text/javascript">
+        // Overrides check for valid roots
+        mxGraph.prototype.isValidRoot = function () {
+            return false;
+        };
+
+        // Program starts here. Creates a sample graph in the
+        // DOM node with the specified ID. This function is invoked
+        // from the onLoad event handler of the document (see below).
+        function main(container) {
+            // Checks if the browser is supported
+            if (!mxClient.isBrowserSupported()) {
+                // Displays an error message if the browser is not supported.
+                mxUtils.error('Browser is not supported!', 200, false);
+            }
+            else {
+                // Creates the graph inside the given container
+                var graph = new mxGraph(container);
+                graph.constrainChildren = false;
+                graph.extendParents = false;
+                graph.extendParentsOnAdd = true;
+                // graph.setEnabled(false);
+                // graph.panningHandler.ignoreCell = true;
+				// graph.setPanning(true);
+                graph.foldingEnabled = true;
+				graph.recursiveResize = true;
+                graph.setConnectable(true);
+
+                graph.isPort = function(cell)
+				{
+					var geo = this.getCellGeometry(cell);
+					return (geo != null) ? geo.relative : false;
+				};
+
+                // Enables rubberband selection
+                new mxRubberband(graph);
+
+                // Gets the default parent for inserting new cells. This
+                // is normally the first child of the root (ie. layer 0).
+                var parent = graph.getDefaultParent();
+
+                // Adds cells to the model in a single step
+                graph.getModel().beginUpdate();
+                try {
+                    var v1 = graph.insertVertex(parent, 'e1', 'A', 20, 20, 60, 120, "verticalLabelPosition=top;verticalAlign=bottom");
+                    v1.setConnectable(false);
+                    var v2 = graph.insertVertex(v1, 'e2', 'a', 1, 0.20, 20, 60, "fillColor=#d5e8d4;verticalLabelPosition=middle;verticalAlign=middle;labelPosition=left");
+                    v2.geometry.offset = new mxPoint(-10, -10);
+					v2.geometry.relative = true;
+                    var v3 = graph.insertVertex(v2, 'e3', 'p1', 1, 0.3, 20, 20, "fillColor=#fad9d5");
+                    v3.geometry.offset = new mxPoint(-10, -10);
+					v3.geometry.relative = true;
+                    var v4 = graph.insertVertex(v2, 'e4', 'p2', 1, 0.7, 20, 20, "fillColor=#fad9d5");
+                    v4.geometry.offset = new mxPoint(-10, -10);
+					v4.geometry.relative = true;
+                    var v5 = graph.insertVertex(v1, 'e5', 'b', 1, 0.80, 20, 20, "fillColor=#d5e8d4;verticalLabelPosition=middle;verticalAlign=middle;labelPosition=left");
+                    v5.geometry.offset = new mxPoint(-10, -10);
+					v5.geometry.relative = true;
+
+
+                    var v6 = graph.insertVertex(parent, 'e6', 'B', 300, 20, 60, 120, "verticalLabelPosition=top;verticalAlign=bottom");
+                    v6.setConnectable(false);
+                    var v7 = graph.insertVertex(v6, 'e7', 'c', 0, 0.20, 20, 60, "fillColor=#d5e8d4;verticalLabelPosition=middle;verticalAlign=middle;labelPosition=right");
+                    v7.geometry.offset = new mxPoint(-10, -10);
+					v7.geometry.relative = true;
+                    var v8 = graph.insertVertex(v7, 'e8', 'p3', 0, 0.3, 20, 20, "fillColor=#fad9d5");
+                    v8.geometry.offset = new mxPoint(-10, -10);
+					v8.geometry.relative = true;
+                    var v9 = graph.insertVertex(v7, 'e9', 'p4', 0, 0.7, 20, 20, "fillColor=#fad9d5");
+                    v9.geometry.offset = new mxPoint(-10, -10);
+					v9.geometry.relative = true;
+                    var v10 = graph.insertVertex(v6, 'e10', 'd', 0, 0.80, 20, 20, "fillColor=#d5e8d4;verticalLabelPosition=middle;verticalAlign=middle;labelPosition=right");
+                    v10.geometry.offset = new mxPoint(-10, -10);
+					v10.geometry.relative = true;
+
+                    var e1 = graph.insertEdge(parent, null, '', v3, v7, "movable=0;edgeStyle=orthogonalEdgeStyle");
+					var e2 = graph.insertEdge(parent, null, '', v5, v10, "movable=0;edgeStyle=orthogonalEdgeStyle");
+
+                    // layout
+                    // var layout = new mxHierarchicalLayout(graph);
+                    // layout.orientation =  mxConstants.DIRECTION_WEST;
+                    var layout = new mxSwimlaneLayout(graph);
+				    // var layout = new mxFastOrganicLayout(graph);
+                    // layout.forceConstant = 120;
+                    // var layout = new mxCircleLayout(graph);
+                    // var layout = new mxCompactTreeLayout(graph);
+                    // var layout = new mxCompositeLayout(graph);
+                    // var layout = new mxParallelEdgeLayout(graph);
+                    // var layout = new mxPartitionLayout(graph);
+                    // var layout = new mxStackLayout(graph);
+
+                    var parent = graph.getDefaultParent();
+                    layout.isEdgeIgnored = false;
+                    layout.execute(parent);
+                    // organic.execute(parent);
+
+                }
+                finally {
+                    // Updates the display
+                    graph.getModel().endUpdate();
+                }
+            }
+        };
+    </script>
+    <script>
+        main(document.getElementById('graphContainer'));
+    </script>
+</body>
+
+</html>

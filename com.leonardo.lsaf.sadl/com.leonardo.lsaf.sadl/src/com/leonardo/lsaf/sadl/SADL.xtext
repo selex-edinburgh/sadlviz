@@ -1,0 +1,135 @@
+grammar com.leonardo.lsaf.sadl.SADL with org.eclipse.xtext.common.Terminals
+ 
+generate sadl "http://www.leonardo.com/lsaf/sadl/SADL"
+ 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+ 
+Model:
+    {Model} package += (Package)*;
+ 
+Package:
+    'package' name=QualifiedName
+        (description = STRING)?
+        (contents += PackageableElement)*
+    'end';
+ 
+QualifiedName hidden():
+    ID ('.' ID)* ;
+ 
+PackageableElement:
+    Unit | Type | Component | Interface | Platform | Application | Transport | Strategy | Deployment;
+ 
+Unit:
+    'unit' name=ID (':' group = [Unit|QualifiedName])? (description=STRING)?';';
+ 
+Type:
+    Primitive | Enumeration | Topic | Alias;
+ 
+Component:
+    'component' name = ID
+    (description=STRING)?
+    (ports+=Port)*
+    'end';
+ 
+Primitive:
+    'primitive' name = ID (min=Real -> max = Real (':' res=Real)?)?';';
+ 
+Real returns ecore::EDouble hidden():
+    ('-')?INT '.' (EXP|INT);
+ 
+terminal EXP: INT'E'('+'|'-')INT;
+ 
+Interface:
+    'interface' name=ID
+    (description=STRING)?
+    (ports+=Port)*
+    'end';
+ 
+Enumeration:
+    'enum' name=ID
+    (description=STRING)?
+    (enumerators+=Enumerator)*
+    'end';
+ 
+Topic:
+    'topic' name=ID
+    (description=STRING)?
+    (attributes+=Attribute)*
+    'end';
+ 
+Alias:
+    'alias' type=[Type|QualifiedName] (min=Real -> max = Real (':' res=Real)?)? ('[' unbounded='*'|upperbound=INT ']')? ('(' unit = [Unit|QualifiedName] ')')? 'as' name=ID (description=STRING)?';';
+ 
+Port:
+    TopicPort | InterfacePort;
+ 
+Enumerator:
+    ('value' | deprecated ?= 'deprecated') name=ID ('=' value=INT)? (description=STRING)?';';
+ 
+Attribute:
+    ('attribute' | deprecated ?= 'deprecated') type=[Type|QualifiedName] name=ID ('[' unbounded?='*' | lowerbound = INT | (lowerbound = INT '..' (unbounded?='*' | upperbound=INT))']')? ('(' unit=[Unit|QualifiedName]')')? (description = STRING)?';';
+ 
+TopicPort:
+    'port' name=ID (conjugated?='receives'|'sends') type=[Topic|QualifiedName]';';
+ 
+InterfacePort:
+    'port' name=ID (conjugated?='requires'|'provides') type=[Interface|QualifiedName]';';
+ 
+Platform:
+       'platform' name=ID  (description = STRING)?
+           (processors+=Processor | links += Link)*
+       'end';
+ 
+Processor:
+       'processor' name=ID (description=STRING)? ';';
+ 
+Link:
+    'link' name=ID (description = STRING)?
+    ('connects' '(' processors += [Processor | QualifiedName]  (',' processors += [Processor | QualifiedName])* ')' ';')?
+    ('over' transport = [Transport]    ('(' value += PropertyValue (',' value += PropertyValue)* ')' )? ';')?
+    'end';
+ 
+Property:
+       'property' name=ID (optional ?='?')? (description = STRING)? ';';
+ 
+PropertyValue:
+       property=[Property] '=' value = STRING ;
+      
+Transport:
+       'transport' name=ID (description = STRING)? ( properties += Property)* 'end' ;
+ 
+Application:
+       'application' name=ID (description=STRING)?
+           (containers+=Container)*
+       'end';
+ 
+Container:
+       'container' name=ID (description=STRING)?
+           (instances += Instance | connections += Connection | children += Container)*
+       'end';
+ 
+Instance:
+    'instance'
+        type = [Component | QualifiedName] name=ID
+        ('[' (unbounded ?= '*' | lowerBound = INT | ( lowerBound = INT '..' (unbounded ?= '*' | upperBound = INT))) ']')? (description = STRING)? ';' ;
+ 
+Connection:
+    'connect' (name=ID)? '(' ('self' | from=[Instance | QualifiedName]) '::' source+=[Port]      ('.' source+=[Port])* ','
+                             ('self' | to=[Instance | QualifiedName])   '::' destination+=[Port] ('.' destination+=[Port])* ')'
+                             ('using' strategy=[Strategy] ('(' value+=PropertyValue ( ',' value+=PropertyValue)* ')')? )? (description = STRING)? ';' ;
+ 
+Deployment:
+       'deployment' name = ID (description=STRING)?
+       (containermapping += ContainerMapping | connectionmapping +=ConnectionMapping)*
+       'end';
+ 
+ContainerMapping:
+       processor=[Processor | QualifiedName]
+       'hosts' container = [Container| QualifiedName] ';';
+ 
+ConnectionMapping:
+       link=[Link|QualifiedName]
+       'carries' connection = [Connection| QualifiedName] ';';
+ 
+Strategy:
+       'strategy' name=ID (description = STRING)? (properties += Property)* 'end' ;
