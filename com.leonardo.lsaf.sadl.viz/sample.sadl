@@ -34,82 +34,21 @@ package First
     component CThird
         port c requires IFirst;
     end
+    
+    component CFour
+        port d provides IFirst;
+    end
  
     application first
-        container dummy
-          container dummy1
-            container dummy11
-            end
-            container dummy12
-            end
-          end
-          container dummy2
-            container dummy21
-            end
-            container dummy22
-            end
-          end
-        end
+        
         container root
-            container cont1
                 instance CFirst c1;
-                container cont11
-                end
-                container cont12
-                end
-            end
-            container cont2
                 instance CSecond c2;
                 instance CThird c3;
-                container cont21
-                end
-                container cont22
-                end
-            end
-            connect c1toc2 (cont1.c1::CFirst.a, cont2.c2::CSecond.b);
-            connect c3toc2 (cont2.c3::CThird.c, cont2.c2::CSecond.b);
+                instance CFour c4;
+            connect c1toc2 (c1::CFirst.a, c2::CSecond.b);
+            connect c3toc2 (c3::CThird.c, c2::CSecond.b);
+            connect c4toc2 (c4::CFour.d, c2::CSecond.b);
         end       
     end
-   
-//    transport TCP
-//        property ServerIP;
-//        property ServerPort;
-//    end
-//   
-//    transport UDP_Unicast
-//        property IP1;
-//        property Port1;
-//        property IP2;
-//        property Port2;
-//    end
-// 
-//    transport PCIe
-//        property DeviceId;
-//        property Lane;
-//        property Vendor;
-//    end
-// 
-//    platform NineAndThreeQuarters
-//        processor proc1;
-//        processor proc2;
-//        link p1top2TCP
-//            connects (proc1, proc2);
-//            over TCP (TCP.ServerIP="0.0.0.0", ServerPort="8100");
-//        end
-//        link p1top2UDP
-//            connects (proc1, proc2);
-//            over UDP_Unicast (IP1="127.0.0.1", Port1="8100", IP2="127.0.0.1", Port2="8101");
-//        end
-//        link p1top2PCIe
-//            connects (proc1, proc2);
-//            over PCIe (DeviceId="0x1e35dde", Lane="16", Vendor="Leonardo");
-//        end
-//    end
-//   
-//    deployment dep1
-//        NineAndThreeQuarters.proc1 hosts first.root.cont1;
-//        NineAndThreeQuarters.proc2 hosts first.root.cont2;
-//        NineAndThreeQuarters.p1top2TCP carries first.root.c1toc2;
-//        NineAndThreeQuarters.p1top2UDP carries first.root.c3toc2;
-//    end
 end

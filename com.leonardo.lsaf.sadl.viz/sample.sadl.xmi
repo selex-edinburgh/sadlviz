@@ -28,90 +28,19 @@
     <contents xsi:type="sadl:Component" name="CThird">
       <ports xsi:type="sadl:InterfacePort" name="c" conjugated="true" type="//@package.0/@contents.5"/>
     </contents>
+    <contents xsi:type="sadl:Component" name="CFour">
+      <ports xsi:type="sadl:InterfacePort" name="d" type="//@package.0/@contents.5"/>
+    </contents>
     <contents xsi:type="sadl:Application" name="first">
-      <containers name="dummy">
-        <children name="dummy1">
-          <children name="dummy11"/>
-          <children name="dummy12"/>
-        </children>
-        <children name="dummy2">
-          <children name="dummy21"/>
-          <children name="dummy22"/>
-        </children>
-      </containers>
       <containers name="root">
-        <connections name="c1toc2" from="//@package.0/@contents.9/@containers.1/@children.0/@instances.0" source="//@package.0/@contents.6/@ports.0" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.0" destination="//@package.0/@contents.7/@ports.0"/>
-        <connections name="c3toc2" from="//@package.0/@contents.9/@containers.1/@children.1/@instances.1" source="//@package.0/@contents.8/@ports.0" to="//@package.0/@contents.9/@containers.1/@children.1/@instances.0" destination="//@package.0/@contents.7/@ports.0"/>
-        <children name="cont1">
-          <instances type="//@package.0/@contents.6" name="c1"/>
-          <children name="cont11"/>
-          <children name="cont12"/>
-        </children>
-        <children name="cont2">
-          <instances type="//@package.0/@contents.7" name="c2"/>
-          <instances type="//@package.0/@contents.8" name="c3"/>
-          <children name="cont21"/>
-          <children name="cont22"/>
-        </children>
+        <instances type="//@package.0/@contents.6" name="c1"/>
+        <instances type="//@package.0/@contents.7" name="c2"/>
+        <instances type="//@package.0/@contents.8" name="c3"/>
+        <instances type="//@package.0/@contents.9" name="c4"/>
+        <connections name="c1toc2" from="//@package.0/@contents.10/@containers.0/@instances.0" source="//@package.0/@contents.6/@ports.0" to="//@package.0/@contents.10/@containers.0/@instances.1" destination="//@package.0/@contents.7/@ports.0"/>
+        <connections name="c3toc2" from="//@package.0/@contents.10/@containers.0/@instances.2" source="//@package.0/@contents.8/@ports.0" to="//@package.0/@contents.10/@containers.0/@instances.1" destination="//@package.0/@contents.7/@ports.0"/>
+        <connections name="c4toc2" from="//@package.0/@contents.10/@containers.0/@instances.3" source="//@package.0/@contents.9/@ports.0" to="//@package.0/@contents.10/@containers.0/@instances.1" destination="//@package.0/@contents.7/@ports.0"/>
       </containers>
-    </contents>
-    <contents xsi:type="sadl:Transport" name="TCP">
-      <properties name="ServerIP"/>
-      <properties name="ServerPort"/>
-    </contents>
-    <contents xsi:type="sadl:Transport" name="UDP_Unicast">
-      <properties name="IP1"/>
-      <properties name="Port1"/>
-      <properties name="IP2"/>
-      <properties name="Port2"/>
-    </contents>
-    <contents xsi:type="sadl:Transport" name="PCIe">
-      <properties name="DeviceId"/>
-      <properties name="Lane"/>
-      <properties name="Vendor"/>
-    </contents>
-    <contents xsi:type="sadl:Platform" name="NineAndThreeQuarters">
-      <processors name="proc1"/>
-      <processors name="proc2"/>
-      <links name="p1top2TCP" processors="//@package.0/@contents.13/@processors.0 //@package.0/@contents.13/@processors.1" transport="//@package.0/@contents.10">
-        <value value="0.0.0.0">
-          <property href="sample.sadl#|23"/>
-        </value>
-        <value value="8100">
-          <property href="sample.sadl#|24"/>
-        </value>
-      </links>
-      <links name="p1top2UDP" processors="//@package.0/@contents.13/@processors.0 //@package.0/@contents.13/@processors.1" transport="//@package.0/@contents.11">
-        <value value="127.0.0.1">
-          <property href="sample.sadl#|28"/>
-        </value>
-        <value value="8100">
-          <property href="sample.sadl#|29"/>
-        </value>
-        <value value="127.0.0.1">
-          <property href="sample.sadl#|30"/>
-        </value>
-        <value value="8101">
-          <property href="sample.sadl#|31"/>
-        </value>
-      </links>
-      <links name="p1top2PCIe" processors="//@package.0/@contents.13/@processors.0 //@package.0/@contents.13/@processors.1" transport="//@package.0/@contents.12">
-        <value value="0x1e35dde">
-          <property href="sample.sadl#|35"/>
-        </value>
-        <value value="16">
-          <property href="sample.sadl#|36"/>
-        </value>
-        <value value="Leonardo">
-          <property href="sample.sadl#|37"/>
-        </value>
-      </links>
-    </contents>
-    <contents xsi:type="sadl:Deployment" name="dep1">
-      <containermapping processor="//@package.0/@contents.13/@processors.0" container="//@package.0/@contents.9/@containers.1/@children.0"/>
-      <containermapping processor="//@package.0/@contents.13/@processors.1" container="//@package.0/@contents.9/@containers.1/@children.1"/>
-      <connectionmapping link="//@package.0/@contents.13/@links.0" connection="//@package.0/@contents.9/@containers.1/@connections.0"/>
-      <connectionmapping link="//@package.0/@contents.13/@links.1" connection="//@package.0/@contents.9/@containers.1/@connections.1"/>
     </contents>
   </package>
 </sadl:Model>

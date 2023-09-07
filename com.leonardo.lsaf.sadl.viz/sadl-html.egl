@@ -68,22 +68,7 @@ var connections = Sequence{};
 	    }
         
         // do for current container
-        if (currentContainer.isTypeOf(M!sadl::Instance)) {
-               var componentFullName = currentContainer.getFullNameStr();
-%]
-                            { "id": "[%=componentFullName%]", "label": "[%=currentContainer.name%]", 
-                              "ports": [
-[%
-        for (port in currentContainer.type.ports) {   
-%]
-                                 { "id": "[%=(componentFullName + "." + port.name).replace("\\.","-")%]", "label": "[%=port.name%]", "width": 5, "height": 5},
-[%
-        }
-%]
-                              ], "width": 30, "height": 30, "info":"component" },
-[%
-        }
-        else if (currentContainer.isTypeOf(M!sadl::Container)) {
+        if (currentContainer.isTypeOf(M!sadl::Container)) {
             
             // collect connections
             connections.addAll(currentContainer.connections); 
@@ -92,20 +77,37 @@ var connections = Sequence{};
                               "children": [
 [%
         }
-                
+        if (currentContainer.isTypeOf(M!sadl::Instance)) {
+               var componentFullName = currentContainer.getFullNameStr();
+%]
+                            { "id": "[%=componentFullName%]", "label": "[%=currentContainer.name%]",
+                              "ports": [
+[%
+            for (port in currentContainer.type.ports) {
+%]
+                                 { "id": "[%=(componentFullName + "." + port.name).replace("\\.","-")%]", "label": "[%=port.name%]", "width": 5, "height": 5},
+[%
+            }
+%]
+                              ], "width": 30, "height": 30, "info":"component" },
+[%
+        }
+
         currentContainer.name.println("!process:");
-        if (currentContainer.isTypeOf(M!sadl::Container) and currentContainer.children.size > 0){
+        if (currentContainer.isTypeOf(M!sadl::Container)){
             visited.add(currentContainer);
         }
 
         //currentContainer.name.println("-rem:");
-        if (currentContainer.isTypeOf(M!sadl::Container) and currentContainer.children.size == 0) {
+        if (currentContainer.isTypeOf(M!sadl::Container) and stack.indexOf(currentContainer) == 0) {
 %]                          ], "width": 30, "height": 30 },
-[% 
+[%
+            stack.println("A: ");
             stack.remove(currentContainer);
-        }else if (currentContainer.isTypeOf(M!sadl::Instance)){
+        } else if (currentContainer.isTypeOf(M!sadl::Instance)){
+//            stack.println("B: ");
             stack.remove(currentContainer);
-        }
+        } 
     }
    %]
 
