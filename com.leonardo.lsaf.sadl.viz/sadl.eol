@@ -133,3 +133,19 @@ operation M!sadl::Port getFullNameStr() {
     var fullName = self.getFullName().concat(".");
     return fullName;
 }
+
+operation sadl::Connection getSourceName(): String{
+    var names = Sequence{};
+    for (port in self.source) {
+        names.add(port.name);
+    }
+    return names.concat(".");
+}
+
+operation sadl::Connection getDestinationName(): String{
+    var names = Sequence{};
+    for (port in self.destination) {
+        names.add(port.name);
+    }
+    return names.concat(".");
+}

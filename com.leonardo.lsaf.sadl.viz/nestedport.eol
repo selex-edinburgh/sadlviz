@@ -1,0 +1,273 @@
+
+operation DEFAULT_COMPONENT_HEIGHT() : Integer {
+    return 30;
+}
+operation DEFAULT_COMPONENT_WIDTH() : Integer {
+    return 30;
+    }
+operation DEFAULT_PORT_HEIGHT() : Integer {
+    return 5;
+    }
+operation DEFAULT_PORT_WIDTH() : Integer {
+    return 5;
+    }
+operation DEFAULT_X_OFFSET() : Integer {
+    return 0;
+    }
+operation DEFAULT_Y_OFFSET() : Integer {
+    return 5;
+    }
+operation DEFAULT_Y_POSITION() : Integer {
+    return 0;
+    }
+operation DEFAULT_X_POSITION() : Integer {
+    return 0;
+    }
+operation SIDE_WEST() : String {
+    return "WEST";
+    }
+operation SIDE_EAST() : String {
+    return "EAST";
+}
+
+operation sadl::Instance getWidth(): Integer {
+    return DEFAULT_COMPONENT_WIDTH();
+}
+
+operation sadl::Container getWidth(): Integer {
+    return DEFAULT_COMPONENT_WIDTH();
+}
+
+operation sadl::Component getWidth(): Integer {
+    return DEFAULT_COMPONENT_WIDTH();
+}
+
+operation sadl::Container getWidth(): Integer {
+    return DEFAULT_COMPONENT_WIDTH();
+}
+
+operation sadl::Port getSide(): String {
+    var side = SIDE_EAST();
+//    if (self.conjugated) {
+//        side = SIDE_WEST(); 
+//    }
+    return side;
+}
+
+var counter = 0;
+
+operation ID(){return 0;}
+operation ALGORITHM(){return 1; }
+operation CHILDREN(){return 2;}
+operation TEXT (){return 3;}
+operation SIDE (){return 4;}
+operation X(){return 5;}
+operation Y(){return 6;} 
+operation OFFSET(){return 7;}
+operation WIDTH(){return 8;}
+operation HEIGHT(){return 9;}
+operation CLASS(){return 10;}
+operation ROOT_PORT(){return 11;}
+operation PARENT_PORT(){return 12;}
+operation LEVEL(){return 13;}
+operation PORT(){return 14;}
+
+operation createPort() : Sequence{
+    var element = Sequence{};
+    for (i in Sequence{1..15}){
+        element.add(null);
+    } 
+    element.set(CHILDREN(), Sequence{});
+    element.set(SIDE(), SIDE_EAST());
+    element.set(X(), DEFAULT_X_POSITION());
+    element.set(Y(), DEFAULT_Y_POSITION());
+    element.set(HEIGHT(), DEFAULT_PORT_HEIGHT());
+    element.set(WIDTH(), DEFAULT_PORT_WIDTH());
+    element.set(CLASS(), "PORT");
+    element.set(OFFSET(), DEFAULT_X_OFFSET());
+    return element;
+}
+
+operation treeToSequence(rootPort: Sequence, targetSequence: Sequence){
+         targetSequence.add(rootPort); 
+         var children = rootPort.get(CHILDREN());
+         for (child in children) {
+//            targetSequence.add(child);
+            treeToSequence(child, targetSequence);
+         }
+}
+
+operation sadl:: InterfacePort getSubPorts(rootPort : Sequence, currentPort: Sequence, level: Integer) {
+
+    currentPort.set(TEXT(), self.name);
+   
+    var parent = currentPort.get(PARENT_PORT());
+    var index = parent.get(CHILDREN()).indexOf(currentPort);
+    
+    var dummyPort = rootPort.get(PARENT_PORT());
+    var rootPortIndex =  dummyPort.get(CHILDREN()).indexOf(rootPort);
+    var childOffset = 0;
+    
+    if(rootPortIndex > 0 and level > 0) {
+        // childOffset = DEFAULT_Y_OFFSET() + (rootPortIndex * DEFAULT_PORT_HEIGHT()) + (level * DEFAULT_PORT_HEIGHT());
+    }
+
+
+    var y = 0;
+    var prevY = 0;
+    var prevHeight = 0;
+    
+//    if (level == 0) {
+//        if (rootPortIndex == 0) {
+//	        prevY = 0;
+//            prevHeight = 0;
+//        } else if (rootPortIndex > 0) {
+//            var prevPort = dummyPort.get(CHILDREN()).get(rootPortIndex - 1);
+//            prevY = prevPort.get(Y());
+//            prevHeight = prevPort.get(HEIGHT());
+//        }
+//        "".println("PrevY = " + prevY + ", prevHeight = " + prevHeight);
+//        y = DEFAULT_Y_OFFSET() + (level * DEFAULT_Y_OFFSET()) + prevY + prevHeight;
+//    }
+
+
+        if (index == 0) {
+            prevY = 0;
+            prevHeight = 0;
+        } else if (index > 0) {
+            var prevPort = parent.get(CHILDREN()).get(index - 1);
+            prevY = prevPort.get(Y());
+            prevHeight = prevPort.get(HEIGHT());
+        }
+//        "".println("PrevY = " + prevY + ", prevHeight = " + prevHeight);
+        if (level == 0) {
+            y = DEFAULT_Y_OFFSET() + (level * DEFAULT_Y_OFFSET()) + prevY + prevHeight;
+            y.println(currentPort.get(ID()) + " : ");
+            currentPort.set(Y(), y);
+        } 
+        else if (level > 0) {
+            if (index == 0) {
+                currentPort.get(PARENT_PORT()).get(Y()).println(currentPort.get(PARENT_PORT()).get(ID()) + " : " + currentPort.get(ID()) + " : ");
+                y = DEFAULT_Y_OFFSET() + currentPort.get(PARENT_PORT()).get(Y()) + prevHeight + (index * DEFAULT_Y_OFFSET());
+            } else if (index > 0) {
+                y = DEFAULT_Y_OFFSET() + prevY + prevHeight;
+            }
+            currentPort.set(Y(), y);
+        }
+
+    
+    
+    
+    level = level + 1;
+    
+    for (port in self.type.ports){
+        if (not port.isTypeOf(sadl::InterfacePort)){
+            continue;
+        }
+
+        var subPort = createPort();
+        var subId = currentPort.get(ID()) + "." + port.name;
+        subPort.set(ID(), subId);
+        subPort.set(ROOT_PORT(), rootPort);
+        subPort.set(PARENT_PORT(), currentPort);
+        subPort.set(LEVEL(), level);
+        subPort.set(TEXT(), port.name);
+        subPort.set(PORT(), port);
+        currentPort.get(CHILDREN()).add(subPort);
+        
+        // start recursive call
+        port.getSubPorts(rootPort, subPort, level);
+    }
+    
+    level = level - 1;
+    
+    var height = DEFAULT_PORT_HEIGHT();
+    for (sp in currentPort.get(CHILDREN())) {
+        var h =  sp.get(HEIGHT());
+        height = height + h;
+        height = height + DEFAULT_PORT_HEIGHT();
+    }
+    currentPort.set(HEIGHT(), height);
+}
+
+operation sadl::Port getY(): Integer {
+    var y = DEFAULT_Y_POSITION();
+    return y;
+}
+
+operation sadl::Port hasSubPort(): Boolean {
+    var hasSubPort = false;
+    if (self.type.ports.size > 0){
+        hasSubPort = true;
+    }
+    return hasSubPort;
+}
+
+operation sadl::Port isSubPort(connection : sadl::Connection): Boolean {
+    var isSubPort = false;
+    if (connection.source.indexOf(self) > 0 or connection.destination.indexOf(self) > 0){
+        isSubPort = true;
+    }
+    return isSubPort;
+}
+
+operation sadl::Port getBorderOffset(): Integer {
+    return DEFAULT_X_OFFSET();
+}
+
+operation sadl::Port getWidth(): Integer {
+   return DEFAULT_PORT_WIDTH();
+}
+
+operation sadl::InterfacePort getHeight(): Integer {
+    var height = DEFAULT_PORT_HEIGHT();
+    for (port in self.type.ports){
+        if (port.isTypeOf(sadl::InterfacePort)){
+	        height = height + port.getHeight();
+	        height = height + DEFAULT_PORT_HEIGHT();
+        }
+    }
+   return height;
+}
+
+operation sadl::Instance getHeight(): Integer {
+   var height = DEFAULT_COMPONENT_HEIGHT();
+    if (self.type.ports.size > 0){
+        height = height + DEFAULT_PORT_HEIGHT();
+        for (port in self.type.ports){
+            height = height + port.getHeight();
+            height = height + DEFAULT_PORT_HEIGHT();
+        }
+    }
+    return height;
+}
+
+operation sadl::Component getHeight(): Integer {
+   var height = DEFAULT_COMPONENT_HEIGHT();
+    if (self.ports.size > 0){
+        height = height + DEFAULT_PORT_HEIGHT();
+        for (port in self.ports){
+            height = height + port.getHeight();
+            height = height + DEFAULT_PORT_HEIGHT();
+        }
+    }
+    return height;
+}
+
+operation sadl::Container getHeight(): Integer {
+   var height = DEFAULT_COMPONENT_HEIGHT();
+    if (self.children.size > 0 or self.instances.size > 0){
+        height = height + DEFAULT_COMPONENT_HEIGHT();
+        for (instance in self.instances){
+            height = height + instance.type.getHeight();
+            height = height + DEFAULT_COMPONENT_HEIGHT();
+        }
+        for (container in self.children){
+            height = height + container.getHeight();
+            height = height + DEFAULT_COMPONENT_HEIGHT();
+        }
+    }
+    return height;
+}
+
+

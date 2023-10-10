@@ -6221,9 +6221,9 @@ rule__Connection__Group__7__Impl
 	}
 :
 (
-	{ before(grammarAccess.getConnectionAccess().getCommaKeyword_7()); }
-	','
-	{ after(grammarAccess.getConnectionAccess().getCommaKeyword_7()); }
+	{ before(grammarAccess.getConnectionAccess().getToKeyword_7()); }
+	'to'
+	{ after(grammarAccess.getConnectionAccess().getToKeyword_7()); }
 )
 ;
 finally {
@@ -6464,9 +6464,9 @@ rule__Connection__Group_6__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getConnectionAccess().getFullStopKeyword_6_0()); }
-	'.'
-	{ after(grammarAccess.getConnectionAccess().getFullStopKeyword_6_0()); }
+	{ before(grammarAccess.getConnectionAccess().getCommaKeyword_6_0()); }
+	','
+	{ after(grammarAccess.getConnectionAccess().getCommaKeyword_6_0()); }
 )
 ;
 finally {
@@ -6518,9 +6518,9 @@ rule__Connection__Group_11__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getConnectionAccess().getFullStopKeyword_11_0()); }
-	'.'
-	{ after(grammarAccess.getConnectionAccess().getFullStopKeyword_11_0()); }
+	{ before(grammarAccess.getConnectionAccess().getCommaKeyword_11_0()); }
+	','
+	{ after(grammarAccess.getConnectionAccess().getCommaKeyword_11_0()); }
 )
 ;
 finally {

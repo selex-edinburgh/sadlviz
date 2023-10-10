@@ -13,16 +13,26 @@ function transverseElkTree(elkGraph, mxgraphRoot, mxgraph) {
     for (i in elkGraph.edges) {
         let elkEdge = elkGraph.edges[i];
         let from = mxgraph.model.getCell(elkEdge.sources[0]);
+        console.log(from.getGeometry());
         let to = mxgraph.model.getCell(elkEdge.targets[0]);
-        var mxedge = mxgraph.insertEdge(mxgraphRoot, elkEdge.id, elkEdge.label, from, to, "rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;");
+        console.log(to.getGeometry());
+        var mxedge = mxgraph.insertEdge(mxgraphRoot, elkEdge.id, elkEdge.label, 
+            from, to, "rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;");
         var points = [];
         for (j in elkEdge.sections) {
             let section = elkEdge.sections[j]; 
+            let startPoint = new mxPoint(section.startPoint.x, section.startPoint.y);
+            startPoint.as = "sourcePoint";
+            points.push(startPoint);
+            let endPoint = new mxPoint(section.endPoint.x, section.endPoint.y);
+            endPoint.as = "targetPoint";
+            points.push(endPoint);
             for (k in section.bendPoints) {
                 let bendPoint = section.bendPoints[k];
                 points.push(new mxPoint(bendPoint.x, bendPoint.y));
             }
         }
+        console.log(points);
         mxedge.getGeometry().points = points;
     }
 }

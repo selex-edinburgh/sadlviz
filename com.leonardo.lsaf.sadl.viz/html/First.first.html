@@ -4,11 +4,11 @@
     <script type="text/javascript" src="js/mxClient-min.js"></script>
     <script type="text/javascript" src="js/elk.bundled-min.js"></script>
     <script type="text/javascript" src="js/adlviz.js"></script>
-    <title>EolSequence [First, first]</title>
+    <title>First.first</title>
 </head>
 <body>
 	<h1>
-		First.first	
+		First.first
 	</h1>
 	<div id="graphContainer" class="viewport">
     </div>
@@ -17,85 +17,111 @@
     
     	<script type="text/javascript">
 	        const elk = new ELK({
-	            workerUrl: 'js/elk-worker.js'
+	            workerUrl: 'js/elk-worker-min.js'
 	        });
 	        
-	        const elkGraph = {
+	        const elkGraph = 
+	        {
 	            "id": "root",
-	            "layoutOptions": { 'elk.algorithm': 'layered' },
+	            "layoutOptions": { "elk.algorithm": "layered" },
 	            "children": [
-                            { "id": "First.first.dummy", "label": "dummy", 
+                            { "id": "First.first.root", 
+                              "labels": [{"text": "root"}],
+                              "properties": {
+                                "portConstraints": "FIXED_POS"
+                              },
                               "children": [
-                            { "id": "First.first.dummy.dummy1", "label": "dummy1", 
-                              "children": [
-                            { "id": "First.first.dummy.dummy1.dummy11", "label": "dummy11", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                            { "id": "First.first.dummy.dummy1.dummy12", "label": "dummy12", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                          ], "width": 30, "height": 30 },
-                            { "id": "First.first.dummy.dummy2", "label": "dummy2", 
-                              "children": [
-                            { "id": "First.first.dummy.dummy2.dummy21", "label": "dummy21", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                            { "id": "First.first.dummy.dummy2.dummy22", "label": "dummy22", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                          ], "width": 30, "height": 30 },
-                          ], "width": 30, "height": 30 },
+                            { "id": "First.first.root.c1", 
+                              "labels": [{"text": "c1"}],
+                              "properties": {
+                                "portConstraints": "FIXED_POS"
+                              },
+                              "ports": [
 
-                            { "id": "First.first.root", "label": "root", 
-                              "children": [
-                            { "id": "First.first.root.cont1", "label": "cont1", 
-                              "children": [
-                            { "id": "First.first.root.cont1.c1", "label": "c1", 
+                                 { "id": "First-first-root-c1-a", 
+                                   "labels": [{"text": "a"}],
+                                   "properties": {
+                                     "port.side": "EAST",
+                                     "port.borderOffset": 0
+                                   },
+                                   "width": 5, "height": 5,
+                                   "y": 5,
+                                   "class": "Port"},
+                              ], "width": 30, "height": 45, "class":"Component" },
+                            { "id": "First.first.root.c2", 
+                              "labels": [{"text": "c2"}],
+                              "properties": {
+                                "portConstraints": "FIXED_POS"
+                              },
                               "ports": [
-                                 { "id": "First-first-root-cont1-c1-a", "label": "a", "width": 5, "height": 5},
-                              ], "width": 30, "height": 30 },
-                            { "id": "First.first.root.cont1.cont11", "label": "cont11", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                            { "id": "First.first.root.cont1.cont12", "label": "cont12", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                          ], "width": 30, "height": 30 },
-                            { "id": "First.first.root.cont2", "label": "cont2", 
-                              "children": [
-                            { "id": "First.first.root.cont2.c2", "label": "c2", 
+
+                                 { "id": "First-first-root-c2-b", 
+                                   "labels": [{"text": "b"}],
+                                   "properties": {
+                                     "port.side": "EAST",
+                                     "port.borderOffset": 0
+                                   },
+                                   "width": 5, "height": 5,
+                                   "y": 5,
+                                   "class": "Port"},
+                              ], "width": 30, "height": 45, "class":"Component" },
+                            { "id": "First.first.root.c3", 
+                              "labels": [{"text": "c3"}],
+                              "properties": {
+                                "portConstraints": "FIXED_POS"
+                              },
                               "ports": [
-                                 { "id": "First-first-root-cont2-c2-b", "label": "b", "width": 5, "height": 5},
-                              ], "width": 30, "height": 30 },
-                            { "id": "First.first.root.cont2.c3", "label": "c3", 
+
+                                 { "id": "First-first-root-c3-c", 
+                                   "labels": [{"text": "c"}],
+                                   "properties": {
+                                     "port.side": "EAST",
+                                     "port.borderOffset": 0
+                                   },
+                                   "width": 5, "height": 5,
+                                   "y": 5,
+                                   "class": "Port"},
+                              ], "width": 30, "height": 45, "class":"Component" },
+                            { "id": "First.first.root.c4", 
+                              "labels": [{"text": "c4"}],
+                              "properties": {
+                                "portConstraints": "FIXED_POS"
+                              },
                               "ports": [
-                                 { "id": "First-first-root-cont2-c3-c", "label": "c", "width": 5, "height": 5},
-                              ], "width": 30, "height": 30 },
-                            { "id": "First.first.root.cont2.cont21", "label": "cont21", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                            { "id": "First.first.root.cont2.cont22", "label": "cont22", 
-                              "children": [
-                          ], "width": 30, "height": 30 },
-                          ], "width": 30, "height": 30 },
-                          ], "width": 30, "height": 30 },
+
+                                 { "id": "First-first-root-c4-d", 
+                                   "labels": [{"text": "d"}],
+                                   "properties": {
+                                     "port.side": "EAST",
+                                     "port.borderOffset": 0
+                                   },
+                                   "width": 5, "height": 5,
+                                   "y": 5,
+                                   "class": "Port"},
+                              ], "width": 30, "height": 45, "class":"Component" },
+                          ], "width": 30, "height": 360 },
 
 	            ]
 	            
 	            ,
-	            edges: [
+	            "edges": [
 	             { 
 	               "id": "First.first.root.c1toc2", "label":"c1toc2", 
-	               "sources": ["First-first-root-cont1-c1-a"],
-	               "targets": ["First-first-root-cont2-c2-b"]
+	               "sources": ["First-first-root-c1-a"],
+	               "targets": ["First-first-root-c2-b"]
 	             },
 	             { 
 	               "id": "First.first.root.c3toc2", "label":"c3toc2", 
-	               "sources": ["First-first-root-cont2-c3-c"],
-	               "targets": ["First-first-root-cont2-c2-b"]
+	               "sources": ["First-first-root-c3-c"],
+	               "targets": ["First-first-root-c2-b"]
+	             },
+	             { 
+	               "id": "First.first.root.c4toc2", "label":"c4toc2", 
+	               "sources": ["First-first-root-c4-d"],
+	               "targets": ["First-first-root-c2-b"]
 	             },
 	            ]
-	        }
+	          }
     </script>
 
     <!-- Render -->

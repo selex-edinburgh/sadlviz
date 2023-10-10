@@ -2785,9 +2785,9 @@ ruleConnection returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_7='.'
+			otherlv_7=','
 			{
-				newLeafNode(otherlv_7, grammarAccess.getConnectionAccess().getFullStopKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getConnectionAccess().getCommaKeyword_6_0());
 			}
 			(
 				(
@@ -2806,9 +2806,9 @@ ruleConnection returns [EObject current=null]
 				)
 			)
 		)*
-		otherlv_9=','
+		otherlv_9='to'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getConnectionAccess().getCommaKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getConnectionAccess().getToKeyword_7());
 		}
 		(
 			otherlv_10='self'
@@ -2854,9 +2854,9 @@ ruleConnection returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_14='.'
+			otherlv_14=','
 			{
-				newLeafNode(otherlv_14, grammarAccess.getConnectionAccess().getFullStopKeyword_11_0());
+				newLeafNode(otherlv_14, grammarAccess.getConnectionAccess().getCommaKeyword_11_0());
 			}
 			(
 				(

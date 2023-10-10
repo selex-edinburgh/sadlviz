@@ -1,6 +1,14 @@
-[% import "sadl.eol";
+[%  
+   import "sadl.eol";
+   import "nestedport.eol";
+
+
+createPort();
+
 
 var connections = Sequence{};
+
+
 
 %]
 <html>
@@ -9,11 +17,11 @@ var connections = Sequence{};
     <script type="text/javascript" src="js/mxClient-min.js"></script>
     <script type="text/javascript" src="js/elk.bundled-min.js"></script>
     <script type="text/javascript" src="js/adlviz.js"></script>
-    <title>[%=application.getFullName()%]</title>
+    <title>[%=application.getFullNameStr()%]</title>
 </head>
 <body>
 	<h1>
-		[%=application.getFullNameStr()%]	
+		[%=application.getFullNameStr()%]
 	</h1>
 	<div id="graphContainer" class="viewport">
     </div>
@@ -22,10 +30,11 @@ var connections = Sequence{};
     
     	<script type="text/javascript">
 	        const elk = new ELK({
-	            workerUrl: 'js/elk-worker.js'
+	            workerUrl: 'js/elk-worker-min.js'
 	        });
 	        
-	        const elkGraph = {
+	        const elkGraph = 
+	        {
 	            "id": "root",
 	            "layoutOptions": { "elk.algorithm": "layered" },
 	            "children": [
@@ -41,7 +50,7 @@ var connections = Sequence{};
         var currentContainer = stack.get(0);
         
         if (visited.includes(currentContainer)){
-%]                          ], "width": 30, "height": 30 },
+%]                          ], "width": [%=currentContainer.getWidth()%], "height": [%=currentContainer.getHeight()%] },
 [%
             stack.removeAt(0);
             continue;
@@ -73,36 +82,76 @@ var connections = Sequence{};
             // collect connections
             connections.addAll(currentContainer.connections); 
 %]
-                            { "id": "[%=currentContainer.getFullNameStr()%]", "label": "[%=currentContainer.name%]", 
+                            { "id": "[%=currentContainer.getFullNameStr()%]", 
+                              "labels": [{"text": "[%=currentContainer.name%]"}],
+                              "properties": {
+                                "portConstraints": "FIXED_POS"
+                              },
                               "children": [
 [%
         }
         if (currentContainer.isTypeOf(M!sadl::Instance)) {
                var componentFullName = currentContainer.getFullNameStr();
 %]
-                            { "id": "[%=componentFullName%]", "label": "[%=currentContainer.name%]",
+                            { "id": "[%=componentFullName%]", 
+                              "labels": [{"text": "[%=currentContainer.name%]"}],
+                              "properties": {
+                                "portConstraints": "FIXED_POS"
+                              },
                               "ports": [
 [%
+            var dummyPort = createPort();
+
             for (port in currentContainer.type.ports) {
+                if (not port.isTypeOf(sadl::InterfacePort)){
+                    continue;
+                }
 %]
-                                 { "id": "[%=(componentFullName + "." + port.name).replace("\\.","-")%]", "label": "[%=port.name%]", "width": 5, "height": 5},
+
+[%
+                    var level = 0;
+                    var rootPort = createPort();
+                    rootPort.set(ID(), componentFullName + "." + port.name);
+                    rootPort.set(PORT(), port);
+                    rootPort.set(PARENT_PORT(), dummyPort);
+                    dummyPort.get(CHILDREN()).add(rootPort);
+                                        
+                    port.getSubPorts(rootPort, rootPort, level);
+                    var subPorts = Sequence{};
+                    treeToSequence(rootPort, subPorts); 
+                    
+                    for (subPort in subPorts){
+                        var portFullName = subPort.get(ID());
+%]
+                                 { "id": "[%=(portFullName).replace("\\.","-")%]", 
+                                   "labels": [{"text": "[%=subPort.get(TEXT())%]"}],
+                                   "properties": {
+                                     "port.side": "[%=subPort.get(SIDE())%]",
+                                     "port.borderOffset": [%=subPort.get(LEVEL()) * DEFAULT_PORT_WIDTH()%]
+                                   },
+                                   "width": [%=subPort.get(WIDTH()) %], "height": [%=subPort.get(HEIGHT())%],
+                                   "y": [%=subPort.get(Y()) %],
+                                   "class": "Port"},
+[%
+                    }
+%]
 [%
             }
 %]
-                              ], "width": 30, "height": 30, "info":"component" },
+                              ], "width": [%=currentContainer.getWidth()%], "height": [%=currentContainer.getHeight()%], "class":"Component" },
 [%
         }
 
-        currentContainer.name.println("!process:");
+//        currentContainer.name.println("!process:");
         if (currentContainer.isTypeOf(M!sadl::Container)){
             visited.add(currentContainer);
         }
 
         //currentContainer.name.println("-rem:");
         if (currentContainer.isTypeOf(M!sadl::Container) and stack.indexOf(currentContainer) == 0) {
-%]                          ], "width": 30, "height": 30 },
+%]                          ], "width": 30, "height": 30, "class":"Application"},
 [%
-            stack.println("A: ");
+//            stack.println("A: ");
             stack.remove(currentContainer);
         } else if (currentContainer.isTypeOf(M!sadl::Instance)){
 //            stack.println("B: ");
@@ -120,17 +169,17 @@ var connections = Sequence{};
 // handle connections to edges
 for (connection in connections) {
     //connection.to.println(connection.from + " : ");
-    connection.println;
+//    connection.println;
     
 %]
 	             { 
 	               "id": "[%=connection.getFullNameStr()%]", "label":"[%=connection.name%]", 
-	               "sources": ["[%=(connection.from.getFullNameStr() + "." + connection.source[connection.source.size - 1].name).replace("\\.","-") %]"],
-	               "targets": ["[%=(connection.to.getFullNameStr() + "." + connection.destination[connection.destination.size - 1].name).replace("\\.","-")%]"]
+	               "sources": ["[%=(connection.from.getFullNameStr() + "." + connection.getSourceName()).replace("\\.","-") %]"],
+	               "targets": ["[%=(connection.to.getFullNameStr() + "." + connection.getDestinationName()).replace("\\.","-")%]"]
 	             },
 [% } %]
 	            ]
-	        }
+	          }
     </script>
 
     <!-- Render -->

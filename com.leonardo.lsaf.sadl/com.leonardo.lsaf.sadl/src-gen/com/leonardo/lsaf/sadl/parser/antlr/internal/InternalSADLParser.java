@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalSADLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_EXP", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'end'", "'.'", "'unit'", "':'", "';'", "'component'", "'primitive'", "'-'", "'interface'", "'enum'", "'topic'", "'alias'", "'['", "'*'", "']'", "'('", "')'", "'as'", "'value'", "'deprecated'", "'='", "'attribute'", "'..'", "'port'", "'receives'", "'sends'", "'requires'", "'provides'", "'platform'", "'processor'", "'link'", "'connects'", "','", "'over'", "'property'", "'?'", "'transport'", "'application'", "'container'", "'instance'", "'connect'", "'self'", "'::'", "'using'", "'deployment'", "'hosts'", "'carries'", "'strategy'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_EXP", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'end'", "'.'", "'unit'", "':'", "';'", "'component'", "'primitive'", "'-'", "'interface'", "'enum'", "'topic'", "'alias'", "'['", "'*'", "']'", "'('", "')'", "'as'", "'value'", "'deprecated'", "'='", "'attribute'", "'..'", "'port'", "'receives'", "'sends'", "'requires'", "'provides'", "'platform'", "'processor'", "'link'", "'connects'", "','", "'over'", "'property'", "'?'", "'transport'", "'application'", "'container'", "'instance'", "'connect'", "'self'", "'::'", "'to'", "'using'", "'deployment'", "'hosts'", "'carries'", "'strategy'"
     };
     public static final int RULE_EXP=7;
     public static final int T__50=50;
@@ -44,6 +44,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
     public static final int T__53=53;
     public static final int T__54=54;
     public static final int T__60=60;
+    public static final int T__61=61;
     public static final int RULE_ID=5;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -421,7 +422,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==15||(LA3_0>=18 && LA3_0<=19)||(LA3_0>=21 && LA3_0<=24)||LA3_0==41||(LA3_0>=49 && LA3_0<=50)||LA3_0==57||LA3_0==60) ) {
+                if ( (LA3_0==15||(LA3_0>=18 && LA3_0<=19)||(LA3_0>=21 && LA3_0<=24)||LA3_0==41||(LA3_0>=49 && LA3_0<=50)||LA3_0==58||LA3_0==61) ) {
                     alt3=1;
                 }
 
@@ -582,13 +583,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
                 int LA4_0 = input.LA(1);
 
                 if ( (LA4_0==14) ) {
-                    int LA4_2 = input.LA(2);
-
-                    if ( (LA4_2==RULE_ID) ) {
-                        alt4=1;
-                    }
-
-
+                    alt4=1;
                 }
 
 
@@ -762,12 +757,12 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
                 alt5=7;
                 }
                 break;
-            case 60:
+            case 61:
                 {
                 alt5=8;
                 }
                 break;
-            case 57:
+            case 58:
                 {
                 alt5=9;
                 }
@@ -7397,7 +7392,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnection"
-    // InternalSADL.g:2710:1: ruleConnection returns [EObject current=null] : (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= '.' ( ( ruleQualifiedName ) ) )* otherlv_9= ',' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= '.' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' ) ;
+    // InternalSADL.g:2710:1: ruleConnection returns [EObject current=null] : (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= ',' ( ( ruleQualifiedName ) ) )* otherlv_9= 'to' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= ',' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' ) ;
     public final EObject ruleConnection() throws RecognitionException {
         EObject current = null;
 
@@ -7428,11 +7423,11 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSADL.g:2716:2: ( (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= '.' ( ( ruleQualifiedName ) ) )* otherlv_9= ',' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= '.' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' ) )
-            // InternalSADL.g:2717:2: (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= '.' ( ( ruleQualifiedName ) ) )* otherlv_9= ',' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= '.' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' )
+            // InternalSADL.g:2716:2: ( (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= ',' ( ( ruleQualifiedName ) ) )* otherlv_9= 'to' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= ',' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' ) )
+            // InternalSADL.g:2717:2: (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= ',' ( ( ruleQualifiedName ) ) )* otherlv_9= 'to' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= ',' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' )
             {
-            // InternalSADL.g:2717:2: (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= '.' ( ( ruleQualifiedName ) ) )* otherlv_9= ',' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= '.' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' )
-            // InternalSADL.g:2718:3: otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= '.' ( ( ruleQualifiedName ) ) )* otherlv_9= ',' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= '.' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';'
+            // InternalSADL.g:2717:2: (otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= ',' ( ( ruleQualifiedName ) ) )* otherlv_9= 'to' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= ',' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';' )
+            // InternalSADL.g:2718:3: otherlv_0= 'connect' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= '(' (otherlv_3= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_5= '::' ( ( ruleQualifiedName ) ) (otherlv_7= ',' ( ( ruleQualifiedName ) ) )* otherlv_9= 'to' (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) ) otherlv_12= '::' ( ( ruleQualifiedName ) ) (otherlv_14= ',' ( ( ruleQualifiedName ) ) )* otherlv_16= ')' (otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )? )? ( (lv_description_24_0= RULE_STRING ) )? otherlv_25= ';'
             {
             otherlv_0=(Token)match(input,53,FOLLOW_57); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -7600,25 +7595,25 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSADL.g:2787:3: (otherlv_7= '.' ( ( ruleQualifiedName ) ) )*
+            // InternalSADL.g:2787:3: (otherlv_7= ',' ( ( ruleQualifiedName ) ) )*
             loop60:
             do {
                 int alt60=2;
                 int LA60_0 = input.LA(1);
 
-                if ( (LA60_0==14) ) {
+                if ( (LA60_0==45) ) {
                     alt60=1;
                 }
 
 
                 switch (alt60) {
             	case 1 :
-            	    // InternalSADL.g:2788:4: otherlv_7= '.' ( ( ruleQualifiedName ) )
+            	    // InternalSADL.g:2788:4: otherlv_7= ',' ( ( ruleQualifiedName ) )
             	    {
-            	    otherlv_7=(Token)match(input,14,FOLLOW_4); if (state.failed) return current;
+            	    otherlv_7=(Token)match(input,45,FOLLOW_4); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      				newLeafNode(otherlv_7, grammarAccess.getConnectionAccess().getFullStopKeyword_6_0());
+            	      				newLeafNode(otherlv_7, grammarAccess.getConnectionAccess().getCommaKeyword_6_0());
             	      			
             	    }
             	    // InternalSADL.g:2792:4: ( ( ruleQualifiedName ) )
@@ -7664,10 +7659,10 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_9=(Token)match(input,45,FOLLOW_58); if (state.failed) return current;
+            otherlv_9=(Token)match(input,56,FOLLOW_58); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_9, grammarAccess.getConnectionAccess().getCommaKeyword_7());
+              			newLeafNode(otherlv_9, grammarAccess.getConnectionAccess().getToKeyword_7());
               		
             }
             // InternalSADL.g:2813:3: (otherlv_10= 'self' | ( ( ruleQualifiedName ) ) )
@@ -7767,7 +7762,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0());
               				
             }
-            pushFollow(FOLLOW_61);
+            pushFollow(FOLLOW_43);
             ruleQualifiedName();
 
             state._fsp--;
@@ -7783,25 +7778,25 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSADL.g:2856:3: (otherlv_14= '.' ( ( ruleQualifiedName ) ) )*
+            // InternalSADL.g:2856:3: (otherlv_14= ',' ( ( ruleQualifiedName ) ) )*
             loop62:
             do {
                 int alt62=2;
                 int LA62_0 = input.LA(1);
 
-                if ( (LA62_0==14) ) {
+                if ( (LA62_0==45) ) {
                     alt62=1;
                 }
 
 
                 switch (alt62) {
             	case 1 :
-            	    // InternalSADL.g:2857:4: otherlv_14= '.' ( ( ruleQualifiedName ) )
+            	    // InternalSADL.g:2857:4: otherlv_14= ',' ( ( ruleQualifiedName ) )
             	    {
-            	    otherlv_14=(Token)match(input,14,FOLLOW_4); if (state.failed) return current;
+            	    otherlv_14=(Token)match(input,45,FOLLOW_4); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      				newLeafNode(otherlv_14, grammarAccess.getConnectionAccess().getFullStopKeyword_11_0());
+            	      				newLeafNode(otherlv_14, grammarAccess.getConnectionAccess().getCommaKeyword_11_0());
             	      			
             	    }
             	    // InternalSADL.g:2861:4: ( ( ruleQualifiedName ) )
@@ -7822,7 +7817,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
             	      						newCompositeNode(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_61);
+            	    pushFollow(FOLLOW_43);
             	    ruleQualifiedName();
 
             	    state._fsp--;
@@ -7847,7 +7842,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_16=(Token)match(input,29,FOLLOW_62); if (state.failed) return current;
+            otherlv_16=(Token)match(input,29,FOLLOW_61); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_16, grammarAccess.getConnectionAccess().getRightParenthesisKeyword_12());
@@ -7857,14 +7852,14 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
             int alt65=2;
             int LA65_0 = input.LA(1);
 
-            if ( (LA65_0==56) ) {
+            if ( (LA65_0==57) ) {
                 alt65=1;
             }
             switch (alt65) {
                 case 1 :
                     // InternalSADL.g:2883:4: otherlv_17= 'using' ( (otherlv_18= RULE_ID ) ) (otherlv_19= '(' ( (lv_value_20_0= rulePropertyValue ) ) (otherlv_21= ',' ( (lv_value_22_0= rulePropertyValue ) ) )* otherlv_23= ')' )?
                     {
-                    otherlv_17=(Token)match(input,56,FOLLOW_4); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,57,FOLLOW_4); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_17, grammarAccess.getConnectionAccess().getUsingKeyword_13_0());
@@ -8165,7 +8160,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
             // InternalSADL.g:2995:2: (otherlv_0= 'deployment' ( (lv_name_1_0= RULE_ID ) ) ( (lv_description_2_0= RULE_STRING ) )? ( ( (lv_containermapping_3_0= ruleContainerMapping ) ) | ( (lv_connectionmapping_4_0= ruleConnectionMapping ) ) )* otherlv_5= 'end' )
             // InternalSADL.g:2996:3: otherlv_0= 'deployment' ( (lv_name_1_0= RULE_ID ) ) ( (lv_description_2_0= RULE_STRING ) )? ( ( (lv_containermapping_3_0= ruleContainerMapping ) ) | ( (lv_connectionmapping_4_0= ruleConnectionMapping ) ) )* otherlv_5= 'end'
             {
-            otherlv_0=(Token)match(input,57,FOLLOW_4); if (state.failed) return current;
+            otherlv_0=(Token)match(input,58,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getDeploymentAccess().getDeploymentKeyword_0());
@@ -8177,7 +8172,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
             // InternalSADL.g:3001:4: (lv_name_1_0= RULE_ID )
             // InternalSADL.g:3002:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_63); if (state.failed) return current;
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_62); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_name_1_0, grammarAccess.getDeploymentAccess().getNameIDTerminalRuleCall_1_0());
@@ -8215,7 +8210,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
                     // InternalSADL.g:3019:4: (lv_description_2_0= RULE_STRING )
                     // InternalSADL.g:3020:5: lv_description_2_0= RULE_STRING
                     {
-                    lv_description_2_0=(Token)match(input,RULE_STRING,FOLLOW_64); if (state.failed) return current;
+                    lv_description_2_0=(Token)match(input,RULE_STRING,FOLLOW_63); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_description_2_0, grammarAccess.getDeploymentAccess().getDescriptionSTRINGTerminalRuleCall_2_0());
@@ -8262,7 +8257,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
             	      						newCompositeNode(grammarAccess.getDeploymentAccess().getContainermappingContainerMappingParserRuleCall_3_0_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_64);
+            	    pushFollow(FOLLOW_63);
             	    lv_containermapping_3_0=ruleContainerMapping();
 
             	    state._fsp--;
@@ -8303,7 +8298,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
             	      						newCompositeNode(grammarAccess.getDeploymentAccess().getConnectionmappingConnectionMappingParserRuleCall_3_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_64);
+            	    pushFollow(FOLLOW_63);
             	    lv_connectionmapping_4_0=ruleConnectionMapping();
 
             	    state._fsp--;
@@ -8442,7 +8437,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getContainerMappingAccess().getProcessorProcessorCrossReference_0_0());
               				
             }
-            pushFollow(FOLLOW_65);
+            pushFollow(FOLLOW_64);
             ruleQualifiedName();
 
             state._fsp--;
@@ -8458,7 +8453,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,58,FOLLOW_4); if (state.failed) return current;
+            otherlv_1=(Token)match(input,59,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getContainerMappingAccess().getHostsKeyword_1());
@@ -8604,7 +8599,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
               					newCompositeNode(grammarAccess.getConnectionMappingAccess().getLinkLinkCrossReference_0_0());
               				
             }
-            pushFollow(FOLLOW_66);
+            pushFollow(FOLLOW_65);
             ruleQualifiedName();
 
             state._fsp--;
@@ -8620,7 +8615,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,59,FOLLOW_4); if (state.failed) return current;
+            otherlv_1=(Token)match(input,60,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getConnectionMappingAccess().getCarriesKeyword_1());
@@ -8752,7 +8747,7 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
             // InternalSADL.g:3217:2: (otherlv_0= 'strategy' ( (lv_name_1_0= RULE_ID ) ) ( (lv_description_2_0= RULE_STRING ) )? ( (lv_properties_3_0= ruleProperty ) )* otherlv_4= 'end' )
             // InternalSADL.g:3218:3: otherlv_0= 'strategy' ( (lv_name_1_0= RULE_ID ) ) ( (lv_description_2_0= RULE_STRING ) )? ( (lv_properties_3_0= ruleProperty ) )* otherlv_4= 'end'
             {
-            otherlv_0=(Token)match(input,60,FOLLOW_4); if (state.failed) return current;
+            otherlv_0=(Token)match(input,61,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getStrategyAccess().getStrategyKeyword_0());
@@ -8917,17 +8912,17 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
     protected DFA68 dfa68 = new DFA68(this);
     static final String dfa_1s = "\7\uffff";
     static final String dfa_2s = "\1\5\1\uffff\1\16\1\5\2\uffff\1\16";
-    static final String dfa_3s = "\1\15\1\uffff\1\73\1\5\2\uffff\1\73";
+    static final String dfa_3s = "\1\15\1\uffff\1\74\1\5\2\uffff\1\74";
     static final String dfa_4s = "\1\uffff\1\3\2\uffff\1\1\1\2\1\uffff";
     static final String dfa_5s = "\7\uffff}>";
     static final String[] dfa_6s = {
             "\1\2\7\uffff\1\1",
             "",
-            "\1\3\53\uffff\1\4\1\5",
+            "\1\3\54\uffff\1\4\1\5",
             "\1\6",
             "",
             "",
-            "\1\3\53\uffff\1\4\1\5"
+            "\1\3\54\uffff\1\4\1\5"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -8960,8 +8955,8 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x1206020001ECA010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x1206020001ECA000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x2406020001ECA010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x2406020001ECA000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000030010L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020010L});
@@ -9015,12 +9010,11 @@ public class InternalSADLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000010000020L});
     public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0040000000000020L});
     public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000200000004000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000020004000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0100000000020010L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000002030L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000002020L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0100200000000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0200000000020010L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000002030L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000002020L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x1000000000000000L});
 
 }

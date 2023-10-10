@@ -25,3 +25,4 @@ replay_pid*
 *.xtendbin
 *._trace
 *.xtextbin
+/com.leonardo.lsaf.sadl.viz/html/*.html

@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalSADLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_EXP", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'value'", "'attribute'", "'sends'", "'provides'", "'self'", "'package'", "'end'", "'.'", "'unit'", "';'", "':'", "'component'", "'primitive'", "'-'", "'interface'", "'enum'", "'topic'", "'alias'", "'as'", "'['", "']'", "'('", "')'", "'='", "'..'", "'port'", "'platform'", "'processor'", "'link'", "'connects'", "','", "'over'", "'property'", "'transport'", "'application'", "'container'", "'instance'", "'connect'", "'::'", "'using'", "'deployment'", "'hosts'", "'carries'", "'strategy'", "'*'", "'deprecated'", "'receives'", "'requires'", "'?'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_EXP", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'value'", "'attribute'", "'sends'", "'provides'", "'self'", "'package'", "'end'", "'.'", "'unit'", "';'", "':'", "'component'", "'primitive'", "'-'", "'interface'", "'enum'", "'topic'", "'alias'", "'as'", "'['", "']'", "'('", "')'", "'='", "'..'", "'port'", "'platform'", "'processor'", "'link'", "'connects'", "','", "'over'", "'property'", "'transport'", "'application'", "'container'", "'instance'", "'connect'", "'::'", "'to'", "'using'", "'deployment'", "'hosts'", "'carries'", "'strategy'", "'*'", "'deprecated'", "'receives'", "'requires'", "'?'"
     };
     public static final int RULE_EXP=4;
     public static final int T__50=50;
@@ -45,6 +45,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
     public static final int T__53=53;
     public static final int T__54=54;
     public static final int T__60=60;
+    public static final int T__61=61;
     public static final int RULE_ID=6;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -2903,12 +2904,12 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 alt1=7;
                 }
                 break;
-            case 55:
+            case 56:
                 {
                 alt1=8;
                 }
                 break;
-            case 52:
+            case 53:
                 {
                 alt1=9;
                 }
@@ -3491,10 +3492,10 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 if ( (LA5_1==RULE_ID) ) {
                     int LA5_2 = input.LA(3);
 
-                    if ( (LA5_2==14||LA5_2==58) ) {
+                    if ( (LA5_2==14||LA5_2==59) ) {
                         alt5=1;
                     }
-                    else if ( (LA5_2==15||LA5_2==59) ) {
+                    else if ( (LA5_2==15||LA5_2==60) ) {
                         alt5=2;
                     }
                     else {
@@ -3598,7 +3599,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( (LA6_0==12) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==57) ) {
+            else if ( (LA6_0==58) ) {
                 alt6=2;
             }
             else {
@@ -3688,7 +3689,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( (LA7_0==13) ) {
                 alt7=1;
             }
-            else if ( (LA7_0==57) ) {
+            else if ( (LA7_0==58) ) {
                 alt7=2;
             }
             else {
@@ -3918,7 +3919,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==56) ) {
+            if ( (LA9_0==57) ) {
                 alt9=1;
             }
             else if ( (LA9_0==RULE_INT) ) {
@@ -4018,7 +4019,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==58) ) {
+            if ( (LA10_0==59) ) {
                 alt10=1;
             }
             else if ( (LA10_0==14) ) {
@@ -4108,7 +4109,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==59) ) {
+            if ( (LA11_0==60) ) {
                 alt11=1;
             }
             else if ( (LA11_0==15) ) {
@@ -4436,7 +4437,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             int alt14=3;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==56) ) {
+            if ( (LA14_0==57) ) {
                 alt14=1;
             }
             else if ( (LA14_0==RULE_INT) ) {
@@ -4579,7 +4580,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==56) ) {
+            if ( (LA15_0==57) ) {
                 alt15=1;
             }
             else if ( (LA15_0==RULE_INT) ) {
@@ -5443,7 +5444,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0==20||(LA21_0>=23 && LA21_0<=24)||(LA21_0>=26 && LA21_0<=29)||LA21_0==38||(LA21_0>=45 && LA21_0<=46)||LA21_0==52||LA21_0==55) ) {
+                if ( (LA21_0==20||(LA21_0>=23 && LA21_0<=24)||(LA21_0>=26 && LA21_0<=29)||LA21_0==38||(LA21_0>=45 && LA21_0<=46)||LA21_0==53||LA21_0==56) ) {
                     alt21=1;
                 }
 
@@ -5699,19 +5700,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 int LA22_0 = input.LA(1);
 
                 if ( (LA22_0==19) ) {
-                    int LA22_2 = input.LA(2);
-
-                    if ( (LA22_2==RULE_ID) ) {
-                        int LA22_3 = input.LA(3);
-
-                        if ( (synpred34_InternalSADL()) ) {
-                            alt22=1;
-                        }
-
-
-                    }
-
-
+                    alt22=1;
                 }
 
 
@@ -8857,7 +8846,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==12||LA33_0==57) ) {
+                if ( (LA33_0==12||LA33_0==58) ) {
                     alt33=1;
                 }
 
@@ -9306,7 +9295,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 int alt35=2;
                 int LA35_0 = input.LA(1);
 
-                if ( (LA35_0==13||LA35_0==57) ) {
+                if ( (LA35_0==13||LA35_0==58) ) {
                     alt35=1;
                 }
 
@@ -17247,7 +17236,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             int alt55=2;
             int LA55_0 = input.LA(1);
 
-            if ( (LA55_0==60) ) {
+            if ( (LA55_0==61) ) {
                 alt55=1;
             }
             switch (alt55) {
@@ -20662,7 +20651,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 int alt66=2;
                 int LA66_0 = input.LA(1);
 
-                if ( (LA66_0==19) ) {
+                if ( (LA66_0==42) ) {
                     alt66=1;
                 }
 
@@ -20671,7 +20660,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSADL.g:6198:3: rule__Connection__Group_6__0
             	    {
-            	    pushFollow(FOLLOW_9);
+            	    pushFollow(FOLLOW_39);
             	    rule__Connection__Group_6__0();
 
             	    state._fsp--;
@@ -20748,24 +20737,24 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connection__Group__7__Impl"
-    // InternalSADL.g:6218:1: rule__Connection__Group__7__Impl : ( ',' ) ;
+    // InternalSADL.g:6218:1: rule__Connection__Group__7__Impl : ( 'to' ) ;
     public final void rule__Connection__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSADL.g:6222:1: ( ( ',' ) )
-            // InternalSADL.g:6223:1: ( ',' )
+            // InternalSADL.g:6222:1: ( ( 'to' ) )
+            // InternalSADL.g:6223:1: ( 'to' )
             {
-            // InternalSADL.g:6223:1: ( ',' )
-            // InternalSADL.g:6224:2: ','
+            // InternalSADL.g:6223:1: ( 'to' )
+            // InternalSADL.g:6224:2: 'to'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConnectionAccess().getCommaKeyword_7()); 
+               before(grammarAccess.getConnectionAccess().getToKeyword_7()); 
             }
-            match(input,42,FOLLOW_2); if (state.failed) return ;
+            match(input,51,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConnectionAccess().getCommaKeyword_7()); 
+               after(grammarAccess.getConnectionAccess().getToKeyword_7()); 
             }
 
             }
@@ -20966,7 +20955,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6291:1: ( rule__Connection__Group__10__Impl rule__Connection__Group__11 )
             // InternalSADL.g:6292:2: rule__Connection__Group__10__Impl rule__Connection__Group__11
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_38);
             rule__Connection__Group__10__Impl();
 
             state._fsp--;
@@ -21055,7 +21044,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6318:1: ( rule__Connection__Group__11__Impl rule__Connection__Group__12 )
             // InternalSADL.g:6319:2: rule__Connection__Group__11__Impl rule__Connection__Group__12
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_38);
             rule__Connection__Group__11__Impl();
 
             state._fsp--;
@@ -21105,7 +21094,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
                 int alt67=2;
                 int LA67_0 = input.LA(1);
 
-                if ( (LA67_0==19) ) {
+                if ( (LA67_0==42) ) {
                     alt67=1;
                 }
 
@@ -21114,7 +21103,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSADL.g:6333:3: rule__Connection__Group_11__0
             	    {
-            	    pushFollow(FOLLOW_9);
+            	    pushFollow(FOLLOW_39);
             	    rule__Connection__Group_11__0();
 
             	    state._fsp--;
@@ -21162,7 +21151,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6345:1: ( rule__Connection__Group__12__Impl rule__Connection__Group__13 )
             // InternalSADL.g:6346:2: rule__Connection__Group__12__Impl rule__Connection__Group__13
             {
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_55);
             rule__Connection__Group__12__Impl();
 
             state._fsp--;
@@ -21241,7 +21230,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6372:1: ( rule__Connection__Group__13__Impl rule__Connection__Group__14 )
             // InternalSADL.g:6373:2: rule__Connection__Group__13__Impl rule__Connection__Group__14
             {
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_55);
             rule__Connection__Group__13__Impl();
 
             state._fsp--;
@@ -21289,7 +21278,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             int alt68=2;
             int LA68_0 = input.LA(1);
 
-            if ( (LA68_0==51) ) {
+            if ( (LA68_0==52) ) {
                 alt68=1;
             }
             switch (alt68) {
@@ -21341,7 +21330,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6399:1: ( rule__Connection__Group__14__Impl rule__Connection__Group__15 )
             // InternalSADL.g:6400:2: rule__Connection__Group__14__Impl rule__Connection__Group__15
             {
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_55);
             rule__Connection__Group__14__Impl();
 
             state._fsp--;
@@ -21544,24 +21533,24 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connection__Group_6__0__Impl"
-    // InternalSADL.g:6461:1: rule__Connection__Group_6__0__Impl : ( '.' ) ;
+    // InternalSADL.g:6461:1: rule__Connection__Group_6__0__Impl : ( ',' ) ;
     public final void rule__Connection__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSADL.g:6465:1: ( ( '.' ) )
-            // InternalSADL.g:6466:1: ( '.' )
+            // InternalSADL.g:6465:1: ( ( ',' ) )
+            // InternalSADL.g:6466:1: ( ',' )
             {
-            // InternalSADL.g:6466:1: ( '.' )
-            // InternalSADL.g:6467:2: '.'
+            // InternalSADL.g:6466:1: ( ',' )
+            // InternalSADL.g:6467:2: ','
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConnectionAccess().getFullStopKeyword_6_0()); 
+               before(grammarAccess.getConnectionAccess().getCommaKeyword_6_0()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,42,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConnectionAccess().getFullStopKeyword_6_0()); 
+               after(grammarAccess.getConnectionAccess().getCommaKeyword_6_0()); 
             }
 
             }
@@ -21707,24 +21696,24 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connection__Group_11__0__Impl"
-    // InternalSADL.g:6515:1: rule__Connection__Group_11__0__Impl : ( '.' ) ;
+    // InternalSADL.g:6515:1: rule__Connection__Group_11__0__Impl : ( ',' ) ;
     public final void rule__Connection__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSADL.g:6519:1: ( ( '.' ) )
-            // InternalSADL.g:6520:1: ( '.' )
+            // InternalSADL.g:6519:1: ( ( ',' ) )
+            // InternalSADL.g:6520:1: ( ',' )
             {
-            // InternalSADL.g:6520:1: ( '.' )
-            // InternalSADL.g:6521:2: '.'
+            // InternalSADL.g:6520:1: ( ',' )
+            // InternalSADL.g:6521:2: ','
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConnectionAccess().getFullStopKeyword_11_0()); 
+               before(grammarAccess.getConnectionAccess().getCommaKeyword_11_0()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,42,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConnectionAccess().getFullStopKeyword_11_0()); 
+               after(grammarAccess.getConnectionAccess().getCommaKeyword_11_0()); 
             }
 
             }
@@ -21885,7 +21874,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectionAccess().getUsingKeyword_13_0()); 
             }
-            match(input,51,FOLLOW_2); if (state.failed) return ;
+            match(input,52,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getConnectionAccess().getUsingKeyword_13_0()); 
             }
@@ -22660,7 +22649,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeploymentAccess().getDeploymentKeyword_0()); 
             }
-            match(input,52,FOLLOW_2); if (state.failed) return ;
+            match(input,53,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getDeploymentAccess().getDeploymentKeyword_0()); 
             }
@@ -22695,7 +22684,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6831:1: ( rule__Deployment__Group__1__Impl rule__Deployment__Group__2 )
             // InternalSADL.g:6832:2: rule__Deployment__Group__1__Impl rule__Deployment__Group__2
             {
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_56);
             rule__Deployment__Group__1__Impl();
 
             state._fsp--;
@@ -22784,7 +22773,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6858:1: ( rule__Deployment__Group__2__Impl rule__Deployment__Group__3 )
             // InternalSADL.g:6859:2: rule__Deployment__Group__2__Impl rule__Deployment__Group__3
             {
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_56);
             rule__Deployment__Group__2__Impl();
 
             state._fsp--;
@@ -22884,7 +22873,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6885:1: ( rule__Deployment__Group__3__Impl rule__Deployment__Group__4 )
             // InternalSADL.g:6886:2: rule__Deployment__Group__3__Impl rule__Deployment__Group__4
             {
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_56);
             rule__Deployment__Group__3__Impl();
 
             state._fsp--;
@@ -22943,7 +22932,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalSADL.g:6900:3: rule__Deployment__Alternatives_3
             	    {
-            	    pushFollow(FOLLOW_58);
+            	    pushFollow(FOLLOW_57);
             	    rule__Deployment__Alternatives_3();
 
             	    state._fsp--;
@@ -23065,7 +23054,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:6939:1: ( rule__ContainerMapping__Group__0__Impl rule__ContainerMapping__Group__1 )
             // InternalSADL.g:6940:2: rule__ContainerMapping__Group__0__Impl rule__ContainerMapping__Group__1
             {
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_58);
             rule__ContainerMapping__Group__0__Impl();
 
             state._fsp--;
@@ -23198,7 +23187,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerMappingAccess().getHostsKeyword_1()); 
             }
-            match(input,53,FOLLOW_2); if (state.failed) return ;
+            match(input,54,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getContainerMappingAccess().getHostsKeyword_1()); 
             }
@@ -23396,7 +23385,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             // InternalSADL.g:7047:1: ( rule__ConnectionMapping__Group__0__Impl rule__ConnectionMapping__Group__1 )
             // InternalSADL.g:7048:2: rule__ConnectionMapping__Group__0__Impl rule__ConnectionMapping__Group__1
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_59);
             rule__ConnectionMapping__Group__0__Impl();
 
             state._fsp--;
@@ -23529,7 +23518,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectionMappingAccess().getCarriesKeyword_1()); 
             }
-            match(input,54,FOLLOW_2); if (state.failed) return ;
+            match(input,55,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getConnectionMappingAccess().getCarriesKeyword_1()); 
             }
@@ -23771,7 +23760,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStrategyAccess().getStrategyKeyword_0()); 
             }
-            match(input,55,FOLLOW_2); if (state.failed) return ;
+            match(input,56,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getStrategyAccess().getStrategyKeyword_0()); 
             }
@@ -25379,7 +25368,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAliasAccess().getUnboundedAsteriskKeyword_3_0_1_0()); 
             }
-            match(input,56,FOLLOW_2); if (state.failed) return ;
+            match(input,57,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAliasAccess().getUnboundedAsteriskKeyword_3_0_1_0()); 
             }
@@ -25612,7 +25601,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEnumeratorAccess().getDeprecatedDeprecatedKeyword_0_1_0()); 
             }
-            match(input,57,FOLLOW_2); if (state.failed) return ;
+            match(input,58,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getEnumeratorAccess().getDeprecatedDeprecatedKeyword_0_1_0()); 
             }
@@ -25788,7 +25777,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAttributeAccess().getDeprecatedDeprecatedKeyword_0_1_0()); 
             }
-            match(input,57,FOLLOW_2); if (state.failed) return ;
+            match(input,58,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAttributeAccess().getDeprecatedDeprecatedKeyword_0_1_0()); 
             }
@@ -25939,7 +25928,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAttributeAccess().getUnboundedAsteriskKeyword_3_0_1_0()); 
             }
-            match(input,56,FOLLOW_2); if (state.failed) return ;
+            match(input,57,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAttributeAccess().getUnboundedAsteriskKeyword_3_0_1_0()); 
             }
@@ -26074,7 +26063,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAttributeAccess().getUnboundedAsteriskKeyword_3_2_0_2_0_0()); 
             }
-            match(input,56,FOLLOW_2); if (state.failed) return ;
+            match(input,57,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAttributeAccess().getUnboundedAsteriskKeyword_3_2_0_2_0_0()); 
             }
@@ -26307,7 +26296,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTopicPortAccess().getConjugatedReceivesKeyword_2_0_0()); 
             }
-            match(input,58,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getTopicPortAccess().getConjugatedReceivesKeyword_2_0_0()); 
             }
@@ -26458,7 +26447,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInterfacePortAccess().getConjugatedRequiresKeyword_2_0_0()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getInterfacePortAccess().getConjugatedRequiresKeyword_2_0_0()); 
             }
@@ -27202,7 +27191,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPropertyAccess().getOptionalQuestionMarkKeyword_2_0()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPropertyAccess().getOptionalQuestionMarkKeyword_2_0()); 
             }
@@ -27959,7 +27948,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceAccess().getUnboundedAsteriskKeyword_3_1_0_0()); 
             }
-            match(input,56,FOLLOW_2); if (state.failed) return ;
+            match(input,57,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getInstanceAccess().getUnboundedAsteriskKeyword_3_1_0_0()); 
             }
@@ -28094,7 +28083,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceAccess().getUnboundedAsteriskKeyword_3_1_2_2_0_0()); 
             }
-            match(input,56,FOLLOW_2); if (state.failed) return ;
+            match(input,57,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getInstanceAccess().getUnboundedAsteriskKeyword_3_1_2_2_0_0()); 
             }
@@ -29300,52 +29289,22 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__Strategy__PropertiesAssignment_3"
 
-    // $ANTLR start synpred34_InternalSADL
-    public final void synpred34_InternalSADL_fragment() throws RecognitionException {   
-        // InternalSADL.g:1553:3: ( rule__QualifiedName__Group_1__0 )
-        // InternalSADL.g:1553:3: rule__QualifiedName__Group_1__0
-        {
-        pushFollow(FOLLOW_2);
-        rule__QualifiedName__Group_1__0();
-
-        state._fsp--;
-        if (state.failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred34_InternalSADL
-
     // Delegated rules
-
-    public final boolean synpred34_InternalSADL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred34_InternalSADL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
 
 
     protected DFA18 dfa18 = new DFA18(this);
     static final String dfa_1s = "\6\uffff";
     static final String dfa_2s = "\1\6\1\23\1\6\2\uffff\1\23";
-    static final String dfa_3s = "\1\6\1\66\1\6\2\uffff\1\66";
+    static final String dfa_3s = "\1\6\1\67\1\6\2\uffff\1\67";
     static final String dfa_4s = "\3\uffff\1\2\1\1\1\uffff";
     static final String dfa_5s = "\6\uffff}>";
     static final String[] dfa_6s = {
             "\1\1",
-            "\1\2\41\uffff\1\4\1\3",
+            "\1\2\42\uffff\1\4\1\3",
             "\1\5",
             "",
             "",
-            "\1\2\41\uffff\1\4\1\3"
+            "\1\2\42\uffff\1\4\1\3"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -29379,8 +29338,8 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x009060403D940080L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x009060403D900002L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x012060403D940080L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x012060403D900002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080002L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000600080L});
@@ -29390,23 +29349,23 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000020L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0200000000041080L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0200000000001002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0200000000042080L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0200000000002002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0400000000041080L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0400000000001002L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0400000000042080L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0400000000002002L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000002C2000020L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000200080L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0200000000000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000800200080L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x00000002802000A0L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0100000000000020L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0400000000004000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0200000000000020L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0800000000004000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0800000000008000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x1000000000008000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000018000040080L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000018000000002L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x00000A0000040080L});
@@ -29414,7 +29373,7 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000040400000000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000040000000002L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000200200000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x1000000000200080L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x2000000000200080L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000100000040080L});
@@ -29427,12 +29386,11 @@ public class InternalSADLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000200000040L});
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000010040L});
     public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000040000080000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000400080000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0008000000200080L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x00000000000400C0L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0008040000000000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0010000000200080L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x00000000000400C0L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0080000000000000L});
 
 }

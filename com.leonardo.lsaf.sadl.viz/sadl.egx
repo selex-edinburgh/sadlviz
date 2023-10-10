@@ -1,4 +1,5 @@
 import "sadl.eol";
+import "nestedport.eol";
 
 rule Sadl2Html
     transform application : M!sadl::Application {

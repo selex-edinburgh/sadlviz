@@ -40,15 +40,65 @@ package First
     end
  
     application first
-        
         container root
                 instance CFirst c1;
                 instance CSecond c2;
                 instance CThird c3;
                 instance CFour c4;
-            connect c1toc2 (c1::CFirst.a, c2::CSecond.b);
-            connect c3toc2 (c3::CThird.c, c2::CSecond.b);
-            connect c4toc2 (c4::CFour.d, c2::CSecond.b);
+            connect c1toc2 (c1::CFirst.a to c2::CSecond.b);
+            connect c3toc2 (c3::CThird.c to c2::CSecond.b);
+            connect c4toc2 (c4::CFour.d to c2::CSecond.b);
         end       
     end
+end
+
+package nestedportexample
+  topic Ta
+  end
+  
+  topic Tb
+  end
+  
+  interface Ia
+    port ta sends Ta;
+  end
+
+  interface Ib
+    port tb receives Tb;
+  end
+
+  interface Ic
+    port p1 provides Ia;
+    port p2 requires Ib;
+  end
+
+  interface Id
+    port a1 provides Ia;
+    port c provides Ic;
+    port a2 provides Ia;
+  end
+
+  component A
+    port p1 provides Ia;
+    port p2 provides Ia;
+    port p3 provides Id;
+    port p4 provides Ia;
+    port p5 provides Ia;
+  end
+
+  component B
+    port p1 provides Ia;
+    port p2 provides Ia;
+    port p3 requires Id;
+    port p4 provides Ia;
+    port p5 provides Ia;
+  end
+
+  application dummy
+      container test
+        instance A a;
+        instance B b;
+        connect Ap1toIcP1 (a::A.p3 to b::B.p3, Id.c, Ic.p1);
+      end
+  end
 end

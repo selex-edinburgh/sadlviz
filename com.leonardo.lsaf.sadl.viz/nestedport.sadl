@@ -35,8 +35,7 @@ package nestedportexample
       container test
         instance A a;
         instance B b;
-        connect (a::p1, b::p1.c.p1);
+        connect (a::A.p1 to b::B.p1, Id.c, Ic.p1);
       end
-  dummy
-
+  end
 end
