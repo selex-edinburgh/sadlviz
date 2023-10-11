@@ -52,6 +52,29 @@ package First
     end
 end
 
+package simple
+  
+  topic Ta
+  end
+  
+  component A
+    port p1 sends Ta;
+  end
+  
+  component B
+    port p1 receives Ta;
+  end
+  
+   application dummy
+      container simple
+        instance A a;
+        instance B b;
+        connect AtoB (a::A.p1 to b::B.p1);
+      end
+  end
+  
+end
+
 package nestedportexample
   topic Ta
   end

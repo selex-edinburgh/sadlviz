@@ -3,9 +3,11 @@ mxGraph.prototype.isValidRoot = function () {
     return false;
 };
 
-
+/***
+ * Visit all elements (nodes and edges) in the JSON
+ */
 function transverseElkTree(elkGraph, mxgraphRoot, mxgraph) {
-    console.log(elkGraph.id);
+    // console.log(elkGraph.id);
     for (i in elkGraph.children) {
         let elkNode = elkGraph.children[i];
         transverseElkNodes(elkNode, mxgraphRoot, mxgraph);
@@ -13,37 +15,42 @@ function transverseElkTree(elkGraph, mxgraphRoot, mxgraph) {
     for (i in elkGraph.edges) {
         let elkEdge = elkGraph.edges[i];
         let from = mxgraph.model.getCell(elkEdge.sources[0]);
-        console.log(from.getGeometry());
+        // console.log(from);
+        // console.log(from.getGeometry());
         let to = mxgraph.model.getCell(elkEdge.targets[0]);
-        console.log(to.getGeometry());
+        // console.log(to);
+        // console.log(to.getGeometry());
         var mxedge = mxgraph.insertEdge(mxgraphRoot, elkEdge.id, elkEdge.label, 
-            from, to, "rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;");
+            from, to, "rounded=0;orthogonalLoop=1;jettySize=auto;html=1;");
         var points = [];
         for (j in elkEdge.sections) {
             let section = elkEdge.sections[j]; 
-            let startPoint = new mxPoint(section.startPoint.x, section.startPoint.y);
-            startPoint.as = "sourcePoint";
-            points.push(startPoint);
-            let endPoint = new mxPoint(section.endPoint.x, section.endPoint.y);
-            endPoint.as = "targetPoint";
-            points.push(endPoint);
+            
+            // let startPoint = new mxPoint(section.startPoint.x, section.startPoint.y);
+            // startPoint.as = "sourcePoint";
+            // points.push(startPoint);
+            // 
+            // let endPoint = new mxPoint(section.endPoint.x, section.endPoint.y);
+            // endPoint.as = "targetPoint";
+            // points.push(endPoint);
+            
             for (k in section.bendPoints) {
                 let bendPoint = section.bendPoints[k];
                 points.push(new mxPoint(bendPoint.x, bendPoint.y));
             }
         }
-        console.log(points);
+        // console.log(points);
         mxedge.getGeometry().points = points;
     }
 }
 
 function transverseElkNodes(elkElement, mxgraphElement, mxgraph) {
-    console.log(elkElement.id);
+    // console.log(elkElement.id);
     var mxElement = mxgraph.insertVertex(mxgraphElement, elkElement.id, elkElement.label, elkElement.x, elkElement.y, elkElement.width, elkElement.height, "verticalLabelPosition=top;verticalAlign=bottom");
 
     for (i in elkElement.ports) {
         let port = elkElement.ports[i];
-        console.log(port.id);
+        // console.log(port.id);
         var mxPort = mxgraph.insertVertex(mxElement, port.id, port.label, port.x, port.y, port.width, port.height, "strokeColor=none;fillColor=#000000;labelPosition=center;verticalLabelPosition=top;");
     }
 
@@ -100,6 +107,8 @@ function render(container, elkGraph) {
             // v2.geometry.relative = true;
             // var e1 = graph.insertEdge(parent, null, '', v3, v7, "movable=0;edgeStyle=orthogonalEdgeStyle");
             // var e2 = graph.insertEdge(parent, null, '', v5, v10, "movable=0;edgeStyle=orthogonalEdgeStyle");
+
+
         }
         finally {
             // Updates the display

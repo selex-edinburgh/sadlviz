@@ -1,15 +1,9 @@
-[%  
-   import "sadl.eol";
-   import "nestedport.eol";
+[% 
+  import "sadl.eol";
+  import "nestedport.eol";
 
-
-createPort();
-
-
-var connections = Sequence{};
-
-
-
+  createPort();
+  var connections = Sequence{};
 %]
 <html>
 <head>
@@ -43,7 +37,6 @@ var connections = Sequence{};
 
     var stack = Sequence{};
     var visited = Set{};
-    //container.name.println("+add:");
     stack.add(0, container);
     var previousStackSize = stack.size;
     while(stack.size > 0) {
