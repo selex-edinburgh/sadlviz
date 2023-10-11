@@ -50,7 +50,7 @@ var connections = Sequence{};
         var currentContainer = stack.get(0);
         
         if (visited.includes(currentContainer)){
-%]                          ], "width": [%=currentContainer.getWidth()%], "height": [%=currentContainer.getHeight()%] },
+%]                          ], "class":"Container" },
 [%
             stack.removeAt(0);
             continue;
@@ -80,7 +80,7 @@ var connections = Sequence{};
         if (currentContainer.isTypeOf(M!sadl::Container)) {
             
             // collect connections
-            connections.addAll(currentContainer.connections); 
+            connections.addAll(currentContainer.connections);
 %]
                             { "id": "[%=currentContainer.getFullNameStr()%]", 
                               "labels": [{"text": "[%=currentContainer.name%]"}],
@@ -100,7 +100,15 @@ var connections = Sequence{};
                               },
                               "ports": [
 [%
-            var dummyPort = createPort();
+            var westDummyPort = createPort();
+            var eastDummyPort = createPort();
+            var portInOut = countPortInOut(connections);
+
+            for (port in currentContainer.type.ports) {
+                if (not port.isTypeOf(sadl::InterfacePort)){
+                    continue;
+                }
+            }
 
             for (port in currentContainer.type.ports) {
                 if (not port.isTypeOf(sadl::InterfacePort)){
@@ -109,19 +117,28 @@ var connections = Sequence{};
 %]
 
 [%
-                    var level = 0;
-                    var rootPort = createPort();
-                    rootPort.set(ID(), componentFullName + "." + port.name);
-                    rootPort.set(PORT(), port);
-                    rootPort.set(PARENT_PORT(), dummyPort);
-                    dummyPort.get(CHILDREN()).add(rootPort);
-                                        
-                    port.getSubPorts(rootPort, rootPort, level);
-                    var subPorts = Sequence{};
-                    treeToSequence(rootPort, subPorts); 
-                    
-                    for (subPort in subPorts){
-                        var portFullName = subPort.get(ID());
+                var level = 0;
+                var rootPort = createPort();
+                var rootPortName = componentFullName + "." + port.name;
+                rootPort.set(ID(), rootPortName);
+                rootPort.set(PORT(), port);
+                
+                if (portInOut.get(rootPortName) > 0) {
+                    rootPort.set(PARENT_PORT(), westDummyPort); 
+                    westDummyPort.get(CHILDREN()).add(rootPort);
+                    westDummyPort.set(SIDE(), SIDE_WEST());
+                    rootPort.set(SIDE(), SIDE_WEST());
+                } else {
+                    rootPort.set(PARENT_PORT(), eastDummyPort);
+                    eastDummyPort.get(CHILDREN()).add(rootPort);
+                }
+                                    
+                port.calculateSubPorts(rootPort, rootPort, level);
+                var subPorts = Sequence{};
+                treeToSequence(rootPort, subPorts); 
+                
+                for (subPort in subPorts){
+                    var portFullName = subPort.get(ID());
 %]
                                  { "id": "[%=(portFullName).replace("\\.","-")%]", 
                                    "labels": [{"text": "[%=subPort.get(TEXT())%]"}],
@@ -133,12 +150,33 @@ var connections = Sequence{};
                                    "y": [%=subPort.get(Y()) %],
                                    "class": "Port"},
 [%
-                    }
+                }
 %]
 [%
             }
+            var dummyPort = eastDummyPort;
+            var westChildren = westDummyPort.get(CHILDREN());
+            var eastChildren = eastDummyPort.get(CHILDREN());
+            var westY = 0;
+            var eastY = 0;
+            if (westChildren.size > 0) {
+                var lastChild = westChildren.get(westChildren.size - 1);
+                westY = lastChild.get(Y()) + lastChild.get(HEIGHT());
+            }
+            if (eastChildren.size > 0) {
+                var lastChild = eastChildren.get(eastChildren.size - 1);
+                eastY = lastChild.get(Y()) + lastChild.get(HEIGHT());
+            }
+            
+            if (westY > eastY) {
+                dummyPort = westDummyPort;
+            } 
+            var containerHeight = calcuateContainerHeight(dummyPort);
+            if (containerHeight < DEFAULT_COMPONENT_HEIGHT() - DEFAULT_Y_OFFSET()) {
+                containerHeight = DEFAULT_COMPONENT_HEIGHT();
+            }
 %]
-                              ], "width": [%=currentContainer.getWidth()%], "height": [%=currentContainer.getHeight()%], "class":"Component" },
+                              ], "width": [%=currentContainer.getWidth()%], "height": [%=containerHeight%], "class":"Component" },
 [%
         }
 

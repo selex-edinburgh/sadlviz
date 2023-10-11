@@ -74,8 +74,10 @@ package nestedportexample
 
   interface Id
     port a1 provides Ia;
-    port c provides Ic;
+    port c1 provides Ic;
     port a2 provides Ia;
+    port c2 provides Ic;
+    port a3 provides Ia;
   end
 
   component A
@@ -83,7 +85,8 @@ package nestedportexample
     port p2 provides Ia;
     port p3 provides Id;
     port p4 provides Ia;
-    port p5 provides Ia;
+    port p5 provides Id;
+    port p6 provides Ia;
   end
 
   component B
@@ -98,7 +101,7 @@ package nestedportexample
       container test
         instance A a;
         instance B b;
-        connect Ap1toIcP1 (a::A.p3 to b::B.p3, Id.c, Ic.p1);
+        connect Ap1toIcP1 (a::A.p3 to b::B.p3, Id.c2, Ic.p1);
       end
   end
 end
