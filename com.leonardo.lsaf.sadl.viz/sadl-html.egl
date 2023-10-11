@@ -105,15 +105,6 @@ var connections = Sequence{};
             var portInOut = countPortInOut(connections);
 
             for (port in currentContainer.type.ports) {
-                if (not port.isTypeOf(sadl::InterfacePort)){
-                    continue;
-                }
-            }
-
-            for (port in currentContainer.type.ports) {
-                if (not port.isTypeOf(sadl::InterfacePort)){
-                    continue;
-                }
 %]
 
 [%

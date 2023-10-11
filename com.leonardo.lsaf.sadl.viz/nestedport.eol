@@ -109,7 +109,7 @@ operation calcuateContainerHeight(dummyPort : Sequence): Integer {
 /**
     Calculate heights and Ys of all ports (root ports and sub ports) 
 */
-operation sadl:: InterfacePort calculateSubPorts(rootPort : Sequence, currentPort: Sequence, level: Integer) {
+operation sadl:: Port calculateSubPorts(rootPort : Sequence, currentPort: Sequence, level: Integer) {
 
     currentPort.set(TEXT(), self.name);
    
@@ -150,26 +150,30 @@ operation sadl:: InterfacePort calculateSubPorts(rootPort : Sequence, currentPor
     }
 
     level = level + 1;
-
-    for (port in self.type.ports){
-        if (not port.isTypeOf(sadl::InterfacePort)){
-            continue;
-        }
-
-        var subPort = createPort();
-        var subId = currentPort.get(ID()) + "." + port.name;
-        subPort.set(ID(), subId);
-        subPort.set(ROOT_PORT(), rootPort);
-        subPort.set(PARENT_PORT(), currentPort);
-        subPort.set(LEVEL(), level);
-        subPort.set(TEXT(), port.name);
-        subPort.set(PORT(), port);
-        subPort.set(SIDE(), currentPort.get(SIDE()));
-        currentPort.get(CHILDREN()).add(subPort);
-        
-        // start recursive call
-        port.calculateSubPorts(rootPort, subPort, level);
-    }
+    
+    if (self.isTypeOf(sadl::InterfacePort)){
+	    for (port in self.type.ports){
+	//        if (not port.isTypeOf(sadl::InterfacePort)){
+	//            continue;
+	//        }
+	
+	        var subPort = createPort();
+	        var subId = currentPort.get(ID()) + "." + port.name;
+	        subPort.set(ID(), subId);
+	        subPort.set(ROOT_PORT(), rootPort);
+	        subPort.set(PARENT_PORT(), currentPort);
+	        subPort.set(LEVEL(), level);
+	        subPort.set(TEXT(), port.name);
+	        subPort.set(PORT(), port);
+	        subPort.set(SIDE(), currentPort.get(SIDE()));
+	        currentPort.get(CHILDREN()).add(subPort);
+	        
+	        // start recursive call
+	//        if (port.isTypeOf(sadl::InterfacePort)){
+	            port.calculateSubPorts(rootPort, subPort, level);
+	//        }
+	    }
+	}
     
     level = level - 1;
     
