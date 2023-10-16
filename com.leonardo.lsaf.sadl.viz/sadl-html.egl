@@ -93,8 +93,9 @@
                               },
                               "ports": [
 [%
-            var westDummyPort = createPort();
-            var eastDummyPort = createPort();
+            var parentNode = createNode();
+            var westPorts = parentNode.westPorts;
+            var eastPorts = parentNode.eastPorts;
             var portInOut = countPortInOut(connections);
 
             for (port in currentContainer.type.ports) {
@@ -104,58 +105,59 @@
                 var level = 0;
                 var rootPort = createPort();
                 var rootPortName = componentFullName + "." + port.name;
-                rootPort.set(ID(), rootPortName);
-                rootPort.set(PORT(), port);
+                rootPort.id = rootPortName;
+                rootPort.sadlPort = port;
+                rootPort.node =  parentNode;
                 
                 if (portInOut.get(rootPortName) > 0) {
-                    rootPort.set(PARENT_PORT(), westDummyPort); 
-                    westDummyPort.get(CHILDREN()).add(rootPort);
-                    westDummyPort.set(SIDE(), SIDE_WEST());
-                    rootPort.set(SIDE(), SIDE_WEST());
+                    //rootPort.set(PARENT_PORT(), westPorts);                     
+                    westPorts.add(rootPort);
+                    //westPorts.set(SIDE(), SIDE_WEST());
+                    rootPort.side = SIDE_WEST();
                 } else {
-                    rootPort.set(PARENT_PORT(), eastDummyPort);
-                    eastDummyPort.get(CHILDREN()).add(rootPort);
+                    eastPorts.add(rootPort);
                 }
-                                    
+
                 port.calculateSubPorts(rootPort, rootPort, level);
                 var subPorts = Sequence{};
                 treeToSequence(rootPort, subPorts); 
                 
                 for (subPort in subPorts){
-                    var portFullName = subPort.get(ID());
+                    var portFullName = subPort.id;
 %]
                                  { "id": "[%=(portFullName).replace("\\.","-")%]", 
-                                   "labels": [{"text": "[%=subPort.get(TEXT())%]"}],
+                                   "labels": [{"text": "[%=subPort.label%]"}],
                                    "properties": {
-                                     "port.side": "[%=subPort.get(SIDE())%]",
-                                     "port.borderOffset": [%=subPort.get(LEVEL()) * DEFAULT_PORT_WIDTH()%]
+                                     "port.side": "[%=subPort.side%]",
+                                     "port.borderOffset": [%=subPort.level * DEFAULT_PORT_WIDTH()%]
                                    },
-                                   "width": [%=subPort.get(WIDTH()) %], "height": [%=subPort.get(HEIGHT())%],
-                                   "y": [%=subPort.get(Y()) %],
+                                   "width": [%=subPort.width %], "height": [%=subPort.height %],
+                                   "y": [%=subPort.y %],
                                    "class": "Port"},
 [%
                 }
 %]
 [%
             }
-            var dummyPort = eastDummyPort;
-            var westChildren = westDummyPort.get(CHILDREN());
-            var eastChildren = eastDummyPort.get(CHILDREN());
+            var highestSidePorts = eastPorts;
+            var westChildren = westPorts;
+            var eastChildren = eastPorts;
             var westY = 0;
             var eastY = 0;
             if (westChildren.size > 0) {
                 var lastChild = westChildren.get(westChildren.size - 1);
-                westY = lastChild.get(Y()) + lastChild.get(HEIGHT());
+                westY = lastChild.y + lastChild.height;
             }
             if (eastChildren.size > 0) {
                 var lastChild = eastChildren.get(eastChildren.size - 1);
-                eastY = lastChild.get(Y()) + lastChild.get(HEIGHT());
+                eastY = lastChild.y + lastChild.height;
             }
             
             if (westY > eastY) {
-                dummyPort = westDummyPort;
+                highestSidePorts = westPorts;
             } 
-            var containerHeight = calcuateContainerHeight(dummyPort);
+            highestSidePorts.println();
+            var containerHeight = calcuateContainerHeight(highestSidePorts);
             if (containerHeight < DEFAULT_COMPONENT_HEIGHT() - DEFAULT_Y_OFFSET()) {
                 containerHeight = DEFAULT_COMPONENT_HEIGHT();
             }

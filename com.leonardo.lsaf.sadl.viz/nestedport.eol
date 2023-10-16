@@ -72,35 +72,31 @@ operation PARENT_PORT(){return 12;}
 operation LEVEL(){return 13;}
 operation PORT(){return 14;}
 
-operation createPort() : Sequence{
-    var element = Sequence{};
-    for (i in Sequence{1..15}){
-        element.add(null);
-    } 
-    element.set(CHILDREN(), Sequence{});
-    element.set(SIDE(), SIDE_EAST());
-    element.set(X(), DEFAULT_X_POSITION());
-    element.set(Y(), DEFAULT_Y_POSITION());
-    element.set(HEIGHT(), DEFAULT_PORT_HEIGHT());
-    element.set(WIDTH(), DEFAULT_PORT_WIDTH());
-    element.set(CLASS(), "PORT");
-    element.set(OFFSET(), DEFAULT_X_OFFSET());
+operation createNode() : MNode {
+    var element = new MNode();
+    element.class = "NODE";
     return element;
 }
 
-operation treeToSequence(rootPort: Sequence, targetSequence: Sequence){
+operation createPort() : MPort {
+    var element = new MPort();
+    element.class = "PORT";
+    return element;
+}
+
+operation treeToSequence(rootPort: MPort, targetSequence: Sequence){
          targetSequence.add(rootPort); 
-         var children = rootPort.get(CHILDREN());
+         var children = rootPort.subPorts;
          for (child in children) {
 //            targetSequence.add(child);
             treeToSequence(child, targetSequence);
          }
 }
 
-operation calcuateContainerHeight(dummyPort : Sequence): Integer {
+operation calcuateContainerHeight(dummyPorts : OrderedSet): Integer {
     var height = DEFAULT_Y_OFFSET();
-    for (port in dummyPort.get(CHILDREN())) {
-        height = height + port.get(HEIGHT());
+    for (port in dummyPorts) {
+        height = height + port.height;
         height = height + DEFAULT_Y_OFFSET();
     } 
     return height;
@@ -109,15 +105,25 @@ operation calcuateContainerHeight(dummyPort : Sequence): Integer {
 /**
     Calculate heights and Ys of all ports (root ports and sub ports) 
 */
-operation sadl:: Port calculateSubPorts(rootPort : Sequence, currentPort: Sequence, level: Integer) {
+operation sadl::Port calculateSubPorts(rootPort : MPort, currentPort: MPort, level: Integer) {
 
-    currentPort.set(TEXT(), self.name);
+    currentPort.label = self.name;
    
-    var parent = currentPort.get(PARENT_PORT());
-    var index = parent.get(CHILDREN()).indexOf(currentPort);
+    var parent = currentPort.parentPort;
+    var currentPorts = null;
+    var index = 0;
+    if (parent == null){
+        currentPorts = (currentPort.side = SIDE_WEST())? currentPort.node.westPorts : currentPort.node.eastPorts;
+        index = currentPorts.indexOf(currentPort); 
+    } else {
+        currentPorts = parent.subPorts;
+        index = currentPorts.indexOf(currentPort);
+         
+    }
+    
 
-    var dummyPort = rootPort.get(PARENT_PORT());
-    var rootPortIndex =  dummyPort.get(CHILDREN()).indexOf(rootPort);
+    var nodePorts = (rootPort.side = SIDE_WEST())? rootPort.node.westPorts : rootPort.node.eastPorts; 
+    var rootPortIndex =  nodePorts.indexOf(rootPort);
     var childOffset = 0;
 
     var y = 0;
@@ -130,23 +136,23 @@ operation sadl:: Port calculateSubPorts(rootPort : Sequence, currentPort: Sequen
       prevHeight = 0;
     // if the port is not the first port (index > 0) then it has a previous port
     } else if (index > 0) {
-      var prevPort = parent.get(CHILDREN()).get(index - 1);
-      prevY = prevPort.get(Y());
-      prevHeight = prevPort.get(HEIGHT());
+      var prevPort = currentPorts.get(index - 1);
+      prevY = prevPort.y;
+      prevHeight = prevPort.height;
     }
     if (level == 0) {
       y = DEFAULT_Y_OFFSET() + (level * DEFAULT_Y_OFFSET()) + prevY + prevHeight;
-      y.println(currentPort.get(ID()) + " : ");
-      currentPort.set(Y(), y);
+      y.println(currentPort.id);
+      currentPort.y = y;
     } 
     else if (level > 0) {
       if (index == 0) {
-        currentPort.get(PARENT_PORT()).get(Y()).println(currentPort.get(PARENT_PORT()).get(ID()) + " : " + currentPort.get(ID()) + " : ");
-        y = DEFAULT_Y_OFFSET() + currentPort.get(PARENT_PORT()).get(Y()) + prevHeight + (index * DEFAULT_Y_OFFSET());
+        currentPort.parentPort.y.println(currentPort.parentPort.id + " : " + currentPort.id + " : ");
+        y = DEFAULT_Y_OFFSET() + currentPort.parentPort.y + prevHeight + (index * DEFAULT_Y_OFFSET());
       } else if (index > 0) {
         y = DEFAULT_Y_OFFSET() + prevY + prevHeight;
       }
-      currentPort.set(Y(), y);
+      currentPort.y = y;
     }
 
     level = level + 1;
@@ -158,15 +164,15 @@ operation sadl:: Port calculateSubPorts(rootPort : Sequence, currentPort: Sequen
 	//        }
 	
 	        var subPort = createPort();
-	        var subId = currentPort.get(ID()) + "." + port.name;
-	        subPort.set(ID(), subId);
-	        subPort.set(ROOT_PORT(), rootPort);
-	        subPort.set(PARENT_PORT(), currentPort);
-	        subPort.set(LEVEL(), level);
-	        subPort.set(TEXT(), port.name);
-	        subPort.set(PORT(), port);
-	        subPort.set(SIDE(), currentPort.get(SIDE()));
-	        currentPort.get(CHILDREN()).add(subPort);
+	        var subId = currentPort.id + "." + port.name;
+	        subPort.id = subId;
+	        subPort.rootPort = rootPort;
+	        subPort.parentPort = currentPort;
+	        subPort.level = level;
+	        subPort.label = port.name;
+	        subPort.sadlPort = port;
+	        subPort.side = currentPort.side;
+	        currentPort.subPorts.add(subPort);
 	        
 	        // start recursive call
 	//        if (port.isTypeOf(sadl::InterfacePort)){
@@ -178,12 +184,12 @@ operation sadl:: Port calculateSubPorts(rootPort : Sequence, currentPort: Sequen
     level = level - 1;
     
     var height = DEFAULT_PORT_HEIGHT();
-    for (sp in currentPort.get(CHILDREN())) {
-        var h =  sp.get(HEIGHT());
+    for (sp in currentPort.subPorts) {
+        var h =  sp.height;
         height = height + h;
         height = height + DEFAULT_PORT_HEIGHT();
     }
-    currentPort.set(HEIGHT(), height);
+    currentPort.height = height;
 }
 
 /**

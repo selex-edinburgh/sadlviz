@@ -1,0 +1,68 @@
+/*
+The mediator model to calculate the automatic layout
+of nested ports.
+
+Year: 2023
+Author: Alfa Yohannis
+*/
+
+@GenModel(documentation="
+The mediator model to calculate the automatic layout
+of nested ports.
+
+Year: 2023
+Author: Alfa Yohannis
+")
+
+@namespace(
+    uri="http://www.leonardo.com/lsaf/sadl/mediator",
+    prefix="mediator"
+)
+package mediator;
+
+import "http://www.leonardo.com/lsaf/sadl/SADL";
+
+class MGraph extends MElement {
+    attr String algorithm;
+    val MNode[*] nodes;
+    val MEdge[*] edges;
+}
+
+abstract class MElement {
+    attr String ~id; 
+    attr String label;
+    attr String ~class;
+}
+
+class MEdge extends MElement {
+    ref MConnectableElement source;
+    ref MConnectableElement target;
+}
+
+class MConnectableElement extends MElement {
+    attr int x = 0;
+    attr int y = 0; 
+    attr int width = 5;
+    attr int height = 5;
+}
+
+class MNode extends MConnectableElement {
+    attr String algorithm;
+    val MNode[*] children;
+    val MEdge[*] edges;
+    val MPort[*] eastPorts;
+    val MPort[*] westPorts;
+}
+
+class MPort extends MConnectableElement {
+    attr int  level = 0;
+    attr int offset = 0;
+    attr int numberOfIncomingOutgoingPorts = 0;
+    attr String side = "EAST";
+    val MPort[*] subPorts;
+    ref MNode node;
+    ref MPort rootPort;
+    ref MPort parentPort;
+    ref sadl.Port sadlPort;
+}
+

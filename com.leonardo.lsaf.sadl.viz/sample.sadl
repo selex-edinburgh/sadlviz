@@ -119,12 +119,19 @@ package nestedportexample
     port p4 provides Ia;
     port p5 provides Ia;
   end
+  
+  component C
+    port p1 receives Tb;
+  end
 
   application dummy
       container test
         instance A a;
         instance B b;
-        connect Ap1toIcP1 (a::A.p3 to b::B.p3, Id.c2, Ic.p1);
+        instance C c;
+        connect con1 (a::A.p3 to b::B.p3, Id.c2, Ic.p1);
+        connect con2 (a::A.p1 to b::B.p5, Ia.ta);
+        connect con3 (a::A.p6, Ia.ta to c::C.p1);
       end
   end
 end

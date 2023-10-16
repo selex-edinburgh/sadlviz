@@ -94,11 +94,17 @@
       <ports xsi:type="sadl:InterfacePort" name="p4" type="//@package.2/@contents.2"/>
       <ports xsi:type="sadl:InterfacePort" name="p5" type="//@package.2/@contents.2"/>
     </contents>
+    <contents xsi:type="sadl:Component" name="C">
+      <ports xsi:type="sadl:TopicPort" name="p1" conjugated="true" type="//@package.2/@contents.1"/>
+    </contents>
     <contents xsi:type="sadl:Application" name="dummy">
       <containers name="test">
         <instances type="//@package.2/@contents.6" name="a"/>
         <instances type="//@package.2/@contents.7" name="b"/>
-        <connections name="Ap1toIcP1" from="//@package.2/@contents.8/@containers.0/@instances.0" source="//@package.2/@contents.6/@ports.2" to="//@package.2/@contents.8/@containers.0/@instances.1" destination="//@package.2/@contents.7/@ports.2 //@package.2/@contents.5/@ports.3 //@package.2/@contents.4/@ports.0"/>
+        <instances type="//@package.2/@contents.8" name="c"/>
+        <connections name="con1" from="//@package.2/@contents.9/@containers.0/@instances.0" source="//@package.2/@contents.6/@ports.2" to="//@package.2/@contents.9/@containers.0/@instances.1" destination="//@package.2/@contents.7/@ports.2 //@package.2/@contents.5/@ports.3 //@package.2/@contents.4/@ports.0"/>
+        <connections name="con2" from="//@package.2/@contents.9/@containers.0/@instances.0" source="//@package.2/@contents.6/@ports.0" to="//@package.2/@contents.9/@containers.0/@instances.1" destination="//@package.2/@contents.7/@ports.4 //@package.2/@contents.2/@ports.0"/>
+        <connections name="con3" from="//@package.2/@contents.9/@containers.0/@instances.0" source="//@package.2/@contents.6/@ports.5 //@package.2/@contents.2/@ports.0" to="//@package.2/@contents.9/@containers.0/@instances.2" destination="//@package.2/@contents.8/@ports.0"/>
       </containers>
     </contents>
   </package>

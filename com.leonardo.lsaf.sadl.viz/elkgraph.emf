@@ -1,0 +1,252 @@
+@namespace(uri="http://www.eclipse.org/elk/ElkGraph", prefix="graph")
+package graph;
+
+datatype IProperty : org.eclipse.elk.graph.properties.IProperty;
+
+datatype PropertyValue : java.lang.Object;
+
+abstract interface IPropertyHolder : org.eclipse.elk.graph.properties.IPropertyHolder {
+	op  <T> IPropertyHolder setProperty(IProperty<? super T> property, T value);
+	op  <T> T getProperty(IProperty<T> property);
+	op boolean hasProperty(IProperty<?> property);
+	op IPropertyHolder copyProperties(IPropertyHolder source);
+	op ecore.EMap<IProperty<?>, EJavaObject> getAllProperties();
+}
+
+@GenModel(documentation="A property holder implementation based on {@link org.eclipse.emf.common.util.EMap} which can be used in Ecore models.
+
+<p>This property holder implementation currently has two ways for saving properties: a map of properties as well as a map of <em>persistent entries</em>. Persistent entries are String-String pairs containing String representations of properties. When a graph is serialized, it is the persistent entries that get serialized, not the properties themselves. This has two implications. First, to save a graph, one has to call {@link #makePersistent()} first. Second, after loading a graph, one of the methods in {@link org.eclipse.elk.core.util.GraphDataUtil} needs to be called to turn persistent entries back into usable properties.</p>")
+abstract class EMapPropertyHolder extends IPropertyHolder {
+
+	@GenModel(documentation="Map of properties configured for this property holder.")
+	val ElkPropertyToValueMapEntry[*] properties;
+}
+
+@GenModel(documentation="This is the superclass of all elements of a graph such as nodes, edges, ports, and labels. Each element can have an arbitrary number of labels attached to it. A graph element can also hold properties that, for instance, influence how it is treated by layout algorithms. Finally, each graph element can have an arbitrary number of {@link ElkGraphData} objects associated with it to further annotate it with more specific information.")
+abstract class ElkGraphElement extends EMapPropertyHolder {
+
+	@GenModel(documentation="Labels associated with this graph element.
+
+<p>Adding or removing a label to/from this list automatically updates its parent element.</p>")
+	val ElkLabel[*]#parent labels;
+
+	@GenModel(documentation="An optional String identifier for this graph element. Can be used as an ID for defining graphs in Xtext-based languages.")
+	attr String identifier;
+}
+
+@GenModel(documentation="A shape is a graph element whose placement and extend can be described by x and y coordinates as well as a width and a height. The coordinates of a shape describe the position of its top left corner, relative to the origin of its parent element. The width and height of a shape describe the extend of its rectangular bounding box.")
+abstract class ElkShape extends ElkGraphElement {
+
+	@GenModel(documentation="Convenience method to set the shape's width and height simultaneously by calling their respective set methods.", body="setWidth(width);
+setHeight(height);")
+	op void setDimensions(double width, double height);
+
+	@GenModel(documentation="Convenience method to set the shape's x and y coordinates simultaneously by calling their respective set methods.", body="setX(x);
+setY(y);")
+	op void setLocation(double x, double y);
+
+	@GenModel(documentation="Height of the shape's rectangular bounding box.")
+	attr double[1] height = "0.0";
+
+	@GenModel(documentation="Height of the shape's rectangular bounding box.")
+	attr double[1] width = "0.0";
+
+	@GenModel(documentation="X coordinate of the shape's top left corner, relative to the origin of its parent object.")
+	attr double[1] x = "0.0";
+
+	@GenModel(documentation="Y coordinate of the shape's top left corner, relative to the origin of its parent object.")
+	attr double[1] y = "0.0";
+}
+
+@GenModel(documentation="Labels are used to associate graph elements with text to be displayed in a diagram. The element the label annotates is its parent element.")
+class ElkLabel extends ElkShape {
+
+	@GenModel(documentation="Graph element the label annotates.
+
+<p>Setting the parent element automatically updates its list of labels.</p>")
+	ref ElkGraphElement#labels parent;
+
+	@GenModel(documentation="The label's text.")
+	attr String text = "";
+}
+
+@GenModel(documentation="A graph element that can be the end point of an edge.")
+abstract class ElkConnectableShape extends ElkShape {
+
+	@GenModel(documentation="List of edges that leave this connectable shape.
+
+<p>Adding or removing an edge to/from this list automatically updates its list of sources.</p>")
+	ref ElkEdge[*]#sources outgoingEdges;
+
+	@GenModel(documentation="List of edges that go into this connectable shape.
+
+<p>Adding or removing an edge to/from this list automatically updates its list of targets.</p>")
+	ref ElkEdge[*]#targets incomingEdges;
+}
+
+@GenModel(documentation="A node in the graph. Edges can be connected to the node directly or through one of its ports.
+
+<p>All nodes except one must have an assigned parent node. The node that does not have a parent node is the graph's root node and represents the graph itself. There can only be one root node for each graph. The parent-child relationship of nodes induces hierarchy in nested graphs: a node's children constitute the graph contained in and represented by that node.</p>")
+class ElkNode extends ElkConnectableShape {
+
+	@GenModel(documentation="The node's list of ports.
+
+<p>Adding or removing a port to/from this list automatically sets its parent node.</p>")
+	val ElkPort[*]#parent ports;
+
+	@GenModel(documentation="Child nodes contained in this node. If the node contains at least one child node, the node is a <em>hierarchical node</em>.
+
+<p>Adding or removing a node to/from this list automatically sets its parent node.</p>")
+	val ElkNode[*]#parent children;
+
+	@GenModel(documentation="The node's parent node, if any. If the node has a parent, its location is interpreted relative to the parent node's origin. If it does not, the meaning of its location is not defined. A node without a parent node is called the <em>root node</em>.
+
+<p>Setting the node's parent node automatically updates the parent node's list of child nodes.</p>")
+	ref ElkNode#children parent;
+
+	@GenModel(documentation="The edges contained in this node. Note that containment does not imply connection: an edge contained in this list is not necessarily connected to this node. The coordinates of the edge's source points, target points, and end points are interpreted relative to this node's origin. See the documentation for {@link ElkEdge} for more details on which node an edge should be contained in.
+
+<p>Adding or removing an edge to/from this list automatically sets its containing node.</p>")
+	val ElkEdge[*]#containingNode containedEdges;
+
+	@GenModel(documentation="Whether or not this node is considered to be a hierarchical node. It is a hierarchical node if its list of child nodes is not empty.
+
+<p>The value of this attribute is computed dynamically and not persistent. So, no worries if you can't find it anywhere.</p>")
+	readonly volatile transient derived attr boolean hierarchical;
+}
+
+@GenModel(documentation="A port represents an explicit point through which to connect to a node. Different ports of a node will usually have different associated meanings, much like different method parameters. Each port belongs to the node it is contained in.")
+class ElkPort extends ElkConnectableShape {
+
+	@GenModel(documentation="The node the port belongs to.
+
+<p>Setting the parent node automatically update's the node's list of ports.</p>")
+	ref ElkNode#ports parent;
+	val ElkPort[*]#parentPort subPorts;
+	ref ElkPort#subPorts parentPort;
+}
+
+@GenModel(documentation="An edge connects one or more source elements ({@link ElkConnectableShape}s) with one or more target elements ({@link ElkConnectableShape}s). If an edge connects at most one source with at most one target, it is called a <em>regular edge</em> (although it is usually simply called an <em>edge</em>). If an edge has more than a single source or more than a single target, it is called a <em>hyperedge</em>. If all of the edge's sources and targets have the same parent node, it is a <em>simple edge</em>; otherwise, it is called a <em>hierarchical edge</em>.
+
+Each edge must be assigned to a containing node. The containing node defines the point where it is hooked into the graph's object hierarchy, which is important for serializing the graph. The containing node's origin is the point the edge's source, target, and bend points are relative to. As a rule of thumb, edges should always be contained in the lowest common representing node of the graphs of all elements it connects, with one exception: if an edge connects a node with one of its descendants, that node should be the edge's containing node. The {@link GraphUtil} class contains methods that help with finding the correct containing node.
+
+The routing of an edge is specified by the {@link ElkEdgeSection} objects it contains. If the edge is a regular edge (as opposed to a hyperedge), it contains at most a single {@link ElkEdgeSection} which specifies a single source point, a single end point, and an arbitrary number of bend points. If the edge is a hyperedge, it contains at least one {@link ElkEdgeSection} for each of its sources and targets (<em>outer edge sections</em>) as well as an arbitrary number of {@link ElkEdgeSection} objects to connect the outer sections (<em>inner edge sections</em>).")
+class ElkEdge extends ElkGraphElement {
+
+	@GenModel(documentation="The node the edge is contained in. This has nothing to do with what the edge connects to.
+
+<p>Setting the contained node automatically update's the node's list of contained edges.</p>")
+	ref ElkNode#containedEdges containingNode;
+
+	@GenModel(documentation="The edge's list of source elements. For an edge to make sense, it should have at least one source element.
+
+<p>Adding or removing an element to/from this list automatically updates its list of outgoing edges.</p>")
+	ref ElkConnectableShape[*]#outgoingEdges sources;
+
+	@GenModel(documentation="The edge's list of target elements. For an edge to make sense, it should have at least one target element.
+
+<p>Adding or removing an element to/from this list automatically updates its list of incoming edges.</p>")
+	ref ElkConnectableShape[*]#incomingEdges targets;
+
+	@GenModel(documentation="All edge sections that define the routing of this edge.
+
+<p>Adding or removing an edge section to/from this list automatically updates its parent edge.</p>")
+	val ElkEdgeSection[*]#parent sections;
+
+	@GenModel(documentation="Whether this edge is a hyperedge or not. It is considered to not be a hyperedge if it has at most one source and at most one target. The result is only meaningful if the node has at least one source and one target.
+
+<p>The value of this attribute is computed dynamically and not persistent. So, no worries if you can't find it anywhere.</p>")
+	readonly volatile transient derived attr boolean hyperedge;
+
+	@GenModel(documentation="Whether the edge is a hierarchical edge or not. It is hierarchical if its sources and targets do not all have the same parent node.
+
+<p>The value of this attribute is computed dynamically and not persistent. So, no worries if you can't find it anywhere.</p>")
+	readonly volatile transient derived attr boolean hierarchical;
+
+	@GenModel(documentation="Whether the edge is a self loop or not. It is a self loop if all of its sources and targets are the same node (or its ports). This is only meaningful if the edge connects at least two end points.
+
+<p>The value of this attribute is computed dynamically and not persistent. So, no worries if you can't find it anywhere.</p>")
+	readonly volatile transient derived attr boolean selfloop;
+
+	@GenModel(documentation="Whether the edge has at least one source and one target.
+
+<p>The value of this attribute is computed dynamically and not persistent. So, no worries if you can't find it anywhere.</p>")
+	readonly volatile transient derived attr boolean connected;
+}
+
+@GenModel(documentation="A bend point of an {@link ElkEdgeSection}. The coordinates of a bend point are always relative to the origin of the containing node of the edge the bend point belongs to.")
+class ElkBendPoint {
+
+	@GenModel(documentation="Sets the bend point's x and y coordinates simultaneously by calling their respective set methods.", body="setX(x);
+setY(y);")
+	op void set(double x, double y);
+
+	@GenModel(documentation="The bend point's x coordinate, relative to the origin of the edge's containing node.")
+	attr double[1] x = "0.0";
+
+	@GenModel(documentation="The bend point's y coordinate, relative to the origin of the edge's containing node.")
+	attr double[1] y = "0.0";
+}
+
+@GenModel(documentation="An edge section defines the routing of an edge, or a part of that routing. If the edge is a regular edge (as opposed to a hyperedge), it will have a single edge section that connects to the edge's source element and target element. The section will then completely define the edge's start point, its end point, and all of its bend points. This is a special case of the more general case described below.
+
+<p>If the section's parent edge is a hyperedge, defining the routing will be more complicated. There will be enough edge sections to connect all of the edge's souce and target elements. The sections will effectively define a <em>routing graph</em>: all sections in the graph will connect to other sections and/or sources and targets of the edge, each effectively defining a part of the complex route the edge will take. We call an edge section that connects to at least one {@link ElkConnectableShape} an <em>outer section</em>. Edge sections that connect only to other edge sections are referred to as <em>inner sections</em>.</p>
+
+<p>Conceptually, the routing graph would be undirected. The way references work in EMF, however, forces us to distinguish between a section's incoming and outgoing sections. This is not much of a problem, however: each routing graph can be made acyclic.</p>
+
+<p>All coordinates that define a section's route are relative to the origin of its edge's containing node.</p>
+
+<p>Note that edge sections are property holders to allow algorithms to pass more detailed information about an edge section back to the client.</p>")
+class ElkEdgeSection extends EMapPropertyHolder {
+
+	@GenModel(documentation="Sets the x and y coordinates of the section's start point simultaneously by calling their respective set methods.", body="setStartX(x);
+setStartY(y);")
+	op void setStartLocation(double x, double y);
+
+	@GenModel(documentation="Sets the x and y coordinates of the section's end point simultaneously by calling their respective set methods.", body="setEndX(x);
+setEndY(y);")
+	op void setEndLocation(double x, double y);
+
+	@GenModel(documentation="X coordinate of the section's start point, relative to the origin of the edge's containing node.")
+	attr double startX;
+
+	@GenModel(documentation="Y coordinate of the section's start point, relative to the origin of the edge's containing node.")
+	attr double startY;
+
+	@GenModel(documentation="X coordinate of the section's end point, relative to the origin of the edge's containing node.")
+	attr double endX;
+
+	@GenModel(documentation="Y coordinate of the section's end point, relative to the origin of the edge's containing node.")
+	attr double endY;
+
+	@GenModel(documentation="The section's list of bend points. May well be empty if the section represents a straight line.")
+	val ElkBendPoint[*] bendPoints;
+
+	@GenModel(documentation="The edge this section belongs to.
+
+<p>Setting the parent edge automatically updates its list of edge sections.</p>")
+	ref ElkEdge#sections parent;
+
+	@GenModel(documentation="The shape this section ends at, if any. If there is one, this section is an <em>outer section</em>.")
+	ref ElkConnectableShape outgoingShape;
+
+	@GenModel(documentation="The shape this section starts at, if any. If there is one, this section is an <em>outer section</em>.")
+	ref ElkConnectableShape incomingShape;
+
+	@GenModel(documentation="List of outgoing sections this section is connected to. Must not be empty if this section is an <em>inner section</em> (not connected to a shape).
+
+<p>Adding or removing a section to/from this list automatically updates its list of incoming sections.</p>")
+	ref ElkEdgeSection[*]#incomingSections outgoingSections;
+
+	@GenModel(documentation="List of incoming sections this section is connected to. Must not be empty if this section is an <em>inner section</em> (not connected to a shape).
+
+<p>Adding or removing a section to/from this list automatically updates its list of outgoing sections.</p>")
+	ref ElkEdgeSection[*]#outgoingSections incomingSections;
+	attr String identifier;
+}
+
+class ElkPropertyToValueMapEntry : java.util.Map$Entry {
+	attr IProperty<?> key;
+	attr PropertyValue value;
+}
+

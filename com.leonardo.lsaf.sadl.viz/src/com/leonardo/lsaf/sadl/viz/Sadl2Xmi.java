@@ -21,7 +21,8 @@ public class Sadl2Xmi {
 			
 //			File sourceModelFile = new File("nestedport.sadl");
 			File sourceModelFile = new File("sample.sadl");
-			new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
+//			new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri(".");
+//			new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
 			System.out.println("Converting " + sourceModelFile.getAbsolutePath() +" to "  +sourceModelFile.getAbsolutePath() + ".xmi ... ");
 			Injector injector = new SADLStandaloneSetup().createInjectorAndDoEMFRegistration();
 			XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
