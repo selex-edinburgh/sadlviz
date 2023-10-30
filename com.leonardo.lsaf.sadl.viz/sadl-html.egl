@@ -14,24 +14,24 @@
     <title>[%=application.getFullNameStr()%]</title>
 </head>
 <body>
-	<h1>
-		[%=application.getFullNameStr()%]
-	</h1>
-	<div id="graphContainer" class="viewport">
+    <h1>
+        [%=application.getFullNameStr()%]
+    </h1>
+    <div id="graphContainer" class="viewport">
     </div>
     <div id="viewport">
     </div>
     
-    	<script type="text/javascript">
-	        const elk = new ELK({
-	            workerUrl: 'js/elk-worker-min.js'
-	        });
-	        
-	        const elkGraph = 
-	        {
-	            "id": "root",
-	            "layoutOptions": { "elk.algorithm": "layered" },
-	            "children": [
+        <script type="text/javascript">
+            const elk = new ELK({
+                workerUrl: 'js/elk-worker-min.js'
+            });
+            
+            const elkGraph = 
+            {
+                "id": "root",
+                "layoutOptions": { "elk.algorithm": "layered" },
+                "children": [
 [% for (container in application.containers) {
      
 
@@ -49,25 +49,25 @@
             continue;
         }
 
-		// add subcontainers 
-		if (currentContainer.isTypeOf(M!sadl::Container)) {
-	        var i = currentContainer.children.size - 1;
-	        while(i >= 0) {
-	            var child = currentContainer.children.get(i);
-	            //child.name.println("+add:");
-	            stack.add(0, child);
-	            i = i - 1;
-	        }
-	        
-	        // add instances in the container
-	        i = currentContainer.instances.size - 1;
-	        while(i >= 0) {
-	            var child = currentContainer.instances.get(i);
-	            //child.name.println("+add:");
-	            stack.add(0, child);
-	            i = i - 1;
-	        }
-	    }
+        // add subcontainers 
+        if (currentContainer.isTypeOf(M!sadl::Container)) {
+            var i = currentContainer.children.size - 1;
+            while(i >= 0) {
+                var child = currentContainer.children.get(i);
+                //child.name.println("+add:");
+                stack.add(0, child);
+                i = i - 1;
+            }
+            
+            // add instances in the container
+            i = currentContainer.instances.size - 1;
+            while(i >= 0) {
+                var child = currentContainer.instances.get(i);
+                //child.name.println("+add:");
+                stack.add(0, child);
+                i = i - 1;
+            }
+        }
         
         // do for current container
         if (currentContainer.isTypeOf(M!sadl::Container)) {
@@ -185,10 +185,10 @@
    %]
 
 [% } %]
-	            ]
-	            
-	            ,
-	            "edges": [
+                ]
+                
+                ,
+                "edges": [
 [%
 // handle connections to edges
 for (connection in connections) {
@@ -196,14 +196,14 @@ for (connection in connections) {
 //    connection.println;
     
 %]
-	             { 
-	               "id": "[%=connection.getFullNameStr()%]", "label":"[%=connection.name%]", 
-	               "sources": ["[%=(connection.from.getFullNameStr() + "." + connection.getSourceName()).replace("\\.","-") %]"],
-	               "targets": ["[%=(connection.to.getFullNameStr() + "." + connection.getDestinationName()).replace("\\.","-")%]"]
-	             },
+                 { 
+                   "id": "[%=connection.getFullNameStr()%]", "label":"[%=connection.name%]", 
+                   "sources": ["[%=(connection.from.getFullNameStr() + "." + connection.getSourceName()).replace("\\.","-") %]"],
+                   "targets": ["[%=(connection.to.getFullNameStr() + "." + connection.getDestinationName()).replace("\\.","-")%]"]
+                 },
 [% } %]
-	            ]
-	          }
+                ]
+              }
     </script>
 
     <!-- Render -->

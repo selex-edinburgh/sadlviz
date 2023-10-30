@@ -158,28 +158,28 @@ operation sadl::Port calculateSubPorts(rootPort : MPort, currentPort: MPort, lev
     level = level + 1;
     
     if (self.isTypeOf(sadl::InterfacePort)){
-	    for (port in self.type.ports){
-	//        if (not port.isTypeOf(sadl::InterfacePort)){
-	//            continue;
-	//        }
-	
-	        var subPort = createPort();
-	        var subId = currentPort.id + "." + port.name;
-	        subPort.id = subId;
-	        subPort.rootPort = rootPort;
-	        subPort.parentPort = currentPort;
-	        subPort.level = level;
-	        subPort.label = port.name;
-	        subPort.sadlPort = port;
-	        subPort.side = currentPort.side;
-	        currentPort.subPorts.add(subPort);
-	        
-	        // start recursive call
-	//        if (port.isTypeOf(sadl::InterfacePort)){
-	            port.calculateSubPorts(rootPort, subPort, level);
-	//        }
-	    }
-	}
+        for (port in self.type.ports){
+    //        if (not port.isTypeOf(sadl::InterfacePort)){
+    //            continue;
+    //        }
+    
+            var subPort = createPort();
+            var subId = currentPort.id + "." + port.name;
+            subPort.id = subId;
+            subPort.rootPort = rootPort;
+            subPort.parentPort = currentPort;
+            subPort.level = level;
+            subPort.label = port.name;
+            subPort.sadlPort = port;
+            subPort.side = currentPort.side;
+            currentPort.subPorts.add(subPort);
+            
+            // start recursive call
+    //        if (port.isTypeOf(sadl::InterfacePort)){
+                port.calculateSubPorts(rootPort, subPort, level);
+    //        }
+        }
+    }
     
     level = level - 1;
     
@@ -252,8 +252,8 @@ operation sadl::InterfacePort getHeight(): Integer {
     var height = DEFAULT_PORT_HEIGHT();
     for (port in self.type.ports){
         if (port.isTypeOf(sadl::InterfacePort)){
-	        height = height + port.getHeight();
-	        height = height + DEFAULT_PORT_HEIGHT();
+            height = height + port.getHeight();
+            height = height + DEFAULT_PORT_HEIGHT();
         }
     }
    return height;
@@ -298,5 +298,4 @@ operation sadl::Container getHeight(): Integer {
     }
     return height;
 }
-
 

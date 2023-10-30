@@ -7,7 +7,7 @@
     <intAttribute key="generateTo" value="1"/>
     <stringAttribute key="implementation_name" value="Sequential EGX"/>
     <listAttribute key="models">
-        <listEntry value="aliases=M&#10;reuseUnmodifiedFileBasedMetamodels=true&#10;modelFile=/com.leonardo. lsaf.sadl.viz/sample.sadl.xmi&#10;metamodelUri=http\://www.leonardo.com/lsaf/sadl/SADL,http\://www.leonardo.com/lsaf/sadl/mediator&#10;concurrent=false&#10;type=EMF&#10;readOnLoad=true&#10;storeOnDisposal=false&#10;expand=true&#10;fileBasedMetamodelUri=&#10;metamodelFile=&#10;cached=true&#10;name=M&#10;modelUri=platform\:/resource/com.leonardo.%20lsaf.sadl.viz/sample.sadl.xmi&#10;isMetamodelFileBased=false&#10;validate=false"/>
+        <listEntry value="aliases=M&#10;reuseUnmodifiedFileBasedMetamodels=true&#10;modelFile=/com.leonardo.lsaf.sadl.viz/sample.sadl&#10;metamodelUri=http\://www.leonardo.com/lsaf/sadl/SADL,http\://www.leonardo.com/lsaf/sadl/mediator&#10;concurrent=false&#10;type=EMF&#10;readOnLoad=true&#10;storeOnDisposal=false&#10;expand=true&#10;fileBasedMetamodelUri=&#10;metamodelFile=&#10;cached=true&#10;name=M&#10;modelUri=platform\:/resource/com.leonardo.lsaf.sadl.viz/sample.sadl&#10;isMetamodelFileBased=false&#10;validate=false"/>
     </listAttribute>
     <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <stringAttribute key="outputDirPath" value=""/>
@@ -17,7 +17,7 @@
     <booleanAttribute key="profile_model_loading" value="false"/>
     <booleanAttribute key="profiling_enabled" value="false"/>
     <booleanAttribute key="reset_profiler" value="false"/>
-    <stringAttribute key="source" value="/com.leonardo. lsaf.sadl.viz/sadl.egx"/>
+    <stringAttribute key="source" value="/com.leonardo.lsaf.sadl.viz/sadl.egx"/>
     <stringAttribute key="templateFactoryType" value="org.eclipse.epsilon.egl.EglFileGeneratingTemplateFactory"/>
     <stringAttribute key="traceDestination" value=""/>
 </launchConfiguration>

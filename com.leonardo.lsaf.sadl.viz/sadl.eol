@@ -1,6 +1,6 @@
 operation addExtension(sequence: Sequence, extension: String) {
-	sequence.add(0, extension);
-	return sequence;
+    sequence.add(0, extension);
+    return sequence;
 }
 
 operation M!sadl::Application getFullName() {

@@ -1,10 +1,11 @@
-package nestedportexample
+package nestedportexample2
+
   topic Ta
   end
   
   topic Tb
   end
-  
+
   interface Ia
     port ta sends Ta;
   end
@@ -17,7 +18,7 @@ package nestedportexample
     port p1 provides Ia;
     port p2 requires Ib;
   end
-
+  
   interface Id
     port c provides Ic;
   end
@@ -30,12 +31,12 @@ package nestedportexample
   component B
     port p1 requires Id;
   end
-
+  
   application dummy
       container test
         instance A a;
         instance B b;
-        connect (a::A.p1 to b::B.p1, Id.c, Ic.p1);
+        connect a2b (a::p1, b::p1.c.p1);
       end
   end
 end

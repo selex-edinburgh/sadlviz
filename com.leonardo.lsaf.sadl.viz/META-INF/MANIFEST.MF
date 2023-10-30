@@ -1,10 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Viz
-Bundle-SymbolicName: com.leonardo._lsaf.sadl.viz
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.leonardo.lsaf.sadl.viz;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: sadl,
+ sadl.impl,
+ sadl.util
 Automatic-Module-Name: com.leonardo.lsaf.sadl.viz
 Require-Bundle: com.leonardo.lsaf.sadl,
  org.eclipse.emf.mwe.core,
- org.eclipse.xtext
+ org.eclipse.xtext,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

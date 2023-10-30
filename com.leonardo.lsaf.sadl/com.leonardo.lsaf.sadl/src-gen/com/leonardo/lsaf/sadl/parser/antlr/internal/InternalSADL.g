@@ -2775,19 +2775,16 @@ ruleConnection returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getConnectionRule());
 					}
 				}
+				otherlv_6=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getConnectionAccess().getSourcePortCrossReference_5_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
+					newLeafNode(otherlv_6, grammarAccess.getConnectionAccess().getSourcePortCrossReference_5_0());
 				}
 			)
 		)
 		(
-			otherlv_7=','
+			otherlv_7='.'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getConnectionAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getConnectionAccess().getFullStopKeyword_6_0());
 			}
 			(
 				(
@@ -2796,19 +2793,16 @@ ruleConnection returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getConnectionRule());
 						}
 					}
+					otherlv_8=RULE_ID
 					{
-						newCompositeNode(grammarAccess.getConnectionAccess().getSourcePortCrossReference_6_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
+						newLeafNode(otherlv_8, grammarAccess.getConnectionAccess().getSourcePortCrossReference_6_1_0());
 					}
 				)
 			)
 		)*
-		otherlv_9='to'
+		otherlv_9=','
 		{
-			newLeafNode(otherlv_9, grammarAccess.getConnectionAccess().getToKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getConnectionAccess().getCommaKeyword_7());
 		}
 		(
 			otherlv_10='self'
@@ -2844,19 +2838,16 @@ ruleConnection returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getConnectionRule());
 					}
 				}
+				otherlv_13=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
+					newLeafNode(otherlv_13, grammarAccess.getConnectionAccess().getDestinationPortCrossReference_10_0());
 				}
 			)
 		)
 		(
-			otherlv_14=','
+			otherlv_14='.'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getConnectionAccess().getCommaKeyword_11_0());
+				newLeafNode(otherlv_14, grammarAccess.getConnectionAccess().getFullStopKeyword_11_0());
 			}
 			(
 				(
@@ -2865,12 +2856,9 @@ ruleConnection returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getConnectionRule());
 						}
 					}
+					otherlv_15=RULE_ID
 					{
-						newCompositeNode(grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
+						newLeafNode(otherlv_15, grammarAccess.getConnectionAccess().getDestinationPortCrossReference_11_1_0());
 					}
 				)
 			)

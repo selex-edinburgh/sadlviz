@@ -249,11 +249,11 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=ID? 
 	 *         from=[Instance|QualifiedName]? 
-	 *         source+=[Port|QualifiedName] 
-	 *         source+=[Port|QualifiedName]* 
+	 *         source+=[Port|ID] 
+	 *         source+=[Port|ID]* 
 	 *         to=[Instance|QualifiedName]? 
-	 *         destination+=[Port|QualifiedName] 
-	 *         destination+=[Port|QualifiedName]* 
+	 *         destination+=[Port|ID] 
+	 *         destination+=[Port|ID]* 
 	 *         (strategy=[Strategy|ID] (value+=PropertyValue value+=PropertyValue*)?)? 
 	 *         description=STRING?
 	 *     )
