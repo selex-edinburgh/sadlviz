@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/com.leonardo.lsaf.sadl.viz/src"
+    modelPluginID="com.leonardo.lsaf.sadl.viz" modelName="Mediator" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>mediator.ecore</foreignModel>
+  <genPackages prefix="Mediator" disposableProviderFactory="true" ecorePackage="mediator.ecore#/">
+    <genClasses ecoreClass="mediator.ecore#//MGraph">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MGraph/algorithm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MGraph/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MGraph/edges"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mediator.ecore#//MElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MElement/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MElement/class"/>
+    </genClasses>
+    <genClasses ecoreClass="mediator.ecore#//MEdge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MEdge/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MEdge/target"/>
+    </genClasses>
+    <genClasses ecoreClass="mediator.ecore#//MConnectableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MConnectableElement/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MConnectableElement/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MConnectableElement/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MConnectableElement/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MConnectableElement/level"/>
+    </genClasses>
+    <genClasses ecoreClass="mediator.ecore#//MNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MNode/algorithm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/edges"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/eastPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/westPorts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/packageableElement"/>
+    </genClasses>
+    <genClasses ecoreClass="mediator.ecore#//MPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MPort/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MPort/numberOfIncomingOutgoingPorts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MPort/side"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MPort/subPorts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MPort/node"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MPort/rootPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MPort/parentPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MPort/sadlPort"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Sadl" ecorePackage="http://www.leonardo.com/lsaf/sadl/SADL#/">
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Model/package"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Package/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Package/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Package/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//PackageableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//PackageableElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Unit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Unit/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Unit/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Type"/>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Primitive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Primitive/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Primitive/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Primitive/res"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Interface/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Interface/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Enumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Enumeration/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Enumeration/enumerators"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Topic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Topic/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Topic/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Alias">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Alias/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Alias/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Alias/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Alias/res"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Alias/unbounded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Alias/upperbound"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Alias/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Alias/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Port/conjugated"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Enumerator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Enumerator/deprecated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Enumerator/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Enumerator/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Enumerator/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/deprecated"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/unbounded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/lowerbound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/upperbound"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Attribute/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//TopicPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//TopicPort/type"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//InterfacePort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//InterfacePort/type"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Platform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Platform/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Platform/processors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Platform/links"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Processor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Processor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Processor/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Link/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Link/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Link/processors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Link/transport"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Link/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Property/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Property/optional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Property/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//PropertyValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//PropertyValue/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//PropertyValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Transport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Transport/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Transport/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Application">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Application/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Application/containerInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Container">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Container/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Container/componentInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Container/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Container/containerInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//ContainerInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//ContainerInstance/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//ContainerInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//ContainerInstance/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Component/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Component/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Component/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//ComponentInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//ComponentInstance/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//ComponentInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//ComponentInstance/unbounded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//ComponentInstance/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//ComponentInstance/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//ComponentInstance/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Connection/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Connection/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Connection/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Connection/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Connection/destination"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Connection/strategy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Connection/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Connection/description"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Deployment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Deployment/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Deployment/containermapping"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Deployment/connectionmapping"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//ContainerMapping">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//ContainerMapping/processor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//ContainerMapping/container"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//ConnectionMapping">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//ConnectionMapping/link"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//ConnectionMapping/connection"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.leonardo.com/lsaf/sadl/SADL#//Strategy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.leonardo.com/lsaf/sadl/SADL#//Strategy/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.leonardo.com/lsaf/sadl/SADL#//Strategy/properties"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
