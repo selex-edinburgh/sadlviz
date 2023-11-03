@@ -7,14 +7,15 @@ import com.leonardo.lsaf.sadl.sadl.Alias;
 import com.leonardo.lsaf.sadl.sadl.Application;
 import com.leonardo.lsaf.sadl.sadl.Attribute;
 import com.leonardo.lsaf.sadl.sadl.Component;
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
 import com.leonardo.lsaf.sadl.sadl.Connection;
 import com.leonardo.lsaf.sadl.sadl.ConnectionMapping;
 import com.leonardo.lsaf.sadl.sadl.Container;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
 import com.leonardo.lsaf.sadl.sadl.ContainerMapping;
 import com.leonardo.lsaf.sadl.sadl.Deployment;
 import com.leonardo.lsaf.sadl.sadl.Enumeration;
 import com.leonardo.lsaf.sadl.sadl.Enumerator;
-import com.leonardo.lsaf.sadl.sadl.Instance;
 import com.leonardo.lsaf.sadl.sadl.Interface;
 import com.leonardo.lsaf.sadl.sadl.InterfacePort;
 import com.leonardo.lsaf.sadl.sadl.Link;
@@ -136,14 +137,6 @@ public class SadlSwitch<T> extends Switch<T>
         Type type = (Type)theEObject;
         T result = caseType(type);
         if (result == null) result = casePackageableElement(type);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SadlPackage.COMPONENT:
-      {
-        Component component = (Component)theEObject;
-        T result = caseComponent(component);
-        if (result == null) result = casePackageableElement(component);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -284,13 +277,29 @@ public class SadlSwitch<T> extends Switch<T>
       {
         Container container = (Container)theEObject;
         T result = caseContainer(container);
+        if (result == null) result = casePackageableElement(container);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SadlPackage.INSTANCE:
+      case SadlPackage.CONTAINER_INSTANCE:
       {
-        Instance instance = (Instance)theEObject;
-        T result = caseInstance(instance);
+        ContainerInstance containerInstance = (ContainerInstance)theEObject;
+        T result = caseContainerInstance(containerInstance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SadlPackage.COMPONENT:
+      {
+        Component component = (Component)theEObject;
+        T result = caseComponent(component);
+        if (result == null) result = casePackageableElement(component);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SadlPackage.COMPONENT_INSTANCE:
+      {
+        ComponentInstance componentInstance = (ComponentInstance)theEObject;
+        T result = caseComponentInstance(componentInstance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -411,22 +420,6 @@ public class SadlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseType(Type object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComponent(Component object)
   {
     return null;
   }
@@ -720,17 +713,49 @@ public class SadlSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Container Instance</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Container Instance</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInstance(Instance object)
+  public T caseContainerInstance(ContainerInstance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponent(Component object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Instance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Instance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentInstance(ComponentInstance object)
   {
     return null;
   }

@@ -234,52 +234,6 @@ public interface SadlPackage extends EPackage
   int TYPE_FEATURE_COUNT = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl <em>Component</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl
-   * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getComponent()
-   * @generated
-   */
-  int COMPONENT = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__NAME = PACKAGEABLE_ELEMENT__NAME;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__DESCRIPTION = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Ports</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__PORTS = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Component</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_FEATURE_COUNT = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
-
-  /**
    * The meta object id for the '{@link com.leonardo.lsaf.sadl.sadl.impl.PrimitiveImpl <em>Primitive</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -287,7 +241,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getPrimitive()
    * @generated
    */
-  int PRIMITIVE = 6;
+  int PRIMITIVE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -342,7 +296,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getInterface()
    * @generated
    */
-  int INTERFACE = 7;
+  int INTERFACE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -388,7 +342,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getEnumeration()
    * @generated
    */
-  int ENUMERATION = 8;
+  int ENUMERATION = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -434,7 +388,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getTopic()
    * @generated
    */
-  int TOPIC = 9;
+  int TOPIC = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -480,7 +434,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getAlias()
    * @generated
    */
-  int ALIAS = 10;
+  int ALIAS = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -580,7 +534,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getPort()
    * @generated
    */
-  int PORT = 11;
+  int PORT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -617,7 +571,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getEnumerator()
    * @generated
    */
-  int ENUMERATOR = 12;
+  int ENUMERATOR = 11;
 
   /**
    * The feature id for the '<em><b>Deprecated</b></em>' attribute.
@@ -672,7 +626,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 13;
+  int ATTRIBUTE = 12;
 
   /**
    * The feature id for the '<em><b>Deprecated</b></em>' attribute.
@@ -763,7 +717,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getTopicPort()
    * @generated
    */
-  int TOPIC_PORT = 14;
+  int TOPIC_PORT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -809,7 +763,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getInterfacePort()
    * @generated
    */
-  int INTERFACE_PORT = 15;
+  int INTERFACE_PORT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -855,7 +809,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getPlatform()
    * @generated
    */
-  int PLATFORM = 16;
+  int PLATFORM = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -910,7 +864,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getProcessor()
    * @generated
    */
-  int PROCESSOR = 17;
+  int PROCESSOR = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -947,7 +901,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getLink()
    * @generated
    */
-  int LINK = 18;
+  int LINK = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1011,7 +965,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 19;
+  int PROPERTY = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1057,7 +1011,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getPropertyValue()
    * @generated
    */
-  int PROPERTY_VALUE = 20;
+  int PROPERTY_VALUE = 19;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' reference.
@@ -1094,7 +1048,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getTransport()
    * @generated
    */
-  int TRANSPORT = 21;
+  int TRANSPORT = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1140,7 +1094,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getApplication()
    * @generated
    */
-  int APPLICATION = 22;
+  int APPLICATION = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1161,13 +1115,13 @@ public interface SadlPackage extends EPackage
   int APPLICATION__DESCRIPTION = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Containers</b></em>' containment reference list.
+   * The feature id for the '<em><b>Container Instances</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int APPLICATION__CONTAINERS = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
+  int APPLICATION__CONTAINER_INSTANCES = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Application</em>' class.
@@ -1186,7 +1140,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getContainer()
    * @generated
    */
-  int CONTAINER = 23;
+  int CONTAINER = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1195,7 +1149,7 @@ public interface SadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__NAME = 0;
+  int CONTAINER__NAME = PACKAGEABLE_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1204,16 +1158,16 @@ public interface SadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__DESCRIPTION = 1;
+  int CONTAINER__DESCRIPTION = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Instances</b></em>' containment reference list.
+   * The feature id for the '<em><b>Component Instances</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTAINER__INSTANCES = 2;
+  int CONTAINER__COMPONENT_INSTANCES = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Connections</b></em>' containment reference list.
@@ -1222,16 +1176,16 @@ public interface SadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__CONNECTIONS = 3;
+  int CONTAINER__CONNECTIONS = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Children</b></em>' containment reference list.
+   * The feature id for the '<em><b>Container Instances</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTAINER__CHILDREN = 4;
+  int CONTAINER__CONTAINER_INSTANCES = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Container</em>' class.
@@ -1240,17 +1194,17 @@ public interface SadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_FEATURE_COUNT = 5;
+  int CONTAINER_FEATURE_COUNT = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link com.leonardo.lsaf.sadl.sadl.impl.InstanceImpl <em>Instance</em>}' class.
+   * The meta object id for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerInstanceImpl <em>Container Instance</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.leonardo.lsaf.sadl.sadl.impl.InstanceImpl
-   * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getInstance()
+   * @see com.leonardo.lsaf.sadl.sadl.impl.ContainerInstanceImpl
+   * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getContainerInstance()
    * @generated
    */
-  int INSTANCE = 24;
+  int CONTAINER_INSTANCE = 23;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1259,7 +1213,7 @@ public interface SadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__TYPE = 0;
+  int CONTAINER_INSTANCE__TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1268,34 +1222,7 @@ public interface SadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__NAME = 1;
-
-  /**
-   * The feature id for the '<em><b>Unbounded</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCE__UNBOUNDED = 2;
-
-  /**
-   * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCE__LOWER_BOUND = 3;
-
-  /**
-   * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCE__UPPER_BOUND = 4;
+  int CONTAINER_INSTANCE__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1304,16 +1231,144 @@ public interface SadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__DESCRIPTION = 5;
+  int CONTAINER_INSTANCE__DESCRIPTION = 2;
 
   /**
-   * The number of structural features of the '<em>Instance</em>' class.
+   * The number of structural features of the '<em>Container Instance</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCE_FEATURE_COUNT = 6;
+  int CONTAINER_INSTANCE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl <em>Component</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl
+   * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getComponent()
+   * @generated
+   */
+  int COMPONENT = 24;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__NAME = PACKAGEABLE_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__DESCRIPTION = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__PARTS = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__PORTS = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Component</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_FEATURE_COUNT = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentInstanceImpl <em>Component Instance</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.leonardo.lsaf.sadl.sadl.impl.ComponentInstanceImpl
+   * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getComponentInstance()
+   * @generated
+   */
+  int COMPONENT_INSTANCE = 25;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_INSTANCE__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_INSTANCE__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Unbounded</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_INSTANCE__UNBOUNDED = 2;
+
+  /**
+   * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_INSTANCE__LOWER_BOUND = 3;
+
+  /**
+   * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_INSTANCE__UPPER_BOUND = 4;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_INSTANCE__DESCRIPTION = 5;
+
+  /**
+   * The number of structural features of the '<em>Component Instance</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_INSTANCE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ConnectionImpl <em>Connection</em>}' class.
@@ -1323,7 +1378,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getConnection()
    * @generated
    */
-  int CONNECTION = 25;
+  int CONNECTION = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1414,7 +1469,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getDeployment()
    * @generated
    */
-  int DEPLOYMENT = 26;
+  int DEPLOYMENT = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1469,7 +1524,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getContainerMapping()
    * @generated
    */
-  int CONTAINER_MAPPING = 27;
+  int CONTAINER_MAPPING = 28;
 
   /**
    * The feature id for the '<em><b>Processor</b></em>' reference.
@@ -1506,7 +1561,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getConnectionMapping()
    * @generated
    */
-  int CONNECTION_MAPPING = 28;
+  int CONNECTION_MAPPING = 29;
 
   /**
    * The feature id for the '<em><b>Link</b></em>' reference.
@@ -1543,7 +1598,7 @@ public interface SadlPackage extends EPackage
    * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getStrategy()
    * @generated
    */
-  int STRATEGY = 29;
+  int STRATEGY = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1708,38 +1763,6 @@ public interface SadlPackage extends EPackage
    * @generated
    */
   EClass getType();
-
-  /**
-   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Component <em>Component</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Component
-   * @generated
-   */
-  EClass getComponent();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Component#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Component#getDescription()
-   * @see #getComponent()
-   * @generated
-   */
-  EAttribute getComponent_Description();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Component#getPorts <em>Ports</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ports</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Component#getPorts()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Ports();
 
   /**
    * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Primitive <em>Primitive</em>}'.
@@ -2473,15 +2496,15 @@ public interface SadlPackage extends EPackage
   EAttribute getApplication_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Application#getContainers <em>Containers</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Application#getContainerInstances <em>Container Instances</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Containers</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Application#getContainers()
+   * @return the meta object for the containment reference list '<em>Container Instances</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.Application#getContainerInstances()
    * @see #getApplication()
    * @generated
    */
-  EReference getApplication_Containers();
+  EReference getApplication_ContainerInstances();
 
   /**
    * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Container <em>Container</em>}'.
@@ -2492,17 +2515,6 @@ public interface SadlPackage extends EPackage
    * @generated
    */
   EClass getContainer();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Container#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Container#getName()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_Name();
 
   /**
    * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Container#getDescription <em>Description</em>}'.
@@ -2516,15 +2528,15 @@ public interface SadlPackage extends EPackage
   EAttribute getContainer_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getInstances <em>Instances</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getComponentInstances <em>Component Instances</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Instances</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Container#getInstances()
+   * @return the meta object for the containment reference list '<em>Component Instances</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.Container#getComponentInstances()
    * @see #getContainer()
    * @generated
    */
-  EReference getContainer_Instances();
+  EReference getContainer_ComponentInstances();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getConnections <em>Connections</em>}'.
@@ -2538,91 +2550,177 @@ public interface SadlPackage extends EPackage
   EReference getContainer_Connections();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getChildren <em>Children</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getContainerInstances <em>Container Instances</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Children</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Container#getChildren()
+   * @return the meta object for the containment reference list '<em>Container Instances</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.Container#getContainerInstances()
    * @see #getContainer()
    * @generated
    */
-  EReference getContainer_Children();
+  EReference getContainer_ContainerInstances();
 
   /**
-   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Instance <em>Instance</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance <em>Container Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Instance</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Instance
+   * @return the meta object for class '<em>Container Instance</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance
    * @generated
    */
-  EClass getInstance();
+  EClass getContainerInstance();
 
   /**
-   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Instance#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Instance#getType()
-   * @see #getInstance()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance#getType()
+   * @see #getContainerInstance()
    * @generated
    */
-  EReference getInstance_Type();
+  EReference getContainerInstance_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Instance#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Instance#getName()
-   * @see #getInstance()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance#getName()
+   * @see #getContainerInstance()
    * @generated
    */
-  EAttribute getInstance_Name();
+  EAttribute getContainerInstance_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Instance#isUnbounded <em>Unbounded</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Unbounded</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Instance#isUnbounded()
-   * @see #getInstance()
-   * @generated
-   */
-  EAttribute getInstance_Unbounded();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Instance#getLowerBound <em>Lower Bound</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Lower Bound</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Instance#getLowerBound()
-   * @see #getInstance()
-   * @generated
-   */
-  EAttribute getInstance_LowerBound();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Instance#getUpperBound <em>Upper Bound</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Upper Bound</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Instance#getUpperBound()
-   * @see #getInstance()
-   * @generated
-   */
-  EAttribute getInstance_UpperBound();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Instance#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see com.leonardo.lsaf.sadl.sadl.Instance#getDescription()
-   * @see #getInstance()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance#getDescription()
+   * @see #getContainerInstance()
    * @generated
    */
-  EAttribute getInstance_Description();
+  EAttribute getContainerInstance_Description();
+
+  /**
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Component <em>Component</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.Component
+   * @generated
+   */
+  EClass getComponent();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Component#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.Component#getDescription()
+   * @see #getComponent()
+   * @generated
+   */
+  EAttribute getComponent_Description();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Component#getParts <em>Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parts</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.Component#getParts()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Parts();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Component#getPorts <em>Ports</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Ports</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.Component#getPorts()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Ports();
+
+  /**
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance <em>Component Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Instance</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance
+   * @generated
+   */
+  EClass getComponentInstance();
+
+  /**
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getType()
+   * @see #getComponentInstance()
+   * @generated
+   */
+  EReference getComponentInstance_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getName()
+   * @see #getComponentInstance()
+   * @generated
+   */
+  EAttribute getComponentInstance_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#isUnbounded <em>Unbounded</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unbounded</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#isUnbounded()
+   * @see #getComponentInstance()
+   * @generated
+   */
+  EAttribute getComponentInstance_Unbounded();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getLowerBound <em>Lower Bound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Lower Bound</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getLowerBound()
+   * @see #getComponentInstance()
+   * @generated
+   */
+  EAttribute getComponentInstance_LowerBound();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getUpperBound <em>Upper Bound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Upper Bound</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getUpperBound()
+   * @see #getComponentInstance()
+   * @generated
+   */
+  EAttribute getComponentInstance_UpperBound();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getDescription()
+   * @see #getComponentInstance()
+   * @generated
+   */
+  EAttribute getComponentInstance_Description();
 
   /**
    * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Connection <em>Connection</em>}'.
@@ -2989,32 +3087,6 @@ public interface SadlPackage extends EPackage
      * @generated
      */
     EClass TYPE = eINSTANCE.getType();
-
-    /**
-     * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl <em>Component</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl
-     * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getComponent()
-     * @generated
-     */
-    EClass COMPONENT = eINSTANCE.getComponent();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPONENT__DESCRIPTION = eINSTANCE.getComponent_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__PORTS = eINSTANCE.getComponent_Ports();
 
     /**
      * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.PrimitiveImpl <em>Primitive</em>}' class.
@@ -3595,12 +3667,12 @@ public interface SadlPackage extends EPackage
     EAttribute APPLICATION__DESCRIPTION = eINSTANCE.getApplication_Description();
 
     /**
-     * The meta object literal for the '<em><b>Containers</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Container Instances</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference APPLICATION__CONTAINERS = eINSTANCE.getApplication_Containers();
+    EReference APPLICATION__CONTAINER_INSTANCES = eINSTANCE.getApplication_ContainerInstances();
 
     /**
      * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl <em>Container</em>}' class.
@@ -3613,14 +3685,6 @@ public interface SadlPackage extends EPackage
     EClass CONTAINER = eINSTANCE.getContainer();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__NAME = eINSTANCE.getContainer_Name();
-
-    /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3629,12 +3693,12 @@ public interface SadlPackage extends EPackage
     EAttribute CONTAINER__DESCRIPTION = eINSTANCE.getContainer_Description();
 
     /**
-     * The meta object literal for the '<em><b>Instances</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Component Instances</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONTAINER__INSTANCES = eINSTANCE.getContainer_Instances();
+    EReference CONTAINER__COMPONENT_INSTANCES = eINSTANCE.getContainer_ComponentInstances();
 
     /**
      * The meta object literal for the '<em><b>Connections</b></em>' containment reference list feature.
@@ -3645,22 +3709,22 @@ public interface SadlPackage extends EPackage
     EReference CONTAINER__CONNECTIONS = eINSTANCE.getContainer_Connections();
 
     /**
-     * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Container Instances</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONTAINER__CHILDREN = eINSTANCE.getContainer_Children();
+    EReference CONTAINER__CONTAINER_INSTANCES = eINSTANCE.getContainer_ContainerInstances();
 
     /**
-     * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.InstanceImpl <em>Instance</em>}' class.
+     * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerInstanceImpl <em>Container Instance</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.leonardo.lsaf.sadl.sadl.impl.InstanceImpl
-     * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getInstance()
+     * @see com.leonardo.lsaf.sadl.sadl.impl.ContainerInstanceImpl
+     * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getContainerInstance()
      * @generated
      */
-    EClass INSTANCE = eINSTANCE.getInstance();
+    EClass CONTAINER_INSTANCE = eINSTANCE.getContainerInstance();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -3668,7 +3732,7 @@ public interface SadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INSTANCE__TYPE = eINSTANCE.getInstance_Type();
+    EReference CONTAINER_INSTANCE__TYPE = eINSTANCE.getContainerInstance_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3676,31 +3740,7 @@ public interface SadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INSTANCE__NAME = eINSTANCE.getInstance_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Unbounded</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INSTANCE__UNBOUNDED = eINSTANCE.getInstance_Unbounded();
-
-    /**
-     * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INSTANCE__LOWER_BOUND = eINSTANCE.getInstance_LowerBound();
-
-    /**
-     * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INSTANCE__UPPER_BOUND = eINSTANCE.getInstance_UpperBound();
+    EAttribute CONTAINER_INSTANCE__NAME = eINSTANCE.getContainerInstance_Name();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -3708,7 +3748,99 @@ public interface SadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INSTANCE__DESCRIPTION = eINSTANCE.getInstance_Description();
+    EAttribute CONTAINER_INSTANCE__DESCRIPTION = eINSTANCE.getContainerInstance_Description();
+
+    /**
+     * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl <em>Component</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl
+     * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getComponent()
+     * @generated
+     */
+    EClass COMPONENT = eINSTANCE.getComponent();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT__DESCRIPTION = eINSTANCE.getComponent_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__PARTS = eINSTANCE.getComponent_Parts();
+
+    /**
+     * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__PORTS = eINSTANCE.getComponent_Ports();
+
+    /**
+     * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentInstanceImpl <em>Component Instance</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.leonardo.lsaf.sadl.sadl.impl.ComponentInstanceImpl
+     * @see com.leonardo.lsaf.sadl.sadl.impl.SadlPackageImpl#getComponentInstance()
+     * @generated
+     */
+    EClass COMPONENT_INSTANCE = eINSTANCE.getComponentInstance();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_INSTANCE__TYPE = eINSTANCE.getComponentInstance_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_INSTANCE__NAME = eINSTANCE.getComponentInstance_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Unbounded</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_INSTANCE__UNBOUNDED = eINSTANCE.getComponentInstance_Unbounded();
+
+    /**
+     * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_INSTANCE__LOWER_BOUND = eINSTANCE.getComponentInstance_LowerBound();
+
+    /**
+     * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_INSTANCE__UPPER_BOUND = eINSTANCE.getComponentInstance_UpperBound();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_INSTANCE__DESCRIPTION = eINSTANCE.getComponentInstance_Description();
 
     /**
      * The meta object literal for the '{@link com.leonardo.lsaf.sadl.sadl.impl.ConnectionImpl <em>Connection</em>}' class.

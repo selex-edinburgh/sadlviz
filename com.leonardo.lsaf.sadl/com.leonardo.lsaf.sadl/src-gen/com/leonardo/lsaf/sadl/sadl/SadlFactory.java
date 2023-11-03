@@ -69,15 +69,6 @@ public interface SadlFactory extends EFactory
   Type createType();
 
   /**
-   * Returns a new object of class '<em>Component</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
-   * @generated
-   */
-  Component createComponent();
-
-  /**
    * Returns a new object of class '<em>Primitive</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -240,13 +231,31 @@ public interface SadlFactory extends EFactory
   Container createContainer();
 
   /**
-   * Returns a new object of class '<em>Instance</em>'.
+   * Returns a new object of class '<em>Container Instance</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance</em>'.
+   * @return a new object of class '<em>Container Instance</em>'.
    * @generated
    */
-  Instance createInstance();
+  ContainerInstance createContainerInstance();
+
+  /**
+   * Returns a new object of class '<em>Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component</em>'.
+   * @generated
+   */
+  Component createComponent();
+
+  /**
+   * Returns a new object of class '<em>Component Instance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Instance</em>'.
+   * @generated
+   */
+  ComponentInstance createComponentInstance();
 
   /**
    * Returns a new object of class '<em>Connection</em>'.

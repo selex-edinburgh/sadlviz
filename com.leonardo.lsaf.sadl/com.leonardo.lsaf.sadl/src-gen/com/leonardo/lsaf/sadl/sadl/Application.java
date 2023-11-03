@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.Application#getDescription <em>Description</em>}</li>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.Application#getContainers <em>Containers</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Application#getContainerInstances <em>Container Instances</em>}</li>
  * </ul>
  *
  * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getApplication()
@@ -47,15 +47,15 @@ public interface Application extends PackageableElement
   void setDescription(String value);
 
   /**
-   * Returns the value of the '<em><b>Containers</b></em>' containment reference list.
-   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Container}.
+   * Returns the value of the '<em><b>Container Instances</b></em>' containment reference list.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ContainerInstance}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Containers</em>' containment reference list.
-   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getApplication_Containers()
+   * @return the value of the '<em>Container Instances</em>' containment reference list.
+   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getApplication_ContainerInstances()
    * @model containment="true"
    * @generated
    */
-  EList<Container> getContainers();
+  EList<ContainerInstance> getContainerInstances();
 
 } // Application

@@ -59,12 +59,12 @@ public interface Connection extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>From</em>' reference.
-   * @see #setFrom(Instance)
+   * @see #setFrom(ComponentInstance)
    * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getConnection_From()
    * @model
    * @generated
    */
-  Instance getFrom();
+  ComponentInstance getFrom();
 
   /**
    * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Connection#getFrom <em>From</em>}' reference.
@@ -74,7 +74,7 @@ public interface Connection extends EObject
    * @see #getFrom()
    * @generated
    */
-  void setFrom(Instance value);
+  void setFrom(ComponentInstance value);
 
   /**
    * Returns the value of the '<em><b>Source</b></em>' reference list.
@@ -93,12 +93,12 @@ public interface Connection extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>To</em>' reference.
-   * @see #setTo(Instance)
+   * @see #setTo(ComponentInstance)
    * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getConnection_To()
    * @model
    * @generated
    */
-  Instance getTo();
+  ComponentInstance getTo();
 
   /**
    * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Connection#getTo <em>To</em>}' reference.
@@ -108,7 +108,7 @@ public interface Connection extends EObject
    * @see #getTo()
    * @generated
    */
-  void setTo(Instance value);
+  void setTo(ComponentInstance value);
 
   /**
    * Returns the value of the '<em><b>Destination</b></em>' reference list.

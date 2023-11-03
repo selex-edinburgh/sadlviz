@@ -7,13 +7,14 @@ import com.leonardo.lsaf.sadl.sadl.Alias;
 import com.leonardo.lsaf.sadl.sadl.Application;
 import com.leonardo.lsaf.sadl.sadl.Attribute;
 import com.leonardo.lsaf.sadl.sadl.Component;
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
 import com.leonardo.lsaf.sadl.sadl.Connection;
 import com.leonardo.lsaf.sadl.sadl.ConnectionMapping;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
 import com.leonardo.lsaf.sadl.sadl.ContainerMapping;
 import com.leonardo.lsaf.sadl.sadl.Deployment;
 import com.leonardo.lsaf.sadl.sadl.Enumeration;
 import com.leonardo.lsaf.sadl.sadl.Enumerator;
-import com.leonardo.lsaf.sadl.sadl.Instance;
 import com.leonardo.lsaf.sadl.sadl.Interface;
 import com.leonardo.lsaf.sadl.sadl.InterfacePort;
 import com.leonardo.lsaf.sadl.sadl.Link;
@@ -99,7 +100,6 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory
       case SadlPackage.PACKAGEABLE_ELEMENT: return createPackageableElement();
       case SadlPackage.UNIT: return createUnit();
       case SadlPackage.TYPE: return createType();
-      case SadlPackage.COMPONENT: return createComponent();
       case SadlPackage.PRIMITIVE: return createPrimitive();
       case SadlPackage.INTERFACE: return createInterface();
       case SadlPackage.ENUMERATION: return createEnumeration();
@@ -118,7 +118,9 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory
       case SadlPackage.TRANSPORT: return createTransport();
       case SadlPackage.APPLICATION: return createApplication();
       case SadlPackage.CONTAINER: return createContainer();
-      case SadlPackage.INSTANCE: return createInstance();
+      case SadlPackage.CONTAINER_INSTANCE: return createContainerInstance();
+      case SadlPackage.COMPONENT: return createComponent();
+      case SadlPackage.COMPONENT_INSTANCE: return createComponentInstance();
       case SadlPackage.CONNECTION: return createConnection();
       case SadlPackage.DEPLOYMENT: return createDeployment();
       case SadlPackage.CONTAINER_MAPPING: return createContainerMapping();
@@ -187,18 +189,6 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory
   {
     TypeImpl type = new TypeImpl();
     return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Component createComponent()
-  {
-    ComponentImpl component = new ComponentImpl();
-    return component;
   }
 
   /**
@@ -423,10 +413,34 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory
    * @generated
    */
   @Override
-  public Instance createInstance()
+  public ContainerInstance createContainerInstance()
   {
-    InstanceImpl instance = new InstanceImpl();
-    return instance;
+    ContainerInstanceImpl containerInstance = new ContainerInstanceImpl();
+    return containerInstance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Component createComponent()
+  {
+    ComponentImpl component = new ComponentImpl();
+    return component;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComponentInstance createComponentInstance()
+  {
+    ComponentInstanceImpl componentInstance = new ComponentInstanceImpl();
+    return componentInstance;
   }
 
   /**

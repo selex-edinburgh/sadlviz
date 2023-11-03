@@ -3,8 +3,8 @@
  */
 package com.leonardo.lsaf.sadl.sadl.impl;
 
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
 import com.leonardo.lsaf.sadl.sadl.Connection;
-import com.leonardo.lsaf.sadl.sadl.Instance;
 import com.leonardo.lsaf.sadl.sadl.Port;
 import com.leonardo.lsaf.sadl.sadl.PropertyValue;
 import com.leonardo.lsaf.sadl.sadl.SadlPackage;
@@ -77,7 +77,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * @generated
    * @ordered
    */
-  protected Instance from;
+  protected ComponentInstance from;
 
   /**
    * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
@@ -97,7 +97,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * @generated
    * @ordered
    */
-  protected Instance to;
+  protected ComponentInstance to;
 
   /**
    * The cached value of the '{@link #getDestination() <em>Destination</em>}' reference list.
@@ -201,12 +201,12 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * @generated
    */
   @Override
-  public Instance getFrom()
+  public ComponentInstance getFrom()
   {
     if (from != null && from.eIsProxy())
     {
       InternalEObject oldFrom = (InternalEObject)from;
-      from = (Instance)eResolveProxy(oldFrom);
+      from = (ComponentInstance)eResolveProxy(oldFrom);
       if (from != oldFrom)
       {
         if (eNotificationRequired())
@@ -221,7 +221,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * <!-- end-user-doc -->
    * @generated
    */
-  public Instance basicGetFrom()
+  public ComponentInstance basicGetFrom()
   {
     return from;
   }
@@ -232,9 +232,9 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * @generated
    */
   @Override
-  public void setFrom(Instance newFrom)
+  public void setFrom(ComponentInstance newFrom)
   {
-    Instance oldFrom = from;
+    ComponentInstance oldFrom = from;
     from = newFrom;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONNECTION__FROM, oldFrom, from));
@@ -261,12 +261,12 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * @generated
    */
   @Override
-  public Instance getTo()
+  public ComponentInstance getTo()
   {
     if (to != null && to.eIsProxy())
     {
       InternalEObject oldTo = (InternalEObject)to;
-      to = (Instance)eResolveProxy(oldTo);
+      to = (ComponentInstance)eResolveProxy(oldTo);
       if (to != oldTo)
       {
         if (eNotificationRequired())
@@ -281,7 +281,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * <!-- end-user-doc -->
    * @generated
    */
-  public Instance basicGetTo()
+  public ComponentInstance basicGetTo()
   {
     return to;
   }
@@ -292,9 +292,9 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
    * @generated
    */
   @Override
-  public void setTo(Instance newTo)
+  public void setTo(ComponentInstance newTo)
   {
-    Instance oldTo = to;
+    ComponentInstance oldTo = to;
     to = newTo;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONNECTION__TO, oldTo, to));
@@ -464,14 +464,14 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
         setName((String)newValue);
         return;
       case SadlPackage.CONNECTION__FROM:
-        setFrom((Instance)newValue);
+        setFrom((ComponentInstance)newValue);
         return;
       case SadlPackage.CONNECTION__SOURCE:
         getSource().clear();
         getSource().addAll((Collection<? extends Port>)newValue);
         return;
       case SadlPackage.CONNECTION__TO:
-        setTo((Instance)newValue);
+        setTo((ComponentInstance)newValue);
         return;
       case SadlPackage.CONNECTION__DESTINATION:
         getDestination().clear();
@@ -505,13 +505,13 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
         setName(NAME_EDEFAULT);
         return;
       case SadlPackage.CONNECTION__FROM:
-        setFrom((Instance)null);
+        setFrom((ComponentInstance)null);
         return;
       case SadlPackage.CONNECTION__SOURCE:
         getSource().clear();
         return;
       case SadlPackage.CONNECTION__TO:
-        setTo((Instance)null);
+        setTo((ComponentInstance)null);
         return;
       case SadlPackage.CONNECTION__DESTINATION:
         getDestination().clear();

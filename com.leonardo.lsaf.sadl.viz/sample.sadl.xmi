@@ -1,111 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sadl:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sadl="http://www.leonardo.com/lsaf/sadl/SADL">
-  <package name="First">
-    <contents xsi:type="sadl:Primitive" name="real"/>
-    <contents xsi:type="sadl:Primitive" name="integer"/>
-    <contents xsi:type="sadl:Topic" name="First">
-      <attributes type="//@package.0/@contents.0" name="attr1"/>
-      <attributes type="//@package.0/@contents.1" name="attr2"/>
-      <attributes type="//@package.0/@contents.3" name="attr3"/>
-      <attributes type="//@package.0/@contents.4" name="attr4"/>
-    </contents>
-    <contents xsi:type="sadl:Topic" name="Second"/>
-    <contents xsi:type="sadl:Enumeration" name="EFirst">
-      <enumerators name="one"/>
-      <enumerators name="two"/>
-      <enumerators name="three"/>
-    </contents>
-    <contents xsi:type="sadl:Interface" name="IFirst">
-      <ports xsi:type="sadl:TopicPort" name="a" type="//@package.0/@contents.2"/>
-      <ports xsi:type="sadl:TopicPort" name="b" conjugated="true" type="//@package.0/@contents.3"/>
-    </contents>
-    <contents xsi:type="sadl:Component" name="CFirst">
-      <ports xsi:type="sadl:InterfacePort" name="a" conjugated="true" type="//@package.0/@contents.5"/>
-    </contents>
-    <contents xsi:type="sadl:Component" name="CSecond">
-      <ports xsi:type="sadl:InterfacePort" name="b" type="//@package.0/@contents.5"/>
-    </contents>
-    <contents xsi:type="sadl:Component" name="CThird">
-      <ports xsi:type="sadl:InterfacePort" name="c" conjugated="true" type="//@package.0/@contents.5"/>
-    </contents>
-    <contents xsi:type="sadl:Component" name="CFour">
-      <ports xsi:type="sadl:InterfacePort" name="d" type="//@package.0/@contents.5"/>
-    </contents>
-    <contents xsi:type="sadl:Application" name="first">
-      <containers name="root">
-        <instances type="//@package.0/@contents.6" name="c1"/>
-        <instances type="//@package.0/@contents.7" name="c2"/>
-        <instances type="//@package.0/@contents.8" name="c3"/>
-        <instances type="//@package.0/@contents.9" name="c4"/>
-        <connections name="c1toc2" from="//@package.0/@contents.10/@containers.0/@instances.0" source="//@package.0/@contents.6/@ports.0" to="//@package.0/@contents.10/@containers.0/@instances.1" destination="//@package.0/@contents.7/@ports.0"/>
-        <connections name="c3toc2" from="//@package.0/@contents.10/@containers.0/@instances.2" source="//@package.0/@contents.8/@ports.0" to="//@package.0/@contents.10/@containers.0/@instances.1" destination="//@package.0/@contents.7/@ports.0"/>
-        <connections name="c4toc2" from="//@package.0/@contents.10/@containers.0/@instances.3" source="//@package.0/@contents.9/@ports.0" to="//@package.0/@contents.10/@containers.0/@instances.1" destination="//@package.0/@contents.7/@ports.0"/>
-      </containers>
-    </contents>
-  </package>
   <package name="simple">
     <contents xsi:type="sadl:Topic" name="Ta"/>
     <contents xsi:type="sadl:Component" name="A">
-      <ports xsi:type="sadl:TopicPort" name="p1" type="//@package.1/@contents.0"/>
+      <ports xsi:type="sadl:TopicPort" name="pa" type="//@package.0/@contents.0"/>
     </contents>
     <contents xsi:type="sadl:Component" name="B">
-      <ports xsi:type="sadl:TopicPort" name="p1" conjugated="true" type="//@package.1/@contents.0"/>
+      <ports xsi:type="sadl:TopicPort" name="pb" conjugated="true" type="//@package.0/@contents.0"/>
+    </contents>
+    <contents xsi:type="sadl:Container" name="Container1">
+      <componentInstances type="//@package.0/@contents.1" name="a"/>
+      <componentInstances type="//@package.0/@contents.2" name="b"/>
+      <connections name="AtoB" from="//@package.0/@contents.3/@componentInstances.0" source="//@package.0/@contents.1/@ports.0" to="//@package.0/@contents.3/@componentInstances.1" destination="//@package.0/@contents.2/@ports.0"/>
     </contents>
     <contents xsi:type="sadl:Application" name="dummy">
-      <containers name="simple">
-        <instances type="//@package.1/@contents.1" name="a"/>
-        <instances type="//@package.1/@contents.2" name="b"/>
-        <connections name="AtoB" from="//@package.1/@contents.3/@containers.0/@instances.0" source="//@package.1/@contents.1/@ports.0" to="//@package.1/@contents.3/@containers.0/@instances.1" destination="//@package.1/@contents.2/@ports.0"/>
-      </containers>
-    </contents>
-  </package>
-  <package name="nestedportexample">
-    <contents xsi:type="sadl:Topic" name="Ta"/>
-    <contents xsi:type="sadl:Topic" name="Tb"/>
-    <contents xsi:type="sadl:Interface" name="Ia">
-      <ports xsi:type="sadl:TopicPort" name="ta" type="//@package.2/@contents.0"/>
-    </contents>
-    <contents xsi:type="sadl:Interface" name="Ib">
-      <ports xsi:type="sadl:TopicPort" name="tb" conjugated="true" type="//@package.2/@contents.1"/>
-    </contents>
-    <contents xsi:type="sadl:Interface" name="Ic">
-      <ports xsi:type="sadl:InterfacePort" name="p1" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="p2" conjugated="true" type="//@package.2/@contents.3"/>
-    </contents>
-    <contents xsi:type="sadl:Interface" name="Id">
-      <ports xsi:type="sadl:InterfacePort" name="a1" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="c1" type="//@package.2/@contents.4"/>
-      <ports xsi:type="sadl:InterfacePort" name="a2" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="c2" type="//@package.2/@contents.4"/>
-      <ports xsi:type="sadl:InterfacePort" name="a3" type="//@package.2/@contents.2"/>
-    </contents>
-    <contents xsi:type="sadl:Component" name="A">
-      <ports xsi:type="sadl:InterfacePort" name="p1" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="p2" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="p3" type="//@package.2/@contents.5"/>
-      <ports xsi:type="sadl:InterfacePort" name="p4" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="p5" type="//@package.2/@contents.5"/>
-      <ports xsi:type="sadl:InterfacePort" name="p6" type="//@package.2/@contents.2"/>
-    </contents>
-    <contents xsi:type="sadl:Component" name="B">
-      <ports xsi:type="sadl:InterfacePort" name="p1" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="p2" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="p3" conjugated="true" type="//@package.2/@contents.5"/>
-      <ports xsi:type="sadl:InterfacePort" name="p4" type="//@package.2/@contents.2"/>
-      <ports xsi:type="sadl:InterfacePort" name="p5" type="//@package.2/@contents.2"/>
-    </contents>
-    <contents xsi:type="sadl:Component" name="C">
-      <ports xsi:type="sadl:TopicPort" name="p1" conjugated="true" type="//@package.2/@contents.1"/>
-    </contents>
-    <contents xsi:type="sadl:Application" name="dummy">
-      <containers name="test">
-        <instances type="//@package.2/@contents.6" name="a"/>
-        <instances type="//@package.2/@contents.7" name="b"/>
-        <instances type="//@package.2/@contents.8" name="c"/>
-        <connections name="con1" from="//@package.2/@contents.9/@containers.0/@instances.0" source="//@package.2/@contents.6/@ports.2" to="//@package.2/@contents.9/@containers.0/@instances.1" destination="//@package.2/@contents.7/@ports.2 //@package.2/@contents.5/@ports.3 //@package.2/@contents.4/@ports.0"/>
-        <connections name="con2" from="//@package.2/@contents.9/@containers.0/@instances.0" source="//@package.2/@contents.6/@ports.0" to="//@package.2/@contents.9/@containers.0/@instances.1" destination="//@package.2/@contents.7/@ports.4 //@package.2/@contents.2/@ports.0"/>
-        <connections name="con3" from="//@package.2/@contents.9/@containers.0/@instances.0" source="//@package.2/@contents.6/@ports.5 //@package.2/@contents.2/@ports.0" to="//@package.2/@contents.9/@containers.0/@instances.2" destination="//@package.2/@contents.8/@ports.0"/>
-      </containers>
+      <containerInstances type="//@package.0/@contents.3" name="con1a"/>
     </contents>
   </package>
 </sadl:Model>

@@ -3,16 +3,16 @@ operation addExtension(sequence: Sequence, extension: String) {
     return sequence;
 }
 
-operation M!sadl::Application getFullName() {
+operation M!Application getFullName() {
     var segments = Sequence{};
     segments.add(self.name);
     var container = self.eContainer;
     var jModel = null;
     while (container <> null) {
-        if (container.isTypeOf(M!sadl::Package)) {
+        if (container.isTypeOf(M!Package)) {
             segments.add(0, container.name);
         } 
-//        else if (container.isTypeOf(M!sadl::Model)) {
+//        else if (container.isTypeOf(M!Model)) {
 //            segments.add(0, container.name);
 //        } 
         container = container.eContainer;
@@ -20,19 +20,19 @@ operation M!sadl::Application getFullName() {
     return segments;
 }
 
-operation M!sadl::Container getFullName() {
+operation M!Container getFullName() {
     var segments = Sequence{};
     segments.add(self.name);
     var container = self.eContainer;
     var jModel = null;
     while (container <> null) {
-        if (container.isTypeOf(M!sadl::Package)) {
+        if (container.isTypeOf(M!Package)) {
             segments.add(0, container.name);
         } 
-        else if (container.isTypeOf(M!sadl::Application)) {
+        else if (container.isTypeOf(M!Application)) {
             segments.add(0, container.name);
         }
-        else if (container.isTypeOf(M!sadl::Container)) {
+        else if (container.isTypeOf(M!Container)) {
             segments.add(0, container.name);
         }  
         container = container.eContainer;
@@ -40,22 +40,22 @@ operation M!sadl::Container getFullName() {
     return segments;
 }
 
-operation M!sadl::Connection getFullName() {
+operation M!Connection getFullName() {
     var segments = Sequence{};
     segments.add(self.name);
     var container = self.eContainer;
     var jModel = null;
     while (container <> null) {
-        if (container.isTypeOf(M!sadl::Package)) {
+        if (container.isTypeOf(M!Package)) {
             segments.add(0, container.name);
         } 
-        else if (container.isTypeOf(M!sadl::Application)) {
+        else if (container.isTypeOf(M!Application)) {
             segments.add(0, container.name);
         }
-        else if (container.isTypeOf(M!sadl::Container)) {
+        else if (container.isTypeOf(M!Container)) {
             segments.add(0, container.name);
         }
-        else if (container.isTypeOf(M!sadl::Connection)) {
+        else if (container.isTypeOf(M!Connection)) {
             segments.add(0, container.name);
         }  
         container = container.eContainer;
@@ -63,22 +63,74 @@ operation M!sadl::Connection getFullName() {
     return segments;
 }
 
-operation M!sadl::Instance getFullName() {
+operation M!ContainerInstance getFullName() {
     var segments = Sequence{};
     segments.add(self.name);
     var container = self.eContainer;
     var jModel = null;
     while (container <> null) {
-        if (container.isTypeOf(M!sadl::Package)) {
+        if (container.isTypeOf(M!Package)) {
             segments.add(0, container.name);
         } 
-        else if (container.isTypeOf(M!sadl::Application)) {
+        else if (container.isTypeOf(M!Application)) {
             segments.add(0, container.name);
         }
-        else if (container.isTypeOf(M!sadl::Container)) {
+        else if (container.isTypeOf(M!ContainerInstance)) {
             segments.add(0, container.name);
         }
-        else if (container.isTypeOf(M!sadl::Instance)) {
+        else if (container.isTypeOf(M!Container)) {
+            segments.add(0, container.name);
+        }
+        container = container.eContainer;
+    }
+    return segments;
+}
+
+operation M!ComponentInstance getFullName() {
+    var segments = Sequence{};
+    segments.add(self.name);
+    var container = self.eContainer;
+    var jModel = null;
+    while (container <> null) {
+        if (container.isTypeOf(M!Package)) {
+            segments.add(0, container.name);
+        } 
+        else if (container.isTypeOf(M!Application)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!ContainerInstance)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!Container)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!ComponentInstance)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!Component)) {
+            segments.add(0, container.name);
+        } 
+        container = container.eContainer;
+    }
+    return segments;
+}
+
+operation M!Port getFullName() {
+    var segments = Sequence{};
+    segments.add(self.name);
+    var container = self.eContainer;
+    var jModel = null;
+    while (container <> null) {
+        if (container.isTypeOf(M!Package)) {
+            segments.add(0, container.name);
+        } 
+        else if (container.isTypeOf(M!Application)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!Container)) {
+            segments.add(0, container.name);
+        }
+        else if (container.isTypeOf(M!Port)) {
             segments.add(0, container.name);
         }  
         container = container.eContainer;
@@ -86,55 +138,37 @@ operation M!sadl::Instance getFullName() {
     return segments;
 }
 
-operation M!sadl::Port getFullName() {
-    var segments = Sequence{};
-    segments.add(self.name);
-    var container = self.eContainer;
-    var jModel = null;
-    while (container <> null) {
-        if (container.isTypeOf(M!sadl::Package)) {
-            segments.add(0, container.name);
-        } 
-        else if (container.isTypeOf(M!sadl::Application)) {
-            segments.add(0, container.name);
-        }
-        else if (container.isTypeOf(M!sadl::Container)) {
-            segments.add(0, container.name);
-        }
-        else if (container.isTypeOf(M!sadl::Port)) {
-            segments.add(0, container.name);
-        }  
-        container = container.eContainer;
-    }
-    return segments;
-}
-
-operation M!sadl::Application getFullNameStr() {
+operation M!Application getFullNameStr() {
     var fullName = self.getFullName().concat(".");
     return fullName;
 }
 
-operation M!sadl::Container getFullNameStr() {
+operation M!Container getFullNameStr() {
     var fullName = self.getFullName().concat(".");
     return fullName;
 }
 
-operation M!sadl::Connection getFullNameStr() {
+operation M!Connection getFullNameStr() {
     var fullName = self.getFullName().concat(".");
     return fullName;
 }
 
-operation M!sadl::Instance getFullNameStr() {
+operation M!ContainerInstance getFullNameStr() {
     var fullName = self.getFullName().concat(".");
     return fullName;
 }
 
-operation M!sadl::Port getFullNameStr() {
+operation M!ComponentInstance getFullNameStr() {
     var fullName = self.getFullName().concat(".");
     return fullName;
 }
 
-operation sadl::Connection getSourceName(): String{
+operation M!Port getFullNameStr() {
+    var fullName = self.getFullName().concat(".");
+    return fullName;
+}
+
+operation Connection getSourceName(): String{
     var names = Sequence{};
     for (port in self.source) {
         names.add(port.name);
@@ -142,7 +176,7 @@ operation sadl::Connection getSourceName(): String{
     return names.concat(".");
 }
 
-operation sadl::Connection getDestinationName(): String{
+operation Connection getDestinationName(): String{
     var names = Sequence{};
     for (port in self.destination) {
         names.add(port.name);

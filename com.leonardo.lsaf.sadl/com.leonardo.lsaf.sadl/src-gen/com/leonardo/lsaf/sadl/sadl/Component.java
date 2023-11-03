@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.Component#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Component#getParts <em>Parts</em>}</li>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.Component#getPorts <em>Ports</em>}</li>
  * </ul>
  *
@@ -45,6 +46,18 @@ public interface Component extends PackageableElement
    * @generated
    */
   void setDescription(String value);
+
+  /**
+   * Returns the value of the '<em><b>Parts</b></em>' containment reference list.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ComponentInstance}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Parts</em>' containment reference list.
+   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getComponent_Parts()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ComponentInstance> getParts();
 
   /**
    * Returns the value of the '<em><b>Ports</b></em>' containment reference list.

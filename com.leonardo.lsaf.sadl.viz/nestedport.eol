@@ -30,23 +30,23 @@ operation SIDE_EAST() : String {
     return "EAST";
 }
 
-operation sadl::Instance getWidth(): Integer {
+operation ComponentInstance getWidth(): Integer {
     return DEFAULT_COMPONENT_WIDTH();
 }
 
-operation sadl::Container getWidth(): Integer {
+operation ContainerInstance getWidth(): Integer {
     return DEFAULT_COMPONENT_WIDTH();
 }
 
-operation sadl::Component getWidth(): Integer {
+operation ComponentInstance getWidth(): Integer {
     return DEFAULT_COMPONENT_WIDTH();
 }
 
-operation sadl::Container getWidth(): Integer {
+operation ContainerInstance getWidth(): Integer {
     return DEFAULT_COMPONENT_WIDTH();
 }
 
-operation sadl::Port getSide(): String {
+operation Port getSide(): String {
     var side = SIDE_EAST();
 //    if (self.conjugated) {
 //        side = SIDE_WEST(); 
@@ -54,23 +54,23 @@ operation sadl::Port getSide(): String {
     return side;
 }
 
-var counter = 0;
+// var counter = 0;
 
-operation ID(){return 0;}
-operation ALGORITHM(){return 1; }
-operation CHILDREN(){return 2;}
-operation TEXT (){return 3;}
-operation SIDE (){return 4;}
-operation X(){return 5;}
-operation Y(){return 6;} 
-operation OFFSET(){return 7;}
-operation WIDTH(){return 8;}
-operation HEIGHT(){return 9;}
-operation CLASS(){return 10;}
-operation ROOT_PORT(){return 11;}
-operation PARENT_PORT(){return 12;}
-operation LEVEL(){return 13;}
-operation PORT(){return 14;}
+// operation ID(){return 0;}
+// operation ALGORITHM(){return 1; }
+// operation CHILDREN(){return 2;}
+// operation TEXT (){return 3;}
+// operation SIDE (){return 4;}
+// operation X(){return 5;}
+// operation Y(){return 6;} 
+// operation OFFSET(){return 7;}
+// operation WIDTH(){return 8;}
+// operation HEIGHT(){return 9;}
+// operation CLASS(){return 10;}
+// operation ROOT_PORT(){return 11;}
+// operation PARENT_PORT(){return 12;}
+// operation LEVEL(){return 13;}
+// operation PORT(){return 14;}
 
 operation createNode() : MNode {
     var element = new MNode();
@@ -105,7 +105,7 @@ operation calcuateContainerHeight(dummyPorts : OrderedSet): Integer {
 /**
     Calculate heights and Ys of all ports (root ports and sub ports) 
 */
-operation sadl::Port calculateSubPorts(rootPort : MPort, currentPort: MPort, level: Integer) {
+operation Port calculateSubPorts(rootPort : MPort, currentPort: MPort, level: Integer) {
 
     currentPort.label = self.name;
    
@@ -113,16 +113,23 @@ operation sadl::Port calculateSubPorts(rootPort : MPort, currentPort: MPort, lev
     var currentPorts = null;
     var index = 0;
     if (parent == null){
-        currentPorts = (currentPort.side = SIDE_WEST())? currentPort.node.westPorts : currentPort.node.eastPorts;
+        if (currentPort.side = SIDE_WEST()) {
+            currentPorts  = currentPort.node.westPorts; 
+        } else { 
+            currentPorts = currentPort.node.eastPorts;
+        }
         index = currentPorts.indexOf(currentPort); 
     } else {
         currentPorts = parent.subPorts;
         index = currentPorts.indexOf(currentPort);
-         
     }
-    
 
-    var nodePorts = (rootPort.side = SIDE_WEST())? rootPort.node.westPorts : rootPort.node.eastPorts; 
+    var nodePorts = null;
+    if  (rootPort.side = SIDE_WEST()) { 
+        nodePorts = rootPort.node.westPorts; 
+    } else {
+        nodePorts = rootPort.node.eastPorts;
+    } 
     var rootPortIndex =  nodePorts.indexOf(rootPort);
     var childOffset = 0;
 
@@ -142,12 +149,12 @@ operation sadl::Port calculateSubPorts(rootPort : MPort, currentPort: MPort, lev
     }
     if (level == 0) {
       y = DEFAULT_Y_OFFSET() + (level * DEFAULT_Y_OFFSET()) + prevY + prevHeight;
-      y.println(currentPort.id);
+//      y.println(currentPort.id);
       currentPort.y = y;
     } 
     else if (level > 0) {
       if (index == 0) {
-        currentPort.parentPort.y.println(currentPort.parentPort.id + " : " + currentPort.id + " : ");
+//        currentPort.parentPort.y.println(currentPort.parentPort.id + " : " + currentPort.id + " : ");
         y = DEFAULT_Y_OFFSET() + currentPort.parentPort.y + prevHeight + (index * DEFAULT_Y_OFFSET());
       } else if (index > 0) {
         y = DEFAULT_Y_OFFSET() + prevY + prevHeight;
@@ -157,9 +164,9 @@ operation sadl::Port calculateSubPorts(rootPort : MPort, currentPort: MPort, lev
 
     level = level + 1;
     
-    if (self.isTypeOf(sadl::InterfacePort)){
+    if (self.isTypeOf(InterfacePort)){
         for (port in self.type.ports){
-    //        if (not port.isTypeOf(sadl::InterfacePort)){
+    //        if (not port.isTypeOf(InterfacePort)){
     //            continue;
     //        }
     
@@ -175,7 +182,7 @@ operation sadl::Port calculateSubPorts(rootPort : MPort, currentPort: MPort, lev
             currentPort.subPorts.add(subPort);
             
             // start recursive call
-    //        if (port.isTypeOf(sadl::InterfacePort)){
+    //        if (port.isTypeOf(InterfacePort)){
                 port.calculateSubPorts(rootPort, subPort, level);
     //        }
         }
@@ -219,12 +226,12 @@ operation countPortInOut(connections: Sequence) : Map(String, Integer) {
     return map;
 }
 
-operation sadl::Port getY(): Integer {
+operation Port getY(): Integer {
     var y = DEFAULT_Y_POSITION();
     return y;
 }
 
-operation sadl::Port hasSubPort(): Boolean {
+operation Port hasSubPort(): Boolean {
     var hasSubPort = false;
     if (self.type.ports.size > 0){
         hasSubPort = true;
@@ -232,7 +239,7 @@ operation sadl::Port hasSubPort(): Boolean {
     return hasSubPort;
 }
 
-operation sadl::Port isSubPort(connection : sadl::Connection): Boolean {
+operation Port isSubPort(connection : Connection): Boolean {
     var isSubPort = false;
     if (connection.source.indexOf(self) > 0 or connection.destination.indexOf(self) > 0){
         isSubPort = true;
@@ -240,18 +247,18 @@ operation sadl::Port isSubPort(connection : sadl::Connection): Boolean {
     return isSubPort;
 }
 
-operation sadl::Port getBorderOffset(): Integer {
+operation Port getBorderOffset(): Integer {
     return DEFAULT_X_OFFSET();
 }
 
-operation sadl::Port getWidth(): Integer {
+operation Port getWidth(): Integer {
    return DEFAULT_PORT_WIDTH();
 }
 
-operation sadl::InterfacePort getHeight(): Integer {
+operation InterfacePort getHeight(): Integer {
     var height = DEFAULT_PORT_HEIGHT();
     for (port in self.type.ports){
-        if (port.isTypeOf(sadl::InterfacePort)){
+        if (port.isTypeOf(InterfacePort)){
             height = height + port.getHeight();
             height = height + DEFAULT_PORT_HEIGHT();
         }
@@ -259,7 +266,7 @@ operation sadl::InterfacePort getHeight(): Integer {
    return height;
 }
 
-operation sadl::Instance getHeight(): Integer {
+operation Instance getHeight(): Integer {
    var height = DEFAULT_COMPONENT_HEIGHT();
     if (self.type.ports.size > 0){
         height = height + DEFAULT_PORT_HEIGHT();
@@ -271,7 +278,7 @@ operation sadl::Instance getHeight(): Integer {
     return height;
 }
 
-operation sadl::Component getHeight(): Integer {
+operation Component getHeight(): Integer {
    var height = DEFAULT_COMPONENT_HEIGHT();
     if (self.ports.size > 0){
         height = height + DEFAULT_PORT_HEIGHT();
@@ -283,7 +290,7 @@ operation sadl::Component getHeight(): Integer {
     return height;
 }
 
-operation sadl::Container getHeight(): Integer {
+operation Container getHeight(): Integer {
    var height = DEFAULT_COMPONENT_HEIGHT();
     if (self.children.size > 0 or self.instances.size > 0){
         height = height + DEFAULT_COMPONENT_HEIGHT();
@@ -298,4 +305,5 @@ operation sadl::Container getHeight(): Integer {
     }
     return height;
 }
+
 

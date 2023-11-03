@@ -23,11 +23,6 @@ class Unit extends PackageableElement {
 class Type extends PackageableElement {
 }
 
-class Component extends PackageableElement {
-	attr String description;
-	val Port[*] ports;
-}
-
 class Primitive extends Type {
 	attr double min;
 	attr double max;
@@ -128,18 +123,29 @@ class Transport extends PackageableElement {
 
 class Application extends PackageableElement {
 	attr String description;
-	val Container[*] containers;
+	val ContainerInstance[*] containerInstances;
 }
 
-class Container {
+class Container extends PackageableElement {
+	attr String description;
+	val ComponentInstance[*] componentInstances;
+	val Connection[*] connections;
+	val ContainerInstance[*] containerInstances;
+}
+
+class ContainerInstance {
+	ref Container type;
 	attr String name;
 	attr String description;
-	val Instance[*] instances;
-	val Connection[*] connections;
-	val Container[*] children;
 }
 
-class Instance {
+class Component extends PackageableElement {
+	attr String description;
+	val ComponentInstance[*] parts;
+	val Port[*] ports;
+}
+
+class ComponentInstance {
 	ref Component type;
 	attr String name;
 	attr boolean unbounded;
@@ -150,9 +156,9 @@ class Instance {
 
 class Connection {
 	attr String name;
-	ref Instance from;
+	ref ComponentInstance from;
 	!unique ref Port[*] source;
-	ref Instance to;
+	ref ComponentInstance to;
 	!unique ref Port[*] destination;
 	ref Strategy strategy;
 	val PropertyValue[*] value;

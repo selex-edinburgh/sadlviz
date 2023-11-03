@@ -7,13 +7,14 @@ import com.leonardo.lsaf.sadl.sadl.Alias;
 import com.leonardo.lsaf.sadl.sadl.Application;
 import com.leonardo.lsaf.sadl.sadl.Attribute;
 import com.leonardo.lsaf.sadl.sadl.Component;
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
 import com.leonardo.lsaf.sadl.sadl.Connection;
 import com.leonardo.lsaf.sadl.sadl.ConnectionMapping;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
 import com.leonardo.lsaf.sadl.sadl.ContainerMapping;
 import com.leonardo.lsaf.sadl.sadl.Deployment;
 import com.leonardo.lsaf.sadl.sadl.Enumeration;
 import com.leonardo.lsaf.sadl.sadl.Enumerator;
-import com.leonardo.lsaf.sadl.sadl.Instance;
 import com.leonardo.lsaf.sadl.sadl.Interface;
 import com.leonardo.lsaf.sadl.sadl.InterfacePort;
 import com.leonardo.lsaf.sadl.sadl.Link;
@@ -83,13 +84,6 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   private EClass typeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass componentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -222,7 +216,21 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass instanceEClass = null;
+  private EClass containerInstanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass componentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass componentInstanceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -451,39 +459,6 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
   public EClass getType()
   {
     return typeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getComponent()
-  {
-    return componentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getComponent_Description()
-  {
-    return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getComponent_Ports()
-  {
-    return (EReference)componentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1240,7 +1215,7 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EReference getApplication_Containers()
+  public EReference getApplication_ContainerInstances()
   {
     return (EReference)applicationEClass.getEStructuralFeatures().get(1);
   }
@@ -1262,7 +1237,7 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EAttribute getContainer_Name()
+  public EAttribute getContainer_Description()
   {
     return (EAttribute)containerEClass.getEStructuralFeatures().get(0);
   }
@@ -1273,20 +1248,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EAttribute getContainer_Description()
+  public EReference getContainer_ComponentInstances()
   {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getContainer_Instances()
-  {
-    return (EReference)containerEClass.getEStructuralFeatures().get(2);
+    return (EReference)containerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1297,6 +1261,17 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
   @Override
   public EReference getContainer_Connections()
   {
+    return (EReference)containerEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getContainer_ContainerInstances()
+  {
     return (EReference)containerEClass.getEStructuralFeatures().get(3);
   }
 
@@ -1306,9 +1281,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EReference getContainer_Children()
+  public EClass getContainerInstance()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(4);
+    return containerInstanceEClass;
   }
 
   /**
@@ -1317,9 +1292,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EClass getInstance()
+  public EReference getContainerInstance_Type()
   {
-    return instanceEClass;
+    return (EReference)containerInstanceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1328,9 +1303,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EReference getInstance_Type()
+  public EAttribute getContainerInstance_Name()
   {
-    return (EReference)instanceEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)containerInstanceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1339,9 +1314,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EAttribute getInstance_Name()
+  public EAttribute getContainerInstance_Description()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)containerInstanceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1350,9 +1325,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EAttribute getInstance_Unbounded()
+  public EClass getComponent()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(2);
+    return componentEClass;
   }
 
   /**
@@ -1361,9 +1336,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EAttribute getInstance_LowerBound()
+  public EAttribute getComponent_Description()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1372,9 +1347,9 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EAttribute getInstance_UpperBound()
+  public EReference getComponent_Parts()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(4);
+    return (EReference)componentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1383,9 +1358,86 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
    * @generated
    */
   @Override
-  public EAttribute getInstance_Description()
+  public EReference getComponent_Ports()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(5);
+    return (EReference)componentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getComponentInstance()
+  {
+    return componentInstanceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getComponentInstance_Type()
+  {
+    return (EReference)componentInstanceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComponentInstance_Name()
+  {
+    return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComponentInstance_Unbounded()
+  {
+    return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComponentInstance_LowerBound()
+  {
+    return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComponentInstance_UpperBound()
+  {
+    return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComponentInstance_Description()
+  {
+    return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1678,10 +1730,6 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
 
     typeEClass = createEClass(TYPE);
 
-    componentEClass = createEClass(COMPONENT);
-    createEAttribute(componentEClass, COMPONENT__DESCRIPTION);
-    createEReference(componentEClass, COMPONENT__PORTS);
-
     primitiveEClass = createEClass(PRIMITIVE);
     createEAttribute(primitiveEClass, PRIMITIVE__MIN);
     createEAttribute(primitiveEClass, PRIMITIVE__MAX);
@@ -1766,22 +1814,31 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
 
     applicationEClass = createEClass(APPLICATION);
     createEAttribute(applicationEClass, APPLICATION__DESCRIPTION);
-    createEReference(applicationEClass, APPLICATION__CONTAINERS);
+    createEReference(applicationEClass, APPLICATION__CONTAINER_INSTANCES);
 
     containerEClass = createEClass(CONTAINER);
-    createEAttribute(containerEClass, CONTAINER__NAME);
     createEAttribute(containerEClass, CONTAINER__DESCRIPTION);
-    createEReference(containerEClass, CONTAINER__INSTANCES);
+    createEReference(containerEClass, CONTAINER__COMPONENT_INSTANCES);
     createEReference(containerEClass, CONTAINER__CONNECTIONS);
-    createEReference(containerEClass, CONTAINER__CHILDREN);
+    createEReference(containerEClass, CONTAINER__CONTAINER_INSTANCES);
 
-    instanceEClass = createEClass(INSTANCE);
-    createEReference(instanceEClass, INSTANCE__TYPE);
-    createEAttribute(instanceEClass, INSTANCE__NAME);
-    createEAttribute(instanceEClass, INSTANCE__UNBOUNDED);
-    createEAttribute(instanceEClass, INSTANCE__LOWER_BOUND);
-    createEAttribute(instanceEClass, INSTANCE__UPPER_BOUND);
-    createEAttribute(instanceEClass, INSTANCE__DESCRIPTION);
+    containerInstanceEClass = createEClass(CONTAINER_INSTANCE);
+    createEReference(containerInstanceEClass, CONTAINER_INSTANCE__TYPE);
+    createEAttribute(containerInstanceEClass, CONTAINER_INSTANCE__NAME);
+    createEAttribute(containerInstanceEClass, CONTAINER_INSTANCE__DESCRIPTION);
+
+    componentEClass = createEClass(COMPONENT);
+    createEAttribute(componentEClass, COMPONENT__DESCRIPTION);
+    createEReference(componentEClass, COMPONENT__PARTS);
+    createEReference(componentEClass, COMPONENT__PORTS);
+
+    componentInstanceEClass = createEClass(COMPONENT_INSTANCE);
+    createEReference(componentInstanceEClass, COMPONENT_INSTANCE__TYPE);
+    createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__NAME);
+    createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__UNBOUNDED);
+    createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__LOWER_BOUND);
+    createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__UPPER_BOUND);
+    createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__DESCRIPTION);
 
     connectionEClass = createEClass(CONNECTION);
     createEAttribute(connectionEClass, CONNECTION__NAME);
@@ -1842,7 +1899,6 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
     // Add supertypes to classes
     unitEClass.getESuperTypes().add(this.getPackageableElement());
     typeEClass.getESuperTypes().add(this.getPackageableElement());
-    componentEClass.getESuperTypes().add(this.getPackageableElement());
     primitiveEClass.getESuperTypes().add(this.getType());
     interfaceEClass.getESuperTypes().add(this.getPackageableElement());
     enumerationEClass.getESuperTypes().add(this.getType());
@@ -1853,6 +1909,8 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
     platformEClass.getESuperTypes().add(this.getPackageableElement());
     transportEClass.getESuperTypes().add(this.getPackageableElement());
     applicationEClass.getESuperTypes().add(this.getPackageableElement());
+    containerEClass.getESuperTypes().add(this.getPackageableElement());
+    componentEClass.getESuperTypes().add(this.getPackageableElement());
     deploymentEClass.getESuperTypes().add(this.getPackageableElement());
     strategyEClass.getESuperTypes().add(this.getPackageableElement());
 
@@ -1873,10 +1931,6 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
     initEAttribute(getUnit_Description(), ecorePackage.getEString(), "description", null, 0, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComponent_Description(), ecorePackage.getEString(), "description", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Ports(), this.getPort(), null, "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primitiveEClass, Primitive.class, "Primitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPrimitive_Min(), ecorePackage.getEDouble(), "min", null, 0, 1, Primitive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1962,28 +2016,37 @@ public class SadlPackageImpl extends EPackageImpl implements SadlPackage
 
     initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getApplication_Description(), ecorePackage.getEString(), "description", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getApplication_Containers(), this.getContainer(), null, "containers", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApplication_ContainerInstances(), this.getContainerInstance(), null, "containerInstances", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(containerEClass, com.leonardo.lsaf.sadl.sadl.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 0, 1, com.leonardo.lsaf.sadl.sadl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_Description(), ecorePackage.getEString(), "description", null, 0, 1, com.leonardo.lsaf.sadl.sadl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getContainer_Instances(), this.getInstance(), null, "instances", null, 0, -1, com.leonardo.lsaf.sadl.sadl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainer_ComponentInstances(), this.getComponentInstance(), null, "componentInstances", null, 0, -1, com.leonardo.lsaf.sadl.sadl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainer_Connections(), this.getConnection(), null, "connections", null, 0, -1, com.leonardo.lsaf.sadl.sadl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getContainer_Children(), this.getContainer(), null, "children", null, 0, -1, com.leonardo.lsaf.sadl.sadl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainer_ContainerInstances(), this.getContainerInstance(), null, "containerInstances", null, 0, -1, com.leonardo.lsaf.sadl.sadl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInstance_Type(), this.getComponent(), null, "type", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInstance_Unbounded(), ecorePackage.getEBoolean(), "unbounded", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInstance_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInstance_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInstance_Description(), ecorePackage.getEString(), "description", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(containerInstanceEClass, ContainerInstance.class, "ContainerInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getContainerInstance_Type(), this.getContainer(), null, "type", null, 0, 1, ContainerInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContainerInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerInstance_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContainerInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComponent_Description(), ecorePackage.getEString(), "description", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Parts(), this.getComponentInstance(), null, "parts", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Ports(), this.getPort(), null, "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComponentInstance_Type(), this.getComponent(), null, "type", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentInstance_Unbounded(), ecorePackage.getEBoolean(), "unbounded", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentInstance_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentInstance_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentInstance_Description(), ecorePackage.getEString(), "description", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectionEClass, Connection.class, "Connection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConnection_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConnection_From(), this.getInstance(), null, "from", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnection_From(), this.getComponentInstance(), null, "from", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnection_Source(), this.getPort(), null, "source", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConnection_To(), this.getInstance(), null, "to", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnection_To(), this.getComponentInstance(), null, "to", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnection_Destination(), this.getPort(), null, "destination", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnection_Strategy(), this.getStrategy(), null, "strategy", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnection_Value(), this.getPropertyValue(), null, "value", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

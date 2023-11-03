@@ -5,8 +5,6 @@ package com.leonardo.lsaf.sadl.sadl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Container</b></em>'.
@@ -16,41 +14,18 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getName <em>Name</em>}</li>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getDescription <em>Description</em>}</li>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getInstances <em>Instances</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getConnections <em>Connections</em>}</li>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getChildren <em>Children</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getContainerInstances <em>Container Instances</em>}</li>
  * </ul>
  *
  * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getContainer()
  * @model
  * @generated
  */
-public interface Container extends EObject
+public interface Container extends PackageableElement
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getContainer_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Container#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -74,16 +49,16 @@ public interface Container extends EObject
   void setDescription(String value);
 
   /**
-   * Returns the value of the '<em><b>Instances</b></em>' containment reference list.
-   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Instance}.
+   * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ComponentInstance}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Instances</em>' containment reference list.
-   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getContainer_Instances()
+   * @return the value of the '<em>Component Instances</em>' containment reference list.
+   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getContainer_ComponentInstances()
    * @model containment="true"
    * @generated
    */
-  EList<Instance> getInstances();
+  EList<ComponentInstance> getComponentInstances();
 
   /**
    * Returns the value of the '<em><b>Connections</b></em>' containment reference list.
@@ -98,15 +73,15 @@ public interface Container extends EObject
   EList<Connection> getConnections();
 
   /**
-   * Returns the value of the '<em><b>Children</b></em>' containment reference list.
-   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Container}.
+   * Returns the value of the '<em><b>Container Instances</b></em>' containment reference list.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ContainerInstance}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Children</em>' containment reference list.
-   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getContainer_Children()
+   * @return the value of the '<em>Container Instances</em>' containment reference list.
+   * @see com.leonardo.lsaf.sadl.sadl.SadlPackage#getContainer_ContainerInstances()
    * @model containment="true"
    * @generated
    */
-  EList<Container> getChildren();
+  EList<ContainerInstance> getContainerInstances();
 
 } // Container

@@ -4,6 +4,7 @@
 package com.leonardo.lsaf.sadl.sadl.impl;
 
 import com.leonardo.lsaf.sadl.sadl.Application;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
 import com.leonardo.lsaf.sadl.sadl.SadlPackage;
 
 import java.util.Collection;
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ApplicationImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ApplicationImpl#getContainers <em>Containers</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ApplicationImpl#getContainerInstances <em>Container Instances</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +59,14 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getContainers() <em>Containers</em>}' containment reference list.
+   * The cached value of the '{@link #getContainerInstances() <em>Container Instances</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContainers()
+   * @see #getContainerInstances()
    * @generated
    * @ordered
    */
-  protected EList<com.leonardo.lsaf.sadl.sadl.Container> containers;
+  protected EList<ContainerInstance> containerInstances;
 
   /**
    * <!-- begin-user-doc -->
@@ -119,13 +120,13 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
    * @generated
    */
   @Override
-  public EList<com.leonardo.lsaf.sadl.sadl.Container> getContainers()
+  public EList<ContainerInstance> getContainerInstances()
   {
-    if (containers == null)
+    if (containerInstances == null)
     {
-      containers = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Container>(com.leonardo.lsaf.sadl.sadl.Container.class, this, SadlPackage.APPLICATION__CONTAINERS);
+      containerInstances = new EObjectContainmentEList<ContainerInstance>(ContainerInstance.class, this, SadlPackage.APPLICATION__CONTAINER_INSTANCES);
     }
-    return containers;
+    return containerInstances;
   }
 
   /**
@@ -138,8 +139,8 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
   {
     switch (featureID)
     {
-      case SadlPackage.APPLICATION__CONTAINERS:
-        return ((InternalEList<?>)getContainers()).basicRemove(otherEnd, msgs);
+      case SadlPackage.APPLICATION__CONTAINER_INSTANCES:
+        return ((InternalEList<?>)getContainerInstances()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,8 +157,8 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
     {
       case SadlPackage.APPLICATION__DESCRIPTION:
         return getDescription();
-      case SadlPackage.APPLICATION__CONTAINERS:
-        return getContainers();
+      case SadlPackage.APPLICATION__CONTAINER_INSTANCES:
+        return getContainerInstances();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -176,9 +177,9 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
       case SadlPackage.APPLICATION__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case SadlPackage.APPLICATION__CONTAINERS:
-        getContainers().clear();
-        getContainers().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Container>)newValue);
+      case SadlPackage.APPLICATION__CONTAINER_INSTANCES:
+        getContainerInstances().clear();
+        getContainerInstances().addAll((Collection<? extends ContainerInstance>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -197,8 +198,8 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
       case SadlPackage.APPLICATION__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case SadlPackage.APPLICATION__CONTAINERS:
-        getContainers().clear();
+      case SadlPackage.APPLICATION__CONTAINER_INSTANCES:
+        getContainerInstances().clear();
         return;
     }
     super.eUnset(featureID);
@@ -216,8 +217,8 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
     {
       case SadlPackage.APPLICATION__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case SadlPackage.APPLICATION__CONTAINERS:
-        return containers != null && !containers.isEmpty();
+      case SadlPackage.APPLICATION__CONTAINER_INSTANCES:
+        return containerInstances != null && !containerInstances.isEmpty();
     }
     return super.eIsSet(featureID);
   }

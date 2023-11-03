@@ -13,6 +13,10 @@
     <stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/SADL"/>
     <booleanAttribute key="default" value="false"/>
     <setAttribute key="deselected_workspace_bundles">
+        <setEntry value="com.leonardo.lsaf.sadl.viz"/>
+        <setEntry value="com.leonardo.lsaf.sadl.viz.edit"/>
+        <setEntry value="com.leonardo.lsaf.sadl.viz.editor"/>
+        <setEntry value="com.leonardo.lsaf.sadl.viz.tests"/>
         <setEntry value="org.eclipse.epsilon.picto.web.generator"/>
         <setEntry value="picto-web"/>
     </setAttribute>
@@ -539,10 +543,6 @@
         <setEntry value="com.leonardo.lsaf.sadl.tests@default:default"/>
         <setEntry value="com.leonardo.lsaf.sadl.ui.tests@default:default"/>
         <setEntry value="com.leonardo.lsaf.sadl.ui@default:default"/>
-        <setEntry value="com.leonardo.lsaf.sadl.viz.edit@default:default"/>
-        <setEntry value="com.leonardo.lsaf.sadl.viz.editor@default:default"/>
-        <setEntry value="com.leonardo.lsaf.sadl.viz.tests@default:default"/>
-        <setEntry value="com.leonardo.lsaf.sadl.viz@default:default"/>
         <setEntry value="com.leonardo.lsaf.sadl@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>

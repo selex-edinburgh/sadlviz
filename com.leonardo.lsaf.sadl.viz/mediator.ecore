@@ -30,21 +30,23 @@
         defaultValueLiteral="5"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MNode" eSuperTypes="#//MConnectableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//MNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//MNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
         eType="#//MEdge" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eastPorts" upperBound="-1"
         eType="#//MPort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="westPorts" upperBound="-1"
         eType="#//MPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packageableElement" eType="ecore:EClass http://www.leonardo.com/lsaf/sadl/SADL#//PackageableElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MPort" eSuperTypes="#//MConnectableElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfIncomingOutgoingPorts"

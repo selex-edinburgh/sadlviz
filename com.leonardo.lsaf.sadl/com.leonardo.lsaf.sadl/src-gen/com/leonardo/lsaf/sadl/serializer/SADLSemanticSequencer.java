@@ -8,14 +8,15 @@ import com.leonardo.lsaf.sadl.sadl.Alias;
 import com.leonardo.lsaf.sadl.sadl.Application;
 import com.leonardo.lsaf.sadl.sadl.Attribute;
 import com.leonardo.lsaf.sadl.sadl.Component;
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
 import com.leonardo.lsaf.sadl.sadl.Connection;
 import com.leonardo.lsaf.sadl.sadl.ConnectionMapping;
 import com.leonardo.lsaf.sadl.sadl.Container;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
 import com.leonardo.lsaf.sadl.sadl.ContainerMapping;
 import com.leonardo.lsaf.sadl.sadl.Deployment;
 import com.leonardo.lsaf.sadl.sadl.Enumeration;
 import com.leonardo.lsaf.sadl.sadl.Enumerator;
-import com.leonardo.lsaf.sadl.sadl.Instance;
 import com.leonardo.lsaf.sadl.sadl.Interface;
 import com.leonardo.lsaf.sadl.sadl.InterfacePort;
 import com.leonardo.lsaf.sadl.sadl.Link;
@@ -69,6 +70,9 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SadlPackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
 				return; 
+			case SadlPackage.COMPONENT_INSTANCE:
+				sequence_ComponentInstance(context, (ComponentInstance) semanticObject); 
+				return; 
 			case SadlPackage.CONNECTION:
 				sequence_Connection(context, (Connection) semanticObject); 
 				return; 
@@ -77,6 +81,9 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case SadlPackage.CONTAINER:
 				sequence_Container(context, (Container) semanticObject); 
+				return; 
+			case SadlPackage.CONTAINER_INSTANCE:
+				sequence_ContainerInstance(context, (ContainerInstance) semanticObject); 
 				return; 
 			case SadlPackage.CONTAINER_MAPPING:
 				sequence_ContainerMapping(context, (ContainerMapping) semanticObject); 
@@ -89,9 +96,6 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case SadlPackage.ENUMERATOR:
 				sequence_Enumerator(context, (Enumerator) semanticObject); 
-				return; 
-			case SadlPackage.INSTANCE:
-				sequence_Instance(context, (Instance) semanticObject); 
 				return; 
 			case SadlPackage.INTERFACE:
 				sequence_Interface(context, (Interface) semanticObject); 
@@ -173,7 +177,7 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Application returns Application
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING? containers+=Container*)
+	 *     (name=ID description=STRING? containerInstances+=ContainerInstance*)
 	 * </pre>
 	 */
 	protected void sequence_Application(ISerializationContext context, Application semanticObject) {
@@ -205,11 +209,30 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ComponentInstance returns ComponentInstance
+	 *
+	 * Constraint:
+	 *     (
+	 *         type=[Component|QualifiedName] 
+	 *         name=ID 
+	 *         (unbounded?='*' | lowerBound=INT | (lowerBound=INT (unbounded?='*' | upperBound=INT)))? 
+	 *         description=STRING?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ComponentInstance(ISerializationContext context, ComponentInstance semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     PackageableElement returns Component
 	 *     Component returns Component
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING? ports+=Port*)
+	 *     (name=ID description=STRING? (parts+=ComponentInstance | ports+=Port)*)
 	 * </pre>
 	 */
 	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
@@ -248,10 +271,10 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID? 
-	 *         from=[Instance|QualifiedName]? 
+	 *         from=[ComponentInstance|QualifiedName]? 
 	 *         source+=[Port|ID] 
 	 *         source+=[Port|ID]* 
-	 *         to=[Instance|QualifiedName]? 
+	 *         to=[ComponentInstance|QualifiedName]? 
 	 *         destination+=[Port|ID] 
 	 *         destination+=[Port|ID]* 
 	 *         (strategy=[Strategy|ID] (value+=PropertyValue value+=PropertyValue*)?)? 
@@ -260,6 +283,20 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_Connection(ISerializationContext context, Connection semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ContainerInstance returns ContainerInstance
+	 *
+	 * Constraint:
+	 *     (type=[Container|QualifiedName] name=ID description=STRING?)
+	 * </pre>
+	 */
+	protected void sequence_ContainerInstance(ISerializationContext context, ContainerInstance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -290,10 +327,11 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     PackageableElement returns Container
 	 *     Container returns Container
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING? (instances+=Instance | connections+=Connection | children+=Container)*)
+	 *     (name=ID description=STRING? (componentInstances+=ComponentInstance | connections+=Connection | containerInstances+=ContainerInstance)*)
 	 * </pre>
 	 */
 	protected void sequence_Container(ISerializationContext context, Container semanticObject) {
@@ -342,25 +380,6 @@ public class SADLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_Enumerator(ISerializationContext context, Enumerator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Instance returns Instance
-	 *
-	 * Constraint:
-	 *     (
-	 *         type=[Component|QualifiedName] 
-	 *         name=ID 
-	 *         (unbounded?='*' | lowerBound=INT | (lowerBound=INT (unbounded?='*' | upperBound=INT)))? 
-	 *         description=STRING?
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_Instance(ISerializationContext context, Instance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

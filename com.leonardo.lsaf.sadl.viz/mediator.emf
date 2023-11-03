@@ -44,18 +44,20 @@ class MConnectableElement extends MElement {
     attr int y = 0; 
     attr int width = 5;
     attr int height = 5;
+    attr int  level = 0;
 }
 
 class MNode extends MConnectableElement {
     attr String algorithm;
     val MNode[*] children;
+    ref MNode parent;
     val MEdge[*] edges;
     val MPort[*] eastPorts;
     val MPort[*] westPorts;
+    ref sadl.PackageableElement packageableElement;
 }
 
 class MPort extends MConnectableElement {
-    attr int  level = 0;
     attr int offset = 0;
     attr int numberOfIncomingOutgoingPorts = 0;
     attr String side = "EAST";

@@ -3,8 +3,9 @@
  */
 package com.leonardo.lsaf.sadl.sadl.impl;
 
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
 import com.leonardo.lsaf.sadl.sadl.Connection;
-import com.leonardo.lsaf.sadl.sadl.Instance;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
 import com.leonardo.lsaf.sadl.sadl.SadlPackage;
 
 import java.util.Collection;
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -31,37 +31,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl#getInstances <em>Instances</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl#getConnections <em>Connections</em>}</li>
- *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl#getChildren <em>Children</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ContainerImpl#getContainerInstances <em>Container Instances</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ContainerImpl extends MinimalEObjectImpl.Container implements com.leonardo.lsaf.sadl.sadl.Container
+public class ContainerImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Container
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -83,14 +62,14 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getInstances() <em>Instances</em>}' containment reference list.
+   * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInstances()
+   * @see #getComponentInstances()
    * @generated
    * @ordered
    */
-  protected EList<Instance> instances;
+  protected EList<ComponentInstance> componentInstances;
 
   /**
    * The cached value of the '{@link #getConnections() <em>Connections</em>}' containment reference list.
@@ -103,14 +82,14 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   protected EList<Connection> connections;
 
   /**
-   * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+   * The cached value of the '{@link #getContainerInstances() <em>Container Instances</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getChildren()
+   * @see #getContainerInstances()
    * @generated
    * @ordered
    */
-  protected EList<com.leonardo.lsaf.sadl.sadl.Container> children;
+  protected EList<ContainerInstance> containerInstances;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,31 +110,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   protected EClass eStaticClass()
   {
     return SadlPackage.Literals.CONTAINER;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONTAINER__NAME, oldName, name));
   }
 
   /**
@@ -189,13 +143,13 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
    * @generated
    */
   @Override
-  public EList<Instance> getInstances()
+  public EList<ComponentInstance> getComponentInstances()
   {
-    if (instances == null)
+    if (componentInstances == null)
     {
-      instances = new EObjectContainmentEList<Instance>(Instance.class, this, SadlPackage.CONTAINER__INSTANCES);
+      componentInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, SadlPackage.CONTAINER__COMPONENT_INSTANCES);
     }
-    return instances;
+    return componentInstances;
   }
 
   /**
@@ -219,13 +173,13 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
    * @generated
    */
   @Override
-  public EList<com.leonardo.lsaf.sadl.sadl.Container> getChildren()
+  public EList<ContainerInstance> getContainerInstances()
   {
-    if (children == null)
+    if (containerInstances == null)
     {
-      children = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Container>(com.leonardo.lsaf.sadl.sadl.Container.class, this, SadlPackage.CONTAINER__CHILDREN);
+      containerInstances = new EObjectContainmentEList<ContainerInstance>(ContainerInstance.class, this, SadlPackage.CONTAINER__CONTAINER_INSTANCES);
     }
-    return children;
+    return containerInstances;
   }
 
   /**
@@ -238,12 +192,12 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   {
     switch (featureID)
     {
-      case SadlPackage.CONTAINER__INSTANCES:
-        return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
+      case SadlPackage.CONTAINER__COMPONENT_INSTANCES:
+        return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
       case SadlPackage.CONTAINER__CONNECTIONS:
         return ((InternalEList<?>)getConnections()).basicRemove(otherEnd, msgs);
-      case SadlPackage.CONTAINER__CHILDREN:
-        return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+      case SadlPackage.CONTAINER__CONTAINER_INSTANCES:
+        return ((InternalEList<?>)getContainerInstances()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -258,16 +212,14 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   {
     switch (featureID)
     {
-      case SadlPackage.CONTAINER__NAME:
-        return getName();
       case SadlPackage.CONTAINER__DESCRIPTION:
         return getDescription();
-      case SadlPackage.CONTAINER__INSTANCES:
-        return getInstances();
+      case SadlPackage.CONTAINER__COMPONENT_INSTANCES:
+        return getComponentInstances();
       case SadlPackage.CONTAINER__CONNECTIONS:
         return getConnections();
-      case SadlPackage.CONTAINER__CHILDREN:
-        return getChildren();
+      case SadlPackage.CONTAINER__CONTAINER_INSTANCES:
+        return getContainerInstances();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -283,23 +235,20 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   {
     switch (featureID)
     {
-      case SadlPackage.CONTAINER__NAME:
-        setName((String)newValue);
-        return;
       case SadlPackage.CONTAINER__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case SadlPackage.CONTAINER__INSTANCES:
-        getInstances().clear();
-        getInstances().addAll((Collection<? extends Instance>)newValue);
+      case SadlPackage.CONTAINER__COMPONENT_INSTANCES:
+        getComponentInstances().clear();
+        getComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
         return;
       case SadlPackage.CONTAINER__CONNECTIONS:
         getConnections().clear();
         getConnections().addAll((Collection<? extends Connection>)newValue);
         return;
-      case SadlPackage.CONTAINER__CHILDREN:
-        getChildren().clear();
-        getChildren().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Container>)newValue);
+      case SadlPackage.CONTAINER__CONTAINER_INSTANCES:
+        getContainerInstances().clear();
+        getContainerInstances().addAll((Collection<? extends ContainerInstance>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -315,20 +264,17 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   {
     switch (featureID)
     {
-      case SadlPackage.CONTAINER__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case SadlPackage.CONTAINER__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case SadlPackage.CONTAINER__INSTANCES:
-        getInstances().clear();
+      case SadlPackage.CONTAINER__COMPONENT_INSTANCES:
+        getComponentInstances().clear();
         return;
       case SadlPackage.CONTAINER__CONNECTIONS:
         getConnections().clear();
         return;
-      case SadlPackage.CONTAINER__CHILDREN:
-        getChildren().clear();
+      case SadlPackage.CONTAINER__CONTAINER_INSTANCES:
+        getContainerInstances().clear();
         return;
     }
     super.eUnset(featureID);
@@ -344,16 +290,14 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
   {
     switch (featureID)
     {
-      case SadlPackage.CONTAINER__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SadlPackage.CONTAINER__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case SadlPackage.CONTAINER__INSTANCES:
-        return instances != null && !instances.isEmpty();
+      case SadlPackage.CONTAINER__COMPONENT_INSTANCES:
+        return componentInstances != null && !componentInstances.isEmpty();
       case SadlPackage.CONTAINER__CONNECTIONS:
         return connections != null && !connections.isEmpty();
-      case SadlPackage.CONTAINER__CHILDREN:
-        return children != null && !children.isEmpty();
+      case SadlPackage.CONTAINER__CONTAINER_INSTANCES:
+        return containerInstances != null && !containerInstances.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -369,9 +313,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements com.l
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
+    result.append(" (description: ");
     result.append(description);
     result.append(')');
     return result.toString();

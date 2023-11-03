@@ -4,6 +4,7 @@
 package com.leonardo.lsaf.sadl.sadl.impl;
 
 import com.leonardo.lsaf.sadl.sadl.Component;
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
 import com.leonardo.lsaf.sadl.sadl.Port;
 import com.leonardo.lsaf.sadl.sadl.SadlPackage;
 
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link com.leonardo.lsaf.sadl.sadl.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  * </ul>
  *
@@ -57,6 +59,16 @@ public class ComponentImpl extends PackageableElementImpl implements Component
    * @ordered
    */
   protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getParts() <em>Parts</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParts()
+   * @generated
+   * @ordered
+   */
+  protected EList<ComponentInstance> parts;
 
   /**
    * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
@@ -120,6 +132,21 @@ public class ComponentImpl extends PackageableElementImpl implements Component
    * @generated
    */
   @Override
+  public EList<ComponentInstance> getParts()
+  {
+    if (parts == null)
+    {
+      parts = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, SadlPackage.COMPONENT__PARTS);
+    }
+    return parts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Port> getPorts()
   {
     if (ports == null)
@@ -139,6 +166,8 @@ public class ComponentImpl extends PackageableElementImpl implements Component
   {
     switch (featureID)
     {
+      case SadlPackage.COMPONENT__PARTS:
+        return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
       case SadlPackage.COMPONENT__PORTS:
         return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
     }
@@ -157,6 +186,8 @@ public class ComponentImpl extends PackageableElementImpl implements Component
     {
       case SadlPackage.COMPONENT__DESCRIPTION:
         return getDescription();
+      case SadlPackage.COMPONENT__PARTS:
+        return getParts();
       case SadlPackage.COMPONENT__PORTS:
         return getPorts();
     }
@@ -176,6 +207,10 @@ public class ComponentImpl extends PackageableElementImpl implements Component
     {
       case SadlPackage.COMPONENT__DESCRIPTION:
         setDescription((String)newValue);
+        return;
+      case SadlPackage.COMPONENT__PARTS:
+        getParts().clear();
+        getParts().addAll((Collection<? extends ComponentInstance>)newValue);
         return;
       case SadlPackage.COMPONENT__PORTS:
         getPorts().clear();
@@ -198,6 +233,9 @@ public class ComponentImpl extends PackageableElementImpl implements Component
       case SadlPackage.COMPONENT__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
+      case SadlPackage.COMPONENT__PARTS:
+        getParts().clear();
+        return;
       case SadlPackage.COMPONENT__PORTS:
         getPorts().clear();
         return;
@@ -217,6 +255,8 @@ public class ComponentImpl extends PackageableElementImpl implements Component
     {
       case SadlPackage.COMPONENT__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case SadlPackage.COMPONENT__PARTS:
+        return parts != null && !parts.isEmpty();
       case SadlPackage.COMPONENT__PORTS:
         return ports != null && !ports.isEmpty();
     }

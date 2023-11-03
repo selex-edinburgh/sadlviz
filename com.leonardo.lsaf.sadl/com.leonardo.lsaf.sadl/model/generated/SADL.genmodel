@@ -22,10 +22,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Unit/description"/>
     </genClasses>
     <genClasses ecoreClass="SADL.ecore#//Type"/>
-    <genClasses ecoreClass="SADL.ecore#//Component">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Component/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Component/ports"/>
-    </genClasses>
     <genClasses ecoreClass="SADL.ecore#//Primitive">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Primitive/min"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Primitive/max"/>
@@ -110,22 +106,31 @@
     </genClasses>
     <genClasses ecoreClass="SADL.ecore#//Application">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Application/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Application/containers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Application/containerInstances"/>
     </genClasses>
     <genClasses ecoreClass="SADL.ecore#//Container">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Container/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Container/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Container/instances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Container/componentInstances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Container/connections"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Container/children"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Container/containerInstances"/>
     </genClasses>
-    <genClasses ecoreClass="SADL.ecore#//Instance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SADL.ecore#//Instance/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Instance/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Instance/unbounded"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Instance/lowerBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Instance/upperBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Instance/description"/>
+    <genClasses ecoreClass="SADL.ecore#//ContainerInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SADL.ecore#//ContainerInstance/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//ContainerInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//ContainerInstance/description"/>
+    </genClasses>
+    <genClasses ecoreClass="SADL.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Component/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Component/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SADL.ecore#//Component/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="SADL.ecore#//ComponentInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SADL.ecore#//ComponentInstance/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//ComponentInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//ComponentInstance/unbounded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//ComponentInstance/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//ComponentInstance/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//ComponentInstance/description"/>
     </genClasses>
     <genClasses ecoreClass="SADL.ecore#//Connection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SADL.ecore#//Connection/name"/>
