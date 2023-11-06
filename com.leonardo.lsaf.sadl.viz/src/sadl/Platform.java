@@ -2,7 +2,11 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Link;
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
+import com.leonardo.lsaf.sadl.sadl.Processor;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,16 +17,16 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Platform#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Platform#getProcessors <em>Processors</em>}</li>
- *   <li>{@link sadl.Platform#getLinks <em>Links</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Platform#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Platform#getProcessors <em>Processors</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Platform#getLinks <em>Links</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getPlatform()
  * @model
  * @generated
  */
-public interface Platform extends PackageableElement {
+public interface Platform extends EObject, PackageableElement {
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -36,7 +40,7 @@ public interface Platform extends PackageableElement {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Platform#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Platform#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -47,7 +51,7 @@ public interface Platform extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Processors</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.Processor}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Processor}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Processors</em>' containment reference list.
@@ -59,7 +63,7 @@ public interface Platform extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.Link}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Link}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Links</em>' containment reference list.

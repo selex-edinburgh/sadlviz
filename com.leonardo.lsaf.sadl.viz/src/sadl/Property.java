@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Property#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Property#isOptional <em>Optional</em>}</li>
- *   <li>{@link sadl.Property#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Property#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Property#isOptional <em>Optional</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Property#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getProperty()
@@ -36,7 +36,7 @@ public interface Property extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Property#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Property#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -58,7 +58,7 @@ public interface Property extends EObject {
   boolean isOptional();
 
   /**
-   * Sets the value of the '{@link sadl.Property#isOptional <em>Optional</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Property#isOptional <em>Optional</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Optional</em>' attribute.
@@ -80,7 +80,7 @@ public interface Property extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Property#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Property#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.

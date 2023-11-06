@@ -2,7 +2,6 @@
   import "sadl.eol";
   import "nestedport.eol";
 
-  createPort();
   var connections = Sequence{};
 %]
 <html>
@@ -88,7 +87,7 @@
 	                    for (subPort in subPorts){
                             var portFullName = subPort.id;
 %]
-	                         { "id": "[%=(portFullName).replace("\\.","-")%]", 
+	                         { "id": "[%=portFullName%]", 
 	                           "labels": [{"text": "[%=subPort.label%]"}],
 	                           "properties": {
 	                             "port.side": "[%=subPort.side%]",
@@ -126,7 +125,7 @@
                         for (subPort in subPorts){
                             var portFullName = subPort.id;
 %]
-	                         { "id": "[%=(portFullName).replace("\\.","-")%]", 
+	                         { "id": "[%=portFullName %]", 
 	                           "labels": [{"text": "[%=subPort.label%]"}],
 	                           "properties": {
 	                             "port.side": "[%=subPort.side%]",
@@ -156,7 +155,7 @@
                         for (subPort in subPorts){
                             var portFullName = subPort.id;
 %]
-                         { "id": "[%=(portFullName).replace("\\.","-")%]", 
+                         { "id": "[%=portFullName%]", 
                            "labels": [{"text": "[%=subPort.label%]"}],
                            "properties": {
                              "port.side": "[%=subPort.side%]",
@@ -233,6 +232,18 @@ while(i < node.level) { %]
 
     }
 %]
+                ],
+                "edges": [
+[%
+// handle the connection-to-edge transformation
+for (connection in connections) {
+%]
+                 { 
+                   "id": "[%=connection.id%]", "label":"[%=connection.sadlConnection.name%]", 
+                   "sources": ["[%=(connection.source.id + "-" + connection.sadlConnection.getSourceName()) %]"],
+                   "targets": ["[%=(connection.target.id + "-" + connection.sadlConnection.getDestinationName())%]"]
+                 },
+[% } %]
                 ]
             }
     </script>
@@ -243,7 +254,7 @@ while(i < node.level) { %]
             .then(function (g) {
                 var viewport = document.getElementById("viewport");
                 render(document.getElementById('graphContainer'), elkGraph);
-                viewport.innerHTML = "<pre>" + JSON.stringify(g, null, " ") + "</pre>"
+//                viewport.innerHTML = "<pre>" + JSON.stringify(g, null, " ") + "</pre>"
             })
             .catch(console.error);
     </script>

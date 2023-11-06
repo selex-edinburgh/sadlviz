@@ -98,127 +98,127 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   protected SadlSwitch<Adapter> modelSwitch =
     new SadlSwitch<Adapter>() {
       @Override
-      public Adapter caseModel(Model object) {
+      public Adapter caseModel(com.leonardo.lsaf.sadl.sadl.Model object) {
         return createModelAdapter();
       }
       @Override
-      public Adapter casePackage(sadl.Package object) {
+      public Adapter casePackage(com.leonardo.lsaf.sadl.sadl.Package object) {
         return createPackageAdapter();
       }
       @Override
-      public Adapter casePackageableElement(PackageableElement object) {
+      public Adapter casePackageableElement(com.leonardo.lsaf.sadl.sadl.PackageableElement object) {
         return createPackageableElementAdapter();
       }
       @Override
-      public Adapter caseUnit(Unit object) {
+      public Adapter caseUnit(com.leonardo.lsaf.sadl.sadl.Unit object) {
         return createUnitAdapter();
       }
       @Override
-      public Adapter caseType(Type object) {
+      public Adapter caseType(com.leonardo.lsaf.sadl.sadl.Type object) {
         return createTypeAdapter();
       }
       @Override
-      public Adapter casePrimitive(Primitive object) {
+      public Adapter casePrimitive(com.leonardo.lsaf.sadl.sadl.Primitive object) {
         return createPrimitiveAdapter();
       }
       @Override
-      public Adapter caseInterface(Interface object) {
+      public Adapter caseInterface(com.leonardo.lsaf.sadl.sadl.Interface object) {
         return createInterfaceAdapter();
       }
       @Override
-      public Adapter caseEnumeration(Enumeration object) {
+      public Adapter caseEnumeration(com.leonardo.lsaf.sadl.sadl.Enumeration object) {
         return createEnumerationAdapter();
       }
       @Override
-      public Adapter caseTopic(Topic object) {
+      public Adapter caseTopic(com.leonardo.lsaf.sadl.sadl.Topic object) {
         return createTopicAdapter();
       }
       @Override
-      public Adapter caseAlias(Alias object) {
+      public Adapter caseAlias(com.leonardo.lsaf.sadl.sadl.Alias object) {
         return createAliasAdapter();
       }
       @Override
-      public Adapter casePort(Port object) {
+      public Adapter casePort(com.leonardo.lsaf.sadl.sadl.Port object) {
         return createPortAdapter();
       }
       @Override
-      public Adapter caseEnumerator(Enumerator object) {
+      public Adapter caseEnumerator(com.leonardo.lsaf.sadl.sadl.Enumerator object) {
         return createEnumeratorAdapter();
       }
       @Override
-      public Adapter caseAttribute(Attribute object) {
+      public Adapter caseAttribute(com.leonardo.lsaf.sadl.sadl.Attribute object) {
         return createAttributeAdapter();
       }
       @Override
-      public Adapter caseTopicPort(TopicPort object) {
+      public Adapter caseTopicPort(com.leonardo.lsaf.sadl.sadl.TopicPort object) {
         return createTopicPortAdapter();
       }
       @Override
-      public Adapter caseInterfacePort(InterfacePort object) {
+      public Adapter caseInterfacePort(com.leonardo.lsaf.sadl.sadl.InterfacePort object) {
         return createInterfacePortAdapter();
       }
       @Override
-      public Adapter casePlatform(Platform object) {
+      public Adapter casePlatform(com.leonardo.lsaf.sadl.sadl.Platform object) {
         return createPlatformAdapter();
       }
       @Override
-      public Adapter caseProcessor(Processor object) {
+      public Adapter caseProcessor(com.leonardo.lsaf.sadl.sadl.Processor object) {
         return createProcessorAdapter();
       }
       @Override
-      public Adapter caseLink(Link object) {
+      public Adapter caseLink(com.leonardo.lsaf.sadl.sadl.Link object) {
         return createLinkAdapter();
       }
       @Override
-      public Adapter caseProperty(Property object) {
+      public Adapter caseProperty(com.leonardo.lsaf.sadl.sadl.Property object) {
         return createPropertyAdapter();
       }
       @Override
-      public Adapter casePropertyValue(PropertyValue object) {
+      public Adapter casePropertyValue(com.leonardo.lsaf.sadl.sadl.PropertyValue object) {
         return createPropertyValueAdapter();
       }
       @Override
-      public Adapter caseTransport(Transport object) {
+      public Adapter caseTransport(com.leonardo.lsaf.sadl.sadl.Transport object) {
         return createTransportAdapter();
       }
       @Override
-      public Adapter caseApplication(Application object) {
+      public Adapter caseApplication(com.leonardo.lsaf.sadl.sadl.Application object) {
         return createApplicationAdapter();
       }
       @Override
-      public Adapter caseContainer(Container object) {
+      public Adapter caseContainer(com.leonardo.lsaf.sadl.sadl.Container object) {
         return createContainerAdapter();
       }
       @Override
-      public Adapter caseContainerInstance(ContainerInstance object) {
+      public Adapter caseContainerInstance(com.leonardo.lsaf.sadl.sadl.ContainerInstance object) {
         return createContainerInstanceAdapter();
       }
       @Override
-      public Adapter caseComponent(Component object) {
+      public Adapter caseComponent(com.leonardo.lsaf.sadl.sadl.Component object) {
         return createComponentAdapter();
       }
       @Override
-      public Adapter caseComponentInstance(ComponentInstance object) {
+      public Adapter caseComponentInstance(com.leonardo.lsaf.sadl.sadl.ComponentInstance object) {
         return createComponentInstanceAdapter();
       }
       @Override
-      public Adapter caseConnection(Connection object) {
+      public Adapter caseConnection(com.leonardo.lsaf.sadl.sadl.Connection object) {
         return createConnectionAdapter();
       }
       @Override
-      public Adapter caseDeployment(Deployment object) {
+      public Adapter caseDeployment(com.leonardo.lsaf.sadl.sadl.Deployment object) {
         return createDeploymentAdapter();
       }
       @Override
-      public Adapter caseContainerMapping(ContainerMapping object) {
+      public Adapter caseContainerMapping(com.leonardo.lsaf.sadl.sadl.ContainerMapping object) {
         return createContainerMappingAdapter();
       }
       @Override
-      public Adapter caseConnectionMapping(ConnectionMapping object) {
+      public Adapter caseConnectionMapping(com.leonardo.lsaf.sadl.sadl.ConnectionMapping object) {
         return createConnectionMappingAdapter();
       }
       @Override
-      public Adapter caseStrategy(Strategy object) {
+      public Adapter caseStrategy(com.leonardo.lsaf.sadl.sadl.Strategy object) {
         return createStrategyAdapter();
       }
       @Override
@@ -242,13 +242,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
 
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Model
+   * @see com.leonardo.lsaf.sadl.sadl.Model
    * @generated
    */
   public Adapter createModelAdapter() {
@@ -256,13 +256,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Package <em>Package</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Package <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Package
+   * @see com.leonardo.lsaf.sadl.sadl.Package
    * @generated
    */
   public Adapter createPackageAdapter() {
@@ -270,13 +270,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.PackageableElement <em>Packageable Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.PackageableElement <em>Packageable Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.PackageableElement
+   * @see com.leonardo.lsaf.sadl.sadl.PackageableElement
    * @generated
    */
   public Adapter createPackageableElementAdapter() {
@@ -284,13 +284,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Unit <em>Unit</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Unit <em>Unit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Unit
+   * @see com.leonardo.lsaf.sadl.sadl.Unit
    * @generated
    */
   public Adapter createUnitAdapter() {
@@ -298,13 +298,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Type <em>Type</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Type <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Type
+   * @see com.leonardo.lsaf.sadl.sadl.Type
    * @generated
    */
   public Adapter createTypeAdapter() {
@@ -312,13 +312,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Primitive <em>Primitive</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Primitive <em>Primitive</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Primitive
+   * @see com.leonardo.lsaf.sadl.sadl.Primitive
    * @generated
    */
   public Adapter createPrimitiveAdapter() {
@@ -326,13 +326,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Interface <em>Interface</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Interface <em>Interface</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Interface
+   * @see com.leonardo.lsaf.sadl.sadl.Interface
    * @generated
    */
   public Adapter createInterfaceAdapter() {
@@ -340,13 +340,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Enumeration <em>Enumeration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Enumeration <em>Enumeration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Enumeration
+   * @see com.leonardo.lsaf.sadl.sadl.Enumeration
    * @generated
    */
   public Adapter createEnumerationAdapter() {
@@ -354,13 +354,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Topic <em>Topic</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Topic <em>Topic</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Topic
+   * @see com.leonardo.lsaf.sadl.sadl.Topic
    * @generated
    */
   public Adapter createTopicAdapter() {
@@ -368,13 +368,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Alias <em>Alias</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Alias <em>Alias</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Alias
+   * @see com.leonardo.lsaf.sadl.sadl.Alias
    * @generated
    */
   public Adapter createAliasAdapter() {
@@ -382,13 +382,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Port <em>Port</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Port <em>Port</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Port
+   * @see com.leonardo.lsaf.sadl.sadl.Port
    * @generated
    */
   public Adapter createPortAdapter() {
@@ -396,13 +396,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Enumerator <em>Enumerator</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Enumerator <em>Enumerator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Enumerator
+   * @see com.leonardo.lsaf.sadl.sadl.Enumerator
    * @generated
    */
   public Adapter createEnumeratorAdapter() {
@@ -410,13 +410,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Attribute <em>Attribute</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Attribute
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute
    * @generated
    */
   public Adapter createAttributeAdapter() {
@@ -424,13 +424,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.TopicPort <em>Topic Port</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.TopicPort <em>Topic Port</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.TopicPort
+   * @see com.leonardo.lsaf.sadl.sadl.TopicPort
    * @generated
    */
   public Adapter createTopicPortAdapter() {
@@ -438,13 +438,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.InterfacePort <em>Interface Port</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.InterfacePort <em>Interface Port</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.InterfacePort
+   * @see com.leonardo.lsaf.sadl.sadl.InterfacePort
    * @generated
    */
   public Adapter createInterfacePortAdapter() {
@@ -452,13 +452,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Platform <em>Platform</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Platform <em>Platform</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Platform
+   * @see com.leonardo.lsaf.sadl.sadl.Platform
    * @generated
    */
   public Adapter createPlatformAdapter() {
@@ -466,13 +466,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Processor <em>Processor</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Processor <em>Processor</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Processor
+   * @see com.leonardo.lsaf.sadl.sadl.Processor
    * @generated
    */
   public Adapter createProcessorAdapter() {
@@ -480,13 +480,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Link <em>Link</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Link <em>Link</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Link
+   * @see com.leonardo.lsaf.sadl.sadl.Link
    * @generated
    */
   public Adapter createLinkAdapter() {
@@ -494,13 +494,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Property <em>Property</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Property <em>Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Property
+   * @see com.leonardo.lsaf.sadl.sadl.Property
    * @generated
    */
   public Adapter createPropertyAdapter() {
@@ -508,13 +508,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.PropertyValue <em>Property Value</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.PropertyValue <em>Property Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.PropertyValue
+   * @see com.leonardo.lsaf.sadl.sadl.PropertyValue
    * @generated
    */
   public Adapter createPropertyValueAdapter() {
@@ -522,13 +522,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Transport <em>Transport</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Transport <em>Transport</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Transport
+   * @see com.leonardo.lsaf.sadl.sadl.Transport
    * @generated
    */
   public Adapter createTransportAdapter() {
@@ -536,13 +536,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Application <em>Application</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Application <em>Application</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Application
+   * @see com.leonardo.lsaf.sadl.sadl.Application
    * @generated
    */
   public Adapter createApplicationAdapter() {
@@ -550,13 +550,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Container <em>Container</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Container <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Container
+   * @see com.leonardo.lsaf.sadl.sadl.Container
    * @generated
    */
   public Adapter createContainerAdapter() {
@@ -564,13 +564,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.ContainerInstance <em>Container Instance</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance <em>Container Instance</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.ContainerInstance
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance
    * @generated
    */
   public Adapter createContainerInstanceAdapter() {
@@ -578,13 +578,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Component <em>Component</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Component <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Component
+   * @see com.leonardo.lsaf.sadl.sadl.Component
    * @generated
    */
   public Adapter createComponentAdapter() {
@@ -592,13 +592,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.ComponentInstance <em>Component Instance</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance <em>Component Instance</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.ComponentInstance
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance
    * @generated
    */
   public Adapter createComponentInstanceAdapter() {
@@ -606,13 +606,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Connection <em>Connection</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Connection <em>Connection</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Connection
+   * @see com.leonardo.lsaf.sadl.sadl.Connection
    * @generated
    */
   public Adapter createConnectionAdapter() {
@@ -620,13 +620,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Deployment <em>Deployment</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Deployment <em>Deployment</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Deployment
+   * @see com.leonardo.lsaf.sadl.sadl.Deployment
    * @generated
    */
   public Adapter createDeploymentAdapter() {
@@ -634,13 +634,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.ContainerMapping <em>Container Mapping</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping <em>Container Mapping</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.ContainerMapping
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerMapping
    * @generated
    */
   public Adapter createContainerMappingAdapter() {
@@ -648,13 +648,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.ConnectionMapping <em>Connection Mapping</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping <em>Connection Mapping</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.ConnectionMapping
+   * @see com.leonardo.lsaf.sadl.sadl.ConnectionMapping
    * @generated
    */
   public Adapter createConnectionMappingAdapter() {
@@ -662,13 +662,13 @@ public class SadlAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link sadl.Strategy <em>Strategy</em>}'.
+   * Creates a new adapter for an object of class '{@link com.leonardo.lsaf.sadl.sadl.Strategy <em>Strategy</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see sadl.Strategy
+   * @see com.leonardo.lsaf.sadl.sadl.Strategy
    * @generated
    */
   public Adapter createStrategyAdapter() {

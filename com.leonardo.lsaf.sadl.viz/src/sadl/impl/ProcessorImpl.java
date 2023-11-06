@@ -26,7 +26,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ProcessorImpl extends EObjectImpl implements Processor {
+public class ProcessorImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Processor {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->

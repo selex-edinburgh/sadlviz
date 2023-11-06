@@ -28,7 +28,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class PropertyValueImpl extends EObjectImpl implements PropertyValue {
+public class PropertyValueImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.PropertyValue {
   /**
    * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
    * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class PropertyValueImpl extends EObjectImpl implements PropertyValue {
    * @generated
    * @ordered
    */
-  protected Property property;
+  protected com.leonardo.lsaf.sadl.sadl.Property property;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -84,10 +84,10 @@ public class PropertyValueImpl extends EObjectImpl implements PropertyValue {
    * @generated
    */
   @Override
-  public Property getProperty() {
+  public com.leonardo.lsaf.sadl.sadl.Property getProperty() {
     if (property != null && property.eIsProxy()) {
       InternalEObject oldProperty = (InternalEObject)property;
-      property = (Property)eResolveProxy(oldProperty);
+      property = (com.leonardo.lsaf.sadl.sadl.Property)eResolveProxy(oldProperty);
       if (property != oldProperty) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.PROPERTY_VALUE__PROPERTY, oldProperty, property));
@@ -101,7 +101,7 @@ public class PropertyValueImpl extends EObjectImpl implements PropertyValue {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Property basicGetProperty() {
+  public com.leonardo.lsaf.sadl.sadl.Property basicGetProperty() {
     return property;
   }
 
@@ -111,8 +111,8 @@ public class PropertyValueImpl extends EObjectImpl implements PropertyValue {
    * @generated
    */
   @Override
-  public void setProperty(Property newProperty) {
-    Property oldProperty = property;
+  public void setProperty(com.leonardo.lsaf.sadl.sadl.Property newProperty) {
+    com.leonardo.lsaf.sadl.sadl.Property oldProperty = property;
     property = newProperty;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.PROPERTY_VALUE__PROPERTY, oldProperty, property));
@@ -167,7 +167,7 @@ public class PropertyValueImpl extends EObjectImpl implements PropertyValue {
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.PROPERTY_VALUE__PROPERTY:
-        setProperty((Property)newValue);
+        setProperty((com.leonardo.lsaf.sadl.sadl.Property)newValue);
         return;
       case SadlPackage.PROPERTY_VALUE__VALUE:
         setValue((String)newValue);
@@ -185,7 +185,7 @@ public class PropertyValueImpl extends EObjectImpl implements PropertyValue {
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.PROPERTY_VALUE__PROPERTY:
-        setProperty((Property)null);
+        setProperty((com.leonardo.lsaf.sadl.sadl.Property)null);
         return;
       case SadlPackage.PROPERTY_VALUE__VALUE:
         setValue(VALUE_EDEFAULT);

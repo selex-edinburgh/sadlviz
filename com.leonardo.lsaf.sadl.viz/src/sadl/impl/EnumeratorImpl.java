@@ -28,7 +28,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class EnumeratorImpl extends EObjectImpl implements Enumerator {
+public class EnumeratorImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Enumerator {
   /**
    * The default value of the '{@link #isDeprecated() <em>Deprecated</em>}' attribute.
    * <!-- begin-user-doc -->

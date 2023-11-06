@@ -2,6 +2,7 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -15,9 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Package#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Package#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Package#getContents <em>Contents</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Package#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Package#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Package#getContents <em>Contents</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getPackage()
@@ -38,7 +39,7 @@ public interface Package extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Package#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Package#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -60,7 +61,7 @@ public interface Package extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Package#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Package#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -71,7 +72,7 @@ public interface Package extends EObject {
 
   /**
    * Returns the value of the '<em><b>Contents</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.PackageableElement}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.PackageableElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Contents</em>' containment reference list.

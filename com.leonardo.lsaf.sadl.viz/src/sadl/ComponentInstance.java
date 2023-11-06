@@ -2,6 +2,7 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Component;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.ComponentInstance#getType <em>Type</em>}</li>
- *   <li>{@link sadl.ComponentInstance#getName <em>Name</em>}</li>
- *   <li>{@link sadl.ComponentInstance#isUnbounded <em>Unbounded</em>}</li>
- *   <li>{@link sadl.ComponentInstance#getLowerBound <em>Lower Bound</em>}</li>
- *   <li>{@link sadl.ComponentInstance#getUpperBound <em>Upper Bound</em>}</li>
- *   <li>{@link sadl.ComponentInstance#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getType <em>Type</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#isUnbounded <em>Unbounded</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getLowerBound <em>Lower Bound</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getUpperBound <em>Upper Bound</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getComponentInstance()
@@ -39,7 +40,7 @@ public interface ComponentInstance extends EObject {
   Component getType();
 
   /**
-   * Sets the value of the '{@link sadl.ComponentInstance#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getType <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' reference.
@@ -61,7 +62,7 @@ public interface ComponentInstance extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.ComponentInstance#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -83,7 +84,7 @@ public interface ComponentInstance extends EObject {
   boolean isUnbounded();
 
   /**
-   * Sets the value of the '{@link sadl.ComponentInstance#isUnbounded <em>Unbounded</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#isUnbounded <em>Unbounded</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Unbounded</em>' attribute.
@@ -105,7 +106,7 @@ public interface ComponentInstance extends EObject {
   int getLowerBound();
 
   /**
-   * Sets the value of the '{@link sadl.ComponentInstance#getLowerBound <em>Lower Bound</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getLowerBound <em>Lower Bound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Lower Bound</em>' attribute.
@@ -127,7 +128,7 @@ public interface ComponentInstance extends EObject {
   int getUpperBound();
 
   /**
-   * Sets the value of the '{@link sadl.ComponentInstance#getUpperBound <em>Upper Bound</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getUpperBound <em>Upper Bound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Upper Bound</em>' attribute.
@@ -149,7 +150,7 @@ public interface ComponentInstance extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.ComponentInstance#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.

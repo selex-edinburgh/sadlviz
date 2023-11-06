@@ -2,6 +2,7 @@
  */
 package mediator.impl;
 
+import com.leonardo.lsaf.sadl.sadl.Connection;
 import mediator.MConnectableElement;
 import mediator.MEdge;
 import mediator.MediatorPackage;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link mediator.impl.MEdgeImpl#getSource <em>Source</em>}</li>
  *   <li>{@link mediator.impl.MEdgeImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link mediator.impl.MEdgeImpl#getSadlConnection <em>Sadl Connection</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +49,16 @@ public class MEdgeImpl extends MElementImpl implements MEdge {
    * @ordered
    */
   protected MConnectableElement target;
+
+  /**
+   * The cached value of the '{@link #getSadlConnection() <em>Sadl Connection</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSadlConnection()
+   * @generated
+   * @ordered
+   */
+  protected Connection sadlConnection;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,6 +165,46 @@ public class MEdgeImpl extends MElementImpl implements MEdge {
    * @generated
    */
   @Override
+  public Connection getSadlConnection() {
+    if (sadlConnection != null && sadlConnection.eIsProxy()) {
+      InternalEObject oldSadlConnection = (InternalEObject)sadlConnection;
+      sadlConnection = (Connection)eResolveProxy(oldSadlConnection);
+      if (sadlConnection != oldSadlConnection) {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MediatorPackage.MEDGE__SADL_CONNECTION, oldSadlConnection, sadlConnection));
+      }
+    }
+    return sadlConnection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Connection basicGetSadlConnection() {
+    return sadlConnection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSadlConnection(Connection newSadlConnection) {
+    Connection oldSadlConnection = sadlConnection;
+    sadlConnection = newSadlConnection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MediatorPackage.MEDGE__SADL_CONNECTION, oldSadlConnection, sadlConnection));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
       case MediatorPackage.MEDGE__SOURCE:
@@ -161,6 +213,9 @@ public class MEdgeImpl extends MElementImpl implements MEdge {
       case MediatorPackage.MEDGE__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
+      case MediatorPackage.MEDGE__SADL_CONNECTION:
+        if (resolve) return getSadlConnection();
+        return basicGetSadlConnection();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,6 +233,9 @@ public class MEdgeImpl extends MElementImpl implements MEdge {
         return;
       case MediatorPackage.MEDGE__TARGET:
         setTarget((MConnectableElement)newValue);
+        return;
+      case MediatorPackage.MEDGE__SADL_CONNECTION:
+        setSadlConnection((Connection)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -197,6 +255,9 @@ public class MEdgeImpl extends MElementImpl implements MEdge {
       case MediatorPackage.MEDGE__TARGET:
         setTarget((MConnectableElement)null);
         return;
+      case MediatorPackage.MEDGE__SADL_CONNECTION:
+        setSadlConnection((Connection)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -213,6 +274,8 @@ public class MEdgeImpl extends MElementImpl implements MEdge {
         return source != null;
       case MediatorPackage.MEDGE__TARGET:
         return target != null;
+      case MediatorPackage.MEDGE__SADL_CONNECTION:
+        return sadlConnection != null;
     }
     return super.eIsSet(featureID);
   }

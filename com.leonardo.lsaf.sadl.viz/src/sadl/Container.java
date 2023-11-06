@@ -2,7 +2,12 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
+import com.leonardo.lsaf.sadl.sadl.Connection;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,17 +18,17 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Container#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Container#getComponentInstances <em>Component Instances</em>}</li>
- *   <li>{@link sadl.Container#getConnections <em>Connections</em>}</li>
- *   <li>{@link sadl.Container#getContainerInstances <em>Container Instances</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getComponentInstances <em>Component Instances</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getConnections <em>Connections</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Container#getContainerInstances <em>Container Instances</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getContainer()
  * @model
  * @generated
  */
-public interface Container extends PackageableElement {
+public interface Container extends EObject, PackageableElement {
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -37,7 +42,7 @@ public interface Container extends PackageableElement {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Container#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Container#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -48,7 +53,7 @@ public interface Container extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.ComponentInstance}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ComponentInstance}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Component Instances</em>' containment reference list.
@@ -60,7 +65,7 @@ public interface Container extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Connections</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.Connection}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Connection}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Connections</em>' containment reference list.
@@ -72,7 +77,7 @@ public interface Container extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Container Instances</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.ContainerInstance}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ContainerInstance}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Container Instances</em>' containment reference list.

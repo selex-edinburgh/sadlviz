@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mediator" nsURI="http://www.leonardo.com/lsaf/sadl/mediator"
     nsPrefix="mediator">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="&#xD;&#xA;The mediator model to calculate the automatic layout&#xD;&#xA;of nested ports.&#xD;&#xA;&#xD;&#xA;Year: 2023&#xD;&#xA;Author: Alfa Yohannis&#xD;&#xA;"/>
+    <details key="documentation" value="&#xD;&#xA;The intermediate model to calculate the automatic layout&#xD;&#xA;of nested ports.&#xD;&#xA;&#xD;&#xA;Year: 2023&#xD;&#xA;Author: Alfa Yohannis&#xD;&#xA;"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="MGraph" eSuperTypes="#//MElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -20,6 +20,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="MEdge" eSuperTypes="#//MElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//MConnectableElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//MConnectableElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sadlConnection" eType="ecore:EClass http://www.leonardo.com/lsaf/sadl/SADL#//Connection"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MConnectableElement" eSuperTypes="#//MElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"

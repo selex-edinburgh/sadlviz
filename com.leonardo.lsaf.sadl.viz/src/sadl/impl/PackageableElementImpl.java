@@ -25,7 +25,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class PackageableElementImpl extends EObjectImpl implements PackageableElement {
+public class PackageableElementImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.PackageableElement {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->

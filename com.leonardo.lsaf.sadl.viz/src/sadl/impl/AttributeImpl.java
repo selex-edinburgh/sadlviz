@@ -35,7 +35,7 @@ import sadl.Unit;
  *
  * @generated
  */
-public class AttributeImpl extends EObjectImpl implements Attribute {
+public class AttributeImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Attribute {
   /**
    * The default value of the '{@link #isDeprecated() <em>Deprecated</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected com.leonardo.lsaf.sadl.sadl.Type type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -154,7 +154,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * @generated
    * @ordered
    */
-  protected Unit unit;
+  protected com.leonardo.lsaf.sadl.sadl.Unit unit;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -224,10 +224,10 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * @generated
    */
   @Override
-  public Type getType() {
+  public com.leonardo.lsaf.sadl.sadl.Type getType() {
     if (type != null && type.eIsProxy()) {
       InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
+      type = (com.leonardo.lsaf.sadl.sadl.Type)eResolveProxy(oldType);
       if (type != oldType) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.ATTRIBUTE__TYPE, oldType, type));
@@ -241,7 +241,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type basicGetType() {
+  public com.leonardo.lsaf.sadl.sadl.Type basicGetType() {
     return type;
   }
 
@@ -251,8 +251,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * @generated
    */
   @Override
-  public void setType(Type newType) {
-    Type oldType = type;
+  public void setType(com.leonardo.lsaf.sadl.sadl.Type newType) {
+    com.leonardo.lsaf.sadl.sadl.Type oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.ATTRIBUTE__TYPE, oldType, type));
@@ -356,10 +356,10 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * @generated
    */
   @Override
-  public Unit getUnit() {
+  public com.leonardo.lsaf.sadl.sadl.Unit getUnit() {
     if (unit != null && unit.eIsProxy()) {
       InternalEObject oldUnit = (InternalEObject)unit;
-      unit = (Unit)eResolveProxy(oldUnit);
+      unit = (com.leonardo.lsaf.sadl.sadl.Unit)eResolveProxy(oldUnit);
       if (unit != oldUnit) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.ATTRIBUTE__UNIT, oldUnit, unit));
@@ -373,7 +373,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Unit basicGetUnit() {
+  public com.leonardo.lsaf.sadl.sadl.Unit basicGetUnit() {
     return unit;
   }
 
@@ -383,8 +383,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * @generated
    */
   @Override
-  public void setUnit(Unit newUnit) {
-    Unit oldUnit = unit;
+  public void setUnit(com.leonardo.lsaf.sadl.sadl.Unit newUnit) {
+    com.leonardo.lsaf.sadl.sadl.Unit oldUnit = unit;
     unit = newUnit;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.ATTRIBUTE__UNIT, oldUnit, unit));
@@ -455,7 +455,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
         setDeprecated((Boolean)newValue);
         return;
       case SadlPackage.ATTRIBUTE__TYPE:
-        setType((Type)newValue);
+        setType((com.leonardo.lsaf.sadl.sadl.Type)newValue);
         return;
       case SadlPackage.ATTRIBUTE__NAME:
         setName((String)newValue);
@@ -470,7 +470,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
         setUpperbound((Integer)newValue);
         return;
       case SadlPackage.ATTRIBUTE__UNIT:
-        setUnit((Unit)newValue);
+        setUnit((com.leonardo.lsaf.sadl.sadl.Unit)newValue);
         return;
       case SadlPackage.ATTRIBUTE__DESCRIPTION:
         setDescription((String)newValue);
@@ -491,7 +491,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
         setDeprecated(DEPRECATED_EDEFAULT);
         return;
       case SadlPackage.ATTRIBUTE__TYPE:
-        setType((Type)null);
+        setType((com.leonardo.lsaf.sadl.sadl.Type)null);
         return;
       case SadlPackage.ATTRIBUTE__NAME:
         setName(NAME_EDEFAULT);
@@ -506,7 +506,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
         setUpperbound(UPPERBOUND_EDEFAULT);
         return;
       case SadlPackage.ATTRIBUTE__UNIT:
-        setUnit((Unit)null);
+        setUnit((com.leonardo.lsaf.sadl.sadl.Unit)null);
         return;
       case SadlPackage.ATTRIBUTE__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);

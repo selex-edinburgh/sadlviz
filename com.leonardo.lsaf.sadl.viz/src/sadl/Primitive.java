@@ -2,6 +2,9 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Type;
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,16 +15,16 @@ package sadl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Primitive#getMin <em>Min</em>}</li>
- *   <li>{@link sadl.Primitive#getMax <em>Max</em>}</li>
- *   <li>{@link sadl.Primitive#getRes <em>Res</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Primitive#getMin <em>Min</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Primitive#getMax <em>Max</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Primitive#getRes <em>Res</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getPrimitive()
  * @model
  * @generated
  */
-public interface Primitive extends Type {
+public interface Primitive extends EObject, Type {
   /**
    * Returns the value of the '<em><b>Min</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -35,7 +38,7 @@ public interface Primitive extends Type {
   double getMin();
 
   /**
-   * Sets the value of the '{@link sadl.Primitive#getMin <em>Min</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Primitive#getMin <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Min</em>' attribute.
@@ -57,7 +60,7 @@ public interface Primitive extends Type {
   double getMax();
 
   /**
-   * Sets the value of the '{@link sadl.Primitive#getMax <em>Max</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Primitive#getMax <em>Max</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Max</em>' attribute.
@@ -79,7 +82,7 @@ public interface Primitive extends Type {
   double getRes();
 
   /**
-   * Sets the value of the '{@link sadl.Primitive#getRes <em>Res</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Primitive#getRes <em>Res</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Res</em>' attribute.

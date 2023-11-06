@@ -29,7 +29,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ContainerMappingImpl extends EObjectImpl implements ContainerMapping {
+public class ContainerMappingImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.ContainerMapping {
   /**
    * The cached value of the '{@link #getProcessor() <em>Processor</em>}' reference.
    * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * @generated
    * @ordered
    */
-  protected Processor processor;
+  protected com.leonardo.lsaf.sadl.sadl.Processor processor;
 
   /**
    * The cached value of the '{@link #getContainer() <em>Container</em>}' reference.
@@ -48,7 +48,7 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * @generated
    * @ordered
    */
-  protected Container container;
+  protected com.leonardo.lsaf.sadl.sadl.Container container;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,10 +75,10 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * @generated
    */
   @Override
-  public Processor getProcessor() {
+  public com.leonardo.lsaf.sadl.sadl.Processor getProcessor() {
     if (processor != null && processor.eIsProxy()) {
       InternalEObject oldProcessor = (InternalEObject)processor;
-      processor = (Processor)eResolveProxy(oldProcessor);
+      processor = (com.leonardo.lsaf.sadl.sadl.Processor)eResolveProxy(oldProcessor);
       if (processor != oldProcessor) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONTAINER_MAPPING__PROCESSOR, oldProcessor, processor));
@@ -92,7 +92,7 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Processor basicGetProcessor() {
+  public com.leonardo.lsaf.sadl.sadl.Processor basicGetProcessor() {
     return processor;
   }
 
@@ -102,8 +102,8 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * @generated
    */
   @Override
-  public void setProcessor(Processor newProcessor) {
-    Processor oldProcessor = processor;
+  public void setProcessor(com.leonardo.lsaf.sadl.sadl.Processor newProcessor) {
+    com.leonardo.lsaf.sadl.sadl.Processor oldProcessor = processor;
     processor = newProcessor;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONTAINER_MAPPING__PROCESSOR, oldProcessor, processor));
@@ -115,10 +115,10 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * @generated
    */
   @Override
-  public Container getContainer() {
+  public com.leonardo.lsaf.sadl.sadl.Container getContainer() {
     if (container != null && container.eIsProxy()) {
       InternalEObject oldContainer = (InternalEObject)container;
-      container = (Container)eResolveProxy(oldContainer);
+      container = (com.leonardo.lsaf.sadl.sadl.Container)eResolveProxy(oldContainer);
       if (container != oldContainer) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONTAINER_MAPPING__CONTAINER, oldContainer, container));
@@ -132,7 +132,7 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Container basicGetContainer() {
+  public com.leonardo.lsaf.sadl.sadl.Container basicGetContainer() {
     return container;
   }
 
@@ -142,8 +142,8 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
    * @generated
    */
   @Override
-  public void setContainer(Container newContainer) {
-    Container oldContainer = container;
+  public void setContainer(com.leonardo.lsaf.sadl.sadl.Container newContainer) {
+    com.leonardo.lsaf.sadl.sadl.Container oldContainer = container;
     container = newContainer;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONTAINER_MAPPING__CONTAINER, oldContainer, container));
@@ -176,10 +176,10 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.CONTAINER_MAPPING__PROCESSOR:
-        setProcessor((Processor)newValue);
+        setProcessor((com.leonardo.lsaf.sadl.sadl.Processor)newValue);
         return;
       case SadlPackage.CONTAINER_MAPPING__CONTAINER:
-        setContainer((Container)newValue);
+        setContainer((com.leonardo.lsaf.sadl.sadl.Container)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,10 +194,10 @@ public class ContainerMappingImpl extends EObjectImpl implements ContainerMappin
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.CONTAINER_MAPPING__PROCESSOR:
-        setProcessor((Processor)null);
+        setProcessor((com.leonardo.lsaf.sadl.sadl.Processor)null);
         return;
       case SadlPackage.CONTAINER_MAPPING__CONTAINER:
-        setContainer((Container)null);
+        setContainer((com.leonardo.lsaf.sadl.sadl.Container)null);
         return;
     }
     super.eUnset(featureID);

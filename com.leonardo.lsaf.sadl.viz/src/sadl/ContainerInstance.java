@@ -2,6 +2,7 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Container;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.ContainerInstance#getType <em>Type</em>}</li>
- *   <li>{@link sadl.ContainerInstance#getName <em>Name</em>}</li>
- *   <li>{@link sadl.ContainerInstance#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getType <em>Type</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getContainerInstance()
@@ -36,7 +37,7 @@ public interface ContainerInstance extends EObject {
   Container getType();
 
   /**
-   * Sets the value of the '{@link sadl.ContainerInstance#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getType <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' reference.
@@ -58,7 +59,7 @@ public interface ContainerInstance extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.ContainerInstance#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -80,7 +81,7 @@ public interface ContainerInstance extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.ContainerInstance#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.

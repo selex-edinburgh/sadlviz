@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Enumerator#isDeprecated <em>Deprecated</em>}</li>
- *   <li>{@link sadl.Enumerator#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Enumerator#getValue <em>Value</em>}</li>
- *   <li>{@link sadl.Enumerator#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Enumerator#isDeprecated <em>Deprecated</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getValue <em>Value</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getEnumerator()
@@ -37,7 +37,7 @@ public interface Enumerator extends EObject {
   boolean isDeprecated();
 
   /**
-   * Sets the value of the '{@link sadl.Enumerator#isDeprecated <em>Deprecated</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#isDeprecated <em>Deprecated</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Deprecated</em>' attribute.
@@ -59,7 +59,7 @@ public interface Enumerator extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Enumerator#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -81,7 +81,7 @@ public interface Enumerator extends EObject {
   int getValue();
 
   /**
-   * Sets the value of the '{@link sadl.Enumerator#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -103,7 +103,7 @@ public interface Enumerator extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Enumerator#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.

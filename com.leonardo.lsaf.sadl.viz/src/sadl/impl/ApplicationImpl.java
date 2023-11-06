@@ -35,7 +35,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ApplicationImpl extends PackageableElementImpl implements Application {
+public class ApplicationImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Application {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
    * @generated
    * @ordered
    */
-  protected EList<ContainerInstance> containerInstances;
+  protected EList<com.leonardo.lsaf.sadl.sadl.ContainerInstance> containerInstances;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
    * @generated
    */
   @Override
-  public EList<ContainerInstance> getContainerInstances() {
+  public EList<com.leonardo.lsaf.sadl.sadl.ContainerInstance> getContainerInstances() {
     if (containerInstances == null) {
-      containerInstances = new EObjectContainmentEList<ContainerInstance>(ContainerInstance.class, this, SadlPackage.APPLICATION__CONTAINER_INSTANCES);
+      containerInstances = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.ContainerInstance>(com.leonardo.lsaf.sadl.sadl.ContainerInstance.class, this, SadlPackage.APPLICATION__CONTAINER_INSTANCES);
     }
     return containerInstances;
   }
@@ -165,7 +165,7 @@ public class ApplicationImpl extends PackageableElementImpl implements Applicati
         return;
       case SadlPackage.APPLICATION__CONTAINER_INSTANCES:
         getContainerInstances().clear();
-        getContainerInstances().addAll((Collection<? extends ContainerInstance>)newValue);
+        getContainerInstances().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.ContainerInstance>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

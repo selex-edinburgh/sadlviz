@@ -27,7 +27,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class PropertyImpl extends EObjectImpl implements Property {
+public class PropertyImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Property {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->

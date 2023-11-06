@@ -152,7 +152,7 @@ public class MPortImpl extends MConnectableElementImpl implements MPort {
    * @generated
    * @ordered
    */
-  protected Port sadlPort;
+  protected com.leonardo.lsaf.sadl.sadl.Port sadlPort;
 
   /**
    * <!-- begin-user-doc -->
@@ -381,10 +381,10 @@ public class MPortImpl extends MConnectableElementImpl implements MPort {
    * @generated
    */
   @Override
-  public Port getSadlPort() {
+  public com.leonardo.lsaf.sadl.sadl.Port getSadlPort() {
     if (sadlPort != null && sadlPort.eIsProxy()) {
       InternalEObject oldSadlPort = (InternalEObject)sadlPort;
-      sadlPort = (Port)eResolveProxy(oldSadlPort);
+      sadlPort = (com.leonardo.lsaf.sadl.sadl.Port)eResolveProxy(oldSadlPort);
       if (sadlPort != oldSadlPort) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, MediatorPackage.MPORT__SADL_PORT, oldSadlPort, sadlPort));
@@ -398,7 +398,7 @@ public class MPortImpl extends MConnectableElementImpl implements MPort {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port basicGetSadlPort() {
+  public com.leonardo.lsaf.sadl.sadl.Port basicGetSadlPort() {
     return sadlPort;
   }
 
@@ -408,8 +408,8 @@ public class MPortImpl extends MConnectableElementImpl implements MPort {
    * @generated
    */
   @Override
-  public void setSadlPort(Port newSadlPort) {
-    Port oldSadlPort = sadlPort;
+  public void setSadlPort(com.leonardo.lsaf.sadl.sadl.Port newSadlPort) {
+    com.leonardo.lsaf.sadl.sadl.Port oldSadlPort = sadlPort;
     sadlPort = newSadlPort;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MediatorPackage.MPORT__SADL_PORT, oldSadlPort, sadlPort));
@@ -493,7 +493,7 @@ public class MPortImpl extends MConnectableElementImpl implements MPort {
         setParentPort((MPort)newValue);
         return;
       case MediatorPackage.MPORT__SADL_PORT:
-        setSadlPort((Port)newValue);
+        setSadlPort((com.leonardo.lsaf.sadl.sadl.Port)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -529,7 +529,7 @@ public class MPortImpl extends MConnectableElementImpl implements MPort {
         setParentPort((MPort)null);
         return;
       case MediatorPackage.MPORT__SADL_PORT:
-        setSadlPort((Port)null);
+        setSadlPort((com.leonardo.lsaf.sadl.sadl.Port)null);
         return;
     }
     super.eUnset(featureID);

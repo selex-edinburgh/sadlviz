@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * 
- * The mediator model to calculate the automatic layout
+ * The intermediate model to calculate the automatic layout
  * of nested ports.
  * 
  * Year: 2023
@@ -239,13 +239,22 @@ public interface MediatorPackage extends EPackage {
   int MEDGE__TARGET = MELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Sadl Connection</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEDGE__SADL_CONNECTION = MELEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>MEdge</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEDGE_FEATURE_COUNT = MELEMENT_FEATURE_COUNT + 2;
+  int MEDGE_FEATURE_COUNT = MELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link mediator.impl.MConnectableElementImpl <em>MConnectable Element</em>}' class.
@@ -775,6 +784,17 @@ public interface MediatorPackage extends EPackage {
   EReference getMEdge_Target();
 
   /**
+   * Returns the meta object for the reference '{@link mediator.MEdge#getSadlConnection <em>Sadl Connection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Sadl Connection</em>'.
+   * @see mediator.MEdge#getSadlConnection()
+   * @see #getMEdge()
+   * @generated
+   */
+  EReference getMEdge_SadlConnection();
+
+  /**
    * Returns the meta object for class '{@link mediator.MConnectableElement <em>MConnectable Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1139,6 +1159,14 @@ public interface MediatorPackage extends EPackage {
      * @generated
      */
     EReference MEDGE__TARGET = eINSTANCE.getMEdge_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Sadl Connection</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MEDGE__SADL_CONNECTION = eINSTANCE.getMEdge_SadlConnection();
 
     /**
      * The meta object literal for the '{@link mediator.impl.MConnectableElementImpl <em>MConnectable Element</em>}' class.

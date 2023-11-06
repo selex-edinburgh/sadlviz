@@ -1636,1322 +1636,1322 @@ public interface SadlPackage extends EPackage {
 
 
   /**
-   * Returns the meta object for class '{@link sadl.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Model</em>'.
-   * @see sadl.Model
+   * @see com.leonardo.lsaf.sadl.sadl.Model
    * @generated
    */
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Model#getPackage <em>Package</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Model#getPackage <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Package</em>'.
-   * @see sadl.Model#getPackage()
+   * @see com.leonardo.lsaf.sadl.sadl.Model#getPackage()
    * @see #getModel()
    * @generated
    */
   EReference getModel_Package();
 
   /**
-   * Returns the meta object for class '{@link sadl.Package <em>Package</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Package <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Package</em>'.
-   * @see sadl.Package
+   * @see com.leonardo.lsaf.sadl.sadl.Package
    * @generated
    */
   EClass getPackage();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Package#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Package#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Package#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Package#getName()
    * @see #getPackage()
    * @generated
    */
   EAttribute getPackage_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Package#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Package#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Package#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Package#getDescription()
    * @see #getPackage()
    * @generated
    */
   EAttribute getPackage_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Package#getContents <em>Contents</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Package#getContents <em>Contents</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Contents</em>'.
-   * @see sadl.Package#getContents()
+   * @see com.leonardo.lsaf.sadl.sadl.Package#getContents()
    * @see #getPackage()
    * @generated
    */
   EReference getPackage_Contents();
 
   /**
-   * Returns the meta object for class '{@link sadl.PackageableElement <em>Packageable Element</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.PackageableElement <em>Packageable Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Packageable Element</em>'.
-   * @see sadl.PackageableElement
+   * @see com.leonardo.lsaf.sadl.sadl.PackageableElement
    * @generated
    */
   EClass getPackageableElement();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.PackageableElement#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.PackageableElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.PackageableElement#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.PackageableElement#getName()
    * @see #getPackageableElement()
    * @generated
    */
   EAttribute getPackageableElement_Name();
 
   /**
-   * Returns the meta object for class '{@link sadl.Unit <em>Unit</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Unit <em>Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Unit</em>'.
-   * @see sadl.Unit
+   * @see com.leonardo.lsaf.sadl.sadl.Unit
    * @generated
    */
   EClass getUnit();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Unit#getGroup <em>Group</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Unit#getGroup <em>Group</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Group</em>'.
-   * @see sadl.Unit#getGroup()
+   * @see com.leonardo.lsaf.sadl.sadl.Unit#getGroup()
    * @see #getUnit()
    * @generated
    */
   EReference getUnit_Group();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Unit#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Unit#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Unit#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Unit#getDescription()
    * @see #getUnit()
    * @generated
    */
   EAttribute getUnit_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.Type <em>Type</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Type <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Type</em>'.
-   * @see sadl.Type
+   * @see com.leonardo.lsaf.sadl.sadl.Type
    * @generated
    */
   EClass getType();
 
   /**
-   * Returns the meta object for class '{@link sadl.Primitive <em>Primitive</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Primitive <em>Primitive</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Primitive</em>'.
-   * @see sadl.Primitive
+   * @see com.leonardo.lsaf.sadl.sadl.Primitive
    * @generated
    */
   EClass getPrimitive();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Primitive#getMin <em>Min</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Primitive#getMin <em>Min</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Min</em>'.
-   * @see sadl.Primitive#getMin()
+   * @see com.leonardo.lsaf.sadl.sadl.Primitive#getMin()
    * @see #getPrimitive()
    * @generated
    */
   EAttribute getPrimitive_Min();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Primitive#getMax <em>Max</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Primitive#getMax <em>Max</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Max</em>'.
-   * @see sadl.Primitive#getMax()
+   * @see com.leonardo.lsaf.sadl.sadl.Primitive#getMax()
    * @see #getPrimitive()
    * @generated
    */
   EAttribute getPrimitive_Max();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Primitive#getRes <em>Res</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Primitive#getRes <em>Res</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Res</em>'.
-   * @see sadl.Primitive#getRes()
+   * @see com.leonardo.lsaf.sadl.sadl.Primitive#getRes()
    * @see #getPrimitive()
    * @generated
    */
   EAttribute getPrimitive_Res();
 
   /**
-   * Returns the meta object for class '{@link sadl.Interface <em>Interface</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Interface <em>Interface</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Interface</em>'.
-   * @see sadl.Interface
+   * @see com.leonardo.lsaf.sadl.sadl.Interface
    * @generated
    */
   EClass getInterface();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Interface#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Interface#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Interface#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Interface#getDescription()
    * @see #getInterface()
    * @generated
    */
   EAttribute getInterface_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Interface#getPorts <em>Ports</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Interface#getPorts <em>Ports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Ports</em>'.
-   * @see sadl.Interface#getPorts()
+   * @see com.leonardo.lsaf.sadl.sadl.Interface#getPorts()
    * @see #getInterface()
    * @generated
    */
   EReference getInterface_Ports();
 
   /**
-   * Returns the meta object for class '{@link sadl.Enumeration <em>Enumeration</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Enumeration <em>Enumeration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Enumeration</em>'.
-   * @see sadl.Enumeration
+   * @see com.leonardo.lsaf.sadl.sadl.Enumeration
    * @generated
    */
   EClass getEnumeration();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Enumeration#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Enumeration#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Enumeration#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Enumeration#getDescription()
    * @see #getEnumeration()
    * @generated
    */
   EAttribute getEnumeration_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Enumeration#getEnumerators <em>Enumerators</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Enumeration#getEnumerators <em>Enumerators</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Enumerators</em>'.
-   * @see sadl.Enumeration#getEnumerators()
+   * @see com.leonardo.lsaf.sadl.sadl.Enumeration#getEnumerators()
    * @see #getEnumeration()
    * @generated
    */
   EReference getEnumeration_Enumerators();
 
   /**
-   * Returns the meta object for class '{@link sadl.Topic <em>Topic</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Topic <em>Topic</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Topic</em>'.
-   * @see sadl.Topic
+   * @see com.leonardo.lsaf.sadl.sadl.Topic
    * @generated
    */
   EClass getTopic();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Topic#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Topic#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Topic#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Topic#getDescription()
    * @see #getTopic()
    * @generated
    */
   EAttribute getTopic_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Topic#getAttributes <em>Attributes</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Topic#getAttributes <em>Attributes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Attributes</em>'.
-   * @see sadl.Topic#getAttributes()
+   * @see com.leonardo.lsaf.sadl.sadl.Topic#getAttributes()
    * @see #getTopic()
    * @generated
    */
   EReference getTopic_Attributes();
 
   /**
-   * Returns the meta object for class '{@link sadl.Alias <em>Alias</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Alias <em>Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Alias</em>'.
-   * @see sadl.Alias
+   * @see com.leonardo.lsaf.sadl.sadl.Alias
    * @generated
    */
   EClass getAlias();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Alias#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Alias#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see sadl.Alias#getType()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getType()
    * @see #getAlias()
    * @generated
    */
   EReference getAlias_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Alias#getMin <em>Min</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Alias#getMin <em>Min</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Min</em>'.
-   * @see sadl.Alias#getMin()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getMin()
    * @see #getAlias()
    * @generated
    */
   EAttribute getAlias_Min();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Alias#getMax <em>Max</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Alias#getMax <em>Max</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Max</em>'.
-   * @see sadl.Alias#getMax()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getMax()
    * @see #getAlias()
    * @generated
    */
   EAttribute getAlias_Max();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Alias#getRes <em>Res</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Alias#getRes <em>Res</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Res</em>'.
-   * @see sadl.Alias#getRes()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getRes()
    * @see #getAlias()
    * @generated
    */
   EAttribute getAlias_Res();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Alias#getUnbounded <em>Unbounded</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Alias#getUnbounded <em>Unbounded</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Unbounded</em>'.
-   * @see sadl.Alias#getUnbounded()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getUnbounded()
    * @see #getAlias()
    * @generated
    */
   EAttribute getAlias_Unbounded();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Alias#getUpperbound <em>Upperbound</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Alias#getUpperbound <em>Upperbound</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Upperbound</em>'.
-   * @see sadl.Alias#getUpperbound()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getUpperbound()
    * @see #getAlias()
    * @generated
    */
   EAttribute getAlias_Upperbound();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Alias#getUnit <em>Unit</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Alias#getUnit <em>Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Unit</em>'.
-   * @see sadl.Alias#getUnit()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getUnit()
    * @see #getAlias()
    * @generated
    */
   EReference getAlias_Unit();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Alias#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Alias#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Alias#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Alias#getDescription()
    * @see #getAlias()
    * @generated
    */
   EAttribute getAlias_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.Port <em>Port</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Port <em>Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Port</em>'.
-   * @see sadl.Port
+   * @see com.leonardo.lsaf.sadl.sadl.Port
    * @generated
    */
   EClass getPort();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Port#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Port#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Port#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Port#getName()
    * @see #getPort()
    * @generated
    */
   EAttribute getPort_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Port#isConjugated <em>Conjugated</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Port#isConjugated <em>Conjugated</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Conjugated</em>'.
-   * @see sadl.Port#isConjugated()
+   * @see com.leonardo.lsaf.sadl.sadl.Port#isConjugated()
    * @see #getPort()
    * @generated
    */
   EAttribute getPort_Conjugated();
 
   /**
-   * Returns the meta object for class '{@link sadl.Enumerator <em>Enumerator</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Enumerator <em>Enumerator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Enumerator</em>'.
-   * @see sadl.Enumerator
+   * @see com.leonardo.lsaf.sadl.sadl.Enumerator
    * @generated
    */
   EClass getEnumerator();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Enumerator#isDeprecated <em>Deprecated</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#isDeprecated <em>Deprecated</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Deprecated</em>'.
-   * @see sadl.Enumerator#isDeprecated()
+   * @see com.leonardo.lsaf.sadl.sadl.Enumerator#isDeprecated()
    * @see #getEnumerator()
    * @generated
    */
   EAttribute getEnumerator_Deprecated();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Enumerator#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Enumerator#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Enumerator#getName()
    * @see #getEnumerator()
    * @generated
    */
   EAttribute getEnumerator_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Enumerator#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see sadl.Enumerator#getValue()
+   * @see com.leonardo.lsaf.sadl.sadl.Enumerator#getValue()
    * @see #getEnumerator()
    * @generated
    */
   EAttribute getEnumerator_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Enumerator#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Enumerator#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Enumerator#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Enumerator#getDescription()
    * @see #getEnumerator()
    * @generated
    */
   EAttribute getEnumerator_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.Attribute <em>Attribute</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Attribute</em>'.
-   * @see sadl.Attribute
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute
    * @generated
    */
   EClass getAttribute();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Attribute#isDeprecated <em>Deprecated</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Attribute#isDeprecated <em>Deprecated</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Deprecated</em>'.
-   * @see sadl.Attribute#isDeprecated()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#isDeprecated()
    * @see #getAttribute()
    * @generated
    */
   EAttribute getAttribute_Deprecated();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Attribute#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see sadl.Attribute#getType()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#getType()
    * @see #getAttribute()
    * @generated
    */
   EReference getAttribute_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Attribute#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Attribute#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#getName()
    * @see #getAttribute()
    * @generated
    */
   EAttribute getAttribute_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Attribute#isUnbounded <em>Unbounded</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Attribute#isUnbounded <em>Unbounded</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Unbounded</em>'.
-   * @see sadl.Attribute#isUnbounded()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#isUnbounded()
    * @see #getAttribute()
    * @generated
    */
   EAttribute getAttribute_Unbounded();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Attribute#getLowerbound <em>Lowerbound</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getLowerbound <em>Lowerbound</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Lowerbound</em>'.
-   * @see sadl.Attribute#getLowerbound()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#getLowerbound()
    * @see #getAttribute()
    * @generated
    */
   EAttribute getAttribute_Lowerbound();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Attribute#getUpperbound <em>Upperbound</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getUpperbound <em>Upperbound</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Upperbound</em>'.
-   * @see sadl.Attribute#getUpperbound()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#getUpperbound()
    * @see #getAttribute()
    * @generated
    */
   EAttribute getAttribute_Upperbound();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Attribute#getUnit <em>Unit</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getUnit <em>Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Unit</em>'.
-   * @see sadl.Attribute#getUnit()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#getUnit()
    * @see #getAttribute()
    * @generated
    */
   EReference getAttribute_Unit();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Attribute#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Attribute#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Attribute#getDescription()
    * @see #getAttribute()
    * @generated
    */
   EAttribute getAttribute_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.TopicPort <em>Topic Port</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.TopicPort <em>Topic Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Topic Port</em>'.
-   * @see sadl.TopicPort
+   * @see com.leonardo.lsaf.sadl.sadl.TopicPort
    * @generated
    */
   EClass getTopicPort();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.TopicPort#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.TopicPort#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see sadl.TopicPort#getType()
+   * @see com.leonardo.lsaf.sadl.sadl.TopicPort#getType()
    * @see #getTopicPort()
    * @generated
    */
   EReference getTopicPort_Type();
 
   /**
-   * Returns the meta object for class '{@link sadl.InterfacePort <em>Interface Port</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.InterfacePort <em>Interface Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Interface Port</em>'.
-   * @see sadl.InterfacePort
+   * @see com.leonardo.lsaf.sadl.sadl.InterfacePort
    * @generated
    */
   EClass getInterfacePort();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.InterfacePort#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.InterfacePort#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see sadl.InterfacePort#getType()
+   * @see com.leonardo.lsaf.sadl.sadl.InterfacePort#getType()
    * @see #getInterfacePort()
    * @generated
    */
   EReference getInterfacePort_Type();
 
   /**
-   * Returns the meta object for class '{@link sadl.Platform <em>Platform</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Platform <em>Platform</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Platform</em>'.
-   * @see sadl.Platform
+   * @see com.leonardo.lsaf.sadl.sadl.Platform
    * @generated
    */
   EClass getPlatform();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Platform#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Platform#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Platform#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Platform#getDescription()
    * @see #getPlatform()
    * @generated
    */
   EAttribute getPlatform_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Platform#getProcessors <em>Processors</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Platform#getProcessors <em>Processors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Processors</em>'.
-   * @see sadl.Platform#getProcessors()
+   * @see com.leonardo.lsaf.sadl.sadl.Platform#getProcessors()
    * @see #getPlatform()
    * @generated
    */
   EReference getPlatform_Processors();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Platform#getLinks <em>Links</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Platform#getLinks <em>Links</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Links</em>'.
-   * @see sadl.Platform#getLinks()
+   * @see com.leonardo.lsaf.sadl.sadl.Platform#getLinks()
    * @see #getPlatform()
    * @generated
    */
   EReference getPlatform_Links();
 
   /**
-   * Returns the meta object for class '{@link sadl.Processor <em>Processor</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Processor <em>Processor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Processor</em>'.
-   * @see sadl.Processor
+   * @see com.leonardo.lsaf.sadl.sadl.Processor
    * @generated
    */
   EClass getProcessor();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Processor#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Processor#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Processor#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Processor#getName()
    * @see #getProcessor()
    * @generated
    */
   EAttribute getProcessor_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Processor#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Processor#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Processor#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Processor#getDescription()
    * @see #getProcessor()
    * @generated
    */
   EAttribute getProcessor_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.Link <em>Link</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Link <em>Link</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Link</em>'.
-   * @see sadl.Link
+   * @see com.leonardo.lsaf.sadl.sadl.Link
    * @generated
    */
   EClass getLink();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Link#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Link#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Link#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Link#getName()
    * @see #getLink()
    * @generated
    */
   EAttribute getLink_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Link#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Link#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Link#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Link#getDescription()
    * @see #getLink()
    * @generated
    */
   EAttribute getLink_Description();
 
   /**
-   * Returns the meta object for the reference list '{@link sadl.Link#getProcessors <em>Processors</em>}'.
+   * Returns the meta object for the reference list '{@link com.leonardo.lsaf.sadl.sadl.Link#getProcessors <em>Processors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Processors</em>'.
-   * @see sadl.Link#getProcessors()
+   * @see com.leonardo.lsaf.sadl.sadl.Link#getProcessors()
    * @see #getLink()
    * @generated
    */
   EReference getLink_Processors();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Link#getTransport <em>Transport</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Link#getTransport <em>Transport</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Transport</em>'.
-   * @see sadl.Link#getTransport()
+   * @see com.leonardo.lsaf.sadl.sadl.Link#getTransport()
    * @see #getLink()
    * @generated
    */
   EReference getLink_Transport();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Link#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Link#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Value</em>'.
-   * @see sadl.Link#getValue()
+   * @see com.leonardo.lsaf.sadl.sadl.Link#getValue()
    * @see #getLink()
    * @generated
    */
   EReference getLink_Value();
 
   /**
-   * Returns the meta object for class '{@link sadl.Property <em>Property</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Property <em>Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Property</em>'.
-   * @see sadl.Property
+   * @see com.leonardo.lsaf.sadl.sadl.Property
    * @generated
    */
   EClass getProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Property#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Property#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Property#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Property#getName()
    * @see #getProperty()
    * @generated
    */
   EAttribute getProperty_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Property#isOptional <em>Optional</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Property#isOptional <em>Optional</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Optional</em>'.
-   * @see sadl.Property#isOptional()
+   * @see com.leonardo.lsaf.sadl.sadl.Property#isOptional()
    * @see #getProperty()
    * @generated
    */
   EAttribute getProperty_Optional();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Property#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Property#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Property#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Property#getDescription()
    * @see #getProperty()
    * @generated
    */
   EAttribute getProperty_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.PropertyValue <em>Property Value</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.PropertyValue <em>Property Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Property Value</em>'.
-   * @see sadl.PropertyValue
+   * @see com.leonardo.lsaf.sadl.sadl.PropertyValue
    * @generated
    */
   EClass getPropertyValue();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.PropertyValue#getProperty <em>Property</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.PropertyValue#getProperty <em>Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Property</em>'.
-   * @see sadl.PropertyValue#getProperty()
+   * @see com.leonardo.lsaf.sadl.sadl.PropertyValue#getProperty()
    * @see #getPropertyValue()
    * @generated
    */
   EReference getPropertyValue_Property();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.PropertyValue#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.PropertyValue#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see sadl.PropertyValue#getValue()
+   * @see com.leonardo.lsaf.sadl.sadl.PropertyValue#getValue()
    * @see #getPropertyValue()
    * @generated
    */
   EAttribute getPropertyValue_Value();
 
   /**
-   * Returns the meta object for class '{@link sadl.Transport <em>Transport</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Transport <em>Transport</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Transport</em>'.
-   * @see sadl.Transport
+   * @see com.leonardo.lsaf.sadl.sadl.Transport
    * @generated
    */
   EClass getTransport();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Transport#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Transport#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Transport#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Transport#getDescription()
    * @see #getTransport()
    * @generated
    */
   EAttribute getTransport_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Transport#getProperties <em>Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Transport#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see sadl.Transport#getProperties()
+   * @see com.leonardo.lsaf.sadl.sadl.Transport#getProperties()
    * @see #getTransport()
    * @generated
    */
   EReference getTransport_Properties();
 
   /**
-   * Returns the meta object for class '{@link sadl.Application <em>Application</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Application <em>Application</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Application</em>'.
-   * @see sadl.Application
+   * @see com.leonardo.lsaf.sadl.sadl.Application
    * @generated
    */
   EClass getApplication();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Application#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Application#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Application#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Application#getDescription()
    * @see #getApplication()
    * @generated
    */
   EAttribute getApplication_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Application#getContainerInstances <em>Container Instances</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Application#getContainerInstances <em>Container Instances</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Container Instances</em>'.
-   * @see sadl.Application#getContainerInstances()
+   * @see com.leonardo.lsaf.sadl.sadl.Application#getContainerInstances()
    * @see #getApplication()
    * @generated
    */
   EReference getApplication_ContainerInstances();
 
   /**
-   * Returns the meta object for class '{@link sadl.Container <em>Container</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Container <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Container</em>'.
-   * @see sadl.Container
+   * @see com.leonardo.lsaf.sadl.sadl.Container
    * @generated
    */
   EClass getContainer();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Container#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Container#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Container#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Container#getDescription()
    * @see #getContainer()
    * @generated
    */
   EAttribute getContainer_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Container#getComponentInstances <em>Component Instances</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getComponentInstances <em>Component Instances</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Component Instances</em>'.
-   * @see sadl.Container#getComponentInstances()
+   * @see com.leonardo.lsaf.sadl.sadl.Container#getComponentInstances()
    * @see #getContainer()
    * @generated
    */
   EReference getContainer_ComponentInstances();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Container#getConnections <em>Connections</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getConnections <em>Connections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Connections</em>'.
-   * @see sadl.Container#getConnections()
+   * @see com.leonardo.lsaf.sadl.sadl.Container#getConnections()
    * @see #getContainer()
    * @generated
    */
   EReference getContainer_Connections();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Container#getContainerInstances <em>Container Instances</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Container#getContainerInstances <em>Container Instances</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Container Instances</em>'.
-   * @see sadl.Container#getContainerInstances()
+   * @see com.leonardo.lsaf.sadl.sadl.Container#getContainerInstances()
    * @see #getContainer()
    * @generated
    */
   EReference getContainer_ContainerInstances();
 
   /**
-   * Returns the meta object for class '{@link sadl.ContainerInstance <em>Container Instance</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance <em>Container Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Container Instance</em>'.
-   * @see sadl.ContainerInstance
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance
    * @generated
    */
   EClass getContainerInstance();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.ContainerInstance#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see sadl.ContainerInstance#getType()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance#getType()
    * @see #getContainerInstance()
    * @generated
    */
   EReference getContainerInstance_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.ContainerInstance#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.ContainerInstance#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance#getName()
    * @see #getContainerInstance()
    * @generated
    */
   EAttribute getContainerInstance_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.ContainerInstance#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ContainerInstance#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.ContainerInstance#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerInstance#getDescription()
    * @see #getContainerInstance()
    * @generated
    */
   EAttribute getContainerInstance_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.Component <em>Component</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Component <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Component</em>'.
-   * @see sadl.Component
+   * @see com.leonardo.lsaf.sadl.sadl.Component
    * @generated
    */
   EClass getComponent();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Component#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Component#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Component#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Component#getDescription()
    * @see #getComponent()
    * @generated
    */
   EAttribute getComponent_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Component#getParts <em>Parts</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Component#getParts <em>Parts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Parts</em>'.
-   * @see sadl.Component#getParts()
+   * @see com.leonardo.lsaf.sadl.sadl.Component#getParts()
    * @see #getComponent()
    * @generated
    */
   EReference getComponent_Parts();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Component#getPorts <em>Ports</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Component#getPorts <em>Ports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Ports</em>'.
-   * @see sadl.Component#getPorts()
+   * @see com.leonardo.lsaf.sadl.sadl.Component#getPorts()
    * @see #getComponent()
    * @generated
    */
   EReference getComponent_Ports();
 
   /**
-   * Returns the meta object for class '{@link sadl.ComponentInstance <em>Component Instance</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance <em>Component Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Component Instance</em>'.
-   * @see sadl.ComponentInstance
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance
    * @generated
    */
   EClass getComponentInstance();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.ComponentInstance#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see sadl.ComponentInstance#getType()
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getType()
    * @see #getComponentInstance()
    * @generated
    */
   EReference getComponentInstance_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.ComponentInstance#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.ComponentInstance#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getName()
    * @see #getComponentInstance()
    * @generated
    */
   EAttribute getComponentInstance_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.ComponentInstance#isUnbounded <em>Unbounded</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#isUnbounded <em>Unbounded</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Unbounded</em>'.
-   * @see sadl.ComponentInstance#isUnbounded()
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#isUnbounded()
    * @see #getComponentInstance()
    * @generated
    */
   EAttribute getComponentInstance_Unbounded();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.ComponentInstance#getLowerBound <em>Lower Bound</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getLowerBound <em>Lower Bound</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Lower Bound</em>'.
-   * @see sadl.ComponentInstance#getLowerBound()
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getLowerBound()
    * @see #getComponentInstance()
    * @generated
    */
   EAttribute getComponentInstance_LowerBound();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.ComponentInstance#getUpperBound <em>Upper Bound</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getUpperBound <em>Upper Bound</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Upper Bound</em>'.
-   * @see sadl.ComponentInstance#getUpperBound()
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getUpperBound()
    * @see #getComponentInstance()
    * @generated
    */
   EAttribute getComponentInstance_UpperBound();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.ComponentInstance#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.ComponentInstance#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.ComponentInstance#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.ComponentInstance#getDescription()
    * @see #getComponentInstance()
    * @generated
    */
   EAttribute getComponentInstance_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.Connection <em>Connection</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Connection <em>Connection</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Connection</em>'.
-   * @see sadl.Connection
+   * @see com.leonardo.lsaf.sadl.sadl.Connection
    * @generated
    */
   EClass getConnection();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Connection#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Connection#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see sadl.Connection#getName()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getName()
    * @see #getConnection()
    * @generated
    */
   EAttribute getConnection_Name();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Connection#getFrom <em>From</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Connection#getFrom <em>From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>From</em>'.
-   * @see sadl.Connection#getFrom()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getFrom()
    * @see #getConnection()
    * @generated
    */
   EReference getConnection_From();
 
   /**
-   * Returns the meta object for the reference list '{@link sadl.Connection#getSource <em>Source</em>}'.
+   * Returns the meta object for the reference list '{@link com.leonardo.lsaf.sadl.sadl.Connection#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Source</em>'.
-   * @see sadl.Connection#getSource()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getSource()
    * @see #getConnection()
    * @generated
    */
   EReference getConnection_Source();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Connection#getTo <em>To</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Connection#getTo <em>To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>To</em>'.
-   * @see sadl.Connection#getTo()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getTo()
    * @see #getConnection()
    * @generated
    */
   EReference getConnection_To();
 
   /**
-   * Returns the meta object for the reference list '{@link sadl.Connection#getDestination <em>Destination</em>}'.
+   * Returns the meta object for the reference list '{@link com.leonardo.lsaf.sadl.sadl.Connection#getDestination <em>Destination</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Destination</em>'.
-   * @see sadl.Connection#getDestination()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getDestination()
    * @see #getConnection()
    * @generated
    */
   EReference getConnection_Destination();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.Connection#getStrategy <em>Strategy</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.Connection#getStrategy <em>Strategy</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Strategy</em>'.
-   * @see sadl.Connection#getStrategy()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getStrategy()
    * @see #getConnection()
    * @generated
    */
   EReference getConnection_Strategy();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Connection#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Connection#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Value</em>'.
-   * @see sadl.Connection#getValue()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getValue()
    * @see #getConnection()
    * @generated
    */
   EReference getConnection_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Connection#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Connection#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Connection#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Connection#getDescription()
    * @see #getConnection()
    * @generated
    */
   EAttribute getConnection_Description();
 
   /**
-   * Returns the meta object for class '{@link sadl.Deployment <em>Deployment</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Deployment <em>Deployment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Deployment</em>'.
-   * @see sadl.Deployment
+   * @see com.leonardo.lsaf.sadl.sadl.Deployment
    * @generated
    */
   EClass getDeployment();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Deployment#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Deployment#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Deployment#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Deployment#getDescription()
    * @see #getDeployment()
    * @generated
    */
   EAttribute getDeployment_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Deployment#getContainermapping <em>Containermapping</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Deployment#getContainermapping <em>Containermapping</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Containermapping</em>'.
-   * @see sadl.Deployment#getContainermapping()
+   * @see com.leonardo.lsaf.sadl.sadl.Deployment#getContainermapping()
    * @see #getDeployment()
    * @generated
    */
   EReference getDeployment_Containermapping();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Deployment#getConnectionmapping <em>Connectionmapping</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Deployment#getConnectionmapping <em>Connectionmapping</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Connectionmapping</em>'.
-   * @see sadl.Deployment#getConnectionmapping()
+   * @see com.leonardo.lsaf.sadl.sadl.Deployment#getConnectionmapping()
    * @see #getDeployment()
    * @generated
    */
   EReference getDeployment_Connectionmapping();
 
   /**
-   * Returns the meta object for class '{@link sadl.ContainerMapping <em>Container Mapping</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping <em>Container Mapping</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Container Mapping</em>'.
-   * @see sadl.ContainerMapping
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerMapping
    * @generated
    */
   EClass getContainerMapping();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.ContainerMapping#getProcessor <em>Processor</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping#getProcessor <em>Processor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Processor</em>'.
-   * @see sadl.ContainerMapping#getProcessor()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerMapping#getProcessor()
    * @see #getContainerMapping()
    * @generated
    */
   EReference getContainerMapping_Processor();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.ContainerMapping#getContainer <em>Container</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping#getContainer <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Container</em>'.
-   * @see sadl.ContainerMapping#getContainer()
+   * @see com.leonardo.lsaf.sadl.sadl.ContainerMapping#getContainer()
    * @see #getContainerMapping()
    * @generated
    */
   EReference getContainerMapping_Container();
 
   /**
-   * Returns the meta object for class '{@link sadl.ConnectionMapping <em>Connection Mapping</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping <em>Connection Mapping</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Connection Mapping</em>'.
-   * @see sadl.ConnectionMapping
+   * @see com.leonardo.lsaf.sadl.sadl.ConnectionMapping
    * @generated
    */
   EClass getConnectionMapping();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.ConnectionMapping#getLink <em>Link</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getLink <em>Link</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Link</em>'.
-   * @see sadl.ConnectionMapping#getLink()
+   * @see com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getLink()
    * @see #getConnectionMapping()
    * @generated
    */
   EReference getConnectionMapping_Link();
 
   /**
-   * Returns the meta object for the reference '{@link sadl.ConnectionMapping#getConnection <em>Connection</em>}'.
+   * Returns the meta object for the reference '{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getConnection <em>Connection</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Connection</em>'.
-   * @see sadl.ConnectionMapping#getConnection()
+   * @see com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getConnection()
    * @see #getConnectionMapping()
    * @generated
    */
   EReference getConnectionMapping_Connection();
 
   /**
-   * Returns the meta object for class '{@link sadl.Strategy <em>Strategy</em>}'.
+   * Returns the meta object for class '{@link com.leonardo.lsaf.sadl.sadl.Strategy <em>Strategy</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Strategy</em>'.
-   * @see sadl.Strategy
+   * @see com.leonardo.lsaf.sadl.sadl.Strategy
    * @generated
    */
   EClass getStrategy();
 
   /**
-   * Returns the meta object for the attribute '{@link sadl.Strategy#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link com.leonardo.lsaf.sadl.sadl.Strategy#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see sadl.Strategy#getDescription()
+   * @see com.leonardo.lsaf.sadl.sadl.Strategy#getDescription()
    * @see #getStrategy()
    * @generated
    */
   EAttribute getStrategy_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link sadl.Strategy#getProperties <em>Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.leonardo.lsaf.sadl.sadl.Strategy#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see sadl.Strategy#getProperties()
+   * @see com.leonardo.lsaf.sadl.sadl.Strategy#getProperties()
    * @see #getStrategy()
    * @generated
    */

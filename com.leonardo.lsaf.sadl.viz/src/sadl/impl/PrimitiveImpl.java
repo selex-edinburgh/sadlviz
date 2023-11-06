@@ -26,7 +26,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class PrimitiveImpl extends TypeImpl implements Primitive {
+public class PrimitiveImpl extends TypeImpl implements com.leonardo.lsaf.sadl.sadl.Primitive {
   /**
    * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->

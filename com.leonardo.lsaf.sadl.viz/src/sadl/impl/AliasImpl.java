@@ -34,7 +34,7 @@ import sadl.Unit;
  *
  * @generated
  */
-public class AliasImpl extends TypeImpl implements Alias {
+public class AliasImpl extends TypeImpl implements com.leonardo.lsaf.sadl.sadl.Alias {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class AliasImpl extends TypeImpl implements Alias {
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected com.leonardo.lsaf.sadl.sadl.Type type;
 
   /**
    * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
@@ -153,7 +153,7 @@ public class AliasImpl extends TypeImpl implements Alias {
    * @generated
    * @ordered
    */
-  protected Unit unit;
+  protected com.leonardo.lsaf.sadl.sadl.Unit unit;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -200,10 +200,10 @@ public class AliasImpl extends TypeImpl implements Alias {
    * @generated
    */
   @Override
-  public Type getType() {
+  public com.leonardo.lsaf.sadl.sadl.Type getType() {
     if (type != null && type.eIsProxy()) {
       InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
+      type = (com.leonardo.lsaf.sadl.sadl.Type)eResolveProxy(oldType);
       if (type != oldType) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.ALIAS__TYPE, oldType, type));
@@ -217,7 +217,7 @@ public class AliasImpl extends TypeImpl implements Alias {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type basicGetType() {
+  public com.leonardo.lsaf.sadl.sadl.Type basicGetType() {
     return type;
   }
 
@@ -227,8 +227,8 @@ public class AliasImpl extends TypeImpl implements Alias {
    * @generated
    */
   @Override
-  public void setType(Type newType) {
-    Type oldType = type;
+  public void setType(com.leonardo.lsaf.sadl.sadl.Type newType) {
+    com.leonardo.lsaf.sadl.sadl.Type oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.ALIAS__TYPE, oldType, type));
@@ -355,10 +355,10 @@ public class AliasImpl extends TypeImpl implements Alias {
    * @generated
    */
   @Override
-  public Unit getUnit() {
+  public com.leonardo.lsaf.sadl.sadl.Unit getUnit() {
     if (unit != null && unit.eIsProxy()) {
       InternalEObject oldUnit = (InternalEObject)unit;
-      unit = (Unit)eResolveProxy(oldUnit);
+      unit = (com.leonardo.lsaf.sadl.sadl.Unit)eResolveProxy(oldUnit);
       if (unit != oldUnit) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.ALIAS__UNIT, oldUnit, unit));
@@ -372,7 +372,7 @@ public class AliasImpl extends TypeImpl implements Alias {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Unit basicGetUnit() {
+  public com.leonardo.lsaf.sadl.sadl.Unit basicGetUnit() {
     return unit;
   }
 
@@ -382,8 +382,8 @@ public class AliasImpl extends TypeImpl implements Alias {
    * @generated
    */
   @Override
-  public void setUnit(Unit newUnit) {
-    Unit oldUnit = unit;
+  public void setUnit(com.leonardo.lsaf.sadl.sadl.Unit newUnit) {
+    com.leonardo.lsaf.sadl.sadl.Unit oldUnit = unit;
     unit = newUnit;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.ALIAS__UNIT, oldUnit, unit));
@@ -451,7 +451,7 @@ public class AliasImpl extends TypeImpl implements Alias {
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.ALIAS__TYPE:
-        setType((Type)newValue);
+        setType((com.leonardo.lsaf.sadl.sadl.Type)newValue);
         return;
       case SadlPackage.ALIAS__MIN:
         setMin((Double)newValue);
@@ -469,7 +469,7 @@ public class AliasImpl extends TypeImpl implements Alias {
         setUpperbound((Integer)newValue);
         return;
       case SadlPackage.ALIAS__UNIT:
-        setUnit((Unit)newValue);
+        setUnit((com.leonardo.lsaf.sadl.sadl.Unit)newValue);
         return;
       case SadlPackage.ALIAS__DESCRIPTION:
         setDescription((String)newValue);
@@ -487,7 +487,7 @@ public class AliasImpl extends TypeImpl implements Alias {
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.ALIAS__TYPE:
-        setType((Type)null);
+        setType((com.leonardo.lsaf.sadl.sadl.Type)null);
         return;
       case SadlPackage.ALIAS__MIN:
         setMin(MIN_EDEFAULT);
@@ -505,7 +505,7 @@ public class AliasImpl extends TypeImpl implements Alias {
         setUpperbound(UPPERBOUND_EDEFAULT);
         return;
       case SadlPackage.ALIAS__UNIT:
-        setUnit((Unit)null);
+        setUnit((com.leonardo.lsaf.sadl.sadl.Unit)null);
         return;
       case SadlPackage.ALIAS__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);

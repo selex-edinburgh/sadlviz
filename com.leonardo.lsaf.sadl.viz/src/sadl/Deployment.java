@@ -2,7 +2,11 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.ConnectionMapping;
+import com.leonardo.lsaf.sadl.sadl.ContainerMapping;
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,16 +17,16 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Deployment#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Deployment#getContainermapping <em>Containermapping</em>}</li>
- *   <li>{@link sadl.Deployment#getConnectionmapping <em>Connectionmapping</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Deployment#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Deployment#getContainermapping <em>Containermapping</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Deployment#getConnectionmapping <em>Connectionmapping</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getDeployment()
  * @model
  * @generated
  */
-public interface Deployment extends PackageableElement {
+public interface Deployment extends EObject, PackageableElement {
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -36,7 +40,7 @@ public interface Deployment extends PackageableElement {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Deployment#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Deployment#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -47,7 +51,7 @@ public interface Deployment extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Containermapping</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.ContainerMapping}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ContainerMapping}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Containermapping</em>' containment reference list.
@@ -59,7 +63,7 @@ public interface Deployment extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Connectionmapping</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.ConnectionMapping}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Connectionmapping</em>' containment reference list.

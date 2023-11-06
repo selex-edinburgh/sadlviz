@@ -253,6 +253,16 @@ public class MediatorPackageImpl extends EPackageImpl implements MediatorPackage
    * @generated
    */
   @Override
+  public EReference getMEdge_SadlConnection() {
+    return (EReference)mEdgeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getMConnectableElement() {
     return mConnectableElementEClass;
   }
@@ -519,6 +529,7 @@ public class MediatorPackageImpl extends EPackageImpl implements MediatorPackage
     mEdgeEClass = createEClass(MEDGE);
     createEReference(mEdgeEClass, MEDGE__SOURCE);
     createEReference(mEdgeEClass, MEDGE__TARGET);
+    createEReference(mEdgeEClass, MEDGE__SADL_CONNECTION);
 
     mConnectableElementEClass = createEClass(MCONNECTABLE_ELEMENT);
     createEAttribute(mConnectableElementEClass, MCONNECTABLE_ELEMENT__X);
@@ -598,6 +609,7 @@ public class MediatorPackageImpl extends EPackageImpl implements MediatorPackage
     initEClass(mEdgeEClass, MEdge.class, "MEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMEdge_Source(), this.getMConnectableElement(), null, "source", null, 0, 1, MEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMEdge_Target(), this.getMConnectableElement(), null, "target", null, 0, 1, MEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMEdge_SadlConnection(), theSadlPackage.getConnection(), null, "sadlConnection", null, 0, 1, MEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mConnectableElementEClass, MConnectableElement.class, "MConnectableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMConnectableElement_X(), ecorePackage.getEInt(), "x", "0", 0, 1, MConnectableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -2,6 +2,10 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Interface;
+import com.leonardo.lsaf.sadl.sadl.Port;
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,14 +16,14 @@ package sadl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.InterfacePort#getType <em>Type</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.InterfacePort#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getInterfacePort()
  * @model
  * @generated
  */
-public interface InterfacePort extends Port {
+public interface InterfacePort extends EObject, Port {
   /**
    * Returns the value of the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -33,7 +37,7 @@ public interface InterfacePort extends Port {
   Interface getType();
 
   /**
-   * Sets the value of the '{@link sadl.InterfacePort#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.InterfacePort#getType <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' reference.

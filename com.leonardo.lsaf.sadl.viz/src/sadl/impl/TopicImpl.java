@@ -35,7 +35,7 @@ import sadl.Topic;
  *
  * @generated
  */
-public class TopicImpl extends TypeImpl implements Topic {
+public class TopicImpl extends TypeImpl implements com.leonardo.lsaf.sadl.sadl.Topic {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class TopicImpl extends TypeImpl implements Topic {
    * @generated
    * @ordered
    */
-  protected EList<Attribute> attributes;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Attribute> attributes;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public class TopicImpl extends TypeImpl implements Topic {
    * @generated
    */
   @Override
-  public EList<Attribute> getAttributes() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Attribute> getAttributes() {
     if (attributes == null) {
-      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, SadlPackage.TOPIC__ATTRIBUTES);
+      attributes = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Attribute>(com.leonardo.lsaf.sadl.sadl.Attribute.class, this, SadlPackage.TOPIC__ATTRIBUTES);
     }
     return attributes;
   }
@@ -165,7 +165,7 @@ public class TopicImpl extends TypeImpl implements Topic {
         return;
       case SadlPackage.TOPIC__ATTRIBUTES:
         getAttributes().clear();
-        getAttributes().addAll((Collection<? extends Attribute>)newValue);
+        getAttributes().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Attribute>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

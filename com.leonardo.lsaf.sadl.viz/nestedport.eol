@@ -171,7 +171,7 @@ operation Port calculateSubPorts(rootPort : MPort, currentPort: MPort, level: In
     //        }
     
             var subPort = createPort();
-            var subId = currentPort.id + "." + port.name;
+            var subId = currentPort.id + "-" + port.name;
             subPort.id = subId;
             subPort.rootPort = rootPort;
             subPort.parentPort = currentPort;
@@ -205,7 +205,7 @@ operation Port calculateSubPorts(rootPort : MPort, currentPort: MPort, level: In
 operation countPortInOut(connections: Sequence) : Map(String, Integer) {
     var map = Map{};
     for (connection in connections){
-        var sourceName = connection.from.getFullNameStr() + "." + connection.source[0].name;
+        var sourceName = connection.sadlConnection.from.getFullNameStr() + "-" + connection.sadlConnection.source[0].name;
 //        sourceName.println("Source: ");
         var value = map.get(sourceName);
         if (value == null) {
@@ -214,7 +214,7 @@ operation countPortInOut(connections: Sequence) : Map(String, Integer) {
         value = value - 1;
         map.put(sourceName, value);
         
-        var destinationName = connection.to.getFullNameStr() + "." + connection.destination[0].name;
+        var destinationName = connection.sadlConnection.to.getFullNameStr() + "-" + connection.sadlConnection.destination[0].name;
 //        destinationName.println("Destination: ");
         var value = map.get(destinationName);
         if (value == null) {
@@ -241,7 +241,7 @@ operation Port hasSubPort(): Boolean {
 
 operation Port isSubPort(connection : Connection): Boolean {
     var isSubPort = false;
-    if (connection.source.indexOf(self) > 0 or connection.destination.indexOf(self) > 0){
+    if (connection.sadlConnection.source.indexOf(self) > 0 or connection.sadlConnection.destination.indexOf(self) > 0){
         isSubPort = true;
     }
     return isSubPort;
@@ -322,7 +322,6 @@ operation populateContainerStack(rootNode, parentNode, element, level, container
 
     level = level + 1;
     if (element.isTypeOf(ContainerInstance)) {
-        connections.addAll(element.type.connections);
         for (containerInstance in element.type.containerInstances) {
             populateContainerStack(rootNode, node, containerInstance, level, containerStack, connections);
         }
@@ -335,13 +334,38 @@ operation populateContainerStack(rootNode, parentNode, element, level, container
             populateContainerStack(rootNode, node, componentInstance, level, containerStack, connections);
         }
     }
+    
+    if (element.isTypeOf(ContainerInstance)) {
+        for (connection in element.type.connections) {
+            var edge = new MEdge();
+            if (connection.name != null) {
+                edge.id = element.id + "-" + connection.name;
+            } else {
+                edge.id = element.id + "-" + Sequence{1..100}.random();
+            }
+            edge.sadlConnection = connection;
+            var from = MConnectableElement.all.selectFirst( e | e.isTypeOf(MNode) and e.sadlContainer.isTypeOf(ComponentInstance) and e.sadlContainer == connection.from);
+            var to = MConnectableElement.all.selectFirst( e | e.isTypeOf(MNode) and e.sadlContainer.isTypeOf(ComponentInstance) and e.sadlContainer == connection.to);
+
+            if (from <> null and to <> null) {
+//                var sourceName = from.id +"-" + connection.getSourceName();
+//                var targetName = to.id + "-" + connection.getDestinationName();
+//                sourceName.println("Source: ");
+//                targetName.println("Target: ");
+//                "".println();
+                edge.source = from;
+                edge.target = to;
+                connections.add(edge);
+            }
+        }
+    }
     level = level - 1;
 }
 
 operation createSequencedPorts(parentNode: MNode, port: Port, portInOut: Map(String, Integer)): Sequence{
     var level = 0;
     var rootPort = createPort();
-    var rootPortName = parentNode.id + "." + port.name;
+    var rootPortName = parentNode.id + "-" + port.name;
     rootPort.id = rootPortName;
     rootPort.sadlPort = port;
     rootPort.node =  parentNode;

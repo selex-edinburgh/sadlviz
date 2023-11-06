@@ -2,6 +2,36 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Alias;
+import com.leonardo.lsaf.sadl.sadl.Application;
+import com.leonardo.lsaf.sadl.sadl.Attribute;
+import com.leonardo.lsaf.sadl.sadl.Component;
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
+import com.leonardo.lsaf.sadl.sadl.Connection;
+import com.leonardo.lsaf.sadl.sadl.ConnectionMapping;
+import com.leonardo.lsaf.sadl.sadl.Container;
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
+import com.leonardo.lsaf.sadl.sadl.ContainerMapping;
+import com.leonardo.lsaf.sadl.sadl.Deployment;
+import com.leonardo.lsaf.sadl.sadl.Enumeration;
+import com.leonardo.lsaf.sadl.sadl.Enumerator;
+import com.leonardo.lsaf.sadl.sadl.Interface;
+import com.leonardo.lsaf.sadl.sadl.InterfacePort;
+import com.leonardo.lsaf.sadl.sadl.Link;
+import com.leonardo.lsaf.sadl.sadl.Model;
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
+import com.leonardo.lsaf.sadl.sadl.Platform;
+import com.leonardo.lsaf.sadl.sadl.Port;
+import com.leonardo.lsaf.sadl.sadl.Primitive;
+import com.leonardo.lsaf.sadl.sadl.Processor;
+import com.leonardo.lsaf.sadl.sadl.Property;
+import com.leonardo.lsaf.sadl.sadl.PropertyValue;
+import com.leonardo.lsaf.sadl.sadl.Strategy;
+import com.leonardo.lsaf.sadl.sadl.Topic;
+import com.leonardo.lsaf.sadl.sadl.TopicPort;
+import com.leonardo.lsaf.sadl.sadl.Transport;
+import com.leonardo.lsaf.sadl.sadl.Type;
+import com.leonardo.lsaf.sadl.sadl.Unit;
 import org.eclipse.emf.ecore.EFactory;
 
 /**
@@ -37,7 +67,7 @@ public interface SadlFactory extends EFactory {
    * @return a new object of class '<em>Package</em>'.
    * @generated
    */
-  Package createPackage();
+  com.leonardo.lsaf.sadl.sadl.Package createPackage();
 
   /**
    * Returns a new object of class '<em>Packageable Element</em>'.

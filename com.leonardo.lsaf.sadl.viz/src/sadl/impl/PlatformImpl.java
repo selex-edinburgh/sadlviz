@@ -37,7 +37,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class PlatformImpl extends PackageableElementImpl implements Platform {
+public class PlatformImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Platform {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class PlatformImpl extends PackageableElementImpl implements Platform {
    * @generated
    * @ordered
    */
-  protected EList<Processor> processors;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Processor> processors;
 
   /**
    * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
@@ -76,7 +76,7 @@ public class PlatformImpl extends PackageableElementImpl implements Platform {
    * @generated
    * @ordered
    */
-  protected EList<Link> links;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Link> links;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,9 +126,9 @@ public class PlatformImpl extends PackageableElementImpl implements Platform {
    * @generated
    */
   @Override
-  public EList<Processor> getProcessors() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Processor> getProcessors() {
     if (processors == null) {
-      processors = new EObjectContainmentEList<Processor>(Processor.class, this, SadlPackage.PLATFORM__PROCESSORS);
+      processors = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Processor>(com.leonardo.lsaf.sadl.sadl.Processor.class, this, SadlPackage.PLATFORM__PROCESSORS);
     }
     return processors;
   }
@@ -139,9 +139,9 @@ public class PlatformImpl extends PackageableElementImpl implements Platform {
    * @generated
    */
   @Override
-  public EList<Link> getLinks() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Link> getLinks() {
     if (links == null) {
-      links = new EObjectContainmentEList<Link>(Link.class, this, SadlPackage.PLATFORM__LINKS);
+      links = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Link>(com.leonardo.lsaf.sadl.sadl.Link.class, this, SadlPackage.PLATFORM__LINKS);
     }
     return links;
   }
@@ -194,11 +194,11 @@ public class PlatformImpl extends PackageableElementImpl implements Platform {
         return;
       case SadlPackage.PLATFORM__PROCESSORS:
         getProcessors().clear();
-        getProcessors().addAll((Collection<? extends Processor>)newValue);
+        getProcessors().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Processor>)newValue);
         return;
       case SadlPackage.PLATFORM__LINKS:
         getLinks().clear();
-        getLinks().addAll((Collection<? extends Link>)newValue);
+        getLinks().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Link>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

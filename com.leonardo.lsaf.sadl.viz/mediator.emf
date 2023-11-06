@@ -7,7 +7,7 @@ Author: Alfa Yohannis
 */
 
 @GenModel(documentation="
-The mediator model to calculate the automatic layout
+The intermediate model to calculate the automatic layout
 of nested ports.
 
 Year: 2023
@@ -37,6 +37,7 @@ abstract class MElement {
 class MEdge extends MElement {
     ref MConnectableElement source;
     ref MConnectableElement target;
+    ref sadl.Connection sadlConnection; 
 }
 
 class MConnectableElement extends MElement {

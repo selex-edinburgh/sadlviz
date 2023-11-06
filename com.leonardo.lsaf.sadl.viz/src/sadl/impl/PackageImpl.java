@@ -36,7 +36,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class PackageImpl extends EObjectImpl implements sadl.Package {
+public class PackageImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Package {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -85,7 +85,7 @@ public class PackageImpl extends EObjectImpl implements sadl.Package {
    * @generated
    * @ordered
    */
-  protected EList<PackageableElement> contents;
+  protected EList<com.leonardo.lsaf.sadl.sadl.PackageableElement> contents;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,9 +158,9 @@ public class PackageImpl extends EObjectImpl implements sadl.Package {
    * @generated
    */
   @Override
-  public EList<PackageableElement> getContents() {
+  public EList<com.leonardo.lsaf.sadl.sadl.PackageableElement> getContents() {
     if (contents == null) {
-      contents = new EObjectContainmentEList<PackageableElement>(PackageableElement.class, this, SadlPackage.PACKAGE__CONTENTS);
+      contents = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.PackageableElement>(com.leonardo.lsaf.sadl.sadl.PackageableElement.class, this, SadlPackage.PACKAGE__CONTENTS);
     }
     return contents;
   }
@@ -214,7 +214,7 @@ public class PackageImpl extends EObjectImpl implements sadl.Package {
         return;
       case SadlPackage.PACKAGE__CONTENTS:
         getContents().clear();
-        getContents().addAll((Collection<? extends PackageableElement>)newValue);
+        getContents().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.PackageableElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

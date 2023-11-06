@@ -2,6 +2,8 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Connection;
+import com.leonardo.lsaf.sadl.sadl.Link;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.ConnectionMapping#getLink <em>Link</em>}</li>
- *   <li>{@link sadl.ConnectionMapping#getConnection <em>Connection</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getLink <em>Link</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getConnection <em>Connection</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getConnectionMapping()
@@ -35,7 +37,7 @@ public interface ConnectionMapping extends EObject {
   Link getLink();
 
   /**
-   * Sets the value of the '{@link sadl.ConnectionMapping#getLink <em>Link</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getLink <em>Link</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Link</em>' reference.
@@ -57,7 +59,7 @@ public interface ConnectionMapping extends EObject {
   Connection getConnection();
 
   /**
-   * Sets the value of the '{@link sadl.ConnectionMapping#getConnection <em>Connection</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ConnectionMapping#getConnection <em>Connection</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Connection</em>' reference.

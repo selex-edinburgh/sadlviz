@@ -29,7 +29,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ContainerInstanceImpl extends EObjectImpl implements ContainerInstance {
+public class ContainerInstanceImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.ContainerInstance {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class ContainerInstanceImpl extends EObjectImpl implements ContainerInsta
    * @generated
    * @ordered
    */
-  protected Container type;
+  protected com.leonardo.lsaf.sadl.sadl.Container type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -105,10 +105,10 @@ public class ContainerInstanceImpl extends EObjectImpl implements ContainerInsta
    * @generated
    */
   @Override
-  public Container getType() {
+  public com.leonardo.lsaf.sadl.sadl.Container getType() {
     if (type != null && type.eIsProxy()) {
       InternalEObject oldType = (InternalEObject)type;
-      type = (Container)eResolveProxy(oldType);
+      type = (com.leonardo.lsaf.sadl.sadl.Container)eResolveProxy(oldType);
       if (type != oldType) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONTAINER_INSTANCE__TYPE, oldType, type));
@@ -122,7 +122,7 @@ public class ContainerInstanceImpl extends EObjectImpl implements ContainerInsta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Container basicGetType() {
+  public com.leonardo.lsaf.sadl.sadl.Container basicGetType() {
     return type;
   }
 
@@ -132,8 +132,8 @@ public class ContainerInstanceImpl extends EObjectImpl implements ContainerInsta
    * @generated
    */
   @Override
-  public void setType(Container newType) {
-    Container oldType = type;
+  public void setType(com.leonardo.lsaf.sadl.sadl.Container newType) {
+    com.leonardo.lsaf.sadl.sadl.Container oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONTAINER_INSTANCE__TYPE, oldType, type));
@@ -213,7 +213,7 @@ public class ContainerInstanceImpl extends EObjectImpl implements ContainerInsta
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.CONTAINER_INSTANCE__TYPE:
-        setType((Container)newValue);
+        setType((com.leonardo.lsaf.sadl.sadl.Container)newValue);
         return;
       case SadlPackage.CONTAINER_INSTANCE__NAME:
         setName((String)newValue);
@@ -234,7 +234,7 @@ public class ContainerInstanceImpl extends EObjectImpl implements ContainerInsta
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.CONTAINER_INSTANCE__TYPE:
-        setType((Container)null);
+        setType((com.leonardo.lsaf.sadl.sadl.Container)null);
         return;
       case SadlPackage.CONTAINER_INSTANCE__NAME:
         setName(NAME_EDEFAULT);

@@ -35,7 +35,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class InterfaceImpl extends PackageableElementImpl implements Interface {
+public class InterfaceImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Interface {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class InterfaceImpl extends PackageableElementImpl implements Interface {
    * @generated
    * @ordered
    */
-  protected EList<Port> ports;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Port> ports;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public class InterfaceImpl extends PackageableElementImpl implements Interface {
    * @generated
    */
   @Override
-  public EList<Port> getPorts() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Port> getPorts() {
     if (ports == null) {
-      ports = new EObjectContainmentEList<Port>(Port.class, this, SadlPackage.INTERFACE__PORTS);
+      ports = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Port>(com.leonardo.lsaf.sadl.sadl.Port.class, this, SadlPackage.INTERFACE__PORTS);
     }
     return ports;
   }
@@ -165,7 +165,7 @@ public class InterfaceImpl extends PackageableElementImpl implements Interface {
         return;
       case SadlPackage.INTERFACE__PORTS:
         getPorts().clear();
-        getPorts().addAll((Collection<? extends Port>)newValue);
+        getPorts().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Port>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -1,9 +1,9 @@
 package PackageA
-	
-	topic ta
-	end
-	
-	
+    
+    topic ta
+    end
+    
+    
 
   interface Ia
     port ia sends ta;
@@ -14,90 +14,97 @@ package PackageA
     port ic provides Ia;
   end
 
-	component Component1
-		component_instance Component11 component11; 
-		component_instance Component12 component12;
-	end
-	
-	component Component2
-		component_instance Component21 component21;
-		component_instance Component22 component22;
-	end
-	
-	component Component11
-		port a provides Ia;
-	end
-	component Component12
-		port a provides Ib; 
-	end
-	component Component21
-		port a provides Ia; 
-	end
-	component Component22
-		port a provides Ib; 
-	end
-	
-	container Container1
-		container_instance Container11 container11;		
-		container_instance Container12 container12;
-	end
-	container Container3
+    component Component1
+        component_instance Component11 component11; 
+        component_instance Component12 component12;
+        port a provides Ia;
+    end
+    
+    component Component2
+        component_instance Component21 component21;
+        component_instance Component22 component22;
+        port a provides Ib;
+    end
+    
+    component Component11
+        port a provides Ia;
+    end
+    component Component12
+        port a provides Ib;
+        port c requires Ia; 
+    end
+    component Component21
+        port a provides Ia; 
+    end
+    component Component22
+        port a provides Ib; 
+    end
+    
+    container Container1
+        container_instance Container11 container11;        
+        container_instance Container12 container12;
+        connect connection1 (component11122::a.ic.ia, component11122::a.ic.ib);
+        connect connection2 (component12::a, component11122::a);
+    end
+    container Container3
   end
   
-	container Container2
-		container_instance Container21 container21;		
-		container_instance Container22 container22;
-		container_instance Container23 container23;
-		component_instance Component1 component1;
-		component_instance Component2 component2;
-	end
-	
-	
-	
-	container Container11
-		container_instance Container111 container111;		
-	end
-	
-	container Container12
-	end
-	
-	container Container13
+    container Container2
+        container_instance Container21 container21;        
+        container_instance Container22 container22;
+        container_instance Container23 container23;
+        component_instance Component1 component1;
+        component_instance Component2 component2;
+        connect connection3 (component1::a.ia, component2::a.ic.ib);
+    end
+    
+    
+    
+    container Container11
+        container_instance Container111 container111;
+    end
+    
+    container Container12
+       component_instance Component12 component12;
+    end
+    
+    container Container13
     container_instance Container121 container131;   
     container_instance Container122 container132;
     container_instance Container122 container133; 
   end
-	container Container21
-		container_instance Container211 container211;
-		container_instance Container212 container212;
-		container_instance Container122 container213; 
-	end
-	container Container22
-		container_instance Container221 container221;		
-		container_instance Container222 container222;
-		container_instance Container122 container223;
-	end
-	 container Container23
+    container Container21
+        container_instance Container211 container211;
+        container_instance Container212 container212;
+        container_instance Container122 container213; 
+    end
+    container Container22
+        container_instance Container221 container221;        
+        container_instance Container222 container222;
+        container_instance Container122 container223;
+    end
+     container Container23
     container_instance Container221 container231;   
     container_instance Container222 container232;
     container_instance Container122 container233;
   end
-//	
+//    
   container Container1111 
   end
 
-	container Container111
-	   component_instance Component22 component11122;
-	end
-	container Container112 
-	end
-	container Container113 
+    container Container111
+       component_instance Component22 component11122;
+    end
+    container Container112 
+    end
+    container Container113 
   end
   
-	container Container121 
-	end
-	container Container122
-	end
-	container Container123
+    container Container121 
+    end
+    container Container122
+    end
+    container Container123
   end
 
   container Container131 
@@ -107,18 +114,18 @@ package PackageA
   container Container133
   end
   
-	container Container211 
-	end
-	container Container212
-	end
-	container Container213
+    container Container211 
+    end
+    container Container212
+    end
+    container Container213
   end
   
-	container Container221 
-	end
-	container Container222 
-	end
-	container Container223
+    container Container221 
+    end
+    container Container222 
+    end
+    container Container223
   end
   
   container Container231 
@@ -127,11 +134,11 @@ package PackageA
   end
   container Container233
   end
-	
-	application AppA
-		container_instance Container1 container1;
-		container_instance Container2 container2;
-	end
+    
+    application AppA
+        container_instance Container1 container1;
+        container_instance Container2 container2;
+    end
 end
 
 //package First

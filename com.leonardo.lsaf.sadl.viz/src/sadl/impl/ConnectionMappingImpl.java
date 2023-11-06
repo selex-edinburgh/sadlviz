@@ -29,7 +29,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapping {
+public class ConnectionMappingImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.ConnectionMapping {
   /**
    * The cached value of the '{@link #getLink() <em>Link</em>}' reference.
    * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * @generated
    * @ordered
    */
-  protected Link link;
+  protected com.leonardo.lsaf.sadl.sadl.Link link;
 
   /**
    * The cached value of the '{@link #getConnection() <em>Connection</em>}' reference.
@@ -48,7 +48,7 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * @generated
    * @ordered
    */
-  protected Connection connection;
+  protected com.leonardo.lsaf.sadl.sadl.Connection connection;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,10 +75,10 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * @generated
    */
   @Override
-  public Link getLink() {
+  public com.leonardo.lsaf.sadl.sadl.Link getLink() {
     if (link != null && link.eIsProxy()) {
       InternalEObject oldLink = (InternalEObject)link;
-      link = (Link)eResolveProxy(oldLink);
+      link = (com.leonardo.lsaf.sadl.sadl.Link)eResolveProxy(oldLink);
       if (link != oldLink) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONNECTION_MAPPING__LINK, oldLink, link));
@@ -92,7 +92,7 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * <!-- end-user-doc -->
    * @generated
    */
-  public Link basicGetLink() {
+  public com.leonardo.lsaf.sadl.sadl.Link basicGetLink() {
     return link;
   }
 
@@ -102,8 +102,8 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * @generated
    */
   @Override
-  public void setLink(Link newLink) {
-    Link oldLink = link;
+  public void setLink(com.leonardo.lsaf.sadl.sadl.Link newLink) {
+    com.leonardo.lsaf.sadl.sadl.Link oldLink = link;
     link = newLink;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONNECTION_MAPPING__LINK, oldLink, link));
@@ -115,10 +115,10 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * @generated
    */
   @Override
-  public Connection getConnection() {
+  public com.leonardo.lsaf.sadl.sadl.Connection getConnection() {
     if (connection != null && connection.eIsProxy()) {
       InternalEObject oldConnection = (InternalEObject)connection;
-      connection = (Connection)eResolveProxy(oldConnection);
+      connection = (com.leonardo.lsaf.sadl.sadl.Connection)eResolveProxy(oldConnection);
       if (connection != oldConnection) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONNECTION_MAPPING__CONNECTION, oldConnection, connection));
@@ -132,7 +132,7 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * <!-- end-user-doc -->
    * @generated
    */
-  public Connection basicGetConnection() {
+  public com.leonardo.lsaf.sadl.sadl.Connection basicGetConnection() {
     return connection;
   }
 
@@ -142,8 +142,8 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
    * @generated
    */
   @Override
-  public void setConnection(Connection newConnection) {
-    Connection oldConnection = connection;
+  public void setConnection(com.leonardo.lsaf.sadl.sadl.Connection newConnection) {
+    com.leonardo.lsaf.sadl.sadl.Connection oldConnection = connection;
     connection = newConnection;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONNECTION_MAPPING__CONNECTION, oldConnection, connection));
@@ -176,10 +176,10 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.CONNECTION_MAPPING__LINK:
-        setLink((Link)newValue);
+        setLink((com.leonardo.lsaf.sadl.sadl.Link)newValue);
         return;
       case SadlPackage.CONNECTION_MAPPING__CONNECTION:
-        setConnection((Connection)newValue);
+        setConnection((com.leonardo.lsaf.sadl.sadl.Connection)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,10 +194,10 @@ public class ConnectionMappingImpl extends EObjectImpl implements ConnectionMapp
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.CONNECTION_MAPPING__LINK:
-        setLink((Link)null);
+        setLink((com.leonardo.lsaf.sadl.sadl.Link)null);
         return;
       case SadlPackage.CONNECTION_MAPPING__CONNECTION:
-        setConnection((Connection)null);
+        setConnection((com.leonardo.lsaf.sadl.sadl.Connection)null);
         return;
     }
     super.eUnset(featureID);

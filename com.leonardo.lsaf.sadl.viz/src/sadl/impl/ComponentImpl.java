@@ -37,7 +37,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ComponentImpl extends PackageableElementImpl implements Component {
+public class ComponentImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Component {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class ComponentImpl extends PackageableElementImpl implements Component {
    * @generated
    * @ordered
    */
-  protected EList<ComponentInstance> parts;
+  protected EList<com.leonardo.lsaf.sadl.sadl.ComponentInstance> parts;
 
   /**
    * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
@@ -76,7 +76,7 @@ public class ComponentImpl extends PackageableElementImpl implements Component {
    * @generated
    * @ordered
    */
-  protected EList<Port> ports;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Port> ports;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,9 +126,9 @@ public class ComponentImpl extends PackageableElementImpl implements Component {
    * @generated
    */
   @Override
-  public EList<ComponentInstance> getParts() {
+  public EList<com.leonardo.lsaf.sadl.sadl.ComponentInstance> getParts() {
     if (parts == null) {
-      parts = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, SadlPackage.COMPONENT__PARTS);
+      parts = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.ComponentInstance>(com.leonardo.lsaf.sadl.sadl.ComponentInstance.class, this, SadlPackage.COMPONENT__PARTS);
     }
     return parts;
   }
@@ -139,9 +139,9 @@ public class ComponentImpl extends PackageableElementImpl implements Component {
    * @generated
    */
   @Override
-  public EList<Port> getPorts() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Port> getPorts() {
     if (ports == null) {
-      ports = new EObjectContainmentEList<Port>(Port.class, this, SadlPackage.COMPONENT__PORTS);
+      ports = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Port>(com.leonardo.lsaf.sadl.sadl.Port.class, this, SadlPackage.COMPONENT__PORTS);
     }
     return ports;
   }
@@ -194,11 +194,11 @@ public class ComponentImpl extends PackageableElementImpl implements Component {
         return;
       case SadlPackage.COMPONENT__PARTS:
         getParts().clear();
-        getParts().addAll((Collection<? extends ComponentInstance>)newValue);
+        getParts().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.ComponentInstance>)newValue);
         return;
       case SadlPackage.COMPONENT__PORTS:
         getPorts().clear();
-        getPorts().addAll((Collection<? extends Port>)newValue);
+        getPorts().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Port>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

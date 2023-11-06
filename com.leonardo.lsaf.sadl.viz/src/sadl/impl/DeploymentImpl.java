@@ -37,7 +37,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class DeploymentImpl extends PackageableElementImpl implements Deployment {
+public class DeploymentImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Deployment {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class DeploymentImpl extends PackageableElementImpl implements Deployment
    * @generated
    * @ordered
    */
-  protected EList<ContainerMapping> containermapping;
+  protected EList<com.leonardo.lsaf.sadl.sadl.ContainerMapping> containermapping;
 
   /**
    * The cached value of the '{@link #getConnectionmapping() <em>Connectionmapping</em>}' containment reference list.
@@ -76,7 +76,7 @@ public class DeploymentImpl extends PackageableElementImpl implements Deployment
    * @generated
    * @ordered
    */
-  protected EList<ConnectionMapping> connectionmapping;
+  protected EList<com.leonardo.lsaf.sadl.sadl.ConnectionMapping> connectionmapping;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,9 +126,9 @@ public class DeploymentImpl extends PackageableElementImpl implements Deployment
    * @generated
    */
   @Override
-  public EList<ContainerMapping> getContainermapping() {
+  public EList<com.leonardo.lsaf.sadl.sadl.ContainerMapping> getContainermapping() {
     if (containermapping == null) {
-      containermapping = new EObjectContainmentEList<ContainerMapping>(ContainerMapping.class, this, SadlPackage.DEPLOYMENT__CONTAINERMAPPING);
+      containermapping = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.ContainerMapping>(com.leonardo.lsaf.sadl.sadl.ContainerMapping.class, this, SadlPackage.DEPLOYMENT__CONTAINERMAPPING);
     }
     return containermapping;
   }
@@ -139,9 +139,9 @@ public class DeploymentImpl extends PackageableElementImpl implements Deployment
    * @generated
    */
   @Override
-  public EList<ConnectionMapping> getConnectionmapping() {
+  public EList<com.leonardo.lsaf.sadl.sadl.ConnectionMapping> getConnectionmapping() {
     if (connectionmapping == null) {
-      connectionmapping = new EObjectContainmentEList<ConnectionMapping>(ConnectionMapping.class, this, SadlPackage.DEPLOYMENT__CONNECTIONMAPPING);
+      connectionmapping = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.ConnectionMapping>(com.leonardo.lsaf.sadl.sadl.ConnectionMapping.class, this, SadlPackage.DEPLOYMENT__CONNECTIONMAPPING);
     }
     return connectionmapping;
   }
@@ -194,11 +194,11 @@ public class DeploymentImpl extends PackageableElementImpl implements Deployment
         return;
       case SadlPackage.DEPLOYMENT__CONTAINERMAPPING:
         getContainermapping().clear();
-        getContainermapping().addAll((Collection<? extends ContainerMapping>)newValue);
+        getContainermapping().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.ContainerMapping>)newValue);
         return;
       case SadlPackage.DEPLOYMENT__CONNECTIONMAPPING:
         getConnectionmapping().clear();
-        getConnectionmapping().addAll((Collection<? extends ConnectionMapping>)newValue);
+        getConnectionmapping().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.ConnectionMapping>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

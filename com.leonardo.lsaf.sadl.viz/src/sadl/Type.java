@@ -2,6 +2,9 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +16,5 @@ package sadl;
  * @model
  * @generated
  */
-public interface Type extends PackageableElement {
+public interface Type extends EObject, PackageableElement {
 } // Type

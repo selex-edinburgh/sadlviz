@@ -2,6 +2,8 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Container;
+import com.leonardo.lsaf.sadl.sadl.Processor;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.ContainerMapping#getProcessor <em>Processor</em>}</li>
- *   <li>{@link sadl.ContainerMapping#getContainer <em>Container</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping#getProcessor <em>Processor</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping#getContainer <em>Container</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getContainerMapping()
@@ -35,7 +37,7 @@ public interface ContainerMapping extends EObject {
   Processor getProcessor();
 
   /**
-   * Sets the value of the '{@link sadl.ContainerMapping#getProcessor <em>Processor</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping#getProcessor <em>Processor</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Processor</em>' reference.
@@ -57,7 +59,7 @@ public interface ContainerMapping extends EObject {
   Container getContainer();
 
   /**
-   * Sets the value of the '{@link sadl.ContainerMapping#getContainer <em>Container</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.ContainerMapping#getContainer <em>Container</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Container</em>' reference.

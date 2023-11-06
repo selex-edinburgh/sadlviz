@@ -35,7 +35,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class EnumerationImpl extends TypeImpl implements Enumeration {
+public class EnumerationImpl extends TypeImpl implements com.leonardo.lsaf.sadl.sadl.Enumeration {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class EnumerationImpl extends TypeImpl implements Enumeration {
    * @generated
    * @ordered
    */
-  protected EList<Enumerator> enumerators;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Enumerator> enumerators;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public class EnumerationImpl extends TypeImpl implements Enumeration {
    * @generated
    */
   @Override
-  public EList<Enumerator> getEnumerators() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Enumerator> getEnumerators() {
     if (enumerators == null) {
-      enumerators = new EObjectContainmentEList<Enumerator>(Enumerator.class, this, SadlPackage.ENUMERATION__ENUMERATORS);
+      enumerators = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Enumerator>(com.leonardo.lsaf.sadl.sadl.Enumerator.class, this, SadlPackage.ENUMERATION__ENUMERATORS);
     }
     return enumerators;
   }
@@ -165,7 +165,7 @@ public class EnumerationImpl extends TypeImpl implements Enumeration {
         return;
       case SadlPackage.ENUMERATION__ENUMERATORS:
         getEnumerators().clear();
-        getEnumerators().addAll((Collection<? extends Enumerator>)newValue);
+        getEnumerators().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Enumerator>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

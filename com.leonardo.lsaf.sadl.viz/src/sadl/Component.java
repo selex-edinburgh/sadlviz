@@ -2,7 +2,11 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
+import com.leonardo.lsaf.sadl.sadl.Port;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,16 +17,16 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Component#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Component#getParts <em>Parts</em>}</li>
- *   <li>{@link sadl.Component#getPorts <em>Ports</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Component#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Component#getParts <em>Parts</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Component#getPorts <em>Ports</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getComponent()
  * @model
  * @generated
  */
-public interface Component extends PackageableElement {
+public interface Component extends EObject, PackageableElement {
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -36,7 +40,7 @@ public interface Component extends PackageableElement {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Component#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Component#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -47,7 +51,7 @@ public interface Component extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Parts</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.ComponentInstance}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ComponentInstance}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Parts</em>' containment reference list.
@@ -59,7 +63,7 @@ public interface Component extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.Port}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Port}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ports</em>' containment reference list.

@@ -2,6 +2,10 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Type;
+import com.leonardo.lsaf.sadl.sadl.Unit;
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,21 +16,21 @@ package sadl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Alias#getType <em>Type</em>}</li>
- *   <li>{@link sadl.Alias#getMin <em>Min</em>}</li>
- *   <li>{@link sadl.Alias#getMax <em>Max</em>}</li>
- *   <li>{@link sadl.Alias#getRes <em>Res</em>}</li>
- *   <li>{@link sadl.Alias#getUnbounded <em>Unbounded</em>}</li>
- *   <li>{@link sadl.Alias#getUpperbound <em>Upperbound</em>}</li>
- *   <li>{@link sadl.Alias#getUnit <em>Unit</em>}</li>
- *   <li>{@link sadl.Alias#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getType <em>Type</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getMin <em>Min</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getMax <em>Max</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getRes <em>Res</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getUnbounded <em>Unbounded</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getUpperbound <em>Upperbound</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getUnit <em>Unit</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Alias#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getAlias()
  * @model
  * @generated
  */
-public interface Alias extends Type {
+public interface Alias extends EObject, Type {
   /**
    * Returns the value of the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -40,7 +44,7 @@ public interface Alias extends Type {
   Type getType();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getType <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' reference.
@@ -62,7 +66,7 @@ public interface Alias extends Type {
   double getMin();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getMin <em>Min</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getMin <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Min</em>' attribute.
@@ -84,7 +88,7 @@ public interface Alias extends Type {
   double getMax();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getMax <em>Max</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getMax <em>Max</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Max</em>' attribute.
@@ -106,7 +110,7 @@ public interface Alias extends Type {
   double getRes();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getRes <em>Res</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getRes <em>Res</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Res</em>' attribute.
@@ -128,7 +132,7 @@ public interface Alias extends Type {
   String getUnbounded();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getUnbounded <em>Unbounded</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getUnbounded <em>Unbounded</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Unbounded</em>' attribute.
@@ -150,7 +154,7 @@ public interface Alias extends Type {
   int getUpperbound();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getUpperbound <em>Upperbound</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getUpperbound <em>Upperbound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Upperbound</em>' attribute.
@@ -172,7 +176,7 @@ public interface Alias extends Type {
   Unit getUnit();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getUnit <em>Unit</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getUnit <em>Unit</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Unit</em>' reference.
@@ -194,7 +198,7 @@ public interface Alias extends Type {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Alias#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Alias#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.

@@ -32,7 +32,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ModelImpl extends EObjectImpl implements Model {
+public class ModelImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Model {
   /**
    * The cached value of the '{@link #getPackage() <em>Package</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class ModelImpl extends EObjectImpl implements Model {
    * @generated
    * @ordered
    */
-  protected EList<sadl.Package> package_;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Package> package_;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class ModelImpl extends EObjectImpl implements Model {
    * @generated
    */
   @Override
-  public EList<sadl.Package> getPackage() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Package> getPackage() {
     if (package_ == null) {
-      package_ = new EObjectContainmentEList<sadl.Package>(sadl.Package.class, this, SadlPackage.MODEL__PACKAGE);
+      package_ = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Package>(com.leonardo.lsaf.sadl.sadl.Package.class, this, SadlPackage.MODEL__PACKAGE);
     }
     return package_;
   }
@@ -114,7 +114,7 @@ public class ModelImpl extends EObjectImpl implements Model {
     switch (featureID) {
       case SadlPackage.MODEL__PACKAGE:
         getPackage().clear();
-        getPackage().addAll((Collection<? extends sadl.Package>)newValue);
+        getPackage().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Package>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

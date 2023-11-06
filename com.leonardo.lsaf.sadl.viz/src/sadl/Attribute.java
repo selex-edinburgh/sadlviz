@@ -2,6 +2,8 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Type;
+import com.leonardo.lsaf.sadl.sadl.Unit;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,14 +15,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Attribute#isDeprecated <em>Deprecated</em>}</li>
- *   <li>{@link sadl.Attribute#getType <em>Type</em>}</li>
- *   <li>{@link sadl.Attribute#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Attribute#isUnbounded <em>Unbounded</em>}</li>
- *   <li>{@link sadl.Attribute#getLowerbound <em>Lowerbound</em>}</li>
- *   <li>{@link sadl.Attribute#getUpperbound <em>Upperbound</em>}</li>
- *   <li>{@link sadl.Attribute#getUnit <em>Unit</em>}</li>
- *   <li>{@link sadl.Attribute#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#isDeprecated <em>Deprecated</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#getType <em>Type</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#isUnbounded <em>Unbounded</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#getLowerbound <em>Lowerbound</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#getUpperbound <em>Upperbound</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#getUnit <em>Unit</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Attribute#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getAttribute()
@@ -41,7 +43,7 @@ public interface Attribute extends EObject {
   boolean isDeprecated();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#isDeprecated <em>Deprecated</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#isDeprecated <em>Deprecated</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Deprecated</em>' attribute.
@@ -63,7 +65,7 @@ public interface Attribute extends EObject {
   Type getType();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getType <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' reference.
@@ -85,7 +87,7 @@ public interface Attribute extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -107,7 +109,7 @@ public interface Attribute extends EObject {
   boolean isUnbounded();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#isUnbounded <em>Unbounded</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#isUnbounded <em>Unbounded</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Unbounded</em>' attribute.
@@ -129,7 +131,7 @@ public interface Attribute extends EObject {
   int getLowerbound();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#getLowerbound <em>Lowerbound</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getLowerbound <em>Lowerbound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Lowerbound</em>' attribute.
@@ -151,7 +153,7 @@ public interface Attribute extends EObject {
   int getUpperbound();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#getUpperbound <em>Upperbound</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getUpperbound <em>Upperbound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Upperbound</em>' attribute.
@@ -173,7 +175,7 @@ public interface Attribute extends EObject {
   Unit getUnit();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#getUnit <em>Unit</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getUnit <em>Unit</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Unit</em>' reference.
@@ -195,7 +197,7 @@ public interface Attribute extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Attribute#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Attribute#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.

@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Port#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Port#isConjugated <em>Conjugated</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Port#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Port#isConjugated <em>Conjugated</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getPort()
@@ -35,7 +35,7 @@ public interface Port extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Port#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Port#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -57,7 +57,7 @@ public interface Port extends EObject {
   boolean isConjugated();
 
   /**
-   * Sets the value of the '{@link sadl.Port#isConjugated <em>Conjugated</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Port#isConjugated <em>Conjugated</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Conjugated</em>' attribute.

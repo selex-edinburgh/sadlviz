@@ -32,7 +32,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ComponentInstanceImpl extends EObjectImpl implements ComponentInstance {
+public class ComponentInstanceImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.ComponentInstance {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class ComponentInstanceImpl extends EObjectImpl implements ComponentInsta
    * @generated
    * @ordered
    */
-  protected Component type;
+  protected com.leonardo.lsaf.sadl.sadl.Component type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -168,10 +168,10 @@ public class ComponentInstanceImpl extends EObjectImpl implements ComponentInsta
    * @generated
    */
   @Override
-  public Component getType() {
+  public com.leonardo.lsaf.sadl.sadl.Component getType() {
     if (type != null && type.eIsProxy()) {
       InternalEObject oldType = (InternalEObject)type;
-      type = (Component)eResolveProxy(oldType);
+      type = (com.leonardo.lsaf.sadl.sadl.Component)eResolveProxy(oldType);
       if (type != oldType) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.COMPONENT_INSTANCE__TYPE, oldType, type));
@@ -185,7 +185,7 @@ public class ComponentInstanceImpl extends EObjectImpl implements ComponentInsta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component basicGetType() {
+  public com.leonardo.lsaf.sadl.sadl.Component basicGetType() {
     return type;
   }
 
@@ -195,8 +195,8 @@ public class ComponentInstanceImpl extends EObjectImpl implements ComponentInsta
    * @generated
    */
   @Override
-  public void setType(Component newType) {
-    Component oldType = type;
+  public void setType(com.leonardo.lsaf.sadl.sadl.Component newType) {
+    com.leonardo.lsaf.sadl.sadl.Component oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.COMPONENT_INSTANCE__TYPE, oldType, type));
@@ -351,7 +351,7 @@ public class ComponentInstanceImpl extends EObjectImpl implements ComponentInsta
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.COMPONENT_INSTANCE__TYPE:
-        setType((Component)newValue);
+        setType((com.leonardo.lsaf.sadl.sadl.Component)newValue);
         return;
       case SadlPackage.COMPONENT_INSTANCE__NAME:
         setName((String)newValue);
@@ -381,7 +381,7 @@ public class ComponentInstanceImpl extends EObjectImpl implements ComponentInsta
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.COMPONENT_INSTANCE__TYPE:
-        setType((Component)null);
+        setType((com.leonardo.lsaf.sadl.sadl.Component)null);
         return;
       case SadlPackage.COMPONENT_INSTANCE__NAME:
         setName(NAME_EDEFAULT);

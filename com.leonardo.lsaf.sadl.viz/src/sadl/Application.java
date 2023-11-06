@@ -2,7 +2,10 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.ContainerInstance;
+import com.leonardo.lsaf.sadl.sadl.PackageableElement;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,15 +16,15 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Application#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Application#getContainerInstances <em>Container Instances</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Application#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Application#getContainerInstances <em>Container Instances</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getApplication()
  * @model
  * @generated
  */
-public interface Application extends PackageableElement {
+public interface Application extends EObject, PackageableElement {
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -35,7 +38,7 @@ public interface Application extends PackageableElement {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Application#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Application#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -46,7 +49,7 @@ public interface Application extends PackageableElement {
 
   /**
    * Returns the value of the '<em><b>Container Instances</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.ContainerInstance}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.ContainerInstance}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Container Instances</em>' containment reference list.

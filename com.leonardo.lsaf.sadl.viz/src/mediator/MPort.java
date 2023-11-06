@@ -182,12 +182,12 @@ public interface MPort extends MConnectableElement {
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Sadl Port</em>' reference.
-   * @see #setSadlPort(Port)
+   * @see #setSadlPort(com.leonardo.lsaf.sadl.sadl.Port)
    * @see mediator.MediatorPackage#getMPort_SadlPort()
    * @model
    * @generated
    */
-  Port getSadlPort();
+  com.leonardo.lsaf.sadl.sadl.Port getSadlPort();
 
   /**
    * Sets the value of the '{@link mediator.MPort#getSadlPort <em>Sadl Port</em>}' reference.
@@ -197,6 +197,6 @@ public interface MPort extends MConnectableElement {
    * @see #getSadlPort()
    * @generated
    */
-  void setSadlPort(Port value);
+  void setSadlPort(com.leonardo.lsaf.sadl.sadl.Port value);
 
 } // MPort

@@ -2,6 +2,7 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Property;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.PropertyValue#getProperty <em>Property</em>}</li>
- *   <li>{@link sadl.PropertyValue#getValue <em>Value</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.PropertyValue#getProperty <em>Property</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.PropertyValue#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getPropertyValue()
@@ -35,7 +36,7 @@ public interface PropertyValue extends EObject {
   Property getProperty();
 
   /**
-   * Sets the value of the '{@link sadl.PropertyValue#getProperty <em>Property</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.PropertyValue#getProperty <em>Property</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Property</em>' reference.
@@ -57,7 +58,7 @@ public interface PropertyValue extends EObject {
   String getValue();
 
   /**
-   * Sets the value of the '{@link sadl.PropertyValue#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.PropertyValue#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.

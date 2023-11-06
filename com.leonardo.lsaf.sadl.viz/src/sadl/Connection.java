@@ -2,6 +2,10 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.ComponentInstance;
+import com.leonardo.lsaf.sadl.sadl.Port;
+import com.leonardo.lsaf.sadl.sadl.PropertyValue;
+import com.leonardo.lsaf.sadl.sadl.Strategy;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -15,14 +19,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Connection#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Connection#getFrom <em>From</em>}</li>
- *   <li>{@link sadl.Connection#getSource <em>Source</em>}</li>
- *   <li>{@link sadl.Connection#getTo <em>To</em>}</li>
- *   <li>{@link sadl.Connection#getDestination <em>Destination</em>}</li>
- *   <li>{@link sadl.Connection#getStrategy <em>Strategy</em>}</li>
- *   <li>{@link sadl.Connection#getValue <em>Value</em>}</li>
- *   <li>{@link sadl.Connection#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getFrom <em>From</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getSource <em>Source</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getTo <em>To</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getDestination <em>Destination</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getStrategy <em>Strategy</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getValue <em>Value</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Connection#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getConnection()
@@ -43,7 +47,7 @@ public interface Connection extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Connection#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Connection#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -65,7 +69,7 @@ public interface Connection extends EObject {
   ComponentInstance getFrom();
 
   /**
-   * Sets the value of the '{@link sadl.Connection#getFrom <em>From</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Connection#getFrom <em>From</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>From</em>' reference.
@@ -76,7 +80,7 @@ public interface Connection extends EObject {
 
   /**
    * Returns the value of the '<em><b>Source</b></em>' reference list.
-   * The list contents are of type {@link sadl.Port}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Port}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source</em>' reference list.
@@ -99,7 +103,7 @@ public interface Connection extends EObject {
   ComponentInstance getTo();
 
   /**
-   * Sets the value of the '{@link sadl.Connection#getTo <em>To</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Connection#getTo <em>To</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>To</em>' reference.
@@ -110,7 +114,7 @@ public interface Connection extends EObject {
 
   /**
    * Returns the value of the '<em><b>Destination</b></em>' reference list.
-   * The list contents are of type {@link sadl.Port}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Port}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Destination</em>' reference list.
@@ -133,7 +137,7 @@ public interface Connection extends EObject {
   Strategy getStrategy();
 
   /**
-   * Sets the value of the '{@link sadl.Connection#getStrategy <em>Strategy</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Connection#getStrategy <em>Strategy</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Strategy</em>' reference.
@@ -144,7 +148,7 @@ public interface Connection extends EObject {
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.PropertyValue}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.PropertyValue}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference list.
@@ -167,7 +171,7 @@ public interface Connection extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Connection#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Connection#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.

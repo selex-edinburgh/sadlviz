@@ -97,39 +97,39 @@ public class SadlSwitch<T> extends Switch<T> {
   protected T doSwitch(int classifierID, EObject theEObject) {
     switch (classifierID) {
       case SadlPackage.MODEL: {
-        Model model = (Model)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Model model = (com.leonardo.lsaf.sadl.sadl.Model)theEObject;
         T result = caseModel(model);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.PACKAGE: {
-        sadl.Package package_ = (sadl.Package)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Package package_ = (com.leonardo.lsaf.sadl.sadl.Package)theEObject;
         T result = casePackage(package_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.PACKAGEABLE_ELEMENT: {
-        PackageableElement packageableElement = (PackageableElement)theEObject;
+        com.leonardo.lsaf.sadl.sadl.PackageableElement packageableElement = (com.leonardo.lsaf.sadl.sadl.PackageableElement)theEObject;
         T result = casePackageableElement(packageableElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.UNIT: {
-        Unit unit = (Unit)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Unit unit = (com.leonardo.lsaf.sadl.sadl.Unit)theEObject;
         T result = caseUnit(unit);
         if (result == null) result = casePackageableElement(unit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.TYPE: {
-        Type type = (Type)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Type type = (com.leonardo.lsaf.sadl.sadl.Type)theEObject;
         T result = caseType(type);
         if (result == null) result = casePackageableElement(type);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.PRIMITIVE: {
-        Primitive primitive = (Primitive)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Primitive primitive = (com.leonardo.lsaf.sadl.sadl.Primitive)theEObject;
         T result = casePrimitive(primitive);
         if (result == null) result = caseType(primitive);
         if (result == null) result = casePackageableElement(primitive);
@@ -137,14 +137,14 @@ public class SadlSwitch<T> extends Switch<T> {
         return result;
       }
       case SadlPackage.INTERFACE: {
-        Interface interface_ = (Interface)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Interface interface_ = (com.leonardo.lsaf.sadl.sadl.Interface)theEObject;
         T result = caseInterface(interface_);
         if (result == null) result = casePackageableElement(interface_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.ENUMERATION: {
-        Enumeration enumeration = (Enumeration)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Enumeration enumeration = (com.leonardo.lsaf.sadl.sadl.Enumeration)theEObject;
         T result = caseEnumeration(enumeration);
         if (result == null) result = caseType(enumeration);
         if (result == null) result = casePackageableElement(enumeration);
@@ -152,7 +152,7 @@ public class SadlSwitch<T> extends Switch<T> {
         return result;
       }
       case SadlPackage.TOPIC: {
-        Topic topic = (Topic)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Topic topic = (com.leonardo.lsaf.sadl.sadl.Topic)theEObject;
         T result = caseTopic(topic);
         if (result == null) result = caseType(topic);
         if (result == null) result = casePackageableElement(topic);
@@ -160,7 +160,7 @@ public class SadlSwitch<T> extends Switch<T> {
         return result;
       }
       case SadlPackage.ALIAS: {
-        Alias alias = (Alias)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Alias alias = (com.leonardo.lsaf.sadl.sadl.Alias)theEObject;
         T result = caseAlias(alias);
         if (result == null) result = caseType(alias);
         if (result == null) result = casePackageableElement(alias);
@@ -168,135 +168,135 @@ public class SadlSwitch<T> extends Switch<T> {
         return result;
       }
       case SadlPackage.PORT: {
-        Port port = (Port)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Port port = (com.leonardo.lsaf.sadl.sadl.Port)theEObject;
         T result = casePort(port);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.ENUMERATOR: {
-        Enumerator enumerator = (Enumerator)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Enumerator enumerator = (com.leonardo.lsaf.sadl.sadl.Enumerator)theEObject;
         T result = caseEnumerator(enumerator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.ATTRIBUTE: {
-        Attribute attribute = (Attribute)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Attribute attribute = (com.leonardo.lsaf.sadl.sadl.Attribute)theEObject;
         T result = caseAttribute(attribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.TOPIC_PORT: {
-        TopicPort topicPort = (TopicPort)theEObject;
+        com.leonardo.lsaf.sadl.sadl.TopicPort topicPort = (com.leonardo.lsaf.sadl.sadl.TopicPort)theEObject;
         T result = caseTopicPort(topicPort);
         if (result == null) result = casePort(topicPort);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.INTERFACE_PORT: {
-        InterfacePort interfacePort = (InterfacePort)theEObject;
+        com.leonardo.lsaf.sadl.sadl.InterfacePort interfacePort = (com.leonardo.lsaf.sadl.sadl.InterfacePort)theEObject;
         T result = caseInterfacePort(interfacePort);
         if (result == null) result = casePort(interfacePort);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.PLATFORM: {
-        Platform platform = (Platform)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Platform platform = (com.leonardo.lsaf.sadl.sadl.Platform)theEObject;
         T result = casePlatform(platform);
         if (result == null) result = casePackageableElement(platform);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.PROCESSOR: {
-        Processor processor = (Processor)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Processor processor = (com.leonardo.lsaf.sadl.sadl.Processor)theEObject;
         T result = caseProcessor(processor);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.LINK: {
-        Link link = (Link)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Link link = (com.leonardo.lsaf.sadl.sadl.Link)theEObject;
         T result = caseLink(link);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.PROPERTY: {
-        Property property = (Property)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Property property = (com.leonardo.lsaf.sadl.sadl.Property)theEObject;
         T result = caseProperty(property);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.PROPERTY_VALUE: {
-        PropertyValue propertyValue = (PropertyValue)theEObject;
+        com.leonardo.lsaf.sadl.sadl.PropertyValue propertyValue = (com.leonardo.lsaf.sadl.sadl.PropertyValue)theEObject;
         T result = casePropertyValue(propertyValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.TRANSPORT: {
-        Transport transport = (Transport)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Transport transport = (com.leonardo.lsaf.sadl.sadl.Transport)theEObject;
         T result = caseTransport(transport);
         if (result == null) result = casePackageableElement(transport);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.APPLICATION: {
-        Application application = (Application)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Application application = (com.leonardo.lsaf.sadl.sadl.Application)theEObject;
         T result = caseApplication(application);
         if (result == null) result = casePackageableElement(application);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.CONTAINER: {
-        Container container = (Container)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Container container = (com.leonardo.lsaf.sadl.sadl.Container)theEObject;
         T result = caseContainer(container);
         if (result == null) result = casePackageableElement(container);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.CONTAINER_INSTANCE: {
-        ContainerInstance containerInstance = (ContainerInstance)theEObject;
+        com.leonardo.lsaf.sadl.sadl.ContainerInstance containerInstance = (com.leonardo.lsaf.sadl.sadl.ContainerInstance)theEObject;
         T result = caseContainerInstance(containerInstance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.COMPONENT: {
-        Component component = (Component)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Component component = (com.leonardo.lsaf.sadl.sadl.Component)theEObject;
         T result = caseComponent(component);
         if (result == null) result = casePackageableElement(component);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.COMPONENT_INSTANCE: {
-        ComponentInstance componentInstance = (ComponentInstance)theEObject;
+        com.leonardo.lsaf.sadl.sadl.ComponentInstance componentInstance = (com.leonardo.lsaf.sadl.sadl.ComponentInstance)theEObject;
         T result = caseComponentInstance(componentInstance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.CONNECTION: {
-        Connection connection = (Connection)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Connection connection = (com.leonardo.lsaf.sadl.sadl.Connection)theEObject;
         T result = caseConnection(connection);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.DEPLOYMENT: {
-        Deployment deployment = (Deployment)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Deployment deployment = (com.leonardo.lsaf.sadl.sadl.Deployment)theEObject;
         T result = caseDeployment(deployment);
         if (result == null) result = casePackageableElement(deployment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.CONTAINER_MAPPING: {
-        ContainerMapping containerMapping = (ContainerMapping)theEObject;
+        com.leonardo.lsaf.sadl.sadl.ContainerMapping containerMapping = (com.leonardo.lsaf.sadl.sadl.ContainerMapping)theEObject;
         T result = caseContainerMapping(containerMapping);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.CONNECTION_MAPPING: {
-        ConnectionMapping connectionMapping = (ConnectionMapping)theEObject;
+        com.leonardo.lsaf.sadl.sadl.ConnectionMapping connectionMapping = (com.leonardo.lsaf.sadl.sadl.ConnectionMapping)theEObject;
         T result = caseConnectionMapping(connectionMapping);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SadlPackage.STRATEGY: {
-        Strategy strategy = (Strategy)theEObject;
+        com.leonardo.lsaf.sadl.sadl.Strategy strategy = (com.leonardo.lsaf.sadl.sadl.Strategy)theEObject;
         T result = caseStrategy(strategy);
         if (result == null) result = casePackageableElement(strategy);
         if (result == null) result = defaultCase(theEObject);
@@ -317,7 +317,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object) {
+  public T caseModel(com.leonardo.lsaf.sadl.sadl.Model object) {
     return null;
   }
 
@@ -332,7 +332,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePackage(sadl.Package object) {
+  public T casePackage(com.leonardo.lsaf.sadl.sadl.Package object) {
     return null;
   }
 
@@ -347,7 +347,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePackageableElement(PackageableElement object) {
+  public T casePackageableElement(com.leonardo.lsaf.sadl.sadl.PackageableElement object) {
     return null;
   }
 
@@ -362,7 +362,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUnit(Unit object) {
+  public T caseUnit(com.leonardo.lsaf.sadl.sadl.Unit object) {
     return null;
   }
 
@@ -377,7 +377,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseType(Type object) {
+  public T caseType(com.leonardo.lsaf.sadl.sadl.Type object) {
     return null;
   }
 
@@ -392,7 +392,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePrimitive(Primitive object) {
+  public T casePrimitive(com.leonardo.lsaf.sadl.sadl.Primitive object) {
     return null;
   }
 
@@ -407,7 +407,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInterface(Interface object) {
+  public T caseInterface(com.leonardo.lsaf.sadl.sadl.Interface object) {
     return null;
   }
 
@@ -422,7 +422,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEnumeration(Enumeration object) {
+  public T caseEnumeration(com.leonardo.lsaf.sadl.sadl.Enumeration object) {
     return null;
   }
 
@@ -437,7 +437,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTopic(Topic object) {
+  public T caseTopic(com.leonardo.lsaf.sadl.sadl.Topic object) {
     return null;
   }
 
@@ -452,7 +452,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAlias(Alias object) {
+  public T caseAlias(com.leonardo.lsaf.sadl.sadl.Alias object) {
     return null;
   }
 
@@ -467,7 +467,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePort(Port object) {
+  public T casePort(com.leonardo.lsaf.sadl.sadl.Port object) {
     return null;
   }
 
@@ -482,7 +482,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEnumerator(Enumerator object) {
+  public T caseEnumerator(com.leonardo.lsaf.sadl.sadl.Enumerator object) {
     return null;
   }
 
@@ -497,7 +497,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAttribute(Attribute object) {
+  public T caseAttribute(com.leonardo.lsaf.sadl.sadl.Attribute object) {
     return null;
   }
 
@@ -512,7 +512,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTopicPort(TopicPort object) {
+  public T caseTopicPort(com.leonardo.lsaf.sadl.sadl.TopicPort object) {
     return null;
   }
 
@@ -527,7 +527,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInterfacePort(InterfacePort object) {
+  public T caseInterfacePort(com.leonardo.lsaf.sadl.sadl.InterfacePort object) {
     return null;
   }
 
@@ -542,7 +542,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePlatform(Platform object) {
+  public T casePlatform(com.leonardo.lsaf.sadl.sadl.Platform object) {
     return null;
   }
 
@@ -557,7 +557,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProcessor(Processor object) {
+  public T caseProcessor(com.leonardo.lsaf.sadl.sadl.Processor object) {
     return null;
   }
 
@@ -572,7 +572,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLink(Link object) {
+  public T caseLink(com.leonardo.lsaf.sadl.sadl.Link object) {
     return null;
   }
 
@@ -587,7 +587,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProperty(Property object) {
+  public T caseProperty(com.leonardo.lsaf.sadl.sadl.Property object) {
     return null;
   }
 
@@ -602,7 +602,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePropertyValue(PropertyValue object) {
+  public T casePropertyValue(com.leonardo.lsaf.sadl.sadl.PropertyValue object) {
     return null;
   }
 
@@ -617,7 +617,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTransport(Transport object) {
+  public T caseTransport(com.leonardo.lsaf.sadl.sadl.Transport object) {
     return null;
   }
 
@@ -632,7 +632,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseApplication(Application object) {
+  public T caseApplication(com.leonardo.lsaf.sadl.sadl.Application object) {
     return null;
   }
 
@@ -647,7 +647,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseContainer(Container object) {
+  public T caseContainer(com.leonardo.lsaf.sadl.sadl.Container object) {
     return null;
   }
 
@@ -662,7 +662,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseContainerInstance(ContainerInstance object) {
+  public T caseContainerInstance(com.leonardo.lsaf.sadl.sadl.ContainerInstance object) {
     return null;
   }
 
@@ -677,7 +677,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComponent(Component object) {
+  public T caseComponent(com.leonardo.lsaf.sadl.sadl.Component object) {
     return null;
   }
 
@@ -692,7 +692,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComponentInstance(ComponentInstance object) {
+  public T caseComponentInstance(com.leonardo.lsaf.sadl.sadl.ComponentInstance object) {
     return null;
   }
 
@@ -707,7 +707,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConnection(Connection object) {
+  public T caseConnection(com.leonardo.lsaf.sadl.sadl.Connection object) {
     return null;
   }
 
@@ -722,7 +722,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDeployment(Deployment object) {
+  public T caseDeployment(com.leonardo.lsaf.sadl.sadl.Deployment object) {
     return null;
   }
 
@@ -737,7 +737,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseContainerMapping(ContainerMapping object) {
+  public T caseContainerMapping(com.leonardo.lsaf.sadl.sadl.ContainerMapping object) {
     return null;
   }
 
@@ -752,7 +752,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConnectionMapping(ConnectionMapping object) {
+  public T caseConnectionMapping(com.leonardo.lsaf.sadl.sadl.ConnectionMapping object) {
     return null;
   }
 
@@ -767,7 +767,7 @@ public class SadlSwitch<T> extends Switch<T> {
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStrategy(Strategy object) {
+  public T caseStrategy(com.leonardo.lsaf.sadl.sadl.Strategy object) {
     return null;
   }
 

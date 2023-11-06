@@ -42,7 +42,7 @@ import sadl.Transport;
  *
  * @generated
  */
-public class LinkImpl extends EObjectImpl implements Link {
+public class LinkImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Link {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -91,7 +91,7 @@ public class LinkImpl extends EObjectImpl implements Link {
    * @generated
    * @ordered
    */
-  protected EList<Processor> processors;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Processor> processors;
 
   /**
    * The cached value of the '{@link #getTransport() <em>Transport</em>}' reference.
@@ -101,7 +101,7 @@ public class LinkImpl extends EObjectImpl implements Link {
    * @generated
    * @ordered
    */
-  protected Transport transport;
+  protected com.leonardo.lsaf.sadl.sadl.Transport transport;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
@@ -111,7 +111,7 @@ public class LinkImpl extends EObjectImpl implements Link {
    * @generated
    * @ordered
    */
-  protected EList<PropertyValue> value;
+  protected EList<com.leonardo.lsaf.sadl.sadl.PropertyValue> value;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,9 +184,9 @@ public class LinkImpl extends EObjectImpl implements Link {
    * @generated
    */
   @Override
-  public EList<Processor> getProcessors() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Processor> getProcessors() {
     if (processors == null) {
-      processors = new EObjectResolvingEList<Processor>(Processor.class, this, SadlPackage.LINK__PROCESSORS);
+      processors = new EObjectResolvingEList<com.leonardo.lsaf.sadl.sadl.Processor>(com.leonardo.lsaf.sadl.sadl.Processor.class, this, SadlPackage.LINK__PROCESSORS);
     }
     return processors;
   }
@@ -197,10 +197,10 @@ public class LinkImpl extends EObjectImpl implements Link {
    * @generated
    */
   @Override
-  public Transport getTransport() {
+  public com.leonardo.lsaf.sadl.sadl.Transport getTransport() {
     if (transport != null && transport.eIsProxy()) {
       InternalEObject oldTransport = (InternalEObject)transport;
-      transport = (Transport)eResolveProxy(oldTransport);
+      transport = (com.leonardo.lsaf.sadl.sadl.Transport)eResolveProxy(oldTransport);
       if (transport != oldTransport) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.LINK__TRANSPORT, oldTransport, transport));
@@ -214,7 +214,7 @@ public class LinkImpl extends EObjectImpl implements Link {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Transport basicGetTransport() {
+  public com.leonardo.lsaf.sadl.sadl.Transport basicGetTransport() {
     return transport;
   }
 
@@ -224,8 +224,8 @@ public class LinkImpl extends EObjectImpl implements Link {
    * @generated
    */
   @Override
-  public void setTransport(Transport newTransport) {
-    Transport oldTransport = transport;
+  public void setTransport(com.leonardo.lsaf.sadl.sadl.Transport newTransport) {
+    com.leonardo.lsaf.sadl.sadl.Transport oldTransport = transport;
     transport = newTransport;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.LINK__TRANSPORT, oldTransport, transport));
@@ -237,9 +237,9 @@ public class LinkImpl extends EObjectImpl implements Link {
    * @generated
    */
   @Override
-  public EList<PropertyValue> getValue() {
+  public EList<com.leonardo.lsaf.sadl.sadl.PropertyValue> getValue() {
     if (value == null) {
-      value = new EObjectContainmentEList<PropertyValue>(PropertyValue.class, this, SadlPackage.LINK__VALUE);
+      value = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.PropertyValue>(com.leonardo.lsaf.sadl.sadl.PropertyValue.class, this, SadlPackage.LINK__VALUE);
     }
     return value;
   }
@@ -298,14 +298,14 @@ public class LinkImpl extends EObjectImpl implements Link {
         return;
       case SadlPackage.LINK__PROCESSORS:
         getProcessors().clear();
-        getProcessors().addAll((Collection<? extends Processor>)newValue);
+        getProcessors().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Processor>)newValue);
         return;
       case SadlPackage.LINK__TRANSPORT:
-        setTransport((Transport)newValue);
+        setTransport((com.leonardo.lsaf.sadl.sadl.Transport)newValue);
         return;
       case SadlPackage.LINK__VALUE:
         getValue().clear();
-        getValue().addAll((Collection<? extends PropertyValue>)newValue);
+        getValue().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.PropertyValue>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -329,7 +329,7 @@ public class LinkImpl extends EObjectImpl implements Link {
         getProcessors().clear();
         return;
       case SadlPackage.LINK__TRANSPORT:
-        setTransport((Transport)null);
+        setTransport((com.leonardo.lsaf.sadl.sadl.Transport)null);
         return;
       case SadlPackage.LINK__VALUE:
         getValue().clear();

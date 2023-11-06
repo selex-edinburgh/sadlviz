@@ -46,7 +46,7 @@ import sadl.Strategy;
  *
  * @generated
  */
-public class ConnectionImpl extends EObjectImpl implements Connection {
+public class ConnectionImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Connection {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    * @ordered
    */
-  protected ComponentInstance from;
+  protected com.leonardo.lsaf.sadl.sadl.ComponentInstance from;
 
   /**
    * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
@@ -85,7 +85,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    * @ordered
    */
-  protected EList<Port> source;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Port> source;
 
   /**
    * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -95,7 +95,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    * @ordered
    */
-  protected ComponentInstance to;
+  protected com.leonardo.lsaf.sadl.sadl.ComponentInstance to;
 
   /**
    * The cached value of the '{@link #getDestination() <em>Destination</em>}' reference list.
@@ -105,7 +105,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    * @ordered
    */
-  protected EList<Port> destination;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Port> destination;
 
   /**
    * The cached value of the '{@link #getStrategy() <em>Strategy</em>}' reference.
@@ -115,7 +115,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    * @ordered
    */
-  protected Strategy strategy;
+  protected com.leonardo.lsaf.sadl.sadl.Strategy strategy;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
@@ -125,7 +125,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    * @ordered
    */
-  protected EList<PropertyValue> value;
+  protected EList<com.leonardo.lsaf.sadl.sadl.PropertyValue> value;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -195,10 +195,10 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public ComponentInstance getFrom() {
+  public com.leonardo.lsaf.sadl.sadl.ComponentInstance getFrom() {
     if (from != null && from.eIsProxy()) {
       InternalEObject oldFrom = (InternalEObject)from;
-      from = (ComponentInstance)eResolveProxy(oldFrom);
+      from = (com.leonardo.lsaf.sadl.sadl.ComponentInstance)eResolveProxy(oldFrom);
       if (from != oldFrom) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONNECTION__FROM, oldFrom, from));
@@ -212,7 +212,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentInstance basicGetFrom() {
+  public com.leonardo.lsaf.sadl.sadl.ComponentInstance basicGetFrom() {
     return from;
   }
 
@@ -222,8 +222,8 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public void setFrom(ComponentInstance newFrom) {
-    ComponentInstance oldFrom = from;
+  public void setFrom(com.leonardo.lsaf.sadl.sadl.ComponentInstance newFrom) {
+    com.leonardo.lsaf.sadl.sadl.ComponentInstance oldFrom = from;
     from = newFrom;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONNECTION__FROM, oldFrom, from));
@@ -235,9 +235,9 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public EList<Port> getSource() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Port> getSource() {
     if (source == null) {
-      source = new EObjectResolvingEList<Port>(Port.class, this, SadlPackage.CONNECTION__SOURCE);
+      source = new EObjectResolvingEList<com.leonardo.lsaf.sadl.sadl.Port>(com.leonardo.lsaf.sadl.sadl.Port.class, this, SadlPackage.CONNECTION__SOURCE);
     }
     return source;
   }
@@ -248,10 +248,10 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public ComponentInstance getTo() {
+  public com.leonardo.lsaf.sadl.sadl.ComponentInstance getTo() {
     if (to != null && to.eIsProxy()) {
       InternalEObject oldTo = (InternalEObject)to;
-      to = (ComponentInstance)eResolveProxy(oldTo);
+      to = (com.leonardo.lsaf.sadl.sadl.ComponentInstance)eResolveProxy(oldTo);
       if (to != oldTo) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONNECTION__TO, oldTo, to));
@@ -265,7 +265,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentInstance basicGetTo() {
+  public com.leonardo.lsaf.sadl.sadl.ComponentInstance basicGetTo() {
     return to;
   }
 
@@ -275,8 +275,8 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public void setTo(ComponentInstance newTo) {
-    ComponentInstance oldTo = to;
+  public void setTo(com.leonardo.lsaf.sadl.sadl.ComponentInstance newTo) {
+    com.leonardo.lsaf.sadl.sadl.ComponentInstance oldTo = to;
     to = newTo;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONNECTION__TO, oldTo, to));
@@ -288,9 +288,9 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public EList<Port> getDestination() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Port> getDestination() {
     if (destination == null) {
-      destination = new EObjectResolvingEList<Port>(Port.class, this, SadlPackage.CONNECTION__DESTINATION);
+      destination = new EObjectResolvingEList<com.leonardo.lsaf.sadl.sadl.Port>(com.leonardo.lsaf.sadl.sadl.Port.class, this, SadlPackage.CONNECTION__DESTINATION);
     }
     return destination;
   }
@@ -301,10 +301,10 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public Strategy getStrategy() {
+  public com.leonardo.lsaf.sadl.sadl.Strategy getStrategy() {
     if (strategy != null && strategy.eIsProxy()) {
       InternalEObject oldStrategy = (InternalEObject)strategy;
-      strategy = (Strategy)eResolveProxy(oldStrategy);
+      strategy = (com.leonardo.lsaf.sadl.sadl.Strategy)eResolveProxy(oldStrategy);
       if (strategy != oldStrategy) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.CONNECTION__STRATEGY, oldStrategy, strategy));
@@ -318,7 +318,7 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Strategy basicGetStrategy() {
+  public com.leonardo.lsaf.sadl.sadl.Strategy basicGetStrategy() {
     return strategy;
   }
 
@@ -328,8 +328,8 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public void setStrategy(Strategy newStrategy) {
-    Strategy oldStrategy = strategy;
+  public void setStrategy(com.leonardo.lsaf.sadl.sadl.Strategy newStrategy) {
+    com.leonardo.lsaf.sadl.sadl.Strategy oldStrategy = strategy;
     strategy = newStrategy;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.CONNECTION__STRATEGY, oldStrategy, strategy));
@@ -341,9 +341,9 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
    * @generated
    */
   @Override
-  public EList<PropertyValue> getValue() {
+  public EList<com.leonardo.lsaf.sadl.sadl.PropertyValue> getValue() {
     if (value == null) {
-      value = new EObjectContainmentEList<PropertyValue>(PropertyValue.class, this, SadlPackage.CONNECTION__VALUE);
+      value = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.PropertyValue>(com.leonardo.lsaf.sadl.sadl.PropertyValue.class, this, SadlPackage.CONNECTION__VALUE);
     }
     return value;
   }
@@ -429,25 +429,25 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
         setName((String)newValue);
         return;
       case SadlPackage.CONNECTION__FROM:
-        setFrom((ComponentInstance)newValue);
+        setFrom((com.leonardo.lsaf.sadl.sadl.ComponentInstance)newValue);
         return;
       case SadlPackage.CONNECTION__SOURCE:
         getSource().clear();
-        getSource().addAll((Collection<? extends Port>)newValue);
+        getSource().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Port>)newValue);
         return;
       case SadlPackage.CONNECTION__TO:
-        setTo((ComponentInstance)newValue);
+        setTo((com.leonardo.lsaf.sadl.sadl.ComponentInstance)newValue);
         return;
       case SadlPackage.CONNECTION__DESTINATION:
         getDestination().clear();
-        getDestination().addAll((Collection<? extends Port>)newValue);
+        getDestination().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Port>)newValue);
         return;
       case SadlPackage.CONNECTION__STRATEGY:
-        setStrategy((Strategy)newValue);
+        setStrategy((com.leonardo.lsaf.sadl.sadl.Strategy)newValue);
         return;
       case SadlPackage.CONNECTION__VALUE:
         getValue().clear();
-        getValue().addAll((Collection<? extends PropertyValue>)newValue);
+        getValue().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.PropertyValue>)newValue);
         return;
       case SadlPackage.CONNECTION__DESCRIPTION:
         setDescription((String)newValue);
@@ -468,19 +468,19 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
         setName(NAME_EDEFAULT);
         return;
       case SadlPackage.CONNECTION__FROM:
-        setFrom((ComponentInstance)null);
+        setFrom((com.leonardo.lsaf.sadl.sadl.ComponentInstance)null);
         return;
       case SadlPackage.CONNECTION__SOURCE:
         getSource().clear();
         return;
       case SadlPackage.CONNECTION__TO:
-        setTo((ComponentInstance)null);
+        setTo((com.leonardo.lsaf.sadl.sadl.ComponentInstance)null);
         return;
       case SadlPackage.CONNECTION__DESTINATION:
         getDestination().clear();
         return;
       case SadlPackage.CONNECTION__STRATEGY:
-        setStrategy((Strategy)null);
+        setStrategy((com.leonardo.lsaf.sadl.sadl.Strategy)null);
         return;
       case SadlPackage.CONNECTION__VALUE:
         getValue().clear();

@@ -26,7 +26,7 @@ import sadl.TopicPort;
  *
  * @generated
  */
-public class TopicPortImpl extends PortImpl implements TopicPort {
+public class TopicPortImpl extends PortImpl implements com.leonardo.lsaf.sadl.sadl.TopicPort {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class TopicPortImpl extends PortImpl implements TopicPort {
    * @generated
    * @ordered
    */
-  protected Topic type;
+  protected com.leonardo.lsaf.sadl.sadl.Topic type;
 
   /**
    * <!-- begin-user-doc -->
@@ -62,10 +62,10 @@ public class TopicPortImpl extends PortImpl implements TopicPort {
    * @generated
    */
   @Override
-  public Topic getType() {
+  public com.leonardo.lsaf.sadl.sadl.Topic getType() {
     if (type != null && type.eIsProxy()) {
       InternalEObject oldType = (InternalEObject)type;
-      type = (Topic)eResolveProxy(oldType);
+      type = (com.leonardo.lsaf.sadl.sadl.Topic)eResolveProxy(oldType);
       if (type != oldType) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.TOPIC_PORT__TYPE, oldType, type));
@@ -79,7 +79,7 @@ public class TopicPortImpl extends PortImpl implements TopicPort {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Topic basicGetType() {
+  public com.leonardo.lsaf.sadl.sadl.Topic basicGetType() {
     return type;
   }
 
@@ -89,8 +89,8 @@ public class TopicPortImpl extends PortImpl implements TopicPort {
    * @generated
    */
   @Override
-  public void setType(Topic newType) {
-    Topic oldType = type;
+  public void setType(com.leonardo.lsaf.sadl.sadl.Topic newType) {
+    com.leonardo.lsaf.sadl.sadl.Topic oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.TOPIC_PORT__TYPE, oldType, type));
@@ -120,7 +120,7 @@ public class TopicPortImpl extends PortImpl implements TopicPort {
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.TOPIC_PORT__TYPE:
-        setType((Topic)newValue);
+        setType((com.leonardo.lsaf.sadl.sadl.Topic)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,7 +135,7 @@ public class TopicPortImpl extends PortImpl implements TopicPort {
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.TOPIC_PORT__TYPE:
-        setType((Topic)null);
+        setType((com.leonardo.lsaf.sadl.sadl.Topic)null);
         return;
     }
     super.eUnset(featureID);

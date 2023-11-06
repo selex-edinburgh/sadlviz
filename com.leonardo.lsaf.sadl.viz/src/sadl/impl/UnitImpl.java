@@ -26,7 +26,7 @@ import sadl.Unit;
  *
  * @generated
  */
-public class UnitImpl extends PackageableElementImpl implements Unit {
+public class UnitImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Unit {
   /**
    * The cached value of the '{@link #getGroup() <em>Group</em>}' reference.
    * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class UnitImpl extends PackageableElementImpl implements Unit {
    * @generated
    * @ordered
    */
-  protected Unit group;
+  protected com.leonardo.lsaf.sadl.sadl.Unit group;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -82,10 +82,10 @@ public class UnitImpl extends PackageableElementImpl implements Unit {
    * @generated
    */
   @Override
-  public Unit getGroup() {
+  public com.leonardo.lsaf.sadl.sadl.Unit getGroup() {
     if (group != null && group.eIsProxy()) {
       InternalEObject oldGroup = (InternalEObject)group;
-      group = (Unit)eResolveProxy(oldGroup);
+      group = (com.leonardo.lsaf.sadl.sadl.Unit)eResolveProxy(oldGroup);
       if (group != oldGroup) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadlPackage.UNIT__GROUP, oldGroup, group));
@@ -99,7 +99,7 @@ public class UnitImpl extends PackageableElementImpl implements Unit {
    * <!-- end-user-doc -->
    * @generated
    */
-  public Unit basicGetGroup() {
+  public com.leonardo.lsaf.sadl.sadl.Unit basicGetGroup() {
     return group;
   }
 
@@ -109,8 +109,8 @@ public class UnitImpl extends PackageableElementImpl implements Unit {
    * @generated
    */
   @Override
-  public void setGroup(Unit newGroup) {
-    Unit oldGroup = group;
+  public void setGroup(com.leonardo.lsaf.sadl.sadl.Unit newGroup) {
+    com.leonardo.lsaf.sadl.sadl.Unit oldGroup = group;
     group = newGroup;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SadlPackage.UNIT__GROUP, oldGroup, group));
@@ -165,7 +165,7 @@ public class UnitImpl extends PackageableElementImpl implements Unit {
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case SadlPackage.UNIT__GROUP:
-        setGroup((Unit)newValue);
+        setGroup((com.leonardo.lsaf.sadl.sadl.Unit)newValue);
         return;
       case SadlPackage.UNIT__DESCRIPTION:
         setDescription((String)newValue);
@@ -183,7 +183,7 @@ public class UnitImpl extends PackageableElementImpl implements Unit {
   public void eUnset(int featureID) {
     switch (featureID) {
       case SadlPackage.UNIT__GROUP:
-        setGroup((Unit)null);
+        setGroup((com.leonardo.lsaf.sadl.sadl.Unit)null);
         return;
       case SadlPackage.UNIT__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);

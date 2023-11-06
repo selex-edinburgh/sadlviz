@@ -26,7 +26,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class PortImpl extends EObjectImpl implements Port {
+public class PortImpl extends EObjectImpl implements com.leonardo.lsaf.sadl.sadl.Port {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->

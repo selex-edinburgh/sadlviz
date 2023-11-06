@@ -2,7 +2,10 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Attribute;
+import com.leonardo.lsaf.sadl.sadl.Type;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,15 +16,15 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Topic#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Topic#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Topic#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Topic#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getTopic()
  * @model
  * @generated
  */
-public interface Topic extends Type {
+public interface Topic extends EObject, Type {
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -35,7 +38,7 @@ public interface Topic extends Type {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Topic#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Topic#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -46,7 +49,7 @@ public interface Topic extends Type {
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.Attribute}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Attribute}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Attributes</em>' containment reference list.

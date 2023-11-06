@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Model#getPackage <em>Package</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Model#getPackage <em>Package</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getModel()
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject {
   /**
    * Returns the value of the '<em><b>Package</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.Package}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Package}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Package</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface Model extends EObject {
    * @model containment="true"
    * @generated
    */
-  EList<sadl.Package> getPackage();
+  EList<com.leonardo.lsaf.sadl.sadl.Package> getPackage();
 
 } // Model

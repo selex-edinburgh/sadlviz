@@ -14,7 +14,7 @@ import sadl.Type;
  *
  * @generated
  */
-public class TypeImpl extends PackageableElementImpl implements Type {
+public class TypeImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Type {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -128,7 +128,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Model createModel() {
+  public com.leonardo.lsaf.sadl.sadl.Model createModel() {
     ModelImpl model = new ModelImpl();
     return model;
   }
@@ -139,7 +139,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public sadl.Package createPackage() {
+  public com.leonardo.lsaf.sadl.sadl.Package createPackage() {
     PackageImpl package_ = new PackageImpl();
     return package_;
   }
@@ -150,7 +150,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public PackageableElement createPackageableElement() {
+  public com.leonardo.lsaf.sadl.sadl.PackageableElement createPackageableElement() {
     PackageableElementImpl packageableElement = new PackageableElementImpl();
     return packageableElement;
   }
@@ -161,7 +161,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Unit createUnit() {
+  public com.leonardo.lsaf.sadl.sadl.Unit createUnit() {
     UnitImpl unit = new UnitImpl();
     return unit;
   }
@@ -172,7 +172,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Type createType() {
+  public com.leonardo.lsaf.sadl.sadl.Type createType() {
     TypeImpl type = new TypeImpl();
     return type;
   }
@@ -183,7 +183,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Primitive createPrimitive() {
+  public com.leonardo.lsaf.sadl.sadl.Primitive createPrimitive() {
     PrimitiveImpl primitive = new PrimitiveImpl();
     return primitive;
   }
@@ -194,7 +194,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Interface createInterface() {
+  public com.leonardo.lsaf.sadl.sadl.Interface createInterface() {
     InterfaceImpl interface_ = new InterfaceImpl();
     return interface_;
   }
@@ -205,7 +205,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Enumeration createEnumeration() {
+  public com.leonardo.lsaf.sadl.sadl.Enumeration createEnumeration() {
     EnumerationImpl enumeration = new EnumerationImpl();
     return enumeration;
   }
@@ -216,7 +216,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Topic createTopic() {
+  public com.leonardo.lsaf.sadl.sadl.Topic createTopic() {
     TopicImpl topic = new TopicImpl();
     return topic;
   }
@@ -227,7 +227,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Alias createAlias() {
+  public com.leonardo.lsaf.sadl.sadl.Alias createAlias() {
     AliasImpl alias = new AliasImpl();
     return alias;
   }
@@ -238,7 +238,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Port createPort() {
+  public com.leonardo.lsaf.sadl.sadl.Port createPort() {
     PortImpl port = new PortImpl();
     return port;
   }
@@ -249,7 +249,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Enumerator createEnumerator() {
+  public com.leonardo.lsaf.sadl.sadl.Enumerator createEnumerator() {
     EnumeratorImpl enumerator = new EnumeratorImpl();
     return enumerator;
   }
@@ -260,7 +260,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Attribute createAttribute() {
+  public com.leonardo.lsaf.sadl.sadl.Attribute createAttribute() {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
   }
@@ -271,7 +271,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public TopicPort createTopicPort() {
+  public com.leonardo.lsaf.sadl.sadl.TopicPort createTopicPort() {
     TopicPortImpl topicPort = new TopicPortImpl();
     return topicPort;
   }
@@ -282,7 +282,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public InterfacePort createInterfacePort() {
+  public com.leonardo.lsaf.sadl.sadl.InterfacePort createInterfacePort() {
     InterfacePortImpl interfacePort = new InterfacePortImpl();
     return interfacePort;
   }
@@ -293,7 +293,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Platform createPlatform() {
+  public com.leonardo.lsaf.sadl.sadl.Platform createPlatform() {
     PlatformImpl platform = new PlatformImpl();
     return platform;
   }
@@ -304,7 +304,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Processor createProcessor() {
+  public com.leonardo.lsaf.sadl.sadl.Processor createProcessor() {
     ProcessorImpl processor = new ProcessorImpl();
     return processor;
   }
@@ -315,7 +315,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Link createLink() {
+  public com.leonardo.lsaf.sadl.sadl.Link createLink() {
     LinkImpl link = new LinkImpl();
     return link;
   }
@@ -326,7 +326,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Property createProperty() {
+  public com.leonardo.lsaf.sadl.sadl.Property createProperty() {
     PropertyImpl property = new PropertyImpl();
     return property;
   }
@@ -337,7 +337,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public PropertyValue createPropertyValue() {
+  public com.leonardo.lsaf.sadl.sadl.PropertyValue createPropertyValue() {
     PropertyValueImpl propertyValue = new PropertyValueImpl();
     return propertyValue;
   }
@@ -348,7 +348,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Transport createTransport() {
+  public com.leonardo.lsaf.sadl.sadl.Transport createTransport() {
     TransportImpl transport = new TransportImpl();
     return transport;
   }
@@ -359,7 +359,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Application createApplication() {
+  public com.leonardo.lsaf.sadl.sadl.Application createApplication() {
     ApplicationImpl application = new ApplicationImpl();
     return application;
   }
@@ -370,7 +370,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public sadl.Container createContainer() {
+  public com.leonardo.lsaf.sadl.sadl.Container createContainer() {
     ContainerImpl container = new ContainerImpl();
     return container;
   }
@@ -381,7 +381,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public ContainerInstance createContainerInstance() {
+  public com.leonardo.lsaf.sadl.sadl.ContainerInstance createContainerInstance() {
     ContainerInstanceImpl containerInstance = new ContainerInstanceImpl();
     return containerInstance;
   }
@@ -392,7 +392,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Component createComponent() {
+  public com.leonardo.lsaf.sadl.sadl.Component createComponent() {
     ComponentImpl component = new ComponentImpl();
     return component;
   }
@@ -403,7 +403,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public ComponentInstance createComponentInstance() {
+  public com.leonardo.lsaf.sadl.sadl.ComponentInstance createComponentInstance() {
     ComponentInstanceImpl componentInstance = new ComponentInstanceImpl();
     return componentInstance;
   }
@@ -414,7 +414,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Connection createConnection() {
+  public com.leonardo.lsaf.sadl.sadl.Connection createConnection() {
     ConnectionImpl connection = new ConnectionImpl();
     return connection;
   }
@@ -425,7 +425,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Deployment createDeployment() {
+  public com.leonardo.lsaf.sadl.sadl.Deployment createDeployment() {
     DeploymentImpl deployment = new DeploymentImpl();
     return deployment;
   }
@@ -436,7 +436,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public ContainerMapping createContainerMapping() {
+  public com.leonardo.lsaf.sadl.sadl.ContainerMapping createContainerMapping() {
     ContainerMappingImpl containerMapping = new ContainerMappingImpl();
     return containerMapping;
   }
@@ -447,7 +447,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public ConnectionMapping createConnectionMapping() {
+  public com.leonardo.lsaf.sadl.sadl.ConnectionMapping createConnectionMapping() {
     ConnectionMappingImpl connectionMapping = new ConnectionMappingImpl();
     return connectionMapping;
   }
@@ -458,7 +458,7 @@ public class SadlFactoryImpl extends EFactoryImpl implements SadlFactory {
    * @generated
    */
   @Override
-  public Strategy createStrategy() {
+  public com.leonardo.lsaf.sadl.sadl.Strategy createStrategy() {
     StrategyImpl strategy = new StrategyImpl();
     return strategy;
   }

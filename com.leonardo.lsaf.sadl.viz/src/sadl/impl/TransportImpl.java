@@ -35,7 +35,7 @@ import sadl.Transport;
  *
  * @generated
  */
-public class TransportImpl extends PackageableElementImpl implements Transport {
+public class TransportImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Transport {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class TransportImpl extends PackageableElementImpl implements Transport {
    * @generated
    * @ordered
    */
-  protected EList<Property> properties;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Property> properties;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public class TransportImpl extends PackageableElementImpl implements Transport {
    * @generated
    */
   @Override
-  public EList<Property> getProperties() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Property> getProperties() {
     if (properties == null) {
-      properties = new EObjectContainmentEList<Property>(Property.class, this, SadlPackage.TRANSPORT__PROPERTIES);
+      properties = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Property>(com.leonardo.lsaf.sadl.sadl.Property.class, this, SadlPackage.TRANSPORT__PROPERTIES);
     }
     return properties;
   }
@@ -165,7 +165,7 @@ public class TransportImpl extends PackageableElementImpl implements Transport {
         return;
       case SadlPackage.TRANSPORT__PROPERTIES:
         getProperties().clear();
-        getProperties().addAll((Collection<? extends Property>)newValue);
+        getProperties().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Property>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

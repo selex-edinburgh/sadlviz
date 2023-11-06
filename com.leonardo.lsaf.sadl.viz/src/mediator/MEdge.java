@@ -2,6 +2,8 @@
  */
 package mediator;
 
+import com.leonardo.lsaf.sadl.sadl.Connection;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +16,7 @@ package mediator;
  * <ul>
  *   <li>{@link mediator.MEdge#getSource <em>Source</em>}</li>
  *   <li>{@link mediator.MEdge#getTarget <em>Target</em>}</li>
+ *   <li>{@link mediator.MEdge#getSadlConnection <em>Sadl Connection</em>}</li>
  * </ul>
  *
  * @see mediator.MediatorPackage#getMEdge()
@@ -64,5 +67,27 @@ public interface MEdge extends MElement {
    * @generated
    */
   void setTarget(MConnectableElement value);
+
+  /**
+   * Returns the value of the '<em><b>Sadl Connection</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sadl Connection</em>' reference.
+   * @see #setSadlConnection(Connection)
+   * @see mediator.MediatorPackage#getMEdge_SadlConnection()
+   * @model
+   * @generated
+   */
+  Connection getSadlConnection();
+
+  /**
+   * Sets the value of the '{@link mediator.MEdge#getSadlConnection <em>Sadl Connection</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sadl Connection</em>' reference.
+   * @see #getSadlConnection()
+   * @generated
+   */
+  void setSadlConnection(Connection value);
 
 } // MEdge

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.PackageableElement#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.PackageableElement#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getPackageableElement()
@@ -34,7 +34,7 @@ public interface PackageableElement extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.PackageableElement#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.PackageableElement#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.

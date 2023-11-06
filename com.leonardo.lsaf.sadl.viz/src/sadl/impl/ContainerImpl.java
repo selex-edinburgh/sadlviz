@@ -39,7 +39,7 @@ import sadl.SadlPackage;
  *
  * @generated
  */
-public class ContainerImpl extends PackageableElementImpl implements Container {
+public class ContainerImpl extends PackageableElementImpl implements com.leonardo.lsaf.sadl.sadl.Container {
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public class ContainerImpl extends PackageableElementImpl implements Container {
    * @generated
    * @ordered
    */
-  protected EList<ComponentInstance> componentInstances;
+  protected EList<com.leonardo.lsaf.sadl.sadl.ComponentInstance> componentInstances;
 
   /**
    * The cached value of the '{@link #getConnections() <em>Connections</em>}' containment reference list.
@@ -78,7 +78,7 @@ public class ContainerImpl extends PackageableElementImpl implements Container {
    * @generated
    * @ordered
    */
-  protected EList<Connection> connections;
+  protected EList<com.leonardo.lsaf.sadl.sadl.Connection> connections;
 
   /**
    * The cached value of the '{@link #getContainerInstances() <em>Container Instances</em>}' containment reference list.
@@ -88,7 +88,7 @@ public class ContainerImpl extends PackageableElementImpl implements Container {
    * @generated
    * @ordered
    */
-  protected EList<ContainerInstance> containerInstances;
+  protected EList<com.leonardo.lsaf.sadl.sadl.ContainerInstance> containerInstances;
 
   /**
    * <!-- begin-user-doc -->
@@ -138,9 +138,9 @@ public class ContainerImpl extends PackageableElementImpl implements Container {
    * @generated
    */
   @Override
-  public EList<ComponentInstance> getComponentInstances() {
+  public EList<com.leonardo.lsaf.sadl.sadl.ComponentInstance> getComponentInstances() {
     if (componentInstances == null) {
-      componentInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, SadlPackage.CONTAINER__COMPONENT_INSTANCES);
+      componentInstances = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.ComponentInstance>(com.leonardo.lsaf.sadl.sadl.ComponentInstance.class, this, SadlPackage.CONTAINER__COMPONENT_INSTANCES);
     }
     return componentInstances;
   }
@@ -151,9 +151,9 @@ public class ContainerImpl extends PackageableElementImpl implements Container {
    * @generated
    */
   @Override
-  public EList<Connection> getConnections() {
+  public EList<com.leonardo.lsaf.sadl.sadl.Connection> getConnections() {
     if (connections == null) {
-      connections = new EObjectContainmentEList<Connection>(Connection.class, this, SadlPackage.CONTAINER__CONNECTIONS);
+      connections = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.Connection>(com.leonardo.lsaf.sadl.sadl.Connection.class, this, SadlPackage.CONTAINER__CONNECTIONS);
     }
     return connections;
   }
@@ -164,9 +164,9 @@ public class ContainerImpl extends PackageableElementImpl implements Container {
    * @generated
    */
   @Override
-  public EList<ContainerInstance> getContainerInstances() {
+  public EList<com.leonardo.lsaf.sadl.sadl.ContainerInstance> getContainerInstances() {
     if (containerInstances == null) {
-      containerInstances = new EObjectContainmentEList<ContainerInstance>(ContainerInstance.class, this, SadlPackage.CONTAINER__CONTAINER_INSTANCES);
+      containerInstances = new EObjectContainmentEList<com.leonardo.lsaf.sadl.sadl.ContainerInstance>(com.leonardo.lsaf.sadl.sadl.ContainerInstance.class, this, SadlPackage.CONTAINER__CONTAINER_INSTANCES);
     }
     return containerInstances;
   }
@@ -223,15 +223,15 @@ public class ContainerImpl extends PackageableElementImpl implements Container {
         return;
       case SadlPackage.CONTAINER__COMPONENT_INSTANCES:
         getComponentInstances().clear();
-        getComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
+        getComponentInstances().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.ComponentInstance>)newValue);
         return;
       case SadlPackage.CONTAINER__CONNECTIONS:
         getConnections().clear();
-        getConnections().addAll((Collection<? extends Connection>)newValue);
+        getConnections().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.Connection>)newValue);
         return;
       case SadlPackage.CONTAINER__CONTAINER_INSTANCES:
         getContainerInstances().clear();
-        getContainerInstances().addAll((Collection<? extends ContainerInstance>)newValue);
+        getContainerInstances().addAll((Collection<? extends com.leonardo.lsaf.sadl.sadl.ContainerInstance>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

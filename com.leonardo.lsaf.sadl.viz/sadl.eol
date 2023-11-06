@@ -139,32 +139,32 @@ operation M!Port getFullName() {
 }
 
 operation M!Application getFullNameStr() {
-    var fullName = self.getFullName().concat(".");
+    var fullName = self.getFullName().concat("-");
     return fullName;
 }
 
 operation M!Container getFullNameStr() {
-    var fullName = self.getFullName().concat(".");
+    var fullName = self.getFullName().concat("-");
     return fullName;
 }
 
 operation M!Connection getFullNameStr() {
-    var fullName = self.getFullName().concat(".");
+    var fullName = self.getFullName().concat("-");
     return fullName;
 }
 
 operation M!ContainerInstance getFullNameStr() {
-    var fullName = self.getFullName().concat(".");
+    var fullName = self.getFullName().concat("-");
     return fullName;
 }
 
 operation M!ComponentInstance getFullNameStr() {
-    var fullName = self.getFullName().concat(".");
+    var fullName = self.getFullName().concat("-");
     return fullName;
 }
 
 operation M!Port getFullNameStr() {
-    var fullName = self.getFullName().concat(".");
+    var fullName = self.getFullName().concat("-");
     return fullName;
 }
 
@@ -173,7 +173,7 @@ operation Connection getSourceName(): String{
     for (port in self.source) {
         names.add(port.name);
     }
-    return names.concat(".");
+    return names.concat("-");
 }
 
 operation Connection getDestinationName(): String{
@@ -181,5 +181,5 @@ operation Connection getDestinationName(): String{
     for (port in self.destination) {
         names.add(port.name);
     }
-    return names.concat(".");
+    return names.concat("-");
 }

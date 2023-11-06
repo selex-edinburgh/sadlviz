@@ -2,6 +2,9 @@
  */
 package sadl;
 
+import com.leonardo.lsaf.sadl.sadl.Processor;
+import com.leonardo.lsaf.sadl.sadl.PropertyValue;
+import com.leonardo.lsaf.sadl.sadl.Transport;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -15,11 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Link#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Link#getDescription <em>Description</em>}</li>
- *   <li>{@link sadl.Link#getProcessors <em>Processors</em>}</li>
- *   <li>{@link sadl.Link#getTransport <em>Transport</em>}</li>
- *   <li>{@link sadl.Link#getValue <em>Value</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Link#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Link#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Link#getProcessors <em>Processors</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Link#getTransport <em>Transport</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Link#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getLink()
@@ -40,7 +43,7 @@ public interface Link extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Link#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Link#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -62,7 +65,7 @@ public interface Link extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Link#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Link#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -73,7 +76,7 @@ public interface Link extends EObject {
 
   /**
    * Returns the value of the '<em><b>Processors</b></em>' reference list.
-   * The list contents are of type {@link sadl.Processor}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.Processor}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Processors</em>' reference list.
@@ -96,7 +99,7 @@ public interface Link extends EObject {
   Transport getTransport();
 
   /**
-   * Sets the value of the '{@link sadl.Link#getTransport <em>Transport</em>}' reference.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Link#getTransport <em>Transport</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Transport</em>' reference.
@@ -107,7 +110,7 @@ public interface Link extends EObject {
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference list.
-   * The list contents are of type {@link sadl.PropertyValue}.
+   * The list contents are of type {@link com.leonardo.lsaf.sadl.sadl.PropertyValue}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference list.

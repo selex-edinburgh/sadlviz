@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sadl.Processor#getName <em>Name</em>}</li>
- *   <li>{@link sadl.Processor#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Processor#getName <em>Name</em>}</li>
+ *   <li>{@link com.leonardo.lsaf.sadl.sadl.Processor#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see sadl.SadlPackage#getProcessor()
@@ -35,7 +35,7 @@ public interface Processor extends EObject {
   String getName();
 
   /**
-   * Sets the value of the '{@link sadl.Processor#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Processor#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -57,7 +57,7 @@ public interface Processor extends EObject {
   String getDescription();
 
   /**
-   * Sets the value of the '{@link sadl.Processor#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link com.leonardo.lsaf.sadl.sadl.Processor#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
