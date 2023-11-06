@@ -475,13 +475,13 @@ public interface MediatorPackage extends EPackage {
   int MNODE__WEST_PORTS = MCONNECTABLE_ELEMENT_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Packageable Element</b></em>' reference.
+   * The feature id for the '<em><b>Sadl Container</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MNODE__PACKAGEABLE_ELEMENT = MCONNECTABLE_ELEMENT_FEATURE_COUNT + 6;
+  int MNODE__SADL_CONTAINER = MCONNECTABLE_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>MNode</em>' class.
@@ -916,15 +916,15 @@ public interface MediatorPackage extends EPackage {
   EReference getMNode_WestPorts();
 
   /**
-   * Returns the meta object for the reference '{@link mediator.MNode#getPackageableElement <em>Packageable Element</em>}'.
+   * Returns the meta object for the reference '{@link mediator.MNode#getSadlContainer <em>Sadl Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Packageable Element</em>'.
-   * @see mediator.MNode#getPackageableElement()
+   * @return the meta object for the reference '<em>Sadl Container</em>'.
+   * @see mediator.MNode#getSadlContainer()
    * @see #getMNode()
    * @generated
    */
-  EReference getMNode_PackageableElement();
+  EReference getMNode_SadlContainer();
 
   /**
    * Returns the meta object for class '{@link mediator.MPort <em>MPort</em>}'.
@@ -1249,12 +1249,12 @@ public interface MediatorPackage extends EPackage {
     EReference MNODE__WEST_PORTS = eINSTANCE.getMNode_WestPorts();
 
     /**
-     * The meta object literal for the '<em><b>Packageable Element</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Sadl Container</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MNODE__PACKAGEABLE_ELEMENT = eINSTANCE.getMNode_PackageableElement();
+    EReference MNODE__SADL_CONTAINER = eINSTANCE.getMNode_SadlContainer();
 
     /**
      * The meta object literal for the '{@link mediator.impl.MPortImpl <em>MPort</em>}' class.

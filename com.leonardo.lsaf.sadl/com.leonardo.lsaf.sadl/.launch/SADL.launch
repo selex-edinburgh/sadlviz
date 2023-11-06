@@ -14,9 +14,6 @@
     <booleanAttribute key="default" value="false"/>
     <setAttribute key="deselected_workspace_bundles">
         <setEntry value="com.leonardo.lsaf.sadl.viz"/>
-        <setEntry value="com.leonardo.lsaf.sadl.viz.edit"/>
-        <setEntry value="com.leonardo.lsaf.sadl.viz.editor"/>
-        <setEntry value="com.leonardo.lsaf.sadl.viz.tests"/>
         <setEntry value="org.eclipse.epsilon.picto.web.generator"/>
         <setEntry value="picto-web"/>
     </setAttribute>
@@ -99,6 +96,7 @@
         <setEntry value="org.apache.batik.xml@default:default"/>
         <setEntry value="org.apache.commons.cli@default:default"/>
         <setEntry value="org.apache.commons.codec@default:default"/>
+        <setEntry value="org.apache.commons.compress"/>
         <setEntry value="org.apache.commons.csv@default:default"/>
         <setEntry value="org.apache.commons.io@default:default"/>
         <setEntry value="org.apache.commons.jxpath@default:default"/>
@@ -385,8 +383,13 @@
         <setEntry value="org.eclipse.jetty.util.ajax@default:default"/>
         <setEntry value="org.eclipse.jetty.util@default:default"/>
         <setEntry value="org.eclipse.jface.databinding@default:default"/>
+        <setEntry value="org.eclipse.jface.notifications"/>
         <setEntry value="org.eclipse.jface.text@default:default"/>
         <setEntry value="org.eclipse.jface@default:default"/>
+        <setEntry value="org.eclipse.lsp4e"/>
+        <setEntry value="org.eclipse.lsp4e.debug"/>
+        <setEntry value="org.eclipse.lsp4j.debug"/>
+        <setEntry value="org.eclipse.lsp4j.jsonrpc.debug"/>
         <setEntry value="org.eclipse.lsp4j.jsonrpc@default:default"/>
         <setEntry value="org.eclipse.lsp4j@default:default"/>
         <setEntry value="org.eclipse.ltk.core.refactoring@default:default"/>
@@ -406,6 +409,8 @@
         <setEntry value="org.eclipse.m2m.qvt.oml.project@default:default"/>
         <setEntry value="org.eclipse.m2m.qvt.oml.runtime@default:default"/>
         <setEntry value="org.eclipse.m2m.qvt.oml@default:default"/>
+        <setEntry value="org.eclipse.mylyn.wikitext"/>
+        <setEntry value="org.eclipse.mylyn.wikitext.markdown"/>
         <setEntry value="org.eclipse.nebula.cwt@default:default"/>
         <setEntry value="org.eclipse.nebula.widgets.cdatetime@default:default"/>
         <setEntry value="org.eclipse.ocl.common@default:default"/>
@@ -447,6 +452,11 @@
         <setEntry value="org.eclipse.team.core@default:default"/>
         <setEntry value="org.eclipse.team.ui@default:default"/>
         <setEntry value="org.eclipse.text@default:default"/>
+        <setEntry value="org.eclipse.tm4e.core"/>
+        <setEntry value="org.eclipse.tm4e.languageconfiguration"/>
+        <setEntry value="org.eclipse.tm4e.registry"/>
+        <setEntry value="org.eclipse.tm4e.ui"/>
+        <setEntry value="org.eclipse.ui.browser"/>
         <setEntry value="org.eclipse.ui.cheatsheets@default:default"/>
         <setEntry value="org.eclipse.ui.console@default:default"/>
         <setEntry value="org.eclipse.ui.editors@default:default"/>
@@ -458,6 +468,7 @@
         <setEntry value="org.eclipse.ui.intro@default:default"/>
         <setEntry value="org.eclipse.ui.navigator.resources@default:default"/>
         <setEntry value="org.eclipse.ui.navigator@default:default"/>
+        <setEntry value="org.eclipse.ui.trace"/>
         <setEntry value="org.eclipse.ui.views.log@default:default"/>
         <setEntry value="org.eclipse.ui.views.properties.tabbed@default:default"/>
         <setEntry value="org.eclipse.ui.views@default:default"/>
@@ -465,6 +476,10 @@
         <setEntry value="org.eclipse.ui.workbench@default:default"/>
         <setEntry value="org.eclipse.ui@default:default"/>
         <setEntry value="org.eclipse.urischeme@default:default"/>
+        <setEntry value="org.eclipse.wildwebdeveloper.embedder.node.linux.x86_64@default:default"/>
+        <setEntry value="org.eclipse.wildwebdeveloper.embedder.node@default:default"/>
+        <setEntry value="org.eclipse.wildwebdeveloper.xml@default:default"/>
+        <setEntry value="org.eclipse.wildwebdeveloper@default:default"/>
         <setEntry value="org.eclipse.wst.common.core@default:default"/>
         <setEntry value="org.eclipse.wst.common.emf@default:default"/>
         <setEntry value="org.eclipse.wst.common.emfworkbench.integration@default:default"/>
@@ -508,7 +523,10 @@
         <setEntry value="org.eclipse.xtext.xbase@default:default"/>
         <setEntry value="org.eclipse.xtext@default:default"/>
         <setEntry value="org.hamcrest.core@default:default"/>
+        <setEntry value="org.jcodings"/>
         <setEntry value="org.jdom@default:default"/>
+        <setEntry value="org.joni"/>
+        <setEntry value="org.jsoup"/>
         <setEntry value="org.junit@default:default"/>
         <setEntry value="org.objectweb.asm@default:default"/>
         <setEntry value="org.opentest4j@default:default"/>

@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -38,7 +39,7 @@ import sadl.PackageableElement;
  *   <li>{@link mediator.impl.MNodeImpl#getEdges <em>Edges</em>}</li>
  *   <li>{@link mediator.impl.MNodeImpl#getEastPorts <em>East Ports</em>}</li>
  *   <li>{@link mediator.impl.MNodeImpl#getWestPorts <em>West Ports</em>}</li>
- *   <li>{@link mediator.impl.MNodeImpl#getPackageableElement <em>Packageable Element</em>}</li>
+ *   <li>{@link mediator.impl.MNodeImpl#getSadlContainer <em>Sadl Container</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,14 +116,14 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
   protected EList<MPort> westPorts;
 
   /**
-   * The cached value of the '{@link #getPackageableElement() <em>Packageable Element</em>}' reference.
+   * The cached value of the '{@link #getSadlContainer() <em>Sadl Container</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackageableElement()
+   * @see #getSadlContainer()
    * @generated
    * @ordered
    */
-  protected PackageableElement packageableElement;
+  protected EObject sadlContainer;
 
   /**
    * <!-- begin-user-doc -->
@@ -264,16 +265,16 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
    * @generated
    */
   @Override
-  public PackageableElement getPackageableElement() {
-    if (packageableElement != null && packageableElement.eIsProxy()) {
-      InternalEObject oldPackageableElement = (InternalEObject)packageableElement;
-      packageableElement = (PackageableElement)eResolveProxy(oldPackageableElement);
-      if (packageableElement != oldPackageableElement) {
+  public EObject getSadlContainer() {
+    if (sadlContainer != null && sadlContainer.eIsProxy()) {
+      InternalEObject oldSadlContainer = (InternalEObject)sadlContainer;
+      sadlContainer = eResolveProxy(oldSadlContainer);
+      if (sadlContainer != oldSadlContainer) {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MediatorPackage.MNODE__PACKAGEABLE_ELEMENT, oldPackageableElement, packageableElement));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MediatorPackage.MNODE__SADL_CONTAINER, oldSadlContainer, sadlContainer));
       }
     }
-    return packageableElement;
+    return sadlContainer;
   }
 
   /**
@@ -281,8 +282,8 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
    * <!-- end-user-doc -->
    * @generated
    */
-  public PackageableElement basicGetPackageableElement() {
-    return packageableElement;
+  public EObject basicGetSadlContainer() {
+    return sadlContainer;
   }
 
   /**
@@ -291,11 +292,11 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
    * @generated
    */
   @Override
-  public void setPackageableElement(PackageableElement newPackageableElement) {
-    PackageableElement oldPackageableElement = packageableElement;
-    packageableElement = newPackageableElement;
+  public void setSadlContainer(EObject newSadlContainer) {
+    EObject oldSadlContainer = sadlContainer;
+    sadlContainer = newSadlContainer;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MediatorPackage.MNODE__PACKAGEABLE_ELEMENT, oldPackageableElement, packageableElement));
+      eNotify(new ENotificationImpl(this, Notification.SET, MediatorPackage.MNODE__SADL_CONTAINER, oldSadlContainer, sadlContainer));
   }
 
   /**
@@ -339,9 +340,9 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
         return getEastPorts();
       case MediatorPackage.MNODE__WEST_PORTS:
         return getWestPorts();
-      case MediatorPackage.MNODE__PACKAGEABLE_ELEMENT:
-        if (resolve) return getPackageableElement();
-        return basicGetPackageableElement();
+      case MediatorPackage.MNODE__SADL_CONTAINER:
+        if (resolve) return getSadlContainer();
+        return basicGetSadlContainer();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -377,8 +378,8 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
         getWestPorts().clear();
         getWestPorts().addAll((Collection<? extends MPort>)newValue);
         return;
-      case MediatorPackage.MNODE__PACKAGEABLE_ELEMENT:
-        setPackageableElement((PackageableElement)newValue);
+      case MediatorPackage.MNODE__SADL_CONTAINER:
+        setSadlContainer((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -410,8 +411,8 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
       case MediatorPackage.MNODE__WEST_PORTS:
         getWestPorts().clear();
         return;
-      case MediatorPackage.MNODE__PACKAGEABLE_ELEMENT:
-        setPackageableElement((PackageableElement)null);
+      case MediatorPackage.MNODE__SADL_CONTAINER:
+        setSadlContainer((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -437,8 +438,8 @@ public class MNodeImpl extends MConnectableElementImpl implements MNode {
         return eastPorts != null && !eastPorts.isEmpty();
       case MediatorPackage.MNODE__WEST_PORTS:
         return westPorts != null && !westPorts.isEmpty();
-      case MediatorPackage.MNODE__PACKAGEABLE_ELEMENT:
-        return packageableElement != null;
+      case MediatorPackage.MNODE__SADL_CONTAINER:
+        return sadlContainer != null;
     }
     return super.eIsSet(featureID);
   }

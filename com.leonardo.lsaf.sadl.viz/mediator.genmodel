@@ -33,7 +33,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/edges"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/eastPorts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/westPorts"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/packageableElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mediator.ecore#//MNode/sadlContainer"/>
     </genClasses>
     <genClasses ecoreClass="mediator.ecore#//MPort">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mediator.ecore#//MPort/offset"/>

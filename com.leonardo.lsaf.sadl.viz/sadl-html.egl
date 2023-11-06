@@ -41,14 +41,15 @@
         var applicationNode = createNode();
         applicationNode.id = application.name;
         applicationNode.label = application.name;
-        applicationNode.packageableElement = application;
+        applicationNode.sadlContainer = application;
         applicationNode.level = -1;
         applicationNode.width = DEFAULT_COMPONENT_WIDTH();
         applicationNode.height = DEFAULT_COMPONENT_HEIGHT();
         applicationNode.class = application.eClass.getName(); 
         
-        populateContainerStack(applicationNode, applicationNode, subContainer.type, 0, containerStack);
-        containerStack.println;
+        populateContainerStack(applicationNode, applicationNode, subContainer, 0, containerStack, connections);
+        var portInOut = countPortInOut(connections);
+        
         
         var prevNode = null;
         for (node in containerStack) {
@@ -56,6 +57,7 @@
 [%
             if (prevNode == null) {
 %]
+[% /* closing tags */ %]
                     // A
                     { "id": "[%=node.id%]", 
                         "labels": [{"text": "[%=node.label%]"}],
@@ -78,9 +80,33 @@
             if (prevNode <> null and node.level == prevNode.level) {
 %]
                     // C
-                        "width": [%=node.width%], 
-                        "height": [%=node.height%], 
-                        "class":"[%=node.class%]" 
+                        "ports": [
+[%              // handle ports here
+                if (prevNode.sadlContainer.isTypeOf(ComponentInstance)) {
+	                for (port in prevNode.sadlContainer.type.ports) {
+	                    var subPorts = createSequencedPorts(prevNode, port, portInOut);
+	                    for (subPort in subPorts){
+                            var portFullName = subPort.id;
+%]
+	                         { "id": "[%=(portFullName).replace("\\.","-")%]", 
+	                           "labels": [{"text": "[%=subPort.label%]"}],
+	                           "properties": {
+	                             "port.side": "[%=subPort.side%]",
+	                             "port.borderOffset": [%=subPort.level * DEFAULT_PORT_WIDTH()%]
+	                           },
+	                           "width": [%=subPort.width %], "height": [%=subPort.height %],
+	                           "y": [%=subPort.y %],
+	                           "class": "Port"},
+	[%
+                        }
+	                }
+                }
+                var containerHeight = calculateContainerHeight(prevNode);
+%]
+                        ],
+                        "width": [%=prevNode.width%], 
+                        "height": [%=containerHeight%], 
+                        "class":"[%=prevNode.class%]" 
                     },
                     { "id": "[%=node.id%]", 
                         "labels": [{"text": "[%=node.label%]"}],
@@ -92,14 +118,62 @@
             if (prevNode <> null and node.level < prevNode.level) {
 %]
                     // D
-                        "width": [%=node.width%], 
-                        "height": [%=node.height%], 
-                        "class":"[%=node.class%]" 
+                        "ports": [
+[%              // handle ports here
+                if (prevNode.sadlContainer.isTypeOf(ComponentInstance)) {
+                    for (port in prevNode.sadlContainer.type.ports) {
+                        var subPorts = createSequencedPorts(prevNode, port, portInOut);
+                        for (subPort in subPorts){
+                            var portFullName = subPort.id;
+%]
+	                         { "id": "[%=(portFullName).replace("\\.","-")%]", 
+	                           "labels": [{"text": "[%=subPort.label%]"}],
+	                           "properties": {
+	                             "port.side": "[%=subPort.side%]",
+	                             "port.borderOffset": [%=subPort.level * DEFAULT_PORT_WIDTH()%]
+	                           },
+	                           "width": [%=subPort.width %], "height": [%=subPort.height %],
+	                           "y": [%=subPort.y %],
+	                           "class": "Port"},
+[%
+                        }
+                    }
+                }
+                var containerHeight = calculateContainerHeight(prevNode);
+%]
+                        ],
+                        "width": [%=prevNode.width%], 
+                        "height": [%=containerHeight%], 
+                        "class":"[%=prevNode.class%]" 
                     },
 [% for (i in Sequence{1..prevNode.level-node.level}) { %]
                     ],
+                        "ports": [
+[%              // handle ports here
+                if (node.sadlContainer.isTypeOf(ComponentInstance)) {
+                    for (port in node.sadlContainer.type.ports) {
+                        var subPorts = createSequencedPorts(node, port, portInOut);
+                        for (subPort in subPorts){
+                            var portFullName = subPort.id;
+%]
+                         { "id": "[%=(portFullName).replace("\\.","-")%]", 
+                           "labels": [{"text": "[%=subPort.label%]"}],
+                           "properties": {
+                             "port.side": "[%=subPort.side%]",
+                             "port.borderOffset": [%=subPort.level * DEFAULT_PORT_WIDTH()%]
+                           },
+                           "width": [%=subPort.width %], "height": [%=subPort.height %],
+                           "y": [%=subPort.y %],
+                           "class": "Port"},
+[%
+                        }
+                    }
+                }
+                var containerHeight = calculateContainerHeight(node);
+%]
+                        ],
                         "width": [%=node.width%], 
-                        "height": [%=node.height%], 
+                        "height": [%=containerHeight%], 
                         "class":"[%=node.class%]" 
                     },
 [% } %]
@@ -116,11 +190,32 @@
             if (node == containerStack.get(containerStack.size - 1)) {
 %]
                     // F
-[% for (i in Sequence{1..node.level}) { %]
-                    //],
-[% } %]
+                        "ports": [
+[%              // handle ports here
+                if (node.sadlContainer.isTypeOf(ComponentInstance)) {
+                    for (port in node.sadlContainer.type.ports) {
+                        var subPorts = createSequencedPorts(node, port, portInOut);
+                        for (subPort in subPorts){
+                            var portFullName = subPort.id;
+%]
+                             { "id": "[%=(portFullName).replace("\\.","-")%]", 
+                               "labels": [{"text": "[%=subPort.label%]"}],
+                               "properties": {
+                                 "port.side": "[%=subPort.side%]",
+                                 "port.borderOffset": [%=subPort.level * DEFAULT_PORT_WIDTH()%]
+                               },
+                               "width": [%=subPort.width %], "height": [%=subPort.height %],
+                               "y": [%=subPort.y %],
+                               "class": "Port"},
+[%
+                        }
+                    }
+                }
+                var containerHeight = calculateContainerHeight(node);
+%]
+                        ],
                         "width": [%=node.width%], 
-                        "height": [%=node.height%], 
+                        "height": [%=containerHeight%], 
                         "class":"[%=node.class%]" 
                     },
 [% 
@@ -155,37 +250,4 @@ while(i < node.level) { %]
 </body>
 
 </html>
- 
-[%
-operation populateContainerStack(rootNode, parentNode, element, level, containerStack) {
-    var node = createNode();
-    node.id = parentNode.id + "-" + element.name;
-    node.label = element.name;
-    node.packageableElement = element;
-    node.level = level;
-    node.class = element.eClass.getName();
-    node.width = DEFAULT_COMPONENT_WIDTH();
-    node.height = DEFAULT_COMPONENT_HEIGHT();
-    node.parent = parentNode; 
-    parentNode.children.add(node);
-    
-    containerStack.add(node);
-    
-    level = level + 1;
-    if (element.isTypeOf(Container)) {
-        for (containerInstance in element.containerInstances) {
-            populateContainerStack(rootNode, node, containerInstance.type, level, containerStack);
-        }
-        for (componentInstance in element.componentInstances) {
-            populateContainerStack(rootNode, node, componentInstance.type, level, containerStack);
-        }
-    }
-    if (element.isTypeOf(Component)) {
-        for (componentInstance in element.parts) {
-            populateContainerStack(rootNode, node, componentInstance.type, level, containerStack);
-        }
-    }
-    level = level - 1;
-}
-%]
 

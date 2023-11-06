@@ -2,6 +2,17 @@ package PackageA
 	
 	topic ta
 	end
+	
+	
+
+  interface Ia
+    port ia sends ta;
+    port ib receives ta;
+  end
+  
+  interface Ib
+    port ic provides Ia;
+  end
 
 	component Component1
 		component_instance Component11 component11; 
@@ -10,20 +21,20 @@ package PackageA
 	
 	component Component2
 		component_instance Component21 component21;
-		component_instance Component21 component21;
+		component_instance Component22 component22;
 	end
 	
 	component Component11
-		port a sends ta;
+		port a provides Ia;
 	end
 	component Component12
-		port a sends ta; 
+		port a provides Ib; 
 	end
 	component Component21
-		port a sends ta; 
+		port a provides Ia; 
 	end
 	component Component22
-		port a sends ta; 
+		port a provides Ib; 
 	end
 	
 	container Container1
@@ -37,6 +48,7 @@ package PackageA
 		container_instance Container21 container21;		
 		container_instance Container22 container22;
 		container_instance Container23 container23;
+		component_instance Component1 component1;
 		component_instance Component2 component2;
 	end
 	
@@ -74,7 +86,7 @@ package PackageA
   end
 
 	container Container111
-	   container_instance Container1111 container1111;
+	   component_instance Component22 component11122;
 	end
 	container Container112 
 	end

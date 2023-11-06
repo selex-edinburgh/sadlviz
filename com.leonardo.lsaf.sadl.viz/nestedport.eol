@@ -306,4 +306,80 @@ operation Container getHeight(): Integer {
     return height;
 }
 
+operation populateContainerStack(rootNode, parentNode, element, level, containerStack, connections) {
+    var node = createNode();
+    node.id = parentNode.id + "-" + element.name;
+    node.label = element.name;
+    node.sadlContainer = element;
+    node.level = level;
+    node.class = element.type.eClass.getName();
+    node.width = DEFAULT_COMPONENT_WIDTH();
+    node.height = DEFAULT_COMPONENT_HEIGHT();
+    node.parent = parentNode; 
+    parentNode.children.add(node);
 
+    containerStack.add(node);
+
+    level = level + 1;
+    if (element.isTypeOf(ContainerInstance)) {
+        connections.addAll(element.type.connections);
+        for (containerInstance in element.type.containerInstances) {
+            populateContainerStack(rootNode, node, containerInstance, level, containerStack, connections);
+        }
+        for (componentInstance in element.type.componentInstances) {
+            populateContainerStack(rootNode, node, componentInstance, level, containerStack, connections);
+        }
+    }
+    if (element.isTypeOf(ComponentInstance)) {
+        for (componentInstance in element.type.parts) {
+            populateContainerStack(rootNode, node, componentInstance, level, containerStack, connections);
+        }
+    }
+    level = level - 1;
+}
+
+operation createSequencedPorts(parentNode: MNode, port: Port, portInOut: Map(String, Integer)): Sequence{
+    var level = 0;
+    var rootPort = createPort();
+    var rootPortName = parentNode.id + "." + port.name;
+    rootPort.id = rootPortName;
+    rootPort.sadlPort = port;
+    rootPort.node =  parentNode;
+
+    if (portInOut.get(rootPortName) > 0) {
+        parentNode.westPorts.add(rootPort);
+        rootPort.side = SIDE_WEST();
+    } else {
+        parentNode.eastPorts.add(rootPort);
+    }
+
+    port.calculateSubPorts(rootPort, rootPort, level);
+    var subPorts = Sequence{};
+    treeToSequence(rootPort, subPorts);
+    return subPorts;
+}
+
+operation calculateContainerHeight(node: MNode) : Integer {
+    var highestSidePorts = node.eastPorts;
+    var westChildren = node.westPorts;
+    var eastChildren = node.eastPorts;
+    var westY = 0;
+    var eastY = 0;
+    if (westChildren.size > 0) {
+    var lastChild = westChildren.get(westChildren.size - 1);
+        westY = lastChild.y + lastChild.height;
+    }
+    if (eastChildren.size > 0) {
+        var lastChild = eastChildren.get(eastChildren.size - 1);
+        eastY = lastChild.y + lastChild.height;
+    }
+    
+    if (westY > eastY) {
+        highestSidePorts = westPorts;
+    } 
+    var containerHeight = calcuateContainerHeight(highestSidePorts);
+    if (containerHeight < DEFAULT_COMPONENT_HEIGHT() - DEFAULT_Y_OFFSET()) {
+        containerHeight = DEFAULT_COMPONENT_HEIGHT();
+    }
+    return containerHeight;
+}

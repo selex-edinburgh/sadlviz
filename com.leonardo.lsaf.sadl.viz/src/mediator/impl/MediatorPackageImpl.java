@@ -383,7 +383,7 @@ public class MediatorPackageImpl extends EPackageImpl implements MediatorPackage
    * @generated
    */
   @Override
-  public EReference getMNode_PackageableElement() {
+  public EReference getMNode_SadlContainer() {
     return (EReference)mNodeEClass.getEStructuralFeatures().get(6);
   }
 
@@ -534,7 +534,7 @@ public class MediatorPackageImpl extends EPackageImpl implements MediatorPackage
     createEReference(mNodeEClass, MNODE__EDGES);
     createEReference(mNodeEClass, MNODE__EAST_PORTS);
     createEReference(mNodeEClass, MNODE__WEST_PORTS);
-    createEReference(mNodeEClass, MNODE__PACKAGEABLE_ELEMENT);
+    createEReference(mNodeEClass, MNODE__SADL_CONTAINER);
 
     mPortEClass = createEClass(MPORT);
     createEAttribute(mPortEClass, MPORT__OFFSET);
@@ -613,7 +613,7 @@ public class MediatorPackageImpl extends EPackageImpl implements MediatorPackage
     initEReference(getMNode_Edges(), this.getMEdge(), null, "edges", null, 0, -1, MNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMNode_EastPorts(), this.getMPort(), null, "eastPorts", null, 0, -1, MNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMNode_WestPorts(), this.getMPort(), null, "westPorts", null, 0, -1, MNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMNode_PackageableElement(), theSadlPackage.getPackageableElement(), null, "packageableElement", null, 0, 1, MNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMNode_SadlContainer(), ecorePackage.getEObject(), null, "sadlContainer", null, 0, 1, MNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mPortEClass, MPort.class, "MPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMPort_Offset(), ecorePackage.getEInt(), "offset", "0", 0, 1, MPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -45,13 +45,15 @@ function transverseElkTree(elkGraph, mxgraphRoot, mxgraph) {
 }
 
 function transverseElkNodes(elkElement, mxgraphElement, mxgraph) {
-    // console.log(elkElement.id);
-    var mxElement = mxgraph.insertVertex(mxgraphElement, elkElement.id, elkElement.label, elkElement.x, elkElement.y, elkElement.width, elkElement.height, "verticalLabelPosition=top;verticalAlign=bottom");
+    //console.log("Node Id:" + elkElement.id);
+    //console.log("Node Label:" + elkElement.labels[0].text);
+    var mxElement = mxgraph.insertVertex(mxgraphElement, elkElement.id, elkElement.labels[0].text, elkElement.x, elkElement.y, elkElement.width, elkElement.height, style="verticalAlign=bottom;labelPosition=center;verticalLabelPosition=top;align=center;");
 
     for (i in elkElement.ports) {
         let port = elkElement.ports[i];
-        // console.log(port.id);
-        var mxPort = mxgraph.insertVertex(mxElement, port.id, port.label, port.x, port.y, port.width, port.height, "strokeColor=none;fillColor=#000000;labelPosition=center;verticalLabelPosition=top;");
+        //console.log("Port Id:" + port.id);
+        //console.log("Port Label:" + port.labels[0].text);
+        mxgraph.insertVertex(mxElement, port.id, port.labels[0].text, port.x, port.y, port.width, port.height, style="strokeColor=#000000;fillColor=#000000;verticalAlign=bottom;labelPosition=center;verticalLabelPosition=top;align=center;");
     }
 
     for (i in elkElement.children) {

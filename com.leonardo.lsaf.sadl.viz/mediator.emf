@@ -54,7 +54,7 @@ class MNode extends MConnectableElement {
     val MEdge[*] edges;
     val MPort[*] eastPorts;
     val MPort[*] westPorts;
-    ref sadl.PackageableElement packageableElement;
+    ref EObject sadlContainer;
 }
 
 class MPort extends MConnectableElement {

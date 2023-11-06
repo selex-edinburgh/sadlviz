@@ -44,7 +44,7 @@
         eType="#//MPort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="westPorts" upperBound="-1"
         eType="#//MPort" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="packageableElement" eType="ecore:EClass http://www.leonardo.com/lsaf/sadl/SADL#//PackageableElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sadlContainer" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MPort" eSuperTypes="#//MConnectableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"

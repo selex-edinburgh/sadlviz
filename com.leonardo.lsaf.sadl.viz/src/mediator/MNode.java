@@ -4,6 +4,7 @@ package mediator;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
 import sadl.PackageableElement;
 
 /**
@@ -21,7 +22,7 @@ import sadl.PackageableElement;
  *   <li>{@link mediator.MNode#getEdges <em>Edges</em>}</li>
  *   <li>{@link mediator.MNode#getEastPorts <em>East Ports</em>}</li>
  *   <li>{@link mediator.MNode#getWestPorts <em>West Ports</em>}</li>
- *   <li>{@link mediator.MNode#getPackageableElement <em>Packageable Element</em>}</li>
+ *   <li>{@link mediator.MNode#getSadlContainer <em>Sadl Container</em>}</li>
  * </ul>
  *
  * @see mediator.MediatorPackage#getMNode()
@@ -122,25 +123,25 @@ public interface MNode extends MConnectableElement {
   EList<MPort> getWestPorts();
 
   /**
-   * Returns the value of the '<em><b>Packageable Element</b></em>' reference.
+   * Returns the value of the '<em><b>Sadl Container</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Packageable Element</em>' reference.
-   * @see #setPackageableElement(PackageableElement)
-   * @see mediator.MediatorPackage#getMNode_PackageableElement()
+   * @return the value of the '<em>Sadl Container</em>' reference.
+   * @see #setSadlContainer(EObject)
+   * @see mediator.MediatorPackage#getMNode_SadlContainer()
    * @model
    * @generated
    */
-  PackageableElement getPackageableElement();
+  EObject getSadlContainer();
 
   /**
-   * Sets the value of the '{@link mediator.MNode#getPackageableElement <em>Packageable Element</em>}' reference.
+   * Sets the value of the '{@link mediator.MNode#getSadlContainer <em>Sadl Container</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Packageable Element</em>' reference.
-   * @see #getPackageableElement()
+   * @param value the new value of the '<em>Sadl Container</em>' reference.
+   * @see #getSadlContainer()
    * @generated
    */
-  void setPackageableElement(PackageableElement value);
+  void setSadlContainer(EObject value);
 
 } // MNode
