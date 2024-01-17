@@ -1,0 +1,108 @@
+ 
+package brewery
+
+    interface String
+    end
+    
+    interface byte
+    end
+    
+    interface int
+    end
+    
+    interface long
+    end
+    
+    interface float
+    end
+    
+    interface double
+    end
+    
+    interface char
+    end
+    
+    interface boolean
+    end
+
+    interface Barrel
+    end
+    
+    interface Brewery
+    end
+    
+    interface Inventory
+    end
+    
+    interface ProductionPlant
+    end
+    
+    interface Warehouse
+    end
+    
+
+    component Barrel
+        port setId_id requires String;
+        port setVolume_volume requires double;
+        port getId provides String;
+        port getVolume provides double;
+    end
+
+
+    component Brewery
+        port main_args requires String;
+        port Brewery provides Brewery;
+    end
+
+
+    component Inventory
+        port addBarrel_barrel requires Barrel;
+        port addBarrels_barrel requires java_util_Collection_Barrel;
+        port getBarrel_id requires String;
+        port getBarrels_ids requires java_util_Collection_String;
+        port Inventory provides Inventory;
+        port getBarrel provides Barrel;
+        port getBarrels provides java_util_Collection_Barrel;
+    end
+
+    interface java_util_Collection_Barrel
+    end
+
+    interface java_util_Collection_String
+    end
+
+
+    component ProductionPlant
+        port receiveBarrel_warehouse requires Warehouse;
+        port receiveBarrel_barrel requires Barrel;
+        port receiveBarrels_warehouse requires Warehouse;
+        port receiveBarrels_barrels requires java_util_Collection_Barrel;
+        port ProductionPlant provides ProductionPlant;
+        port getInventory provides Inventory;
+    end
+
+    interface java_util_Collection_Barrel
+    end
+
+    interface java_util_Collection_String
+    end
+
+
+    component Warehouse
+        port issueBarrel_barrel requires Barrel;
+        port issueBarrels_barrels requires java_util_Collection_Barrel;
+        port Warehouse provides Warehouse;
+        port getInventory provides Inventory;
+        port issueBarrel provides Barrel;
+        port issueBarrels provides java_util_Collection_Barrel;
+    end
+
+    interface java_util_Collection_Barrel
+    end
+
+    interface java_util_Collection_String
+    end
+
+
+end
+

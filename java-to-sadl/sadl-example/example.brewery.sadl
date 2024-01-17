@@ -1,0 +1,39 @@
+
+package brewery
+  
+  interface Barrel
+
+  end
+  
+  interface Warehouse
+  
+  end
+  
+  interface Inventory
+    port getBarrel provides Barrel;
+    port addBarrel requires Barrel;
+  end
+  
+  component Warehouse
+    port getInventory provides Inventory;
+    port issueBarrel provides Barrel;
+  end
+  
+  component ProductionPlant
+    port getInventory requires Inventory;
+    port receiveBarrel_0 requires Warehouse;
+    port receiveBarrel_1 requires Barrel;
+  end
+  
+  container Brewery
+    component_instance Warehouse warehouseA; 
+    component_instance ProductionPlant productionPlantA; 
+     
+    connect con1 (warehouseA::getInventory.getBarrel, productionPlantA::getInventory.addBarrel); 
+    connect con2 (warehouseA::issueBarrel, productionPlantA::receiveBarrel);
+  end
+
+   application BreweryApp
+      container_instance Brewery breweryA;
+  end
+end

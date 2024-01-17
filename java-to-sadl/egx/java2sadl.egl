@@ -1,0 +1,103 @@
+[% 
+import 'java2sadl.eol';
+
+var newInterfaces = OrderedSet{};
+%] 
+package [%=package.getFullName()%]
+
+    interface String
+    end
+    
+    interface byte
+    end
+    
+    interface int
+    end
+    
+    interface long
+    end
+    
+    interface float
+    end
+    
+    interface double
+    end
+    
+    interface char
+    end
+    
+    interface boolean
+    end
+
+[%
+    var classes = package.getClasses();
+    for(class in classes) {
+%]
+    interface [%=class.name%]
+    end
+    
+[%
+    }
+%]
+
+[%
+    for(class in package.getClasses()) {
+%]
+    component [%=class.name%]
+[%    
+        // handle parameters
+        for (method in class.getMethods()) {
+            for (parameter in method.parameters) {
+                 var typeName = parameter.type.type.getTypeName();
+                    if (parameter.type.type.isTypeOf(M!java::ParameterizedType)) {
+                        newInterfaces.add(typeName);
+                    }
+%]
+        port [%=method.name%]_[%=parameter.name%] requires [%=typeName%];
+[%
+            }    
+        }
+        // handle returns
+        for (method in class.getMethods()) {
+            if (method.isTypeOf(M!java::ConstructorDeclaration)) {
+%]
+        port [%=method.name%] provides [%=method.name%];
+[%
+            }
+            else if (method.isTypeOf(M!java::MethodDeclaration)) {
+                if ( method.returnType <> null and
+                        not method.returnType.type
+                        .isTypeOf(M!java::PrimitiveTypeVoid)
+                    ) {
+                    var typeName = method.returnType.type.getTypeName();
+                    if (method.returnType.type.isTypeOf(M!java::ParameterizedType)) {
+                        newInterfaces.add(typeName);
+                    }
+%]
+        port [%=method.name%] provides [%=typeName%];
+[%
+                }
+            } else {
+%]
+        port [%=method.name%]; // unhandled method, please check
+[%            
+            }
+        }
+%]
+    end
+
+[%
+    for (newInterface in newInterfaces){
+%]
+    interface [%=newInterface%]
+    end
+
+[%
+    }
+%]
+
+[%
+    }
+%]
+end
+

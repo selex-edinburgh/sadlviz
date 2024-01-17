@@ -1,0 +1,44 @@
+ 
+package java.lang
+
+    interface String
+    end
+    
+    interface byte
+    end
+    
+    interface int
+    end
+    
+    interface long
+    end
+    
+    interface float
+    end
+    
+    interface double
+    end
+    
+    interface char
+    end
+    
+    interface boolean
+    end
+
+    interface Object
+    end
+    
+    interface String
+    end
+    
+
+    component Object
+    end
+
+
+    component String
+    end
+
+
+end
+

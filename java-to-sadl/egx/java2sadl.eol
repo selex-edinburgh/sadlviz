@@ -1,0 +1,35 @@
+
+operation M!java::Package getFullName(): String{
+    var name = self.name;
+    var currentPackage = self;
+    while(currentPackage.package <> null) {
+        name = currentPackage.package.name + "." + name;
+        currentPackage = currentPackage.package;
+    }
+    return name;
+}
+
+operation M!java::Package getClasses(): OrderedSet(M!java::ClassDeclaration) {
+    var classes = OrderedSet{};
+    classes.addAll(self.ownedElements
+        .select(e | e.isTypeOf(M!java::ClassDeclaration)).sortBy(e | e.name));
+    return classes;
+}
+
+operation M!java::ClassDeclaration getMethods(): OrderedSet(M!java::AbstractMethodDeclaration) {
+    var methods = OrderedSet{};
+    methods.addAll(self.bodyDeclarations
+        .select(e | e.isKindOf(M!java::AbstractMethodDeclaration)).sortBy(e | e.name));
+    return methods;
+}
+
+operation M!java::Type getTypeName(): String {
+    var name = self.name;
+    if (self.isTypeOf(M!java::ParameterizedType)){
+        name = self.name.split("<")[0].replace("\\.", "_");
+        for (typeArgument in self.typeArguments) {
+            name = name + "_" + typeArgument.type.name;
+        }
+    }
+    return name;
+}

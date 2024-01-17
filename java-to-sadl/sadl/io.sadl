@@ -1,0 +1,30 @@
+ 
+package java.io
+
+    interface String
+    end
+    
+    interface byte
+    end
+    
+    interface int
+    end
+    
+    interface long
+    end
+    
+    interface float
+    end
+    
+    interface double
+    end
+    
+    interface char
+    end
+    
+    interface boolean
+    end
+
+
+end
+

@@ -37,7 +37,7 @@ abstract class MElement {
 class MEdge extends MElement {
     ref MConnectableElement source;
     ref MConnectableElement target;
-    ref sadl.Connection sadlConnection; 
+    ref sadl.Connection sadlConnection;
 }
 
 class MConnectableElement extends MElement {
