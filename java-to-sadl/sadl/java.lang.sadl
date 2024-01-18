@@ -1,6 +1,9 @@
  
-package java.util.stream
+package java.lang
 
+    interface Object
+    end
+    
     interface String
     end
     
@@ -25,6 +28,20 @@ package java.util.stream
     interface boolean
     end
 
+    interface Object
+    end
+    
+    interface String
+    end
+    
+
+    component Object
+    end
+
+    component String
+    end
+
 
 end
+
 

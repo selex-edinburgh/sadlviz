@@ -1,6 +1,8 @@
-package brewery;
+package brewery.function;
 
 import java.util.Collection;
+
+import brewery.product.Barrel;
 
 public class ProductionPlant {
 

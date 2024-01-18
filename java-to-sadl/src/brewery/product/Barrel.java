@@ -1,4 +1,4 @@
-package brewery;
+package brewery.product;
 
 public class Barrel {
 	String id;

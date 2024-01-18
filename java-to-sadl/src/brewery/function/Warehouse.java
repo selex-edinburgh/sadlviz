@@ -1,6 +1,8 @@
-package brewery;
+package brewery.function;
 
 import java.util.Collection;
+
+import brewery.product.Barrel;
 
 public class Warehouse {
 
@@ -15,7 +17,7 @@ public class Warehouse {
 	}
 	
 	public Collection<Barrel> issueBarrels(Collection<Barrel> barrels) {
-	  Collection<String> barrelIds = barrels.stream().map(b -> b.id).toList();
+	  Collection<String> barrelIds = barrels.stream().map(b -> b.getId()).toList();
     return this.getInventory().getBarrels(barrelIds);
   }
 

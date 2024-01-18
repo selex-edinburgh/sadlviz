@@ -2,7 +2,7 @@ import 'java2sadl.eol';
 
 rule Java2Sadl transform package : M!java::Package {
     template : "java2sadl.egl"
-    target : "../sadl/" + package.name + ".sadl"
+    target : "../sadl/" + package.getFullName() + ".sadl"
     parameters : Map{
         "package" = package
     }

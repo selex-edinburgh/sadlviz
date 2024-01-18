@@ -1,10 +1,13 @@
 [% 
 import 'java2sadl.eol';
 
-var newInterfaces = OrderedSet{};
+var parameterizedTypes = OrderedSet{};
 %] 
 package [%=package.getFullName()%]
 
+    interface Object
+    end
+    
     interface String
     end
     
@@ -48,10 +51,10 @@ package [%=package.getFullName()%]
         // handle parameters
         for (method in class.getMethods()) {
             for (parameter in method.parameters) {
-                 var typeName = parameter.type.type.getTypeName();
-                    if (parameter.type.type.isTypeOf(M!java::ParameterizedType)) {
-                        newInterfaces.add(typeName);
-                    }
+                var typeName = parameter.type.type.getTypeName();
+                if (parameter.type.type.isTypeOf(M!java::ParameterizedType)) {
+                    parameterizedTypes.add(parameter.type.type);
+                }
 %]
         port [%=method.name%]_[%=parameter.name%] requires [%=typeName%];
 [%
@@ -59,19 +62,20 @@ package [%=package.getFullName()%]
         }
         // handle returns
         for (method in class.getMethods()) {
+            // constructor
             if (method.isTypeOf(M!java::ConstructorDeclaration)) {
 %]
-        port [%=method.name%] provides [%=method.name%];
+        port constructor_out provides [%=method.name%];
 [%
             }
             else if (method.isTypeOf(M!java::MethodDeclaration)) {
-                if ( method.returnType <> null and
-                        not method.returnType.type
-                        .isTypeOf(M!java::PrimitiveTypeVoid)
+                if ( method.returnType <> null and not method.returnType.type
+                    .isTypeOf(M!java::PrimitiveTypeVoid)
                     ) {
+
                     var typeName = method.returnType.type.getTypeName();
                     if (method.returnType.type.isTypeOf(M!java::ParameterizedType)) {
-                        newInterfaces.add(typeName);
+                        parameterizedTypes.add(method.returnType.type);
                     }
 %]
         port [%=method.name%] provides [%=typeName%];
@@ -87,17 +91,26 @@ package [%=package.getFullName()%]
     end
 
 [%
-    for (newInterface in newInterfaces){
+    }
 %]
-    interface [%=newInterface%]
+
+[%
+    for (parameterizedType in parameterizedTypes){
+%]
+    interface [%=parameterizedType.getTypeName()%]
+[%
+        for (typeArgument in parameterizedType.typeArguments){
+%]
+        port [%=typeArgument.type.name%]_in receives [%=typeArgument.type.name%]; 
+        port [%=typeArgument.type.name%]_out provides [%=typeArgument.type.name%];
+[%
+        }
+%]
     end
 
 [%
     }
 %]
-
-[%
-    }
-%]
 end
+
 

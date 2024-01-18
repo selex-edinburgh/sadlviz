@@ -1,0 +1,90 @@
+ 
+package brewery.function
+
+    interface Object
+    end
+    
+    interface String
+    end
+    
+    interface byte
+    end
+    
+    interface int
+    end
+    
+    interface long
+    end
+    
+    interface float
+    end
+    
+    interface double
+    end
+    
+    interface char
+    end
+    
+    interface boolean
+    end
+
+    interface Brewery
+    end
+    
+    interface Inventory
+    end
+    
+    interface ProductionPlant
+    end
+    
+    interface Warehouse
+    end
+    
+
+    component Brewery
+        port main_args requires String;
+        port constructor_out provides Brewery;
+    end
+
+    component Inventory
+        port addBarrel_barrel requires Barrel;
+        port addBarrels_barrel requires java_util_Collection__Barrel;
+        port getBarrel_id requires String;
+        port getBarrels_ids requires java_util_Collection__String;
+        port constructor_out provides Inventory;
+        port getBarrel provides Barrel;
+        port getBarrels provides java_util_Collection__Barrel;
+    end
+
+    component ProductionPlant
+        port receiveBarrel_warehouse requires Warehouse;
+        port receiveBarrel_barrel requires Barrel;
+        port receiveBarrels_warehouse requires Warehouse;
+        port receiveBarrels_barrels requires java_util_Collection__Barrel;
+        port constructor_out provides ProductionPlant;
+        port getInventory provides Inventory;
+    end
+
+    component Warehouse
+        port issueBarrel_barrel requires Barrel;
+        port issueBarrels_barrels requires java_util_Collection__Barrel;
+        port constructor_out provides Warehouse;
+        port getInventory provides Inventory;
+        port issueBarrel provides Barrel;
+        port issueBarrels provides java_util_Collection__Barrel;
+    end
+
+
+    interface java_util_Collection__Barrel
+        port Barrel_in receives Barrel; 
+        port Barrel_out provides Barrel;
+    end
+
+    interface java_util_Collection__String
+        port String_in receives String; 
+        port String_out provides String;
+    end
+
+end
+
+

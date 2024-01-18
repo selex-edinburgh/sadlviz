@@ -1,6 +1,9 @@
  
 package java.util
 
+    interface Object
+    end
+    
     interface String
     end
     
@@ -41,15 +44,12 @@ package java.util
     component AbstractCollection
     end
 
-
     component AbstractList
     end
 
-
     component ArrayList
-        port ArrayList provides ArrayList;
+        port constructor_out provides ArrayList;
     end
-
 
     component Optional
         port orElse_arg0 requires Object;
@@ -57,4 +57,5 @@ package java.util
 
 
 end
+
 

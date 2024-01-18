@@ -27,9 +27,10 @@ operation M!java::Type getTypeName(): String {
     var name = self.name;
     if (self.isTypeOf(M!java::ParameterizedType)){
         name = self.name.split("<")[0].replace("\\.", "_");
-        for (typeArgument in self.typeArguments) {
-            name = name + "_" + typeArgument.type.name;
-        }
+        var paramNames = self.typeArguments
+            .collect(typeArgument | typeArgument.type.name)
+            .asOrderedSet().concat("_");
+        name = name + "__" + paramNames;
     }
     return name;
 }

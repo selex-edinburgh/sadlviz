@@ -1,5 +1,5 @@
  
-package java
+package brewery.product
 
     interface Object
     end
@@ -28,6 +28,16 @@ package java
     interface boolean
     end
 
+    interface Barrel
+    end
+    
+
+    component Barrel
+        port setId_id requires String;
+        port setVolume_volume requires double;
+        port getId provides String;
+        port getVolume provides double;
+    end
 
 
 end

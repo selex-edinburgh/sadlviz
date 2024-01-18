@@ -1,4 +1,6 @@
-package brewery;
+package brewery.function;
+
+import brewery.product.Barrel;
 
 public class Brewery {
 
